@@ -330,8 +330,8 @@ export default function Home() {
         <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-[#4C7793]/18 blur-3xl" />
         <div className="absolute bottom-[-10rem] left-[20%] h-[26rem] w-[26rem] rounded-full bg-[#F5C979]/10 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-          <div>
+        <div className="relative mx-auto max-w-7xl">
+          <div className="max-w-4xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
               <span className="text-[#F5C979]">🔑</span>
               GTA Rental Decision Assistant
@@ -348,23 +348,25 @@ export default function Home() {
               Check your rental readiness, understand realistic areas, and move forward with a stronger application plan.
             </p>
 
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-5 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a
                 href="#rental-match"
-                className="rounded-full bg-[#F5C979] px-7 py-4 text-center font-bold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.25)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center text-base font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.38)] ring-1 ring-[#F8DCA6]/70 transition hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C979] sm:w-auto"
               >
                 Check My Rental Readiness →
               </a>
 
               <a
                 href="#areas"
-                className="rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
               >
                 📍 Explore Areas
               </a>
             </div>
+          </div>
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+          <div className="mt-5 grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div className="grid gap-3 sm:grid-cols-3">
               <div className="glass-card rounded-2xl p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">01</p>
                 <h3 className="mt-2 font-bold">Profile Review</h3>
@@ -381,46 +383,45 @@ export default function Home() {
                 <p className="text-sm text-white/55">Prepare before applying</p>
               </div>
             </div>
-          </div>
 
-          <div className="grid gap-3 lg:grid-cols-[1fr_0.6fr]">
-            <div className="relative">
-              <div className="float-slow relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl">
-                <img
-                  src="/hero-condo.jpg"
-                  alt="GTA condo living"
-                  className="h-[19rem] w-full object-cover opacity-90 md:h-[22rem]"
-                  onError={(event) => {
-                    event.currentTarget.style.display = "none";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />
+            <div className="grid gap-3 lg:grid-cols-[1fr_0.6fr]">
+              <div className="relative">
+                <div className="float-slow relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl">
+                  <img
+                    src="/hero-condo.jpg"
+                    alt="GTA condo living"
+                    className="h-[19rem] w-full object-cover opacity-90 md:h-[22rem]"
+                    onError={(event) => {
+                      event.currentTarget.style.display = "none";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />
 
-                <div className="absolute left-5 top-5 rounded-2xl bg-[#101827]/86 px-5 py-4 shadow-xl backdrop-blur">
-                  <p className="text-sm text-white/60">⭐ Curated for</p>
-                  <p className="font-bold">You</p>
+                  <div className="absolute left-5 top-5 rounded-2xl bg-[#101827]/86 px-5 py-4 shadow-xl backdrop-blur">
+                    <p className="text-sm text-white/60">⭐ Curated for</p>
+                    <p className="font-bold">You</p>
+                  </div>
+
+                  <div className="absolute bottom-5 left-5 rounded-2xl bg-[#101827]/86 p-5 shadow-xl backdrop-blur">
+                    <h3 className="text-xl font-bold">🏢 GTA Condo Living</h3>
+                    <p className="mt-1 text-sm text-white/60">Find the right fit in the right area.</p>
+                  </div>
+
+                  <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
+                    <span className="h-2 w-6 rounded-full bg-[#F5C979]" />
+                    <span className="h-2 w-2 rounded-full bg-white/50" />
+                    <span className="h-2 w-2 rounded-full bg-white/50" />
+                    <span className="h-2 w-2 rounded-full bg-white/50" />
+                  </div>
                 </div>
 
-                <div className="absolute bottom-5 left-5 rounded-2xl bg-[#101827]/86 p-5 shadow-xl backdrop-blur">
-                  <h3 className="text-xl font-bold">🏢 GTA Condo Living</h3>
-                  <p className="mt-1 text-sm text-white/60">Find the right fit in the right area.</p>
-                </div>
-
-                <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
-                  <span className="h-2 w-6 rounded-full bg-[#F5C979]" />
-                  <span className="h-2 w-2 rounded-full bg-white/50" />
-                  <span className="h-2 w-2 rounded-full bg-white/50" />
-                  <span className="h-2 w-2 rounded-full bg-white/50" />
+                <div className="float-side absolute -bottom-5 right-[-1rem] rounded-2xl border border-[#F5C979]/35 bg-[#241B14]/90 p-4 shadow-[0_0_45px_rgba(245,201,121,.22)] backdrop-blur">
+                  <p className="font-bold">Rental plan note</p>
+                  <p className="text-sm text-white/60">Shortlist after profile review</p>
                 </div>
               </div>
 
-              <div className="float-side absolute -bottom-5 right-[-1rem] rounded-2xl border border-[#F5C979]/35 bg-[#241B14]/90 p-4 shadow-[0_0_45px_rgba(245,201,121,.22)] backdrop-blur">
-                <p className="font-bold">Rental plan note</p>
-                <p className="text-sm text-white/60">Shortlist after profile review</p>
-              </div>
-            </div>
-
-            <div className="grid gap-4">
+              <div className="grid gap-4">
               <div className="glass-card rounded-[2rem] p-5">
                 <h3 className="text-lg font-bold">How the review works</h3>
                 <div className="mt-5 grid gap-3 text-sm text-white/70">
@@ -476,8 +477,9 @@ export default function Home() {
                   Helping newcomers and tenants make confident rental decisions across the GTA.
                 </p>
               </div>
-            </div>
+              </div>
           </div>
+        </div>
         </div>
 
         <ReviewsSection />
