@@ -330,14 +330,14 @@ export default function Home() {
         <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-[#4C7793]/18 blur-3xl" />
         <div className="absolute bottom-[-10rem] left-[20%] h-[26rem] w-[26rem] rounded-full bg-[#F5C979]/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="max-w-4xl">
+        <div className="relative mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+          <div className="lg:pt-1">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
               <span className="text-[#F5C979]">🔑</span>
               GTA Rental Decision Assistant
             </div>
 
-            <h1 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.055em] md:text-6xl xl:text-7xl">
+            <h1 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.055em] md:text-6xl xl:text-6xl 2xl:text-7xl">
               Find realistic rental options before{" "}
               <span className="bg-gradient-to-r from-[#F8DCA6] to-[#D8A94F] bg-clip-text text-transparent">
                 wasting time on viewings.
@@ -363,10 +363,8 @@ export default function Home() {
                 📍 Explore Areas
               </a>
             </div>
-          </div>
 
-          <div className="mt-5 grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <div className="glass-card rounded-2xl p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">01</p>
                 <h3 className="mt-2 font-bold">Profile Review</h3>
@@ -384,102 +382,119 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-3 lg:grid-cols-[1fr_0.6fr]">
-              <div className="relative">
-                <div className="float-slow relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl">
-                  <img
-                    src="/hero-condo.jpg"
-                    alt="GTA condo living"
-                    className="h-[19rem] w-full object-cover opacity-90 md:h-[22rem]"
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />
+            <div className="glass-card mt-3 hidden rounded-2xl p-4 lg:grid lg:grid-cols-3 lg:gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">Private</p>
+                <p className="mt-1 text-sm font-semibold text-white">Readiness clarity</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">Focused</p>
+                <p className="mt-1 text-sm font-semibold text-white">GTA area strategy</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">Prepared</p>
+                <p className="mt-1 text-sm font-semibold text-white">Application path</p>
+              </div>
+            </div>
+          </div>
 
-                  <div className="absolute left-5 top-5 rounded-2xl bg-[#101827]/86 px-5 py-4 shadow-xl backdrop-blur">
-                    <p className="text-sm text-white/60">⭐ Curated for</p>
-                    <p className="font-bold">You</p>
-                  </div>
+          <div className="grid gap-3 lg:grid-cols-[1fr_0.68fr]">
+            <div className="relative lg:col-start-1 lg:row-start-1">
+              <div className="float-slow relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl">
+                <img
+                  src="/hero-condo.jpg"
+                  alt="GTA condo living"
+                  className="h-[19rem] w-full object-cover opacity-90 md:h-[22rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[22rem]"
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />
 
-                  <div className="absolute bottom-5 left-5 rounded-2xl bg-[#101827]/86 p-5 shadow-xl backdrop-blur">
-                    <h3 className="text-xl font-bold">🏢 GTA Condo Living</h3>
-                    <p className="mt-1 text-sm text-white/60">Find the right fit in the right area.</p>
-                  </div>
-
-                  <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
-                    <span className="h-2 w-6 rounded-full bg-[#F5C979]" />
-                    <span className="h-2 w-2 rounded-full bg-white/50" />
-                    <span className="h-2 w-2 rounded-full bg-white/50" />
-                    <span className="h-2 w-2 rounded-full bg-white/50" />
-                  </div>
+                <div className="absolute left-5 top-5 rounded-2xl bg-[#101827]/86 px-5 py-4 shadow-xl backdrop-blur">
+                  <p className="text-sm text-white/60">⭐ Curated for</p>
+                  <p className="font-bold">You</p>
                 </div>
 
-                <div className="float-side absolute -bottom-5 right-[-1rem] rounded-2xl border border-[#F5C979]/35 bg-[#241B14]/90 p-4 shadow-[0_0_45px_rgba(245,201,121,.22)] backdrop-blur">
-                  <p className="font-bold">Rental plan note</p>
-                  <p className="text-sm text-white/60">Shortlist after profile review</p>
+                <div className="absolute bottom-5 left-5 rounded-2xl bg-[#101827]/86 p-5 shadow-xl backdrop-blur">
+                  <h3 className="text-xl font-bold">🏢 GTA Condo Living</h3>
+                  <p className="mt-1 text-sm text-white/60">Find the right fit in the right area.</p>
+                </div>
+
+                <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
+                  <span className="h-2 w-6 rounded-full bg-[#F5C979]" />
+                  <span className="h-2 w-2 rounded-full bg-white/50" />
+                  <span className="h-2 w-2 rounded-full bg-white/50" />
+                  <span className="h-2 w-2 rounded-full bg-white/50" />
                 </div>
               </div>
 
-              <div className="grid gap-4">
-              <div className="glass-card rounded-[2rem] p-5">
+              <div className="float-side absolute -bottom-5 right-[-1rem] rounded-2xl border border-[#F5C979]/35 bg-[#241B14]/90 p-4 shadow-[0_0_45px_rgba(245,201,121,.22)] backdrop-blur">
+                <p className="font-bold">Rental plan note</p>
+                <p className="text-sm text-white/60">Shortlist after profile review</p>
+              </div>
+            </div>
+
+            <div className="grid gap-3 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+              <div className="glass-card rounded-[2rem] p-5 lg:p-4 2xl:p-5">
                 <h3 className="text-lg font-bold">How the review works</h3>
-                <div className="mt-5 grid gap-3 text-sm text-white/70">
-                  <div className="rounded-2xl bg-white/[0.07] p-4">
+                <div className="mt-4 grid gap-3 text-sm text-white/70">
+                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
                     <p className="font-semibold text-white">Profile</p>
                     <p className="mt-1 text-white/55">Budget, income, credit, and timing.</p>
                   </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4">
+                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
                     <p className="font-semibold text-white">Documents</p>
                     <p className="mt-1 text-white/55">Pay stubs and Equifax readiness.</p>
                   </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4">
+                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
                     <p className="font-semibold text-white">Plan</p>
                     <p className="mt-1 text-white/55">Realistic areas and next steps.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="glass-card shine rounded-[2rem] p-5">
+              <div className="glass-card shine rounded-[2rem] p-5 lg:p-4 2xl:p-5">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
                   Rental Decision System
                 </p>
-                <div className="mt-5 grid gap-3">
-                  <div className="rounded-2xl bg-white/[0.07] p-4">
+                <div className="mt-4 grid gap-3">
+                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
                     <p className="text-xs text-white/50">Step 1</p>
-                    <h3 className="text-xl font-bold">Readiness Check</h3>
+                    <h3 className="text-lg font-bold 2xl:text-xl">Readiness Check</h3>
                   </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4">
+                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
                     <p className="text-xs text-white/50">Step 2</p>
-                    <h3 className="text-xl font-bold">Area Strategy</h3>
+                    <h3 className="text-lg font-bold 2xl:text-xl">Area Strategy</h3>
                   </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4">
+                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
                     <p className="text-xs text-white/50">Step 3</p>
-                    <h3 className="text-xl font-bold">Rental Plan</h3>
+                    <h3 className="text-lg font-bold 2xl:text-xl">Rental Plan</h3>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className="glass-card rounded-[2rem] p-6 text-center">
-                <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#F5C979]/60 bg-white/[0.08]">
-                  <img
-                    src="/behzad.jpg"
-                    alt="Behzad Fard"
-                    className="h-full w-full object-cover"
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                    }}
-                  />
-                </div>
-                <h3 className="mt-4 text-2xl font-bold text-[#F5C979]">Behzad Fard</h3>
+            <div className="glass-card rounded-[2rem] p-6 text-center lg:col-start-1 lg:row-start-2 lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
+              <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#F5C979]/60 bg-white/[0.08] lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
+                <img
+                  src="/behzad.jpg"
+                  alt="Behzad Fard"
+                  className="h-full w-full object-cover"
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                />
+              </div>
+              <div>
+                <h3 className="mt-4 text-2xl font-bold text-[#F5C979] lg:mt-0 2xl:mt-4">Behzad Fard</h3>
                 <p className="text-sm text-white/65">Founder & Real Estate Advisor</p>
-                <p className="mt-3 text-sm leading-6 text-white/58">
+                <p className="mt-3 text-sm leading-6 text-white/58 lg:mt-1 2xl:mt-3">
                   Helping newcomers and tenants make confident rental decisions across the GTA.
                 </p>
               </div>
-              </div>
+            </div>
           </div>
-        </div>
         </div>
 
         <ReviewsSection />
