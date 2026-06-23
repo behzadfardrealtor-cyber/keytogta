@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
 
-const GOOGLE_REVIEW_LINK = "GOOGLE_REVIEW_LINK_HERE";
+const GOOGLE_REVIEW_LINK = "https://PASTE_YOUR_GOOGLE_REVIEW_LINK_HERE";
 const WHATSAPP_REVIEW_NOTIFICATION_LINK =
   "https://wa.me/16470000000?text=Hi%20Behzad%2C%20I%20posted%20my%20review.";
 
-const reviewPrompts = [
+const reviewCards = [
   {
     number: "01",
-    label: "Experience",
-    prompt: "What was your experience working with Behzad?",
+    title: "Experience",
+    text: "What was your experience working with Behzad?",
   },
   {
     number: "02",
-    label: "Help",
-    prompt: "How did he help during the rental or home search?",
+    title: "Help",
+    text: "How did he help during the rental or home search?",
   },
   {
     number: "03",
-    label: "Recommend",
-    prompt: "Would you recommend him to others?",
+    title: "Recommend",
+    text: "Would you recommend him to others?",
   },
 ];
 
@@ -30,119 +30,118 @@ export const metadata: Metadata = {
 
 export default function ReviewPage() {
   return (
-    <main className="relative isolate h-[100svh] min-h-[100svh] overflow-hidden bg-[#03060c] px-3 py-3 text-white sm:px-4 sm:py-4">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(67,120,255,0.14),transparent_30%),radial-gradient(circle_at_84%_8%,rgba(243,198,119,0.12),transparent_25%),linear-gradient(145deg,#03060c_0%,#07101d_48%,#090b12_100%)]" />
-      <div className="absolute bottom-0 left-0 -z-10 h-72 w-72 rounded-full bg-[#3d76ff]/9 blur-2xl" />
-      <div className="absolute right-0 top-0 -z-10 h-80 w-80 rounded-full bg-[#f3c677]/8 blur-2xl" />
+    <main className="relative isolate flex h-[100svh] min-h-[100svh] items-center justify-center overflow-hidden bg-[#050816] px-4 py-4 text-[#f8fafc]">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_88%_8%,rgba(214,179,106,0.26),transparent_34%),radial-gradient(ellipse_at_10%_88%,rgba(72,111,205,0.24),transparent_38%),radial-gradient(ellipse_at_50%_40%,rgba(255,255,255,0.06),transparent_32%),linear-gradient(145deg,#050816_0%,#0b1020_48%,#05070f_100%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-35 [background-image:radial-gradient(circle_at_14px_18px,rgba(248,250,252,0.48)_1px,transparent_1.4px)] [background-size:52px_52px]" />
 
-      <div className="mx-auto flex h-full w-full max-w-[1180px] items-center justify-center">
-        <section className="relative grid h-[calc(100svh-24px)] max-h-[720px] w-full grid-rows-[auto_minmax(0,1fr)_auto] overflow-y-auto overflow-x-hidden rounded-[32px] border border-[#f3c677]/20 bg-[#07101a]/78 p-4 shadow-[0_24px_90px_rgba(0,0,0,0.5),0_0_46px_rgba(83,135,255,0.08),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-[6px] sm:h-[calc(100svh-32px)] sm:rounded-[36px] sm:p-5 lg:overflow-hidden lg:p-6 xl:p-7">
-          <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_84%_14%,rgba(243,198,119,0.1),transparent_26%),radial-gradient(circle_at_8%_88%,rgba(92,145,255,0.1),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.055),rgba(255,255,255,0.014))]" />
-          <div
-            className="absolute inset-y-0 right-0 -z-10 w-full opacity-30 grayscale contrast-125 brightness-75 sm:opacity-38 lg:opacity-46"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg,rgba(7,16,26,0.96),rgba(7,16,26,0.56) 45%,rgba(7,16,26,0.18) 74%,rgba(7,16,26,0.22)),url('/behzad-review-bg.jpg')",
-              backgroundPosition: "right top",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "auto 92%",
-            }}
-          />
-          <div className="absolute inset-0 -z-10 bg-[#07101a]/20" />
+      <section
+        aria-labelledby="review-heading"
+        className="relative h-[calc(100svh-32px)] max-h-[680px] w-full max-w-[1180px] overflow-hidden rounded-[28px] border border-[#d6b36a]/25 bg-[#070e1b]/82 px-6 py-6 shadow-[0_28px_90px_rgba(0,0,0,0.58),0_0_42px_rgba(214,179,106,0.14),0_0_38px_rgba(72,111,205,0.20),inset_0_1px_0_rgba(255,255,255,0.10)] backdrop-blur-xl sm:px-8 lg:px-10 lg:py-7"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_14%,rgba(214,179,106,0.14),transparent_26%),radial-gradient(circle_at_12%_90%,rgba(72,111,205,0.15),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.055),rgba(255,255,255,0.012))]" />
+        <img
+          alt="Behzad Fard"
+          className="pointer-events-none absolute bottom-0 right-2 z-0 hidden h-[78%] max-w-none object-contain object-right-bottom opacity-80 grayscale contrast-125 brightness-90 lg:block"
+          src="/behzad-review-bg.jpg"
+        />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[58%] bg-[linear-gradient(90deg,rgba(7,14,27,0.96)_0%,rgba(7,14,27,0.72)_34%,rgba(7,14,27,0.18)_70%,rgba(7,14,27,0)_100%)] lg:block" />
+        <div className="pointer-events-none absolute bottom-0 right-0 z-0 hidden h-40 w-[48%] bg-[linear-gradient(0deg,rgba(7,14,27,0.92),rgba(7,14,27,0))] lg:block" />
 
-          <header className="relative z-10 flex items-center justify-between gap-3">
-            <a className="flex min-w-0 items-center" href="/" aria-label="Key to GTA">
-              <img
-                alt="Key to GTA logo"
-                className="h-10 w-auto bg-transparent object-contain mix-blend-normal sm:h-11 lg:h-14"
-                src="/keytogta-logo.png"
-              />
-            </a>
-            <span className="rounded-full border border-[#f3c677]/16 bg-white/8 px-3 py-1.5 text-xs font-medium text-white/76 sm:px-4 sm:py-2 sm:text-sm">
+        <div className="relative z-20 flex h-full min-h-0 flex-col lg:w-[58%]">
+          <header className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#d6b36a]/25 bg-white/[0.06] text-base font-bold text-[#f0c76a] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(214,179,106,0.14)]">
+                K
+              </span>
+              <span className="text-base font-semibold tracking-tight text-white">
+                Key to GTA
+              </span>
+            </div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-[#e2e8f0] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <span aria-hidden="true" className="text-[#f0c76a]">
+                ⭐
+              </span>
               Client Feedback
             </span>
           </header>
 
-          <div className="relative z-10 grid min-h-0 gap-4 pt-4 sm:pt-5 lg:grid-cols-[1fr_0.74fr] lg:items-center">
-            <div className="max-w-2xl">
-              <h1 className="text-[clamp(2rem,9vw,2.8rem)] font-semibold leading-[0.95] text-white sm:text-[clamp(2.2rem,4vw,3.8rem)]">
-                Thank you for trusting{" "}
-                <span className="text-[#f3c677]">Behzad Fard</span>
-              </h1>
-              <p className="mt-3 max-w-xl text-base leading-6 text-white/80 sm:text-[1.05rem] sm:leading-7 lg:max-w-lg">
-                Your feedback helps other GTA renters and newcomers make more
-                confident rental decisions.
-              </p>
-
-              <p className="mt-2.5 max-w-xl text-sm leading-6 text-white/72 sm:text-[0.95rem] sm:leading-6 lg:max-w-lg">
-                Key to GTA helps renters understand realistic areas, prepare
-                stronger applications, and move forward with a smarter rental
-                plan.
-              </p>
-
-              <div className="mt-4 flex flex-col gap-2.5 sm:mt-5 sm:flex-row sm:gap-3">
-                <a
-                  className="inline-flex items-center justify-center rounded-full bg-[#f3c677] px-6 py-3 text-sm font-bold text-[#11100b] shadow-[0_18px_46px_rgba(243,198,119,0.2)] transition hover:bg-[#ffd98d] sm:px-6 sm:text-[0.95rem]"
-                  href={GOOGLE_REVIEW_LINK}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Leave a Google Review
-                </a>
-                <a
-                  className="inline-flex items-center justify-center rounded-full border border-white/14 bg-white/8 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#f3c677]/55 hover:text-[#f8d99b] sm:px-6 sm:text-[0.95rem]"
-                  href={WHATSAPP_REVIEW_NOTIFICATION_LINK}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  I posted my review
-                </a>
-              </div>
-            </div>
-
-            <div className="hidden lg:block" aria-hidden="true" />
+          <div className="mt-6 max-w-2xl lg:mt-7">
+            <h1
+              id="review-heading"
+              className="text-[clamp(2.25rem,9vw,3.2rem)] font-semibold leading-[0.96] tracking-tight text-white lg:text-5xl xl:text-6xl"
+            >
+              Thank you for trusting{" "}
+              <span className="bg-gradient-to-br from-[#fff0b8] via-[#f0c76a] to-[#9f7436] bg-clip-text text-transparent">
+                Behzad Fard
+              </span>
+            </h1>
+            <p className="mt-4 max-w-[38rem] text-sm leading-6 text-[#d9e2ef] sm:text-base lg:text-[1.02rem]">
+              Your feedback helps other GTA renters and newcomers make more
+              confident rental decisions. Key to GTA helps renters understand
+              realistic areas, prepare stronger applications, and move forward
+              with a smarter rental plan.
+            </p>
           </div>
 
-          <div className="relative z-10 mt-4 sm:mt-5">
-            <p className="mb-2 text-center text-[0.65rem] font-semibold uppercase tracking-[0.26em] text-[#f3c677]/86">
-              Review Guide
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <a
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#f0c76a] px-5 text-sm font-bold text-[#09111d] shadow-[0_0_34px_rgba(240,199,106,0.36)] transition hover:bg-[#ffd978] hover:shadow-[0_0_46px_rgba(240,199,106,0.48)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f0c76a]"
+              href={GOOGLE_REVIEW_LINK}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span aria-hidden="true">⭐</span>
+              Leave a Google Review
+            </a>
+            <a
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[#486fcd]/20 bg-white/[0.055] px-5 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_24px_rgba(72,111,205,0.12)] transition hover:border-[#d6b36a]/25 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6b36a]"
+              href={WHATSAPP_REVIEW_NOTIFICATION_LINK}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <span aria-hidden="true">✓</span>
+              I posted my review
+            </a>
+          </div>
+
+          <div className="mt-5 min-h-0">
+            <p className="border-t border-white/10 pt-3 text-center text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#f0c76a]/90">
+              REVIEW GUIDE
             </p>
-            <div className="grid gap-2 sm:grid-cols-3">
-              {reviewPrompts.map((item) => (
-                <div
-                  className="rounded-2xl border border-white/10 bg-white/[0.055] p-2.5 sm:p-3"
-                  key={item.number}
+            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+              {reviewCards.map((card) => (
+                <article
+                  className="h-[88px] rounded-2xl border border-white/10 bg-white/[0.055] px-3 py-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_16px_34px_rgba(0,0,0,0.18)]"
+                  key={card.number}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-semibold text-[#f3c677]">
-                      {item.number}
+                    <span className="text-lg font-semibold leading-none text-[#f0c76a]">
+                      {card.number}
                     </span>
-                    <span className="text-sm font-semibold text-white">
-                      {item.label}
-                    </span>
+                    <h2 className="text-sm font-bold text-white">{card.title}</h2>
                   </div>
-                  <p className="mt-1.5 text-[0.82rem] leading-5 text-white/72 sm:text-sm">
-                    {item.prompt}
+                  <p className="mt-1.5 text-[0.78rem] leading-4 text-[#cbd5e1]">
+                    {card.text}
                   </p>
-                </div>
+                </article>
               ))}
             </div>
-
-            <div className="mt-2.5 flex flex-col items-center justify-center gap-1.5 text-center text-sm leading-6 text-white/72 sm:flex-row sm:gap-2">
-              <p>Know someone looking for a rental in the GTA?</p>
-              <span className="hidden text-white/28 sm:inline">|</span>
-              <a
-                className="inline-flex items-center justify-center rounded-full border border-[#f3c677]/24 bg-[#f3c677]/10 px-3.5 py-1.5 text-xs font-bold text-[#f8d99b] transition hover:bg-[#f3c677]/16 hover:text-[#ffd98d]"
-                href="https://keytogta.ca"
-                rel="noreferrer"
-                target="_blank"
-              >
-                Share KeyToGTA.ca
-              </a>
-            </div>
           </div>
-        </section>
-      </div>
+
+          <footer className="mt-auto flex flex-col items-center justify-center gap-1.5 pt-4 text-center text-sm text-[#d9e2ef] sm:flex-row">
+            <span className="text-[#f0c76a]" aria-hidden="true">
+              👥
+            </span>
+            <p>
+              Know someone looking for a rental in the GTA?{" "}
+              <span className="hidden text-white/30 sm:inline">| </span>
+              <span className="font-semibold text-[#f0c76a]">
+                Share KeyToGTA.ca
+              </span>
+            </p>
+          </footer>
+        </div>
+      </section>
     </main>
   );
 }
