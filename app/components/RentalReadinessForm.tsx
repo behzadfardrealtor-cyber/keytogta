@@ -83,7 +83,7 @@ export default function RentalReadinessForm({
               {approvalReport.recommendedRentRange}
             </p>
             <p className="mt-2 text-xs leading-5 text-white/45">
-              Comfort range only â€” not a maximum rent.
+              Comfort range only &mdash; not a maximum rent.
             </p>
           </div>
 
@@ -101,7 +101,13 @@ export default function RentalReadinessForm({
               <p className="font-bold">Please fix these fields before getting your report:</p>
               <ul className="mt-2 grid gap-1">
                 {Object.values(fieldErrors).map((error) => (
-                  <li key={error}>â€¢ {error}</li>
+                  <li key={error} className="flex gap-2">
+                    <span
+                      aria-hidden="true"
+                      className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-red-600"
+                    />
+                    <span>{error}</span>
+                  </li>
                 ))}
               </ul>
             </div>

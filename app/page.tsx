@@ -23,7 +23,7 @@ const GOOGLE_SCRIPT_URL =
 function getScoreStyle(score: number) {
   if (score >= 85) {
     return {
-      label: "🟢 Strong Position",
+      label: "Strong Position",
       simpleLabel: "Strong Position",
       tone: "green",
       bar: "bg-green-500",
@@ -36,7 +36,7 @@ function getScoreStyle(score: number) {
 
   if (score >= 70) {
     return {
-      label: "🟡 Review Recommended",
+      label: "Review Recommended",
       simpleLabel: "Review Recommended",
       tone: "yellow",
       bar: "bg-yellow-400",
@@ -49,7 +49,7 @@ function getScoreStyle(score: number) {
 
   if (score >= 55) {
     return {
-      label: "🟠 Strategy Adjustment Needed",
+      label: "Strategy Adjustment Needed",
       simpleLabel: "Strategy Adjustment Needed",
       tone: "orange",
       bar: "bg-orange-400",
@@ -61,7 +61,7 @@ function getScoreStyle(score: number) {
   }
 
   return {
-    label: "🔴 High Risk Profile",
+    label: "High Risk Profile",
     simpleLabel: "High Risk Profile",
     tone: "red",
     bar: "bg-red-500",
@@ -301,9 +301,12 @@ export default function Home() {
 
       <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/78 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tight">
-            Key <span className="font-normal text-white/70">to</span>{" "}
-            <span className="text-[#D8C7AA]">GTA</span>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/keytogta-logo.png"
+              alt="Key to GTA logo"
+              className="h-11 w-auto object-contain"
+            />
           </Link>
 
           <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
@@ -524,12 +527,14 @@ export default function Home() {
 
       <FooterSection />
 
-      <a
-        href="#rental-match"
-        className="fixed bottom-5 left-5 right-5 z-50 rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-semibold text-[#070A12] shadow-2xl md:hidden"
-      >
-        Check My Rental Readiness
-      </a>
+      {!showReport && (
+        <a
+          href="#rental-match"
+          className="fixed bottom-5 left-5 right-5 z-50 rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-semibold text-[#070A12] shadow-2xl md:hidden"
+        >
+          Check My Rental Readiness
+        </a>
+      )}
           </div>
 </main>
   );

@@ -33,7 +33,9 @@ export default function ReadinessReport({
           </p>
         </div>
 
-        <div className={`min-w-[240px] rounded-2xl border ${scoreStyle.border} bg-[#070A12] px-5 py-5 text-white shadow-2xl ${scoreStyle.glow}`}>
+        <div
+          className={`min-w-[240px] rounded-2xl border ${scoreStyle.border} bg-[#070A12] px-5 py-5 text-white shadow-2xl ${scoreStyle.glow}`}
+        >
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
             Approval outlook
           </p>
@@ -51,10 +53,11 @@ export default function ReadinessReport({
               Internal readiness
             </p>
             <p className="mt-1 text-sm font-semibold text-white/80">
-              Used to guide your plan Ã¢â‚¬â€ not shown as a pass/fail score.
+              Used to guide your plan &mdash; not shown as a pass/fail score.
             </p>
           </div>
-        </div>                </div>
+        </div>
+      </div>
 
       <div className="mt-5 grid gap-4 md:grid-cols-2">
         <div className="rounded-2xl bg-black/[0.04] p-4">
@@ -106,7 +109,13 @@ export default function ReadinessReport({
               ? approvalReport.strengths
               : ["Some strengths may appear after more details are reviewed."]
             ).slice(0, 4).map((item) => (
-              <li key={item}>Ã¢Å“â€œ {item}</li>
+              <li key={item} className="flex gap-2">
+                <span
+                  aria-hidden="true"
+                  className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-green-600"
+                />
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
         </div>
@@ -118,7 +127,13 @@ export default function ReadinessReport({
               ? approvalReport.concerns
               : ["No major concern detected from the information provided."]
             ).slice(0, 4).map((item) => (
-              <li key={item}>Ã¢â‚¬Â¢ {item}</li>
+              <li key={item} className="flex gap-2">
+                <span
+                  aria-hidden="true"
+                  className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600"
+                />
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
         </div>
@@ -128,7 +143,13 @@ export default function ReadinessReport({
         <p className="font-bold text-[#070A12]">Smart next steps</p>
         <ul className="mt-3 grid gap-2 text-sm leading-6 text-[#3D352D]">
           {approvalReport.helpfulSteps.slice(0, 4).map((step) => (
-            <li key={step}>Ã¢â‚¬Â¢ {step}</li>
+            <li key={step} className="flex gap-2">
+              <span
+                aria-hidden="true"
+                className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D8A94F]"
+              />
+              <span>{step}</span>
+            </li>
           ))}
         </ul>
       </div>
@@ -137,18 +158,24 @@ export default function ReadinessReport({
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#F5C979]">
-              Next step
+              Rental options request
             </p>
-            <p className="mt-2 text-sm leading-6 text-white/70">
-              Want a clearer path forward? I can review your details and help you build a realistic rental plan.
+            <p className="mt-2 text-lg font-bold leading-7 text-white">
+              Would you like me to send you current GTA rental options that fit your profile?
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-white/70">
+              Based on your budget, preferred area, income range, credit range, and move-in date, Behzad can send you realistic listings currently available in the market.
+            </p>
+            <p className="mt-2 text-xs font-semibold leading-5 text-white/50">
+              No pressure &mdash; this is only a planning request, not a rental application.
             </p>
           </div>
 
           <a
             href="#contact"
-            className="w-full whitespace-nowrap rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-black text-[#070A12] md:w-auto"
+            className="w-full rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-black text-[#070A12] md:w-auto md:whitespace-nowrap"
           >
-            Get My Rental Plan Ã¢â€ â€™
+            Yes, send me matching rental options
           </a>
         </div>
       </div>

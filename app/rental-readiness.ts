@@ -353,9 +353,9 @@ export function calculateApprovalReport(form: RentalForm): ApprovalReport {
 
   const userFriendlySummaryMap: Record<ApprovalReport["strength"], string> = {
     "Strong Match":
-      "Good news â€” your profile looks ready for a targeted rental search.",
+      "Good news \u2014 your profile looks ready for a targeted rental search.",
     "Good Match":
-      "You may be close â€” the next step is choosing realistic listings and preparing documents properly.",
+      "You may be close \u2014 the next step is choosing realistic listings and preparing documents properly.",
     "Needs Review":
       "You may still have options, but you should adjust the strategy before booking too many viewings.",
     "Review First":
