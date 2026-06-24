@@ -14,6 +14,9 @@ type ReadinessReportProps = {
   scoreStyle: ScoreStyle;
 };
 
+const RENTAL_OPTIONS_MAILTO =
+  "mailto:behzadfardrealtor@gmail.com?subject=Rental%20Options%20Request%20from%20KeyToGTA&body=Hi%20Behzad%2C%20I%20completed%20the%20Rental%20Readiness%20Check%20and%20would%20like%20you%20to%20send%20me%20current%20rental%20options%20that%20fit%20my%20profile.";
+
 export default function ReadinessReport({
   approvalReport,
   scoreStyle,
@@ -53,7 +56,7 @@ export default function ReadinessReport({
               Internal readiness
             </p>
             <p className="mt-1 text-sm font-semibold text-white/80">
-              Used to guide your plan &mdash; not shown as a pass/fail score.
+              Used to guide your plan - not shown as a pass/fail score.
             </p>
           </div>
         </div>
@@ -161,18 +164,18 @@ export default function ReadinessReport({
               Rental options request
             </p>
             <p className="mt-2 text-lg font-bold leading-7 text-white">
-              Would you like me to send you current GTA rental options that fit your profile?
+              Want current rental options that fit your profile?
             </p>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-white/70">
-              Based on your budget, preferred area, income range, credit range, and move-in date, Behzad can send you realistic listings currently available in the market.
+              Based on your budget, preferred area, income range, credit range, and move-in date, Behzad can send you realistic GTA rental listings currently available in the market.
             </p>
             <p className="mt-2 text-xs font-semibold leading-5 text-white/50">
-              No pressure &mdash; this is only a planning request, not a rental application.
+              No pressure - this is only a planning request, not a rental application.
             </p>
           </div>
 
           <a
-            href="#contact"
+            href={RENTAL_OPTIONS_MAILTO}
             className="w-full rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-black text-[#070A12] md:w-auto md:whitespace-nowrap"
           >
             Yes, send me matching rental options
