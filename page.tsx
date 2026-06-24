@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzyrgOWECKbz0H6vv8oIFSdoAkd2I9sHNrJmfd27_-0GLqMpF5unoWz2t4-r5XnLq5kew/exec";
+ https://script.google.com/macros/s/AKfycbg8YRGDp26.../exec
 
 const GOOGLE_REVIEW_URL = "https://g.page/r/CTOtf7AXoY6rEAI/review";
 

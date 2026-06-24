@@ -18,8 +18,7 @@ import {
 } from "./rental-readiness";
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzyrgOWECKbz0H6vv8oIFSdoAkd2I9sHNrJmfd27_-0GLqMpF5unoWz2t4-r5XnLq5kew/exec";
-
+  https://script.google.com/macros/s/AKfycbg8YRGDp26.../exec
 function getScoreStyle(score: number) {
   if (score >= 85) {
     return {
