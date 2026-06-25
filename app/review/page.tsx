@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const GOOGLE_REVIEW_LINK = "https://g.page/r/CTOtf7AXoY6rEAI/review";
+const GOOGLE_REVIEW_LINK = "https://g.page/r/CT0t57nXoY6rEAI/review";
 const WHATSAPP_REVIEW_NOTIFICATION_LINK =
   "https://wa.me/16470000000?text=Hi%20Behzad%2C%20I%20posted%20my%20review.";
 

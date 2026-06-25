@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-const GOOGLE_REVIEW_LINK = "GOOGLE_REVIEW_LINK_HERE";
+const GOOGLE_REVIEW_LINK = "https://g.page/r/CT0t57nXoY6rEAI/review";
 const WHATSAPP_REVIEW_NOTIFICATION_LINK =
   "https://wa.me/16470000000?text=Hi%20Behzad%2C%20I%20posted%20my%20review.";
 const PORTRAIT_SRC = "/behzad-review-bg.jpg";

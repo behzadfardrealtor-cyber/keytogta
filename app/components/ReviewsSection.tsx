@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { reviews } from "../home-page-data";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/CTOtf7AXoY6rEAI/review";
+const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
 
 export default function ReviewsSection() {
   const [activeReview, setActiveReview] = useState(0);

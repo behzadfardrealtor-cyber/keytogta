@@ -17,17 +17,18 @@ import {
   validateRentalForm,
 } from "./rental-readiness";
 
-const GOOGLE_SCRIPT_URL =
-  https://script.google.com/macros/s/AKfycbg8YRGDp26.../exec
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbg8YRGDp26w8oqqqWHIMCXbtawrTYDFueB8si3IZogL_Kxu5q292OUHhonRqeEXQsf1N68/exec";
+const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
+
 function getScoreStyle(score: number) {
   if (score >= 85) {
     return {
       label: "Strong Position",
       simpleLabel: "Strong Position",
       tone: "green",
-      bar: "bg-green-500",
-      badge: "bg-green-100 text-green-900",
+      badge: "bg-green-500",
       border: "border-green-300/30",
+      bar: "bg-green-500",
       glow: "shadow-green-900/20",
       message: "Your profile looks competitive for a focused rental search.",
     };
@@ -38,36 +39,23 @@ function getScoreStyle(score: number) {
       label: "Review Recommended",
       simpleLabel: "Review Recommended",
       tone: "yellow",
-      bar: "bg-yellow-400",
-      badge: "bg-yellow-100 text-yellow-900",
+      badge: "bg-yellow-500",
       border: "border-yellow-300/30",
+      bar: "bg-yellow-500",
       glow: "shadow-yellow-900/20",
-      message: "You may still have good options, but strategy matters.",
-    };
-  }
-
-  if (score >= 55) {
-    return {
-      label: "Strategy Adjustment Needed",
-      simpleLabel: "Strategy Adjustment Needed",
-      tone: "orange",
-      bar: "bg-orange-400",
-      badge: "bg-orange-100 text-orange-950",
-      border: "border-orange-300/30",
-      glow: "shadow-orange-900/20",
-      message: "Your profile may need a stronger package or adjusted search plan.",
+      message: "Your profile may work, but some details should be reviewed first.",
     };
   }
 
   return {
-    label: "High Risk Profile",
-    simpleLabel: "High Risk Profile",
+    label: "Needs Improvement",
+    simpleLabel: "Needs Improvement",
     tone: "red",
-    bar: "bg-red-500",
-    badge: "bg-red-100 text-red-900",
+    badge: "bg-red-500",
     border: "border-red-300/30",
+    bar: "bg-red-500",
     glow: "shadow-red-900/20",
-    message: "Review your profile before applying in a competitive market.",
+    message: "Your profile may need improvement before applying.",
   };
 }
 
