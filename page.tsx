@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbg8YRGDp26w8oqqqWHIMCXbtawrTYDFueB8si3IZogL_Kxu5q292OUHhonRqeEXQsf1N68/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby8VRgDe26w8oqqwIHMCXbtawTyDFueBsi3iZogL_Kxu5qZ9ZQUHnOnRQeEXQsflN6B/exec";
 const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
 
 type RentalForm = {
