@@ -15,7 +15,7 @@ export default function ContactSection() {
 
             <div className="rounded-2xl bg-white/[0.07] p-6">
               <p className="text-sm text-white/50">Email</p>
-              <p className="mt-2 break-all text-xl font-bold">behzad.fard@property.ca</p>
+              <p className="mt-2 break-all text-xl font-bold">behzadfard.realtor@gmail.com</p>
 
               <a
                 href="#rental-match"
