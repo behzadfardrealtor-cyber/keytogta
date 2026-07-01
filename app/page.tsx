@@ -324,18 +324,18 @@ export default function Home() {
           <div className="lg:pt-1">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
               <span className="text-[#F5C979]">🔑</span>
-              GTA Rental Decision Assistant
+              CURATED GTA RENTALS - LICENSED AGENT
             </div>
 
             <h1 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.055em] md:text-6xl xl:text-6xl 2xl:text-7xl">
-              Find realistic rental options before{" "}
+              Stop scrolling. Get a GTA rental shortlist{" "}
               <span className="bg-gradient-to-r from-[#F8DCA6] to-[#D8A94F] bg-clip-text text-transparent">
-                wasting time on viewings.
+                that actually fits.
               </span>
             </h1>
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/70 md:text-lg">
-              Check your rental readiness, understand realistic areas, and move forward with a stronger application plan.
+              Tell us your budget, area, and move-in date. A licensed GTA agent reviews the current market and sends you a curated shortlist, usually within 24 hours. No endless tabs, no listings you'd never get approved for.
             </p>
 
             <div className="mt-5 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
@@ -343,7 +343,7 @@ export default function Home() {
                 href="#rental-match"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center text-base font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.38)] ring-1 ring-[#F8DCA6]/70 transition hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C979] sm:w-auto"
               >
-                Check My Rental Readiness →
+                Get My Rental Shortlist →
               </a>
 
               <a
@@ -519,7 +519,7 @@ export default function Home() {
           href="#rental-match"
           className="fixed bottom-5 left-5 right-5 z-50 rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-semibold text-[#070A12] shadow-2xl md:hidden"
         >
-          Check My Rental Readiness
+          Get My Rental Shortlist
         </a>
       )}
           </div>
