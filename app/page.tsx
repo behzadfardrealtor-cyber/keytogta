@@ -288,12 +288,13 @@ export default function Home() {
 
       <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/78 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <img
-              src="/keytogta-logo.png"
-              alt="Key to GTA logo"
-              className="h-11 w-auto object-contain"
-            />
+          <Link href="/" className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+              K
+            </span>
+            <span className="text-base font-semibold tracking-tight text-white">
+              Key to GTA
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
@@ -314,31 +315,31 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative px-6 pb-8 pt-5 md:pb-8 md:pt-7">
+      <section className="relative px-6 pb-8 pt-4 md:pb-8 md:pt-5">
         <div className="absolute left-6 right-6 top-6 h-px bg-gradient-to-r from-transparent via-[#F5C979]/35 to-transparent" />
         <div className="absolute left-[-12rem] top-0 h-[35rem] w-[35rem] rounded-full bg-[#D8C7AA]/14 blur-3xl" />
         <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-[#4C7793]/18 blur-3xl" />
         <div className="absolute bottom-[-10rem] left-[20%] h-[26rem] w-[26rem] rounded-full bg-[#F5C979]/10 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+        <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-2 lg:items-start">
           <div className="lg:pt-1">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
               <span className="text-[#F5C979]">🔑</span>
               CURATED GTA RENTALS - LICENSED AGENT
             </div>
 
-            <h1 className="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.055em] md:text-6xl xl:text-6xl 2xl:text-7xl">
+            <h1 className="max-w-4xl text-4xl font-black leading-[0.95] tracking-[-0.05em] md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl">
               Stop scrolling. Get a GTA rental shortlist{" "}
               <span className="bg-gradient-to-r from-[#F8DCA6] to-[#D8A94F] bg-clip-text text-transparent">
                 that actually fits.
               </span>
             </h1>
 
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/70 md:text-lg">
-              Tell us your budget, area, and move-in date. A licensed GTA agent reviews the current market and sends you a curated shortlist, usually within 24 hours. No endless tabs, no listings you'd never get approved for.
+            <p className="mt-3 max-w-2xl text-base leading-6 text-white/70 md:text-lg">
+              Tell us what you're looking for. The Key to GTA team hand-picks rentals that fit you and sends them over, so you don't have to search the whole market yourself. You pick, we do the legwork.
             </p>
 
-            <div className="mt-5 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a
                 href="#rental-match"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center text-base font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.38)] ring-1 ring-[#F8DCA6]/70 transition hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C979] sm:w-auto"
@@ -388,8 +389,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-3 lg:grid-cols-[1fr_0.68fr]">
-            <div className="relative lg:col-start-1 lg:row-start-1">
+          <div className="grid gap-4">
+            <div className="relative">
               <div className="float-slow relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl">
                 <img
                   src="/hero-condo.jpg"
@@ -425,47 +426,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-3 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-              <div className="glass-card rounded-[2rem] p-5 lg:p-4 2xl:p-5">
-                <h3 className="text-lg font-bold">How the review works</h3>
-                <div className="mt-4 grid gap-3 text-sm text-white/70">
-                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
-                    <p className="font-semibold text-white">Profile</p>
-                    <p className="mt-1 text-white/55">Budget, income, credit, and timing.</p>
-                  </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
-                    <p className="font-semibold text-white">Documents</p>
-                    <p className="mt-1 text-white/55">Pay stubs and Equifax readiness.</p>
-                  </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
-                    <p className="font-semibold text-white">Plan</p>
-                    <p className="mt-1 text-white/55">Realistic areas and next steps.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="glass-card shine rounded-[2rem] p-5 lg:p-4 2xl:p-5">
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
-                  Rental Decision System
-                </p>
-                <div className="mt-4 grid gap-3">
-                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
-                    <p className="text-xs text-white/50">Step 1</p>
-                    <h3 className="text-lg font-bold 2xl:text-xl">Readiness Check</h3>
-                  </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
-                    <p className="text-xs text-white/50">Step 2</p>
-                    <h3 className="text-lg font-bold 2xl:text-xl">Area Strategy</h3>
-                  </div>
-                  <div className="rounded-2xl bg-white/[0.07] p-4 lg:p-3 2xl:p-4">
-                    <p className="text-xs text-white/50">Step 3</p>
-                    <h3 className="text-lg font-bold 2xl:text-xl">Rental Plan</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-card rounded-[2rem] p-6 text-center lg:col-start-1 lg:row-start-2 lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
+            <div className="glass-card rounded-[2rem] p-6 text-center lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
               <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#F5C979]/60 bg-white/[0.08] lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
                 <img
                   src="/behzad.jpg"
