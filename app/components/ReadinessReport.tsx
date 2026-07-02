@@ -11,14 +11,17 @@ type ScoreStyle = {
 
 type ReadinessReportProps = {
   approvalReport: ApprovalReport;
+  isSubmittingMatchingOptions: boolean;
+  matchingOptionsStatus: string;
+  onRequestMatchingOptions: () => void | Promise<void>;
   scoreStyle: ScoreStyle;
 };
 
-const RENTAL_OPTIONS_MAILTO =
-  "mailto:behzadfardrealtor@gmail.com?subject=Rental%20Options%20Request%20from%20KeyToGTA&body=Hi%20Behzad%2C%20I%20completed%20the%20Rental%20Readiness%20Check%20and%20would%20like%20you%20to%20send%20me%20current%20rental%20options%20that%20fit%20my%20profile.";
-
 export default function ReadinessReport({
   approvalReport,
+  isSubmittingMatchingOptions,
+  matchingOptionsStatus,
+  onRequestMatchingOptions,
   scoreStyle,
 }: ReadinessReportProps) {
   return (
@@ -174,13 +177,21 @@ export default function ReadinessReport({
             </p>
           </div>
 
-          <a
-            href={RENTAL_OPTIONS_MAILTO}
-            className="w-full rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-black text-[#070A12] md:w-auto md:whitespace-nowrap"
+          <button
+            type="button"
+            onClick={onRequestMatchingOptions}
+            disabled={isSubmittingMatchingOptions}
+            className="w-full rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-black text-[#070A12] disabled:opacity-60 md:w-auto md:whitespace-nowrap"
           >
-            Yes, send me matching rental options
-          </a>
+            {isSubmittingMatchingOptions ? "Sending..." : "Yes, send me matching rental options"}
+          </button>
         </div>
+
+        {matchingOptionsStatus && (
+          <p className="mt-4 rounded-2xl bg-white/[0.07] p-4 text-sm font-medium leading-6 text-white/85">
+            {matchingOptionsStatus}
+          </p>
+        )}
       </div>
 
       <div className="mt-4 rounded-2xl border border-black/10 bg-black/[0.04] p-4">

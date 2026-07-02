@@ -17,6 +17,9 @@ type RentalReadinessFormProps = {
   form: RentalForm;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void | Promise<void>;
   isSubmitting: boolean;
+  isSubmittingMatchingOptions: boolean;
+  matchingOptionsStatus: string;
+  onRequestMatchingOptions: () => void | Promise<void>;
   resultPreview: ApprovalReport["strength"];
   scorePreview: number;
   scoreStyle: ScoreStyle;
@@ -48,6 +51,9 @@ export default function RentalReadinessForm({
   form,
   handleSubmit,
   isSubmitting,
+  isSubmittingMatchingOptions,
+  matchingOptionsStatus,
+  onRequestMatchingOptions,
   resultPreview,
   scorePreview,
   scoreStyle,
@@ -243,6 +249,9 @@ export default function RentalReadinessForm({
           {showReport && (
             <ReadinessReport
               approvalReport={approvalReport}
+              isSubmittingMatchingOptions={isSubmittingMatchingOptions}
+              matchingOptionsStatus={matchingOptionsStatus}
+              onRequestMatchingOptions={onRequestMatchingOptions}
               scoreStyle={scoreStyle}
             />
           )}

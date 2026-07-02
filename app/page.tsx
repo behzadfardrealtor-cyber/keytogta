@@ -64,6 +64,8 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showReport, setShowReport] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const [matchingOptionsStatus, setMatchingOptionsStatus] = useState("");
+  const [isSubmittingMatchingOptions, setIsSubmittingMatchingOptions] = useState(false);
 
   const [form, setForm] = useState<RentalForm>(initialRentalForm);
 
@@ -142,6 +144,59 @@ export default function Home() {
       setStatus("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
+    }
+  }
+
+  async function handleRequestMatchingOptions() {
+    setMatchingOptionsStatus("");
+    setIsSubmittingMatchingOptions(true);
+
+    const phoneDigits = normalizeCanadianPhone(form.phone);
+
+    const payload = {
+      ...form,
+      normalizedPhone: phoneDigits,
+      leadSource: "Key to GTA Website",
+      clientType: "Renter",
+      matchType: "Rental Approval Strength Report",
+      internalScore: String(approvalReport.score),
+      score: String(approvalReport.score),
+      result: approvalReport.strength,
+      displayResult: approvalReport.displayStrength,
+      priority: approvalReport.priority,
+      rentToIncomeRatio: approvalReport.rentToIncomeRatio
+        ? `${approvalReport.rentToIncomeRatio}%`
+        : "",
+      typicalComfortRange: approvalReport.recommendedRentRange,
+      recommendedRentRange: approvalReport.recommendedRentRange,
+      approvalExplanation: approvalReport.explanation,
+      userFriendlySummary: approvalReport.userFriendlySummary,
+      strengths: approvalReport.strengths.join(", "),
+      concerns: approvalReport.concerns.join(", "),
+      missingDocuments: approvalReport.missingDocuments.join(", "),
+      nextAction: "Send shortlist / contact quickly",
+      notes: "Requested matching rental options after readiness check",
+      status: "New Lead",
+      followUpStage: "Initial",
+      requestType: "Matching Rental Options",
+      matchingOptionsRequested: true,
+    };
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      setMatchingOptionsStatus(
+        "Thanks - your request was sent to Behzad. He'll review your profile and send realistic rental options that match your search criteria."
+      );
+    } catch {
+      setMatchingOptionsStatus("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmittingMatchingOptions(false);
     }
   }
 
@@ -461,6 +516,9 @@ export default function Home() {
         form={form}
         handleSubmit={handleSubmit}
         isSubmitting={isSubmitting}
+        isSubmittingMatchingOptions={isSubmittingMatchingOptions}
+        matchingOptionsStatus={matchingOptionsStatus}
+        onRequestMatchingOptions={handleRequestMatchingOptions}
         resultPreview={resultPreview}
         scorePreview={scorePreview}
         scoreStyle={scoreStyle}
