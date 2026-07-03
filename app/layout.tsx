@@ -1,37 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Key to GTA",
   description: "Rental and real estate guidance across the GTA.",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "RealEstateAgent",
-      name: "Behzad Fard - Key to GTA",
-      url: "https://keytogta.ca",
-      email: "behzadfardrealtor@gmail.com",
-      areaServed: [
-        "North York",
-        "Richmond Hill",
-        "Thornhill",
-        "Scarborough",
-        "Markham",
-        "Mississauga",
-        "Etobicoke",
-      ],
-      description:
-        "Renter readiness checks and curated MLS rental shortlists for tenants across the Greater Toronto Area, matched to each renter's budget and needs.",
-    },
-    {
-      "@type": "WebSite",
-      name: "Key to GTA",
-      url: "https://keytogta.ca",
-    },
-  ],
 };
 
 export default function RootLayout({
@@ -42,11 +15,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y998E1RMJ9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y998E1RMJ9');
+          `}
+        </Script>
       </body>
     </html>
   );
