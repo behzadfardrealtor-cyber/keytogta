@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FooterSection from "../../components/FooterSection";
 
 const siteUrl = "https://www.keytogta.ca";
 const pagePath = "/rental-documents/checklist-ontario";
@@ -813,12 +814,7 @@ export default function OntarioRentalDocumentsChecklistPage() {
         </div>
       </section>
 
-      <footer className="border-t border-white/12 px-6 py-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>Key to GTA. Rental and real estate guidance across the GTA.</p>
-          <p>Built for renters, buyers, and newcomers looking for a clearer next step.</p>
-        </div>
-      </footer>
+      <FooterSection />
     </main>
   );
 }

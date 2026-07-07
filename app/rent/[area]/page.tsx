@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import FooterSection from "../../components/FooterSection";
 
 const areaPages = {
   "north-york": {
@@ -118,6 +119,8 @@ export default async function AreaPage({
           </div>
         </div>
       </section>
+
+      <FooterSection />
     </main>
   );
 }
