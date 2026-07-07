@@ -1,14 +1,20 @@
 declare global {
   interface Window {
+    dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
   }
 }
 
 export function trackEvent(eventName: string, params?: Record<string, unknown>) {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") {
+  if (typeof window === "undefined") {
     return;
   }
-  window.gtag("event", eventName, params);
+  // Push directly to dataLayer rather than calling window.gtag(), since the
+  // afterInteractive gtag script isn't guaranteed to have run yet by the time
+  // a page's own useEffect fires. dataLayer is queued and drained once gtag.js
+  // loads, so this works regardless of script load order.
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(["event", eventName, params]);
 }
 
 export function createLeadId(): string {
