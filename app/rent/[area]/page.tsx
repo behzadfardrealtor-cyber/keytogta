@@ -88,6 +88,17 @@ export default async function AreaPage({
             {page.intro}
           </p>
 
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-white/50">
+            Before you apply, see our{" "}
+            <Link
+              href="/rental-documents/checklist-ontario"
+              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+            >
+              Ontario rental application checklist
+            </Link>{" "}
+            for the documents landlords typically expect.
+          </p>
+
           <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.06] p-8">
             <p className="text-sm uppercase tracking-[0.25em] text-white/50">
               Estimated Rental Range

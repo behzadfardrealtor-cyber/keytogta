@@ -109,7 +109,15 @@ export default function AreaGuidesSection() {
                   Next step
                 </p>
                 <p className="mt-2 text-white/65">
-                  Not sure which area fits your budget and approval strength? Start with the Rental Readiness tool.
+                  Not sure which area fits your budget and approval strength?
+                  Start with the Rental Readiness tool, or review our{" "}
+                  <Link
+                    href="/rental-documents/checklist-ontario"
+                    className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                  >
+                    Ontario rental application checklist
+                  </Link>{" "}
+                  to see what documents you'll need.
                 </p>
               </div>
 

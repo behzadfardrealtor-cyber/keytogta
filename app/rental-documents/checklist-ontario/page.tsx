@@ -679,43 +679,44 @@ export default function OntarioRentalDocumentsChecklistPage() {
               Tips if you have no Canadian credit history
             </h2>
             <p className="mt-5 leading-8 text-white/70">
-              Newcomers rent across Toronto,{" "}
+              Newcomers settle across the GTA in different ways: some explore
+              rentals in Toronto, others browse{" "}
               <Link
                 href="/rent/north-york"
                 className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
               >
-                North York
-              </Link>
-              ,{" "}
+                North York listings
+              </Link>{" "}
+              for subway access, check what's{" "}
               <Link
                 href="/rent/vaughan"
                 className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
               >
-                Vaughan
-              </Link>
-              ,{" "}
+                available in Vaughan
+              </Link>{" "}
+              for newer buildings, compare{" "}
               <Link
                 href="/rent/markham"
                 className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
               >
-                Markham
-              </Link>
-              ,{" "}
+                Markham rental options
+              </Link>{" "}
+              near York Region, look at{" "}
               <Link
                 href="/rent/richmond-hill"
                 className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
               >
-                Richmond Hill
-              </Link>
-              ,{" "}
+                Richmond Hill homes for rent
+              </Link>{" "}
+              in quieter communities, or search{" "}
               <Link
                 href="/rent/scarborough"
                 className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
               >
-                Scarborough
-              </Link>
-              , and the wider GTA every day. The key is to replace uncertainty
-              with clear supporting proof.
+                Scarborough apartments
+              </Link>{" "}
+              for better value. Wherever you land, the key is to replace
+              uncertainty with clear supporting proof.
             </p>
           </div>
 
