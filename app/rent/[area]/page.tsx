@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FooterSection from "../../components/FooterSection";
+import PageViewTracker from "../../components/PageViewTracker";
 
 const areaPages = {
   "north-york": {
@@ -59,6 +60,7 @@ export default async function AreaPage({
 
   return (
     <main className="min-h-screen bg-[#070A12] text-white">
+      <PageViewTracker eventName="area_guide_view" params={{ area_name: page.name }} />
       <header className="border-b border-white/10 px-6 py-5">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <Link href="/" className="text-xl font-bold">

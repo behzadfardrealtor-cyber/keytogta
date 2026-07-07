@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useRef, useState } from "react";
 import AreaGuidesSection from "./components/AreaGuidesSection";
 import ContactSection from "./components/ContactSection";
 import FAQSection from "./components/FAQSection";
@@ -9,6 +9,7 @@ import FooterSection from "./components/FooterSection";
 import RentalReadinessForm from "./components/RentalReadinessForm";
 import ReviewsSection from "./components/ReviewsSection";
 import ServicesSection from "./components/ServicesSection";
+import { createLeadId, trackEvent } from "./lib/analytics";
 import {
   calculateApprovalReport,
   initialRentalForm,
@@ -66,10 +67,16 @@ export default function Home() {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [matchingOptionsStatus, setMatchingOptionsStatus] = useState("");
   const [isSubmittingMatchingOptions, setIsSubmittingMatchingOptions] = useState(false);
+  const [leadId, setLeadId] = useState<string | null>(null);
 
   const [form, setForm] = useState<RentalForm>(initialRentalForm);
+  const hasFiredFormStart = useRef(false);
 
   function updateField(field: keyof RentalForm, value: string) {
+    if (!hasFiredFormStart.current) {
+      hasFiredFormStart.current = true;
+      trackEvent("form_start");
+    }
     setForm((prev) => ({ ...prev, [field]: value }));
     setFieldErrors((prev) => {
       const next = { ...prev };
@@ -102,10 +109,12 @@ export default function Home() {
     setIsSubmitting(true);
 
     const phoneDigits = normalizeCanadianPhone(form.phone);
+    const newLeadId = createLeadId();
 
     const payload = {
       ...form,
       normalizedPhone: phoneDigits,
+      leadId: newLeadId,
       leadSource: "Key to GTA Website",
       clientType: "Renter",
       matchType: "Rental Approval Strength Report",
@@ -138,6 +147,8 @@ export default function Home() {
         body: JSON.stringify(payload),
       });
 
+      setLeadId(newLeadId);
+      trackEvent("generate_lead", { lead_source: "readiness_form", lead_id: newLeadId });
       setShowReport(true);
       setStatus("Your report is ready below. Your information was also sent to Behzad for review.");
     } catch {
@@ -152,10 +163,12 @@ export default function Home() {
     setIsSubmittingMatchingOptions(true);
 
     const phoneDigits = normalizeCanadianPhone(form.phone);
+    const matchingLeadId = leadId ?? createLeadId();
 
     const payload = {
       ...form,
       normalizedPhone: phoneDigits,
+      leadId: matchingLeadId,
       leadSource: "Key to GTA Website",
       clientType: "Renter",
       matchType: "Rental Approval Strength Report",
@@ -190,6 +203,7 @@ export default function Home() {
         body: JSON.stringify(payload),
       });
 
+      trackEvent("generate_lead", { lead_source: "matching_options", lead_id: matchingLeadId });
       setMatchingOptionsStatus(
         "Thanks - your request was sent to Behzad. He'll review your profile and send realistic rental options that match your search criteria."
       );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FooterSection from "../../components/FooterSection";
+import PageViewTracker from "../../components/PageViewTracker";
 
 const siteUrl = "https://www.keytogta.ca";
 const pagePath = "/rental-documents/checklist-ontario";
@@ -326,6 +327,7 @@ const structuredData = [
 export default function OntarioRentalDocumentsChecklistPage() {
   return (
     <main className="min-h-screen bg-[#070A12] text-white">
+      <PageViewTracker eventName="checklist_view" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
