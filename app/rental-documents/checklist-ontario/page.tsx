@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const siteUrl = "https://www.keytogta.ca";
+const siteUrl = "https://keytogta.ca";
 const pagePath = "/rental-documents/checklist-ontario";
 const pageUrl = `${siteUrl}${pagePath}`;
-const title = "Rental Documents Checklist Ontario | KeyToGTA.ca";
+const title = "Rental Documents Checklist Ontario (2026) | KeyToGTA.ca";
 const description =
   "A practical Ontario rental documents checklist for GTA renters and newcomers: ID, employment letter, pay stubs, credit report, proof of funds and tips.";
 
@@ -108,6 +108,14 @@ const mistakes = [
   "Transferring money before confirming the listing, written acceptance, lease terms, and payment instructions.",
 ];
 
+const incomeGuide = [
+  { rent: "$1,800", income: "$4,500", annual: "$54,000" },
+  { rent: "$2,000", income: "$5,000", annual: "$60,000" },
+  { rent: "$2,500", income: "$6,250", annual: "$75,000" },
+  { rent: "$3,000", income: "$7,500", annual: "$90,000" },
+  { rent: "$3,500", income: "$8,750", annual: "$105,000" },
+];
+
 const heroPackageRows = [
   { label: "Government ID", status: "Ready" },
   { label: "Income proof", status: "Ready" },
@@ -152,6 +160,64 @@ const faqs = [
     answer:
       "It helps you review rent target, income, credit, documents, move-in timing, and application strength before you spend time on showings or submit an offer.",
   },
+  {
+    question: "How much income do I need to rent an apartment in the GTA?",
+    answer:
+      "Many GTA landlords look for a gross monthly income of roughly 2.5 to 3 times the rent. For a $2,000 unit that is about $5,000 per month, or around $60,000 per year. A lower income near $4,000 can still work with no monthly debt, strong savings, or proof of funds. Requirements vary by landlord.",
+  },
+  {
+    question: "What is a good rent-to-income ratio for renting in the GTA?",
+    answer:
+      "Most landlords look for rent at or below 30–35% of gross monthly income, but this cannot legally be the only reason for rejection under Ontario's Human Rights Code.",
+  },
+  {
+    question: "What credit score do I need to rent an apartment in Toronto?",
+    answer:
+      "There's no legal minimum. Property management companies often expect 700+; private landlords are frequently flexible from 600–660 with strong supporting documents.",
+  },
+  {
+    question: "Do I need a guarantor to rent in the GTA?",
+    answer:
+      "Only if your income, credit, or rental history alone doesn't reassure the landlord. It's common for newcomers, students, and self-employed applicants, not a universal requirement.",
+  },
+  {
+    question: "Is the GTA rental market still competitive in 2026?",
+    answer:
+      "Less than in 2022–2023. GTA rental vacancy hit 3.0% in 2025 and rents have fallen across most unit types in early 2026, giving renters more leverage — though well-priced units in top locations still move fast.",
+  },
+  {
+    question: "Can a landlord reject me for having no Canadian credit history?",
+    answer:
+      "Ontario's Human Rights Code says a lack of credit history alone shouldn't count against you — landlords must weigh income, references, and employment together.",
+  },
+];
+
+const marketQnA = [
+  {
+    question: "Is the 30% rent-to-income rule actually legal in Ontario?",
+    answer:
+      "No — not as a sole basis for rejection. Ontario's Human Rights Code (s. 21(3)) allows landlords to consider income information, credit checks, credit references, and rental history, but a Board of Inquiry ruling upheld by the Ontario Superior Court found that using rent-to-income ratios or minimum income criteria as the sole reason to reject an applicant is indirect discrimination. In practice, most landlords still use it as an informal screening tool — expect to see it on applications — but if your ratio falls short, you have a legal basis to ask the landlord to consider your complete file: savings, guarantor, employment stability, and rental references. The Ontario Human Rights Commission has flagged that automatically requiring a co-signer from low-income applicants can itself create a discriminatory barrier, so this cuts both ways.",
+  },
+  {
+    question: "What credit score do you need to rent in the GTA?",
+    answer:
+      "There's no legal minimum credit score in Ontario. In practice, property management companies in Toronto and the GTA typically look for 700+, while independent landlords are often flexible with 600–660 if the rest of the application is strong. Equifax and TransUnion scores can differ by 40+ points for the same person, so check both before applying. A score below 660 doesn't disqualify you — it just shifts what you need to bring: a larger upfront deposit (Ontario law caps this at first and last month's rent), a guarantor, or a written explanation paired with proof of savings. Under the Human Rights Code, a thin or missing credit file (common for newcomers) cannot legally be held against you on its own.",
+  },
+  {
+    question: "How competitive is the GTA rental market in 2026?",
+    answer:
+      "Less than the headlines suggest. CMHC reported the GTA's purpose-built rental vacancy rate rose to 3.0% in 2025 — the highest since the pandemic. TRREB recorded 24,012 condo apartment units listed for rent in Q1 2026, up 6% year-over-year, while average one-bedroom rents fell 4.1% to $2,246 and two-bedroom rents fell 3.2% to $2,939 over the same period. Supply has grown faster than demand, driven by record purpose-built rental completions and condo owners renting out units they can't sell profitably. This doesn't mean every unit is easy to get — well-priced units in strong locations still draw multiple applicants — but it does mean 2026 renters generally have more negotiating room and landlords are more open to working with a complete, well-documented application than in 2022–2023.",
+  },
+  {
+    question: "What documents actually get a rental application approved?",
+    answer:
+      "In order of practical weight: (1) a signed job offer letter or employment letter on company letterhead stating title, start date, and salary; (2) two to three recent pay stubs; (3) a credit report or signed consent for a credit check; (4) a previous landlord reference confirming on-time payment; (5) three to six months of bank statements, especially for newcomers or self-employed applicants without a Canadian credit file. Self-employed applicants should substitute a Notice of Assessment, invoices/contracts, and averaged bank deposits for pay stubs. A landlord cannot legally require your SIN on a rental application — only your full name, address, and date of birth are needed for a credit check.",
+  },
+  {
+    question: "Can you rent in the GTA without Canadian credit history?",
+    answer:
+      "Yes. Thin or empty credit files are common and expected for newcomers — most experienced GTA landlords know how to evaluate around them. The two documents that carry the most weight are a signed employment offer letter and three to six months of bank statements showing savings equivalent to several months' rent. Add a Canadian guarantor if available, or a reference from an international landlord or employer if not. Being upfront about limited Canadian credit history, rather than leaving gaps in the application, generally works in your favour — landlords read a complete, transparent file faster than a partial one they have to chase down.",
+  },
 ];
 
 const structuredData = [
@@ -160,7 +226,7 @@ const structuredData = [
     "@type": "WebPage",
     "@id": `${pageUrl}#webpage`,
     url: pageUrl,
-    name: title,
+    name: "Rental Documents Checklist Ontario (2026)",
     description,
     inLanguage: "en-CA",
     isPartOf: {
@@ -212,11 +278,11 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": ["Article", "BlogPosting"],
     "@id": `${pageUrl}#article`,
-    headline: "Rental Documents Checklist Ontario",
+    headline: "Rental Documents Checklist Ontario (2026)",
     description,
     image: `${siteUrl}/hero-condo.jpg`,
-    datePublished: "2026-07-03",
-    dateModified: "2026-07-03",
+    datePublished: "2026-07-05",
+    dateModified: "2026-07-05",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario rental documents",
@@ -244,6 +310,16 @@ const structuredData = [
       "@id": `${pageUrl}#webpage`,
     },
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  },
 ];
 
 export default function OntarioRentalDocumentsChecklistPage() {
@@ -268,6 +344,9 @@ export default function OntarioRentalDocumentsChecklistPage() {
           </Link>
 
           <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
+            <a href="#income" className="hover:text-white">
+              Income
+            </a>
             <a href="#checklist" className="hover:text-white">
               Checklist
             </a>
@@ -302,7 +381,7 @@ export default function OntarioRentalDocumentsChecklistPage() {
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
-              Rental documents checklist Ontario renters can use before applying
+              Rental documents checklist Ontario renters can use before applying (2026)
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
               A strong rental application is not about sending the most paperwork.
@@ -385,6 +464,34 @@ export default function OntarioRentalDocumentsChecklistPage() {
         </div>
       </section>
 
+      <section id="direct-answer" className="px-6 pb-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+              Direct Answer
+            </p>
+            <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
+              What income do you need to rent in the GTA?
+            </h2>
+            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+              Most GTA landlords use a 30–35% rent-to-income guideline,
+              sometimes stated as "40x monthly rent" in annual income. For a
+              $2,000/month unit, that works out to roughly $60,000–$72,000 in
+              gross annual income. But this is a landlord preference, not a
+              legal requirement — Ontario's Human Rights Code prohibits
+              landlords from rejecting an application based on a
+              rent-to-income ratio alone. A landlord must weigh your full
+              picture: income, credit, and rental history together. That
+              means a strong reference letter, a stable job letter, or a
+              guarantor can offset an income ratio that falls short. In 2026,
+              GTA rental supply has grown faster than demand, so landlords
+              increasingly weigh the complete application rather than a
+              single cutoff number.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 pb-20">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           <div className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
@@ -425,6 +532,107 @@ export default function OntarioRentalDocumentsChecklistPage() {
               Redact account numbers, protect your SIN, and send documents through
               trusted channels. A strong package should also be a careful one.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="income" className="px-6 pb-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+            Income &amp; Budget
+          </p>
+          <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
+            How much income do you usually need to rent in the GTA?
+          </h2>
+          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+            As a general guideline, many GTA landlords look for a gross monthly
+            household income of about 2.5 to 3 times the monthly rent. For a
+            $2,000 rental, that is roughly $5,000 per month, or about $60,000
+            per year. A lower income near $4,000 per month can still work when
+            the applicant has no car loan or monthly debt payments, has strong
+            savings, or can show proof of funds. Every landlord is different, so
+            treat these as planning targets, not strict rules.
+          </p>
+
+          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-white/12 md:block">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="bg-white/[0.06] text-sm font-semibold uppercase tracking-[0.08em] text-[#F5C979]">
+                  <th className="px-6 py-4">Monthly rent</th>
+                  <th className="px-6 py-4">
+                    Typical monthly income (about 2.5x)
+                  </th>
+                  <th className="px-6 py-4">Approx. annual income</th>
+                </tr>
+              </thead>
+              <tbody>
+                {incomeGuide.map((row) => (
+                  <tr
+                    key={row.rent}
+                    className="border-t border-white/10 text-white/78"
+                  >
+                    <td className="px-6 py-4 font-semibold">{row.rent}</td>
+                    <td className="px-6 py-4">{row.income}</td>
+                    <td className="px-6 py-4">{row.annual}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:hidden">
+            {incomeGuide.map((row) => (
+              <div
+                key={row.rent}
+                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-5"
+              >
+                <p className="text-lg font-bold text-[#F5C979]">{row.rent} rent</p>
+                <p className="mt-2 leading-7 text-white/72">
+                  Typical monthly income (about 2.5x): {row.income}
+                </p>
+                <p className="mt-1 leading-7 text-white/72">
+                  Approx. annual income: {row.annual}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-5 max-w-3xl text-sm leading-6 text-white/52">
+            These are common planning ranges, not guarantees. Strong savings, a
+            co-applicant, or a guarantor can change what a landlord will accept.
+          </p>
+
+          <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-6">
+            <p className="leading-7 text-white/85">
+              In competitive, well-priced listings in strong locations, a
+              unit can still receive 2 to 3 applications at once, so the
+              strongest, best-organized file usually wins. Most landlords ask
+              for about 2 recent pay stubs, sometimes 3.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="market-qa" className="px-6 pb-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+            GTA Market &amp; Eligibility (2026)
+          </p>
+          <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
+            What renters are actually asking about income, credit, and the
+            2026 market
+          </h2>
+
+          <div className="mt-10 grid gap-4">
+            {marketQnA.map((item) => (
+              <article
+                key={item.question}
+                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+              >
+                <h3 className="text-xl font-bold">{item.question}</h3>
+                <p className="mt-3 leading-7 text-white/70">{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -470,9 +678,43 @@ export default function OntarioRentalDocumentsChecklistPage() {
               Tips if you have no Canadian credit history
             </h2>
             <p className="mt-5 leading-8 text-white/70">
-              Newcomers rent across Toronto, North York, Vaughan, Markham,
-              Richmond Hill, Scarborough, and the wider GTA every day. The key is
-              to replace uncertainty with clear supporting proof.
+              Newcomers rent across Toronto,{" "}
+              <Link
+                href="/rent/north-york"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                North York
+              </Link>
+              ,{" "}
+              <Link
+                href="/rent/vaughan"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                Vaughan
+              </Link>
+              ,{" "}
+              <Link
+                href="/rent/markham"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                Markham
+              </Link>
+              ,{" "}
+              <Link
+                href="/rent/richmond-hill"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                Richmond Hill
+              </Link>
+              ,{" "}
+              <Link
+                href="/rent/scarborough"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                Scarborough
+              </Link>
+              , and the wider GTA every day. The key is to replace uncertainty
+              with clear supporting proof.
             </p>
           </div>
 
