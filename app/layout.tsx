@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   description: "Rental and real estate guidance across the GTA.",
 };
 
+const CLARITY_PROJECT_ID = "xixi2ztuOj";
+
+const CLARITY_SCRIPT =
+  "(function(c,l,a,r,i,t,y){" +
+  "c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};" +
+  "t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i+\"?ref=npm\";" +
+  "y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);" +
+  "})(window, document, \"clarity\", \"script\", \"" + CLARITY_PROJECT_ID + "\");";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,6 +36,9 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-Y998E1RMJ9');
           `}
+        </Script>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {CLARITY_SCRIPT}
         </Script>
       </body>
     </html>
