@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://keytogta.ca";
+const BASE_URL = "https://www.keytogta.ca";
 
 const areaSlugs = [
   "north-york",

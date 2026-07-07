@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const GOOGLE_REVIEW_LINK = "https://g.page/r/CTOtf7AXoY6rEAI/review";
-const SHARE_URL = "https://keytogta.ca";
+const SHARE_URL = "https://www.keytogta.ca";
 const SHARE_TEXT = "Looking for a rental in the GTA? Check out Key to GTA";
 const SHARE_BUTTON_SCRIPT = `
 (function () {

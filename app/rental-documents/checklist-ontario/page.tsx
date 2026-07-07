@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const siteUrl = "https://keytogta.ca";
+const siteUrl = "https://www.keytogta.ca";
 const pagePath = "/rental-documents/checklist-ontario";
 const pageUrl = `${siteUrl}${pagePath}`;
 const title = "Rental Documents Checklist Ontario (2026) | KeyToGTA.ca";

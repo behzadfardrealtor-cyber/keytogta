@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://keytogta.ca/sitemap.xml
+Sitemap: https://www.keytogta.ca/sitemap.xml
