@@ -5,7 +5,7 @@ export const areaLinks = [
     description: "Subway access, condo lifestyle, Bayview Village, Finch, Sheppard.",
     image: "/north-york.jpg",
     tag: "Best for TTC access",
-    rent: "$2,200 - $3,200+",
+    rent: "$1,950 - $2,150",
     score: "92",
   },
   {

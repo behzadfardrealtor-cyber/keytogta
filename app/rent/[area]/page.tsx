@@ -1,16 +1,66 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FooterSection from "../../components/FooterSection";
 import PageViewTracker from "../../components/PageViewTracker";
 
-const areaPages = {
+type NeighbourhoodDetail = {
+  name: string;
+  description: string;
+};
+
+type AreaPageData = {
+  name: string;
+  title: string;
+  priceRange: string;
+  intro: string;
+  areas?: string[];
+  rentDetail?: string;
+  rentSource?: string;
+  neighbourhoods?: NeighbourhoodDetail[];
+  gettingAround?: string;
+  schoolsNote?: string;
+};
+
+const areaPages: Record<string, AreaPageData> = {
   "north-york": {
     name: "North York",
     title: "North York Condo Rentals",
-    priceRange: "$2,200 - $3,200+",
+    priceRange: "$1,950 - $2,150",
     intro:
-      "North York is one of the most active rental markets in the GTA, especially for renters who want TTC access, newer condos, shopping, and a balanced lifestyle.",
-    areas: ["Yonge & Finch", "North York Centre", "Bayview Village", "Fairview Mall"],
+      "North York is one of the GTA's most active rental markets - strong subway access, a wide mix of condo stock, and everyday shopping and services close by in most pockets.",
+    rentDetail:
+      "One-bedroom units in North York currently run roughly $1,950 to $2,150 a month. liv.rent's Ontario Rent Report (January 2026) put the Toronto-wide unfurnished one-bedroom average at $1,993/month, with North York down 3.66% that month, while Zumper's May 2026 data showed a North York-area average of roughly $2,044/month. Rents here move month to month, so treat this as a planning range, not a fixed number. Under the common 30%-of-income guideline, this level of rent implies a gross household income of roughly $78,000 to $86,000 a year.",
+    rentSource:
+      "Sources: liv.rent Ontario Rent Report (January 2026); Zumper (May 2026). Figures are monthly averages that change regularly - treat as directional, not exact.",
+    neighbourhoods: [
+      {
+        name: "Willowdale",
+        description:
+          "Modern condos alongside detached homes, right on the subway at Yonge and Finch. A common choice for young professionals and families who want quick subway access without downtown pricing.",
+      },
+      {
+        name: "Bayview Village",
+        description:
+          "Quieter and more upscale, close to some of the city's top-rated schools and to North York General Hospital. Suits families who want a calmer setting without giving up transit access.",
+      },
+      {
+        name: "Yonge & Sheppard",
+        description:
+          "The most urban, high-rise stretch of North York, sitting where TTC Line 1 meets Line 4. The pick for renters who want nightlife, restaurants, and the shortest possible subway ride downtown.",
+      },
+      {
+        name: "Newtonbrook",
+        description:
+          "Straddles Yonge Street between Finch and Steeles, sitting directly on Line 1 with Finch Station at its southern edge. One-bedrooms here typically run $1,600 to $1,900 a month - the more affordable end of North York while still being subway-accessible.",
+      },
+    ],
+    gettingAround:
+      "North York is anchored by three subway stations - North York Centre, Sheppard-Yonge, and Finch - all on Line 1. Finch Station also connects to York Region Transit and GO buses, which matters if you work outside downtown Toronto or commute north into York Region.",
+    // TODO: verify current school reputation/ranking claims against TDSB or Fraser
+    // Institute before publishing - not independently sourced as of this draft.
+    schoolsNote:
+      "Earl Haig Secondary School, near Yonge and Finch, is one of the more commonly cited draws for renters with older kids considering this part of North York.",
   },
   vaughan: {
     name: "Vaughan",
@@ -45,6 +95,28 @@ const areaPages = {
     areas: ["Scarborough Town Centre", "Kennedy", "Agincourt", "Guildwood"],
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ area: string }>;
+}): Promise<Metadata> {
+  const { area } = await params;
+  const page = areaPages[area as keyof typeof areaPages];
+
+  if (!page) {
+    return {};
+  }
+
+  const title = page.title + " | Key to GTA";
+  const description =
+    page.intro + " Estimated rental range: " + page.priceRange + ".";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default async function AreaPage({
   params,
@@ -111,16 +183,66 @@ export default async function AreaPage({
             </h2>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
-            {page.areas.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 text-white/80"
-              >
-                {item}
+          {page.rentDetail && (
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold">What you'll actually pay</h2>
+              <p className="mt-3 max-w-3xl leading-7 text-white/70">
+                {page.rentDetail}
+              </p>
+              {page.rentSource && (
+                <p className="mt-3 max-w-3xl text-xs leading-5 text-white/40">
+                  {page.rentSource}
+                </p>
+              )}
+            </div>
+          )}
+
+          {page.neighbourhoods ? (
+            <div className="mt-10">
+              <h2 className="text-2xl font-bold">Neighbourhoods to know</h2>
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                {page.neighbourhoods.map((item) => (
+                  <div
+                    key={item.name}
+                    className="rounded-2xl border border-white/10 bg-white/[0.05] p-5"
+                  >
+                    <h3 className="font-bold text-[#F5EBDD]">{item.name}</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/70">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+            page.areas && (
+              <div className="mt-8 grid gap-4 md:grid-cols-4">
+                {page.areas.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 text-white/80"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            )
+          )}
+
+          {page.gettingAround && (
+            <div className="mt-10">
+              <h2 className="text-2xl font-bold">Getting around</h2>
+              <p className="mt-3 max-w-3xl leading-7 text-white/70">
+                {page.gettingAround}
+              </p>
+            </div>
+          )}
+
+          {page.schoolsNote && (
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-white/60">
+              {page.schoolsNote}
+            </p>
+          )}
 
           <div className="mt-10">
             <Link
