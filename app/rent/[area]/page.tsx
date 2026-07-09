@@ -121,10 +121,37 @@ const areaPages: Record<string, AreaPageData> = {
   scarborough: {
     name: "Scarborough",
     title: "Scarborough Rentals",
-    priceRange: "$2,000 - $3,100+",
+    priceRange: "$2,000 - $2,500",
     intro:
-      "Scarborough can offer more flexible rental options compared to central Toronto, especially for renters looking for value.",
-    areas: ["Scarborough Town Centre", "Kennedy", "Agincourt", "Guildwood"],
+      "Scarborough is one of the GTA's most practical rental markets - established communities, GO Transit and bus rapid transit access, and generally lower rents than central Toronto for renters prioritizing value.",
+    rentDetail:
+      "One-bedroom units in Scarborough currently run roughly $2,000 to $2,500 a month, based on current liv.rent listing data. That brings the top end of this page's range down from the old $3,000-$3,100+ ceiling, which was overstated relative to today's market - the same kind of correction made on the Markham page. Rents move regularly, so treat this as a planning range, not a fixed number.",
+    rentSource:
+      "Source: liv.rent current listing data. Figures are monthly averages that change regularly - treat as directional, not exact.",
+    neighbourhoods: [
+      {
+        name: "Kennedy",
+        description:
+          "Anchored by Kennedy Station, the area's real rapid-transit hub - Line 2 subway, GO Transit's Stouffville line, and the Eglinton Crosstown LRT all meet here. Good fit for renters who want the most reliable transit connection into central Toronto.",
+      },
+      {
+        name: "Scarborough Town Centre",
+        description:
+          "Scarborough's main shopping and civic hub, with dense newer condo development. Currently reached by bus pending the Scarborough Busway (opening fall 2026) and the longer-term subway extension (targeted for 2033). Good fit for renters who want an urban, amenity-dense feel and are comfortable with bus-based transit for now.",
+      },
+      {
+        name: "Agincourt",
+        description:
+          "An established, diverse residential community with its own GO station on the Stouffville line. Good fit for renters who want a quieter, family-oriented area with a direct GO commute option.",
+      },
+      {
+        name: "Guildwood",
+        description:
+          "A quieter, more residential pocket near the Scarborough Bluffs and Lake Ontario, served by Guildwood GO Station on the Lakeshore East line. Good fit for renters who want green space and lake proximity over urban density.",
+      },
+    ],
+    gettingAround:
+      "Scarborough's old rapid-transit line, Line 3 (the Scarborough RT), was permanently shut down in 2023 after a derailment and has not been replaced by rail yet - don't expect subway access directly at Scarborough Town Centre. Kennedy Station is the real rapid-transit anchor for the area, connecting to Line 2 (Bloor-Danforth) subway, GO Transit's Stouffville line, and the Eglinton Crosstown LRT. Scarborough Town Centre itself is currently reached by replacement bus service, with a dedicated Scarborough Busway - a proper bus corridor from Kennedy Station cutting the trip to about 15 minutes - scheduled to open fall 2026. The full subway extension (Line 2 East Extension, permanently replacing Line 3) has been delayed to 2033. Guildwood and Agincourt are each served by their own GO station, on the Lakeshore East and Stouffville lines respectively.",
   },
 };
 
