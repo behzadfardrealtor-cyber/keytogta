@@ -14,6 +14,7 @@ const contentPages = [
   "rental-documents/checklist-ontario",
   "credit-score-rental-application-gta",
   "newcomer-rental-help-gta",
+  "persian-newcomer-neighbourhoods-gta",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
