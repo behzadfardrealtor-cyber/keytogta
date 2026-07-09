@@ -32,7 +32,7 @@ export const areaLinks = [
     description: "Downtown Markham, Unionville, newer buildings, York Region access.",
     image: "/markham.jpg",
     tag: "Best for lifestyle balance",
-    rent: "$2,300 - $3,500+",
+    rent: "$1,950 - $2,100",
     score: "86",
   },
   {

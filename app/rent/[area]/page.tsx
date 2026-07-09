@@ -81,10 +81,42 @@ const areaPages: Record<string, AreaPageData> = {
   markham: {
     name: "Markham",
     title: "Markham Condo Rentals",
-    priceRange: "$2,300 - $3,400+",
+    priceRange: "$1,950 - $2,100",
     intro:
-      "Markham is a strong rental market for renters looking for newer condos, clean communities, schools, and York Region access.",
-    areas: ["Downtown Markham", "Unionville", "Markham Centre", "Cornell"],
+      "Markham is one of York Region's most active rental markets, with a wide mix of newer condo stock, strong GO Transit and VIVA bus rapid transit connections, and easy access to Highways 404 and 407.",
+    rentDetail:
+      "One-bedroom units in Markham currently average roughly $1,950 to $2,100 a month. Markham saw the largest year-over-year rent decline of any GTA market in the past year: liv.rent's Ontario Rent Report (April 2026) recorded one-bedroom rents falling from $2,295/month in April 2025 to $2,007/month in April 2026 - a 12.5% drop. That's good news if you're renting here now, and it means the older $2,300-$3,400+ range previously shown on this page was overstated relative to the current market. Rents move month to month, so treat this as a planning range, not a fixed number.",
+    rentSource:
+      "Source: liv.rent Ontario Rent Report (April 2026). Figures are monthly averages that change regularly - treat as directional, not exact.",
+    neighbourhoods: [
+      {
+        name: "Downtown Markham",
+        description:
+          "One of the largest planned mixed-use urban centres of its kind in Canada, with dense, modern condo towers. Served by VIVA bus rapid transit stops at Warden, Enterprise, and Unionville. Good fit for renters who want an urban, walkable, newer-construction feel without being in Toronto proper.",
+      },
+      {
+        name: "Unionville",
+        description:
+          "A historic Main Street heritage district with a GO Station on the Stouffville line, mixing older character homes with newer condos nearby. Good fit for renters who want small-town charm with a reliable GO commute option.",
+      },
+      {
+        name: "Cornell",
+        description:
+          "A master-planned \"New Urbanism\" community built starting in 1999, with a walkable street grid and its own transit terminal connecting to YRT/VIVA, close to Highway 407. Good fit for families wanting a self-contained, walkable suburb.",
+      },
+      {
+        name: "Markham Centre",
+        description:
+          "The broader urban-core area overlapping with Unionville and Downtown Markham's development zone - a similar profile to Downtown Markham, slightly more residential-leaning.",
+      },
+    ],
+    gettingAround:
+      "Markham isn't on the subway. It's served by GO Transit's Stouffville line (Unionville and Mount Joy stations, roughly 55-60 minutes to Union Station), York Region Transit's VIVA bus rapid transit (Blue, Purple, Pink, and Green lines running along Yonge Street and Highway 7), and bus connections to TTC Line 1 at Finch Station - there's no direct subway line into Markham. Highways 404 and 407 are the main road links to the rest of the GTA.",
+    // TODO: verify current Fraser Institute / TDSB / YRDSB school rankings before
+    // publishing - not independently confirmed as of this draft, framed cautiously
+    // pending verification.
+    schoolsNote:
+      "Markham's school zones, including the area around Cornell, have generally performed above the provincial median in third-party rankings such as the Fraser Institute's, though exact current standings should be checked directly.",
   },
   scarborough: {
     name: "Scarborough",
