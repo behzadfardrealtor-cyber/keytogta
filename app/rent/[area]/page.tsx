@@ -65,18 +65,72 @@ const areaPages: Record<string, AreaPageData> = {
   vaughan: {
     name: "Vaughan",
     title: "Vaughan Condo Rentals",
-    priceRange: "$2,300 - $3,400+",
+    priceRange: "$2,000 - $2,900",
     intro:
-      "Vaughan is a strong option for renters who want newer buildings, more space, parking options, and access to Highway 400, 407, and VMC subway.",
-    areas: ["VMC", "Maple", "Concord", "Woodbridge"],
+      "Vaughan is one of the few GTA municipalities outside Toronto with direct subway access, alongside newer condo stock, more space, parking options, and easy reach to Highways 400 and 407.",
+    rentDetail:
+      "One-bedroom units in Vaughan currently run roughly $2,000 to $2,900 a month, based on current liv.rent listing data. Rents move regularly, so treat this as a planning range, not a fixed number.",
+    rentSource:
+      "Source: liv.rent current listing data. Figures are monthly averages that change regularly - treat as directional, not exact.",
+    neighbourhoods: [
+      {
+        name: "VMC (Vaughan Metropolitan Centre)",
+        description:
+          "Home to Vaughan Metropolitan Centre Station, a real TTC Line 1 subway terminus - about 45 minutes to Union Station, 5 minutes to York University. Vaughan is one of only two municipalities outside Toronto with direct subway access. Dense new-construction condos make up Vaughan's planned downtown core. Best fit for renters who want direct subway access without living in Toronto proper.",
+      },
+      {
+        name: "Maple",
+        description:
+          "An established residential community with its own GO station (Maple GO, Barrie line). Good fit for renters who want a quieter, family-oriented area with a direct GO commute option.",
+      },
+      {
+        name: "Concord",
+        description:
+          "A mix of industrial/commercial and newer residential development, close to Highways 400 and 407 and closer to the Toronto border than VMC. Good fit for renters prioritizing highway access and proximity to the city line.",
+      },
+      {
+        name: "Woodbridge",
+        description:
+          "Vaughan's older, more established suburban core, with a historic village centre. More car-dependent and further from subway or GO access. Good fit for renters wanting a quieter, more traditional suburban feel.",
+      },
+    ],
+    gettingAround:
+      "Vaughan has genuinely good subway access, unlike most of the GTA outside Toronto. Vaughan Metropolitan Centre (VMC) Station, opened in December 2017, is a real terminus of TTC Line 1 (Yonge-University) - about 45 minutes to Union Station and 5 minutes to York University station. Vaughan is one of only two municipalities outside Toronto with direct subway access. VMC also connects to York Region Transit's VIVA bus rapid transit along the Highway 7 Rapidway and to Brampton's Zum. GO Transit's Barrie line serves Vaughan as well, with Rutherford GO and Vaughan Metropolitan Centre GO stations running to Union Station.",
   },
   "richmond-hill": {
     name: "Richmond Hill",
     title: "Richmond Hill Rentals",
-    priceRange: "$2,300 - $3,500+",
+    priceRange: "$2,000 - $3,000",
     intro:
-      "Richmond Hill is popular for renters who want quieter communities, parking, more space, and access to York Region.",
-    areas: ["Yonge Street Corridor", "Langstaff", "Bayview Hill", "Oak Ridges"],
+      "Richmond Hill is popular with renters who want quieter communities, parking, and more space, with GO Transit and VIVA bus rapid transit connections into York Region and Toronto.",
+    rentDetail:
+      "One-bedroom units in Richmond Hill currently run roughly $2,000 to $3,000 a month, based on current liv.rent listing data. Rents move regularly, so treat this as a planning range, not a fixed number.",
+    rentSource:
+      "Source: liv.rent current listing data. Figures are monthly averages that change regularly - treat as directional, not exact.",
+    neighbourhoods: [
+      {
+        name: "Yonge Street Corridor",
+        description:
+          "The main VIVA bus rapid transit spine through Richmond Hill, with denser mixed-use development and the closest access to the eventual (2030s) subway extension route. Good fit for renters who want the best current bus rapid transit access.",
+      },
+      {
+        name: "Langstaff",
+        description:
+          "Centred on the GO station area - Richmond Hill/Langstaff GO on the GO Transit Richmond Hill line - with a mix of low- and high-rise development near Highway 407. Good fit for renters who want a direct GO Train commute option.",
+      },
+      {
+        name: "Bayview Hill",
+        description:
+          "A quieter, established residential area with larger homes and less focus on transit. Good fit for renters prioritizing a calmer setting over transit access.",
+      },
+      {
+        name: "Oak Ridges",
+        description:
+          "Richmond Hill's northern, more suburban and semi-rural edge, closer to the Oak Ridges Moraine greenbelt and more car-dependent. Good fit for renters wanting more green space and a quieter, lower-density feel.",
+      },
+    ],
+    gettingAround:
+      "Richmond Hill is not currently on the subway. The Yonge North Subway Extension - extending TTC Line 1 north from Finch Station into Richmond Hill, with new stations including one near Langstaff GO - is still in the procurement and planning stage as of early 2026, with an opening date in the 2030s. It does not exist yet. Today, Richmond Hill is served by York Region Transit's VIVA bus rapid transit along Yonge Street, connecting to TTC Line 1 at Finch Station by bus, and by GO Transit's Richmond Hill line, with Langstaff and Richmond Hill GO stations.",
   },
   markham: {
     name: "Markham",

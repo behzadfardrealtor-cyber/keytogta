@@ -14,7 +14,7 @@ export const areaLinks = [
     description: "VMC, newer condos, parking, Highway 400/407 access.",
     image: "/vaughan.jpg",
     tag: "Best for newer condos",
-    rent: "$2,300 - $3,400+",
+    rent: "$2,000 - $2,900",
     score: "88",
   },
   {
@@ -23,7 +23,7 @@ export const areaLinks = [
     description: "Quiet communities, parking, family-friendly rental options.",
     image: "/richmond-hill.jpg",
     tag: "Best for quiet living",
-    rent: "$2,300 - $3,500+",
+    rent: "$2,000 - $3,000",
     score: "84",
   },
   {
