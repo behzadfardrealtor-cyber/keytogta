@@ -13,6 +13,7 @@ const areaSlugs = [
 const contentPages = [
   "rental-documents/checklist-ontario",
   "credit-score-rental-application-gta",
+  "newcomer-rental-help-gta",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

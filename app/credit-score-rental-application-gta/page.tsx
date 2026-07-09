@@ -556,6 +556,18 @@ export default function CreditScoreRentalApplicationPage() {
             </Link>{" "}
             for local rent benchmarks and neighbourhood breakdowns.
           </p>
+          <p className="mt-4 max-w-3xl leading-7 text-[#3D352D]">
+            If you're a student, work permit holder, or newcomer working out
+            what applies to your specific situation - and how to avoid
+            rental scams along the way - see our{" "}
+            <Link
+              href="/newcomer-rental-help-gta"
+              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+            >
+              newcomer rental help guide
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

@@ -720,6 +720,18 @@ export default function OntarioRentalDocumentsChecklistPage() {
               for better value. Wherever you land, the key is to replace
               uncertainty with clear supporting proof.
             </p>
+            <p className="mt-4 leading-8 text-white/70">
+              For a deeper look at what changes by status - student, work
+              permit holder, permanent resident, or protected person - plus
+              how to spot rental scams, see our{" "}
+              <Link
+                href="/newcomer-rental-help-gta"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                newcomer rental help guide
+              </Link>
+              .
+            </p>
           </div>
 
           <div className="grid gap-4">
