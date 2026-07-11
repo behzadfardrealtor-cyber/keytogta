@@ -39,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.1,
     },
+    {
+      url: BASE_URL + "/about",
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
     ...areaSlugs.map((slug) => ({
       url: BASE_URL + "/rent/" + slug,
       lastModified: now,

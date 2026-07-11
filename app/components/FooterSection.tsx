@@ -13,7 +13,11 @@ export default function FooterSection() {
             <Link href="/privacy" className="underline underline-offset-2 hover:text-white/60">
               Privacy Policy
             </Link>{" "}
-            for details.
+            for details.{" "}
+            <Link href="/about" className="underline underline-offset-2 hover:text-white/60">
+              About Key to GTA
+            </Link>
+            .
           </p>
         </div>
       </footer>
