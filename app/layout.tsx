@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Rental and real estate guidance across the GTA.",
 };
 
-const CLARITY_PROJECT_ID = "xixi2ztuOj";
+const CLARITY_PROJECT_ID = "xixi2ztu0j";
 
 const CLARITY_SCRIPT =
   "(function(c,l,a,r,i,t,y){" +
