@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { areaLinks } from "../home-page-data";
 
@@ -55,10 +56,12 @@ export default function AreaGuidesSection() {
                 className="area-card group relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.06]"
               >
                 <div className="relative h-44 bg-gradient-to-br from-white/10 to-[#D8C7AA]/10">
-                  <img
+                  <Image
                     src={area.image}
                     alt={`${area.name} rental area`}
-                    className="h-full w-full object-cover opacity-85 transition duration-500 group-hover:scale-110 group-hover:opacity-100"
+                    fill
+                    sizes="(min-width: 768px) 20vw, 100vw"
+                    className="object-cover opacity-85 transition duration-500 group-hover:scale-110 group-hover:opacity-100"
                     onError={(event) => {
                       event.currentTarget.style.display = "none";
                     }}

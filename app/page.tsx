@@ -243,7 +243,7 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden bg-[#070A12] text-white">
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 bg-[url('/hero-skyline-bg.png')] bg-cover bg-center opacity-48"
+        className="pointer-events-none fixed inset-0 z-0 bg-[url('/hero-skyline-bg.jpg')] bg-cover bg-center opacity-48"
       />
       <div
         aria-hidden="true"
