@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useMemo, useRef, useState } from "react";
 import AreaGuidesSection from "./components/AreaGuidesSection";
@@ -460,11 +461,14 @@ export default function Home() {
 
           <div className="grid gap-4">
             <div className="relative">
-              <div className="float-slow relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl">
-                <img
+              <div className="float-slow relative h-[19rem] w-full overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl md:h-[22rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[22rem]">
+                <Image
                   src="/hero-condo.jpg"
                   alt="GTA condo living"
-                  className="h-[19rem] w-full object-cover opacity-90 md:h-[22rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[22rem]"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover opacity-90"
                   onError={(event) => {
                     event.currentTarget.style.display = "none";
                   }}
@@ -496,11 +500,13 @@ export default function Home() {
             </div>
 
             <div className="glass-card rounded-[2rem] p-6 text-center lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
-              <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#F5C979]/60 bg-white/[0.08] lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
-                <img
+              <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#F5C979]/60 bg-white/[0.08] lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
+                <Image
                   src="/behzad.jpg"
                   alt="Behzad Fard"
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="112px"
+                  className="object-cover"
                   onError={(event) => {
                     event.currentTarget.style.display = "none";
                   }}
