@@ -1,15 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { FormEvent, useMemo, useRef, useState } from "react";
-import AreaGuidesSection from "./components/AreaGuidesSection";
-import ContactSection from "./components/ContactSection";
-import FAQSection from "./components/FAQSection";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import FooterSection from "./components/FooterSection";
-import RentalReadinessForm from "./components/RentalReadinessForm";
-import ReviewsSection from "./components/ReviewsSection";
-import ServicesSection from "./components/ServicesSection";
 import { createLeadId, trackEvent } from "./lib/analytics";
 import {
   calculateApprovalReport,
@@ -18,6 +13,16 @@ import {
   type RentalForm,
   validateRentalForm,
 } from "./rental-readiness";
+
+// Below-the-fold sections, code-split out of the initial JS bundle.
+// Still server-rendered (dynamic() defaults to ssr: true), so there's no
+// content flash or SEO impact - this only defers the client JS chunk.
+const AreaGuidesSection = dynamic(() => import("./components/AreaGuidesSection"));
+const ContactSection = dynamic(() => import("./components/ContactSection"));
+const FAQSection = dynamic(() => import("./components/FAQSection"));
+const RentalReadinessForm = dynamic(() => import("./components/RentalReadinessForm"));
+const ReviewsSection = dynamic(() => import("./components/ReviewsSection"));
+const ServicesSection = dynamic(() => import("./components/ServicesSection"));
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby8VRgDe26w8oqqwIHMCXbtawTyDFueBsi3iZogL_Kxu5qZ9ZQUHnOnRQeEXQsflN6B/exec";
 const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
@@ -71,6 +76,7 @@ export default function Home() {
   const [leadId, setLeadId] = useState<string | null>(null);
 
   const [form, setForm] = useState<RentalForm>(initialRentalForm);
+  const [debouncedForm, setDebouncedForm] = useState<RentalForm>(initialRentalForm);
   const hasFiredFormStart = useRef(false);
 
   function updateField(field: keyof RentalForm, value: string) {
@@ -88,7 +94,18 @@ export default function Home() {
     setStatus("");
   }
 
-  const approvalReport = useMemo(() => calculateApprovalReport(form), [form]);
+  // Debounce the live score preview so typing doesn't trigger a
+  // recalculation on every keystroke - the score display lags 300ms
+  // behind the fields, but the fields themselves update immediately.
+  useEffect(() => {
+    const timeout = setTimeout(() => setDebouncedForm(form), 300);
+    return () => clearTimeout(timeout);
+  }, [form]);
+
+  const approvalReport = useMemo(
+    () => calculateApprovalReport(debouncedForm),
+    [debouncedForm]
+  );
 
   const scorePreview = approvalReport.score;
   const resultPreview = approvalReport.strength;
@@ -111,6 +128,10 @@ export default function Home() {
 
     const phoneDigits = normalizeCanadianPhone(form.phone);
     const newLeadId = createLeadId();
+    // Recompute from the live form (not the debounced preview value) so the
+    // submitted payload always reflects exactly what's in the fields right
+    // now, regardless of the 300ms preview lag.
+    const submittedReport = calculateApprovalReport(form);
 
     const payload = {
       ...form,
@@ -119,22 +140,22 @@ export default function Home() {
       leadSource: "Key to GTA Website",
       clientType: "Renter",
       matchType: "Rental Approval Strength Report",
-      internalScore: String(approvalReport.score),
-      score: String(approvalReport.score),
-      result: approvalReport.strength,
-      displayResult: approvalReport.displayStrength,
-      priority: approvalReport.priority,
-      rentToIncomeRatio: approvalReport.rentToIncomeRatio
-        ? `${approvalReport.rentToIncomeRatio}%`
+      internalScore: String(submittedReport.score),
+      score: String(submittedReport.score),
+      result: submittedReport.strength,
+      displayResult: submittedReport.displayStrength,
+      priority: submittedReport.priority,
+      rentToIncomeRatio: submittedReport.rentToIncomeRatio
+        ? `${submittedReport.rentToIncomeRatio}%`
         : "",
-      typicalComfortRange: approvalReport.recommendedRentRange,
-      recommendedRentRange: approvalReport.recommendedRentRange,
-      approvalExplanation: approvalReport.explanation,
-      userFriendlySummary: approvalReport.userFriendlySummary,
-      strengths: approvalReport.strengths.join(", "),
-      concerns: approvalReport.concerns.join(", "),
-      missingDocuments: approvalReport.missingDocuments.join(", "),
-      nextAction: approvalReport.nextAction,
+      typicalComfortRange: submittedReport.recommendedRentRange,
+      recommendedRentRange: submittedReport.recommendedRentRange,
+      approvalExplanation: submittedReport.explanation,
+      userFriendlySummary: submittedReport.userFriendlySummary,
+      strengths: submittedReport.strengths.join(", "),
+      concerns: submittedReport.concerns.join(", "),
+      missingDocuments: submittedReport.missingDocuments.join(", "),
+      nextAction: submittedReport.nextAction,
       notes: "Website approval strength lead",
       status: "New Lead",
       followUpStage: "Initial",
@@ -165,6 +186,9 @@ export default function Home() {
 
     const phoneDigits = normalizeCanadianPhone(form.phone);
     const matchingLeadId = leadId ?? createLeadId();
+    // Same freshness reasoning as handleSubmit - don't rely on the
+    // debounced preview value for the submitted payload.
+    const submittedReport = calculateApprovalReport(form);
 
     const payload = {
       ...form,
@@ -173,21 +197,21 @@ export default function Home() {
       leadSource: "Key to GTA Website",
       clientType: "Renter",
       matchType: "Rental Approval Strength Report",
-      internalScore: String(approvalReport.score),
-      score: String(approvalReport.score),
-      result: approvalReport.strength,
-      displayResult: approvalReport.displayStrength,
-      priority: approvalReport.priority,
-      rentToIncomeRatio: approvalReport.rentToIncomeRatio
-        ? `${approvalReport.rentToIncomeRatio}%`
+      internalScore: String(submittedReport.score),
+      score: String(submittedReport.score),
+      result: submittedReport.strength,
+      displayResult: submittedReport.displayStrength,
+      priority: submittedReport.priority,
+      rentToIncomeRatio: submittedReport.rentToIncomeRatio
+        ? `${submittedReport.rentToIncomeRatio}%`
         : "",
-      typicalComfortRange: approvalReport.recommendedRentRange,
-      recommendedRentRange: approvalReport.recommendedRentRange,
-      approvalExplanation: approvalReport.explanation,
-      userFriendlySummary: approvalReport.userFriendlySummary,
-      strengths: approvalReport.strengths.join(", "),
-      concerns: approvalReport.concerns.join(", "),
-      missingDocuments: approvalReport.missingDocuments.join(", "),
+      typicalComfortRange: submittedReport.recommendedRentRange,
+      recommendedRentRange: submittedReport.recommendedRentRange,
+      approvalExplanation: submittedReport.explanation,
+      userFriendlySummary: submittedReport.userFriendlySummary,
+      strengths: submittedReport.strengths.join(", "),
+      concerns: submittedReport.concerns.join(", "),
+      missingDocuments: submittedReport.missingDocuments.join(", "),
       nextAction: "Send shortlist / contact quickly",
       notes: "Requested matching rental options after readiness check",
       status: "New Lead",
