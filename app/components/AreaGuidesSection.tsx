@@ -88,7 +88,7 @@ export default function AreaGuidesSection() {
                   <h3 className="text-2xl font-black">{area.name}</h3>
 
                   <div className="mt-3 rounded-2xl border border-white/12 bg-white/[0.045] p-3">
-                    <p className="text-xs text-white/45">Estimated rental range</p>
+                    <p className="text-xs text-white/55">Estimated rental range</p>
                     <p className="mt-1 font-bold text-[#F5C979]">{area.rent}</p>
                   </div>
 

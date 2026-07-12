@@ -88,7 +88,7 @@ export default function RentalReadinessForm({
             <p className="mt-1 font-semibold text-white/85">
               {approvalReport.recommendedRentRange}
             </p>
-            <p className="mt-2 text-xs leading-5 text-white/45">
+            <p className="mt-2 text-xs leading-5 text-white/55">
               Comfort range only - not a maximum rent.
             </p>
           </div>

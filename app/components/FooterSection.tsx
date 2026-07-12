@@ -7,7 +7,7 @@ export default function FooterSection() {
           <p>© 2026 Key to GTA. Rental and buyer guidance across the GTA.</p>
           <p>Built for renters, buyers, and newcomers looking for a clearer next step.</p>
         </div>
-        <div className="mx-auto mt-4 max-w-7xl text-xs leading-relaxed text-white/40">
+        <div className="mx-auto mt-4 max-w-7xl text-xs leading-relaxed text-white/55">
           <p>
             We use analytics tools including Google Analytics and Microsoft Clarity to see how visitors use this site, so we can improve it. By using this site, you agree to this data collection. See our{" "}
             <Link href="/privacy" className="underline underline-offset-2 hover:text-white/60">

@@ -452,17 +452,17 @@ export default function Home() {
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <div className="glass-card rounded-2xl p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">01</p>
-                <h3 className="mt-2 font-bold">Profile Review</h3>
+                <h2 className="mt-2 font-bold">Profile Review</h2>
                 <p className="text-sm text-white/55">Know where you stand</p>
               </div>
               <div className="glass-card rounded-2xl p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">02</p>
-                <h3 className="mt-2 font-bold">Area Plan</h3>
+                <h2 className="mt-2 font-bold">Area Plan</h2>
                 <p className="text-sm text-white/55">Focus on realistic areas</p>
               </div>
               <div className="glass-card rounded-2xl p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">03</p>
-                <h3 className="mt-2 font-bold">Application Path</h3>
+                <h2 className="mt-2 font-bold">Application Path</h2>
                 <p className="text-sm text-white/55">Prepare before applying</p>
               </div>
             </div>

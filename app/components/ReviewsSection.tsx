@@ -104,10 +104,14 @@ export default function ReviewsSection() {
               type="button"
               onClick={() => setActiveReview(index)}
               aria-label={`Show review ${index + 1}`}
-              className={`h-2 rounded-full transition-all ${
-                activeReview === index ? "w-8 bg-[#F5C979]" : "w-2 bg-white/35"
-              }`}
-            />
+              className="flex items-center justify-center p-2"
+            >
+              <span
+                className={`block h-2 rounded-full transition-all ${
+                  activeReview === index ? "w-8 bg-[#F5C979]" : "w-2 bg-white/35"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>
