@@ -37,7 +37,7 @@ export default function RootLayout({
             gtag('config', 'G-Y998E1RMJ9');
           `}
         </Script>
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {CLARITY_SCRIPT}
         </Script>
       </body>

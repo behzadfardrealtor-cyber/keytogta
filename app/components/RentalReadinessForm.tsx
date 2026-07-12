@@ -19,6 +19,7 @@ type RentalReadinessFormProps = {
   isSubmitting: boolean;
   isSubmittingMatchingOptions: boolean;
   matchingOptionsStatus: string;
+  mounted: boolean;
   onRequestMatchingOptions: () => void | Promise<void>;
   resultPreview: ApprovalReport["strength"];
   scorePreview: number;
@@ -53,6 +54,7 @@ export default function RentalReadinessForm({
   isSubmitting,
   isSubmittingMatchingOptions,
   matchingOptionsStatus,
+  mounted,
   onRequestMatchingOptions,
   resultPreview,
   scorePreview,
@@ -233,10 +235,10 @@ export default function RentalReadinessForm({
 
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !mounted}
               className="rounded-2xl bg-[#070A12] px-6 py-4 font-semibold text-white disabled:opacity-60 md:col-span-2"
             >
-              {isSubmitting ? "Sending..." : "Get My Rental Plan"}
+              {!mounted ? "Loading..." : isSubmitting ? "Sending..." : "Get My Rental Plan"}
             </button>
           </div>
 

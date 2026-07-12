@@ -53,6 +53,17 @@ function getScoreStyle(score: number) {
 }
 
 export default function RentalReadinessSection() {
+  // Guards against a form-hydration race: RentalReadinessSection is loaded via
+  // dynamic() as a separate client chunk, so the SSR'd <form> can be visible
+  // and even appear interactive before its onSubmit handler is actually wired
+  // up. Submitting in that window falls through to the browser's native form
+  // submission (no action/method set), which just reloads the page and
+  // silently drops the lead. Keep the submit button disabled until this
+  // component has actually mounted client-side, which only happens once
+  // hydration for this chunk has completed.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showReport, setShowReport] = useState(false);
@@ -235,6 +246,7 @@ export default function RentalReadinessSection() {
         isSubmitting={isSubmitting}
         isSubmittingMatchingOptions={isSubmittingMatchingOptions}
         matchingOptionsStatus={matchingOptionsStatus}
+        mounted={mounted}
         onRequestMatchingOptions={handleRequestMatchingOptions}
         resultPreview={resultPreview}
         scorePreview={scorePreview}
