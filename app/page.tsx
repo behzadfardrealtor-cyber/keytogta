@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import AreaGuidesSection from "./components/AreaGuidesSection";
 import ContactSection from "./components/ContactSection";
 import FAQSection from "./components/FAQSection";
 import FooterSection from "./components/FooterSection";
 import ImageWithFallback from "./components/ImageWithFallback";
+import { LazyRentalReadinessSection, LazyReviewsSection } from "./components/LazySections";
 import ServicesSection from "./components/ServicesSection";
-
-// Genuinely interactive sections, code-split out of the initial JS bundle.
-// Still server-rendered (dynamic() defaults to ssr: true), so there's no
-// content flash or SEO impact - this only defers the client JS chunk.
-const ReviewsSection = dynamic(() => import("./components/ReviewsSection"));
-const RentalReadinessSection = dynamic(() => import("./components/RentalReadinessSection"));
 
 const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
 
@@ -326,14 +320,14 @@ export default function Home() {
           </div>
         </div>
 
-        <ReviewsSection />
+        <LazyReviewsSection />
       </section>
 
       <AreaGuidesSection />
 
       <ServicesSection />
 
-      <RentalReadinessSection />
+      <LazyRentalReadinessSection />
 
       <FAQSection />
 
