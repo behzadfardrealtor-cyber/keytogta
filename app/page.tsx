@@ -1,244 +1,28 @@
-"use client";
-
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
-import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import AreaGuidesSection from "./components/AreaGuidesSection";
+import ContactSection from "./components/ContactSection";
+import FAQSection from "./components/FAQSection";
 import FooterSection from "./components/FooterSection";
-import { createLeadId, trackEvent } from "./lib/analytics";
-import {
-  calculateApprovalReport,
-  initialRentalForm,
-  normalizeCanadianPhone,
-  type RentalForm,
-  validateRentalForm,
-} from "./rental-readiness";
+import ImageWithFallback from "./components/ImageWithFallback";
+import ServicesSection from "./components/ServicesSection";
 
-// Below-the-fold sections, code-split out of the initial JS bundle.
+// Genuinely interactive sections, code-split out of the initial JS bundle.
 // Still server-rendered (dynamic() defaults to ssr: true), so there's no
 // content flash or SEO impact - this only defers the client JS chunk.
-const AreaGuidesSection = dynamic(() => import("./components/AreaGuidesSection"));
-const ContactSection = dynamic(() => import("./components/ContactSection"));
-const FAQSection = dynamic(() => import("./components/FAQSection"));
-const RentalReadinessForm = dynamic(() => import("./components/RentalReadinessForm"));
 const ReviewsSection = dynamic(() => import("./components/ReviewsSection"));
-const ServicesSection = dynamic(() => import("./components/ServicesSection"));
+const RentalReadinessSection = dynamic(() => import("./components/RentalReadinessSection"));
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby8VRgDe26w8oqqwIHMCXbtawTyDFueBsi3iZogL_Kxu5qZ9ZQUHnOnRQeEXQsflN6B/exec";
 const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
 
-function getScoreStyle(score: number) {
-  if (score >= 85) {
-    return {
-      label: "Strong Position",
-      simpleLabel: "Strong Position",
-      tone: "green",
-      badge: "bg-green-500",
-      border: "border-green-300/30",
-      bar: "bg-green-500",
-      glow: "shadow-green-900/20",
-      message: "Your profile looks competitive for a focused rental search.",
-    };
-  }
-
-  if (score >= 70) {
-    return {
-      label: "Review Recommended",
-      simpleLabel: "Review Recommended",
-      tone: "yellow",
-      badge: "bg-yellow-500",
-      border: "border-yellow-300/30",
-      bar: "bg-yellow-500",
-      glow: "shadow-yellow-900/20",
-      message: "Your profile may work, but some details should be reviewed first.",
-    };
-  }
-
-  return {
-    label: "Needs Improvement",
-    simpleLabel: "Needs Improvement",
-    tone: "red",
-    badge: "bg-red-500",
-    border: "border-red-300/30",
-    bar: "bg-red-500",
-    glow: "shadow-red-900/20",
-    message: "Your profile may need improvement before applying.",
-  };
-}
+export const metadata: Metadata = {
+  title: "Key to GTA | GTA Rental Shortlist & Rental Readiness Tool",
+  description:
+    "Get a curated GTA rental shortlist and check your Rental Readiness score before you apply. Compare North York, Vaughan, Richmond Hill, Markham, and Scarborough.",
+};
 
 export default function Home() {
-  const [status, setStatus] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showReport, setShowReport] = useState(false);
-  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
-  const [matchingOptionsStatus, setMatchingOptionsStatus] = useState("");
-  const [isSubmittingMatchingOptions, setIsSubmittingMatchingOptions] = useState(false);
-  const [leadId, setLeadId] = useState<string | null>(null);
-
-  const [form, setForm] = useState<RentalForm>(initialRentalForm);
-  const [debouncedForm, setDebouncedForm] = useState<RentalForm>(initialRentalForm);
-  const hasFiredFormStart = useRef(false);
-
-  function updateField(field: keyof RentalForm, value: string) {
-    if (!hasFiredFormStart.current) {
-      hasFiredFormStart.current = true;
-      trackEvent("form_start");
-    }
-    setForm((prev) => ({ ...prev, [field]: value }));
-    setFieldErrors((prev) => {
-      const next = { ...prev };
-      delete next[field];
-      return next;
-    });
-    setShowReport(false);
-    setStatus("");
-  }
-
-  // Debounce the live score preview so typing doesn't trigger a
-  // recalculation on every keystroke - the score display lags 300ms
-  // behind the fields, but the fields themselves update immediately.
-  useEffect(() => {
-    const timeout = setTimeout(() => setDebouncedForm(form), 300);
-    return () => clearTimeout(timeout);
-  }, [form]);
-
-  const approvalReport = useMemo(
-    () => calculateApprovalReport(debouncedForm),
-    [debouncedForm]
-  );
-
-  const scorePreview = approvalReport.score;
-  const resultPreview = approvalReport.strength;
-  const scoreStyle = getScoreStyle(scorePreview);
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("");
-
-    const errors = validateRentalForm(form);
-    if (Object.keys(errors).length > 0) {
-      setFieldErrors(errors);
-      setShowReport(false);
-      setStatus("Please complete the required fields before getting your report.");
-      return;
-    }
-
-    setFieldErrors({});
-    setIsSubmitting(true);
-
-    const phoneDigits = normalizeCanadianPhone(form.phone);
-    const newLeadId = createLeadId();
-    // Recompute from the live form (not the debounced preview value) so the
-    // submitted payload always reflects exactly what's in the fields right
-    // now, regardless of the 300ms preview lag.
-    const submittedReport = calculateApprovalReport(form);
-
-    const payload = {
-      ...form,
-      normalizedPhone: phoneDigits,
-      leadId: newLeadId,
-      leadSource: "Key to GTA Website",
-      clientType: "Renter",
-      matchType: "Rental Approval Strength Report",
-      internalScore: String(submittedReport.score),
-      score: String(submittedReport.score),
-      result: submittedReport.strength,
-      displayResult: submittedReport.displayStrength,
-      priority: submittedReport.priority,
-      rentToIncomeRatio: submittedReport.rentToIncomeRatio
-        ? `${submittedReport.rentToIncomeRatio}%`
-        : "",
-      typicalComfortRange: submittedReport.recommendedRentRange,
-      recommendedRentRange: submittedReport.recommendedRentRange,
-      approvalExplanation: submittedReport.explanation,
-      userFriendlySummary: submittedReport.userFriendlySummary,
-      strengths: submittedReport.strengths.join(", "),
-      concerns: submittedReport.concerns.join(", "),
-      missingDocuments: submittedReport.missingDocuments.join(", "),
-      nextAction: submittedReport.nextAction,
-      notes: "Website approval strength lead",
-      status: "New Lead",
-      followUpStage: "Initial",
-    };
-
-    try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      setLeadId(newLeadId);
-      trackEvent("generate_lead", { lead_source: "readiness_form", lead_id: newLeadId });
-      setShowReport(true);
-      setStatus("Your report is ready below. Your information was also sent to Behzad for review.");
-    } catch {
-      setStatus("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
-
-  async function handleRequestMatchingOptions() {
-    setMatchingOptionsStatus("");
-    setIsSubmittingMatchingOptions(true);
-
-    const phoneDigits = normalizeCanadianPhone(form.phone);
-    const matchingLeadId = leadId ?? createLeadId();
-    // Same freshness reasoning as handleSubmit - don't rely on the
-    // debounced preview value for the submitted payload.
-    const submittedReport = calculateApprovalReport(form);
-
-    const payload = {
-      ...form,
-      normalizedPhone: phoneDigits,
-      leadId: matchingLeadId,
-      leadSource: "Key to GTA Website",
-      clientType: "Renter",
-      matchType: "Rental Approval Strength Report",
-      internalScore: String(submittedReport.score),
-      score: String(submittedReport.score),
-      result: submittedReport.strength,
-      displayResult: submittedReport.displayStrength,
-      priority: submittedReport.priority,
-      rentToIncomeRatio: submittedReport.rentToIncomeRatio
-        ? `${submittedReport.rentToIncomeRatio}%`
-        : "",
-      typicalComfortRange: submittedReport.recommendedRentRange,
-      recommendedRentRange: submittedReport.recommendedRentRange,
-      approvalExplanation: submittedReport.explanation,
-      userFriendlySummary: submittedReport.userFriendlySummary,
-      strengths: submittedReport.strengths.join(", "),
-      concerns: submittedReport.concerns.join(", "),
-      missingDocuments: submittedReport.missingDocuments.join(", "),
-      nextAction: "Send shortlist / contact quickly",
-      notes: "Requested matching rental options after readiness check",
-      status: "New Lead",
-      followUpStage: "Initial",
-      requestType: "Matching Rental Options",
-      matchingOptionsRequested: true,
-    };
-
-    try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      trackEvent("generate_lead", { lead_source: "matching_options", lead_id: matchingLeadId });
-      setMatchingOptionsStatus(
-        "Thanks - your request was sent to Behzad. He'll review your profile and send realistic rental options that match your search criteria."
-      );
-    } catch {
-      setMatchingOptionsStatus("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmittingMatchingOptions(false);
-    }
-  }
-
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#070A12] text-white">
       <div
@@ -486,7 +270,7 @@ export default function Home() {
           <div className="grid gap-4">
             <div className="relative">
               <div className="float-slow relative h-[19rem] w-full overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl md:h-[22rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[22rem]">
-                <Image
+                <ImageWithFallback
                   src="/hero-condo.jpg"
                   alt="GTA condo living"
                   fill
@@ -494,9 +278,6 @@ export default function Home() {
                   fetchPriority="high"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover opacity-90"
-                  onError={(event) => {
-                    event.currentTarget.style.display = "none";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />
 
@@ -526,15 +307,12 @@ export default function Home() {
 
             <div className="glass-card rounded-[2rem] p-6 text-center lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
               <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#F5C979]/60 bg-white/[0.08] lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
-                <Image
+                <ImageWithFallback
                   src="/behzad.jpg"
                   alt="Behzad Fard"
                   fill
                   sizes="112px"
                   className="object-cover"
-                  onError={(event) => {
-                    event.currentTarget.style.display = "none";
-                  }}
                 />
               </div>
               <div>
@@ -555,37 +333,13 @@ export default function Home() {
 
       <ServicesSection />
 
-      <RentalReadinessForm
-        approvalReport={approvalReport}
-        fieldErrors={fieldErrors}
-        form={form}
-        handleSubmit={handleSubmit}
-        isSubmitting={isSubmitting}
-        isSubmittingMatchingOptions={isSubmittingMatchingOptions}
-        matchingOptionsStatus={matchingOptionsStatus}
-        onRequestMatchingOptions={handleRequestMatchingOptions}
-        resultPreview={resultPreview}
-        scorePreview={scorePreview}
-        scoreStyle={scoreStyle}
-        showReport={showReport}
-        status={status}
-        updateField={updateField}
-      />
+      <RentalReadinessSection />
 
       <FAQSection />
 
       <ContactSection />
 
       <FooterSection />
-
-      {!showReport && (
-        <a
-          href="#rental-match"
-          className="fixed bottom-5 left-5 right-5 z-50 rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-semibold text-[#070A12] shadow-2xl md:hidden"
-        >
-          Get My Rental Shortlist
-        </a>
-      )}
           </div>
 </main>
   );
