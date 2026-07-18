@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import EmailGate from "../../components/EmailGate";
 import FooterSection from "../../components/FooterSection";
 import PageViewTracker from "../../components/PageViewTracker";
 
@@ -826,6 +827,16 @@ export default function OntarioRentalDocumentsChecklistPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="checklist-download" className="px-6 pb-20">
+        <div className="mx-auto max-w-4xl">
+          <EmailGate
+            source="checklist-ontario"
+            pdfUrl="/pdfs/keytogta-rental-document-checklist.pdf"
+            pdfFilename="keytogta-rental-document-checklist.pdf"
+          />
         </div>
       </section>
 
