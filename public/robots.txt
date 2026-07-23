@@ -1,4 +1,31 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /pdfs/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /pdfs/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /pdfs/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /pdfs/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /pdfs/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /pdfs/
+
 Sitemap: https://www.keytogta.ca/sitemap.xml

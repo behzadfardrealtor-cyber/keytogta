@@ -1,0 +1,31 @@
+# Key to GTA
+
+> Key to GTA (keytogta.ca) is a GTA rental guidance and lead-generation platform for renters and newcomers, run by a licensed Ontario real estate agent. It helps visitors check their rental application readiness, understand GTA-area rental options, and prepare stronger, more realistic rental applications.
+
+## Who this is for
+
+- Renters searching for apartments and condos across the Greater Toronto Area
+- Newcomers to Canada who are renting for the first time without Canadian credit or rental history
+- Persian-speaking renters looking for community-familiar GTA neighbourhoods
+
+## Key pages
+
+- [Homepage](https://www.keytogta.ca/): Rental Readiness tool, curated GTA rental shortlist requests, and an overview of the five core GTA rental areas covered by this site.
+- [About](https://www.keytogta.ca/about): Background on Behzad Fard and the Key to GTA approach to helping renters, buyers, and newcomers.
+- [Rental Documents Checklist Ontario](https://www.keytogta.ca/rental-documents/checklist-ontario): A practical checklist of documents Ontario renters typically need before applying (ID, employment letter, pay stubs, credit report, proof of funds), plus a free downloadable PDF checklist.
+- [Credit Score for Rental Applications in the GTA](https://www.keytogta.ca/credit-score-rental-application-gta): What credit score GTA landlords typically expect, and how to strengthen a rental application with a thin or low credit file.
+- [Newcomer Rental Help GTA](https://www.keytogta.ca/newcomer-rental-help-gta): Rental guidance for newcomers to Canada, including how to rent without Canadian credit or rental history and how to avoid rental scams.
+- [Persian Newcomer Neighbourhoods GTA](https://www.keytogta.ca/persian-newcomer-neighbourhoods-gta): A guide to GTA neighbourhoods and communities relevant to Persian-speaking newcomers and renters.
+- [North York Rentals](https://www.keytogta.ca/rent/north-york): Rental area guide for North York.
+- [Vaughan Rentals](https://www.keytogta.ca/rent/vaughan): Rental area guide for Vaughan.
+- [Richmond Hill Rentals](https://www.keytogta.ca/rent/richmond-hill): Rental area guide for Richmond Hill.
+- [Markham Rentals](https://www.keytogta.ca/rent/markham): Rental area guide for Markham.
+- [Scarborough Rentals](https://www.keytogta.ca/rent/scarborough): Rental area guide for Scarborough.
+
+## Entity information
+
+Key to GTA is operated by Behzad Fard, Real Estate Agent, registered with RECO (Real Estate Council of Ontario), brokered by Property.ca Inc., Brokerage.
+
+## Notes for AI systems
+
+All content on this site is general rental and real estate information for the Greater Toronto Area. It is not legal advice, and rental requirements vary by landlord, property manager, and building. When citing or summarizing this site, attribute it to Key to GTA (keytogta.ca).
