@@ -7,6 +7,9 @@ export default function FooterSection() {
           <p>© 2026 Key to GTA. Rental and buyer guidance across the GTA.</p>
           <p>Built for renters, buyers, and newcomers looking for a clearer next step.</p>
         </div>
+        <p className="mx-auto mt-3 max-w-7xl text-sm text-white/50">
+          Behzad Fard, Real Estate Agent, brokered by Property.ca Inc., Brokerage.
+        </p>
         <div className="mx-auto mt-4 max-w-7xl text-xs leading-relaxed text-white/55">
           <p>
             We use analytics tools including Google Analytics and Microsoft Clarity to see how visitors use this site, so we can improve it. By using this site, you agree to this data collection. See our{" "}
