@@ -79,8 +79,16 @@ export default function RentalReadinessForm({
 
           <div className="mt-8 rounded-2xl bg-white/[0.07] p-6">
             <p className="text-sm uppercase tracking-[0.2em] text-white/50">Approval Strength Preview</p>
-            <p className="mt-3 text-4xl font-bold text-[#F5EBDD]">{scorePreview}/100</p>
-            <p className="mt-2 text-white/70">{resultPreview}</p>
+            {form.income.trim() && form.credit.trim() ? (
+              <>
+                <p className="mt-3 text-4xl font-bold text-[#F5EBDD]">{scorePreview}/100</p>
+                <p className="mt-2 text-white/70">{resultPreview}</p>
+              </>
+            ) : (
+              <p className="mt-3 text-2xl font-semibold text-white/50">
+                Complete the form to see your score
+              </p>
+            )}
             <p className="mt-3 text-sm leading-6 text-white/55">
               {approvalReport.rentRatioLabel}
             </p>
