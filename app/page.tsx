@@ -208,7 +208,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-3 max-w-2xl text-base leading-6 text-white/70 md:text-lg">
-              Tell us what you're looking for. The Key to GTA team hand-picks rentals that fit you and sends them over, so you don't have to search the whole market yourself. You pick, we do the legwork.
+              Tell me what you're looking for. I hand-pick rentals that fit you and send them over, so you don't have to search the whole market yourself. You pick, I do the legwork.
             </p>
 
             <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">

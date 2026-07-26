@@ -12,7 +12,7 @@ export default function FooterSection() {
         </p>
         <div className="mx-auto mt-4 max-w-7xl text-xs leading-relaxed text-white/55">
           <p>
-            We use analytics tools including Google Analytics and Microsoft Clarity to see how visitors use this site, so we can improve it. By using this site, you agree to this data collection. See our{" "}
+            I use analytics tools including Google Analytics and Microsoft Clarity to see how visitors use this site, so I can improve it. By using this site, you agree to this data collection. See my{" "}
             <Link href="/privacy" className="underline underline-offset-2 hover:text-white/60">
               Privacy Policy
             </Link>{" "}
