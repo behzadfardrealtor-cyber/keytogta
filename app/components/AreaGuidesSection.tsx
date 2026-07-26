@@ -31,15 +31,15 @@ export default function AreaGuidesSection() {
 
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl bg-white/[0.07] p-4">
-                  <p className="text-xl">📍</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">01</p>
                   <p className="mt-2 text-sm font-bold">Local fit</p>
                 </div>
                 <div className="rounded-2xl bg-white/[0.07] p-4">
-                  <p className="text-xl">💰</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">02</p>
                   <p className="mt-2 text-sm font-bold">Budget range</p>
                 </div>
                 <div className="rounded-2xl bg-white/[0.07] p-4">
-                  <p className="text-xl">✅</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">03</p>
                   <p className="mt-2 text-sm font-bold">Approval strategy</p>
                 </div>
               </div>

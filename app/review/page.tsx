@@ -75,9 +75,6 @@ export default function ReviewPage() {
               </span>
             </div>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] px-2 py-1 text-[0.65rem] font-semibold text-[#e2e8f0] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs">
-              <span aria-hidden="true" className="text-[#f0c76a]">
-                ⭐
-              </span>
               Client Feedback
             </span>
           </header>
@@ -117,7 +114,6 @@ export default function ReviewPage() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <span aria-hidden="true">⭐</span>
               Leave a Google Review
             </a>
           </div>
@@ -147,9 +143,6 @@ export default function ReviewPage() {
           </div>
 
           <footer className="mt-1.5 flex shrink-0 flex-col items-center justify-center gap-1 pt-1 text-center text-[0.7rem] text-[#d9e2ef] sm:mt-2 sm:pt-1.5 sm:text-xs">
-            <span className="text-[#f0c76a]" aria-hidden="true">
-              👥
-            </span>
             <p>
               Know someone looking for a rental in the GTA?{" "}
               <span className="hidden text-white/30 sm:inline">| </span>

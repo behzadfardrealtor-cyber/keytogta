@@ -196,7 +196,6 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-2 lg:items-start">
           <div className="lg:pt-1">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
-              <span className="text-[#F5C979]">🔑</span>
               CURATED GTA RENTALS - LICENSED AGENT
             </div>
 
@@ -223,7 +222,7 @@ export default function Home() {
                 href="#areas"
                 className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
               >
-                📍 Explore Areas
+                Explore Areas
               </a>
             </div>
 
@@ -276,12 +275,12 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />
 
                 <div className="absolute left-5 top-5 rounded-2xl bg-[#101827]/86 px-5 py-4 shadow-xl backdrop-blur">
-                  <p className="text-sm text-white/60">⭐ Curated for</p>
+                  <p className="text-sm text-white/60">Curated for</p>
                   <p className="font-bold">You</p>
                 </div>
 
                 <div className="absolute bottom-5 left-5 rounded-2xl bg-[#101827]/86 p-5 shadow-xl backdrop-blur">
-                  <h3 className="text-xl font-bold">🏢 GTA Condo Living</h3>
+                  <h3 className="text-xl font-bold">GTA Condo Living</h3>
                   <p className="mt-1 text-sm text-white/60">Find the right fit in the right area.</p>
                 </div>
 
