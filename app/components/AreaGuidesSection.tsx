@@ -123,7 +123,7 @@ export default function AreaGuidesSection() {
                 href="#rental-match"
                 className="rounded-full bg-[#F5C979] px-6 py-3 text-center font-bold text-[#070A12]"
               >
-                Check My Area Match →
+                Get My Rental Shortlist →
               </a>
             </div>
           </div>

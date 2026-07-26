@@ -21,7 +21,7 @@ export default function ContactSection() {
                 href="#rental-match"
                 className="mt-6 inline-flex w-full justify-center rounded-2xl bg-[#F5EBDD] px-6 py-4 font-semibold text-[#070A12]"
               >
-                Start Rental Readiness
+                Get My Rental Shortlist
               </a>
             </div>
           </div>

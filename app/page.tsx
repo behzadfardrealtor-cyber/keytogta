@@ -182,7 +182,7 @@ export default function Home() {
             href="#rental-match"
             className="rounded-full bg-[#F5C979] px-6 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
           >
-            Start →
+            Get My Rental Shortlist →
           </a>
         </div>
       </header>
