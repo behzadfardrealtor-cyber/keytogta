@@ -116,7 +116,7 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
         <div className="glass-card rounded-[2rem] p-5 text-center">
           <h3 className="text-2xl font-black text-[#F5C979]">5+</h3>
           <p className="font-semibold">GTA Area Guides</p>
@@ -126,11 +126,6 @@ export default function ReviewsSection() {
           <h3 className="text-2xl font-black text-[#F5C979]">Instant</h3>
           <p className="font-semibold">Fast Follow-Up</p>
           <p className="mt-2 text-xs text-white/55">Quick review and next-step guidance after form submission.</p>
-        </div>
-        <div className="glass-card rounded-[2rem] p-5 text-center">
-          <h3 className="text-2xl font-black text-[#F5C979]">Step 2</h3>
-          <p className="font-semibold">Tracking</p>
-          <p className="mt-2 text-xs text-white/55">Every lead tracked. Every follow-up matters.</p>
         </div>
       </div>
     </div>
