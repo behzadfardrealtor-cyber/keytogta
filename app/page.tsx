@@ -16,9 +16,46 @@ export const metadata: Metadata = {
     "Get a curated GTA rental shortlist and check your Rental Readiness score before you apply. Compare North York, Vaughan, Richmond Hill, Markham, and Scarborough.",
 };
 
+// RealEstateAgent extends LocalBusiness in schema.org's own type hierarchy,
+// so one node carries both instead of duplicating the business as two
+// separate top-level entities.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "@id": "https://keytogta.ca/#realestateagent",
+  name: "Behzad Fard",
+  url: "https://keytogta.ca",
+  telephone: "+1-647-708-1144",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "31 Disera Drive Suite 250",
+    addressLocality: "Thornhill",
+    addressRegion: "ON",
+    postalCode: "L4J 0A7",
+    addressCountry: "CA",
+  },
+  areaServed: ["North York", "Vaughan", "Richmond Hill", "Markham", "Scarborough"],
+  worksFor: {
+    "@type": "Organization",
+    name: "Property.ca Inc., Brokerage",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "10",
+    bestRating: "5",
+  },
+};
+
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#070A12] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 z-0 bg-[url('/hero-skyline-bg.jpg')] bg-cover bg-center opacity-48"

@@ -168,9 +168,9 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 leading-7 text-white/72">
               My approach is built on market data and modern tools. Backed
-              by {BROKERAGE_NAME}, one of Ontario's largest brokerages, I
-              work with real-time market intelligence that most
-              independent agents can't reach - live pricing trends, rent
+              by {BROKERAGE_NAME}, I work with real-time market
+              intelligence that most independent agents can't reach - live
+              pricing trends, rent
               ranges, neighbourhood demand, and application patterns. I
               read that data so you don't have to, and I turn it into
               clear, practical advice: what a property is really worth,
