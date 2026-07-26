@@ -64,6 +64,7 @@ export default function RentalReadinessSection() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
+  const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showReport, setShowReport] = useState(false);
@@ -107,6 +108,35 @@ export default function RentalReadinessSection() {
   const scorePreview = approvalReport.score;
   const resultPreview = approvalReport.strength;
   const scoreStyle = getScoreStyle(scorePreview);
+
+  function handleContinue(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("");
+
+    // Reuse the existing validator, but only surface the Step 1 fields'
+    // errors here - budget/income/credit don't exist on the page yet, so
+    // they'd always "fail" at this point. The full check still runs again
+    // at final submit, unchanged.
+    const errors = validateRentalForm(form);
+    const step1Errors: Record<string, string> = {};
+    if (errors.name) step1Errors.name = errors.name;
+    if (errors.phone) step1Errors.phone = errors.phone;
+    if (errors.email) step1Errors.email = errors.email;
+
+    if (Object.keys(step1Errors).length > 0) {
+      setFieldErrors(step1Errors);
+      return;
+    }
+
+    setFieldErrors({});
+    setStep(2);
+  }
+
+  function handleBack() {
+    setFieldErrors({});
+    setStatus("");
+    setStep(1);
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -247,12 +277,15 @@ export default function RentalReadinessSection() {
         isSubmittingMatchingOptions={isSubmittingMatchingOptions}
         matchingOptionsStatus={matchingOptionsStatus}
         mounted={mounted}
+        onBack={handleBack}
+        onContinue={handleContinue}
         onRequestMatchingOptions={handleRequestMatchingOptions}
         resultPreview={resultPreview}
         scorePreview={scorePreview}
         scoreStyle={scoreStyle}
         showReport={showReport}
         status={status}
+        step={step}
         updateField={updateField}
       />
 
