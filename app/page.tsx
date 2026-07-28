@@ -350,7 +350,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="mt-4 text-2xl font-bold text-[#F5C979] lg:mt-0 2xl:mt-4">Behzad Fard</h3>
-                <p className="text-sm text-white/65">Founder & Real Estate Advisor</p>
+                <p className="text-sm text-white/65">Real Estate Agent | Founder, Key to GTA</p>
                 <p className="mt-3 text-sm leading-6 text-white/58 lg:mt-1 2xl:mt-3">
                   Helping newcomers and tenants make confident rental decisions across the GTA.
                 </p>
