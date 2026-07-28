@@ -82,4 +82,18 @@ export const reviews = [
       "I had an excellent experience working with Behzad throughout my condo search. He took the time to understand my budget and preferred location.",
     initials: "AV",
   },
+  {
+    name: "Parisa Nikoomaram",
+    area: "Google Review",
+    quote:
+      "Behzad was amazing to work with! He was incredibly responsive, professional, and truly went above and beyond throughout the entire process. Thanks to his dedication and persistence, I was able to find and sign my new lease in less than a week.",
+    initials: "PN",
+  },
+  {
+    name: "Arian Z",
+    area: "Google Review",
+    quote:
+      "Behzad is an excellent agent. Throughout our time working together, he consistently demonstrated professionalism, respect, and a deep understanding of the sales process. I have no doubt that his clients are in good hands.",
+    initials: "AZ",
+  },
 ];
