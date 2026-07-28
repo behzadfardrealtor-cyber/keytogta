@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.keytogta.ca"),
   title: "Key to GTA",
   description: "Rental and real estate guidance across the GTA.",
 };

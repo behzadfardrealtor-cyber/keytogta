@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Key to GTA | GTA Rental Shortlist & Rental Readiness Tool",
   description:
     "Get a curated GTA rental shortlist and check your Rental Readiness score before you apply. Compare North York, Vaughan, Richmond Hill, Markham, and Scarborough.",
+  alternates: {
+    canonical: "https://www.keytogta.ca",
+  },
 };
 
 // RealEstateAgent extends LocalBusiness in schema.org's own type hierarchy,
@@ -22,9 +25,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "@id": "https://keytogta.ca/#realestateagent",
+  "@id": "https://www.keytogta.ca/#realestateagent",
   name: "Behzad Fard",
-  url: "https://keytogta.ca",
+  url: "https://www.keytogta.ca",
   telephone: "+1-647-708-1144",
   address: {
     "@type": "PostalAddress",

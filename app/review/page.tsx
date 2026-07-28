@@ -50,6 +50,9 @@ export const metadata: Metadata = {
   title: "Leave a Review | Key to GTA",
   description:
     "Share feedback about your rental or real estate experience with Behzad Fard and Key to GTA.",
+  alternates: {
+    canonical: "https://www.keytogta.ca/review",
+  },
 };
 
 export default function ReviewPage() {

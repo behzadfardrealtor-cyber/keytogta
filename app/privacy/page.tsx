@@ -9,6 +9,9 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  alternates: {
+    canonical: "https://www.keytogta.ca/privacy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
