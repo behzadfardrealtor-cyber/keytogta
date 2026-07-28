@@ -96,4 +96,11 @@ export const reviews = [
       "Behzad is an excellent agent. Throughout our time working together, he consistently demonstrated professionalism, respect, and a deep understanding of the sales process. I have no doubt that his clients are in good hands.",
     initials: "AZ",
   },
+  {
+    name: "Fariba",
+    area: "Google Review",
+    quote:
+      "Behzad is truly professional, honest, and always puts his clients first. You can trust him to go the extra mile.",
+    initials: "F",
+  },
 ];
