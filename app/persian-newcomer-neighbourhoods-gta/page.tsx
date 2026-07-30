@@ -7,9 +7,9 @@ import PageViewTracker from "../components/PageViewTracker";
 const siteUrl = "https://www.keytogta.ca";
 const pagePath = "/persian-newcomer-neighbourhoods-gta";
 const pageUrl = `${siteUrl}${pagePath}`;
-const title = "Persian Newcomer Neighbourhoods in the GTA (2026) | KeyToGTA.ca";
+const title = "Tehranto GTA Guide for Persian Renters (2026) | KeyToGTA.ca";
 const description =
-  "Where Toronto's Persian-speaking community is concentrated across the GTA, and what that means for choosing a rental neighbourhood in North York, Richmond Hill, Vaughan, Markham, or Scarborough.";
+  "Where Toronto's Persian community lives, and how North York, Richmond Hill, Vaughan, Markham & Scarborough compare on rent, transit & community access.";
 
 export const metadata: Metadata = {
   title,
