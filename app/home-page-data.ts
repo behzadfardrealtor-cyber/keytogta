@@ -6,7 +6,6 @@ export const areaLinks = [
     image: "/north-york.jpg",
     tag: "Best for TTC access",
     rent: "$1,950 - $2,150",
-    score: "92",
   },
   {
     name: "Vaughan",
@@ -15,7 +14,6 @@ export const areaLinks = [
     image: "/vaughan.jpg",
     tag: "Best for newer condos",
     rent: "$2,000 - $2,900",
-    score: "88",
   },
   {
     name: "Richmond Hill",
@@ -24,7 +22,6 @@ export const areaLinks = [
     image: "/richmond-hill.jpg",
     tag: "Best for quiet living",
     rent: "$2,000 - $3,000",
-    score: "84",
   },
   {
     name: "Markham",
@@ -33,7 +30,6 @@ export const areaLinks = [
     image: "/markham.jpg",
     tag: "Best for lifestyle balance",
     rent: "$1,950 - $2,100",
-    score: "86",
   },
   {
     name: "Scarborough",
@@ -42,7 +38,6 @@ export const areaLinks = [
     image: "/scarborough.jpg",
     tag: "Best for value options",
     rent: "$2,000 - $2,500",
-    score: "82",
   },
 ];
 

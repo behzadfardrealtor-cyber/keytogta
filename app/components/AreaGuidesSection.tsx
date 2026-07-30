@@ -68,10 +68,6 @@ export default function AreaGuidesSection() {
                     0{index + 1}
                   </div>
 
-                  <div className="area-glow absolute right-4 top-4 rounded-full border border-[#F5C979]/30 bg-[#F5C979]/15 px-3 py-1 text-xs font-bold text-[#F5C979] backdrop-blur">
-                    Score {area.score}
-                  </div>
-
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#F5C979]">
                       {area.tag}
