@@ -30,7 +30,6 @@ const areaLinks = [
     image: "/north-york.jpg",
     tag: "Best for TTC access",
     rent: "$2,200 - $3,200+",
-    score: "92",
   },
   {
     name: "Vaughan",
@@ -39,7 +38,6 @@ const areaLinks = [
     image: "/vaughan.jpg",
     tag: "Best for newer condos",
     rent: "$2,300 - $3,400+",
-    score: "88",
   },
   {
     name: "Richmond Hill",
@@ -48,7 +46,6 @@ const areaLinks = [
     image: "/richmond-hill.jpg",
     tag: "Best for quiet living",
     rent: "$2,300 - $3,500+",
-    score: "84",
   },
   {
     name: "Markham",
@@ -57,7 +54,6 @@ const areaLinks = [
     image: "/markham.jpg",
     tag: "Best for lifestyle balance",
     rent: "$2,300 - $3,500+",
-    score: "86",
   },
   {
     name: "Scarborough",
@@ -66,7 +62,6 @@ const areaLinks = [
     image: "/scarborough.jpg",
     tag: "Best for value options",
     rent: "$2,000 - $3,000+",
-    score: "82",
   },
 ];
 
@@ -744,10 +739,6 @@ export default function Home() {
 
                   <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-[#09111F]/80 px-3 py-1 text-xs font-bold backdrop-blur">
                     0{index + 1}
-                  </div>
-
-                  <div className="area-glow absolute right-4 top-4 rounded-full border border-[#F5C979]/30 bg-[#F5C979]/15 px-3 py-1 text-xs font-bold text-[#F5C979] backdrop-blur">
-                    Score {area.score}
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4">
