@@ -423,6 +423,19 @@ export default function NewcomerRentalHelpPage() {
             </Link>{" "}
             covers the GTA's only direct-subway option outside Toronto.
           </p>
+
+          <p className="mt-4 max-w-3xl leading-7 text-[#3D352D]">
+            If being near an established cultural or language community
+            matters as you settle in, see our{" "}
+            <Link
+              href="/persian-newcomer-neighbourhoods-gta"
+              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+            >
+              guide to Persian newcomer neighbourhoods in the GTA
+            </Link>{" "}
+            for where that community is concentrated and what it means for
+            choosing a rental area.
+          </p>
         </div>
       </section>
 

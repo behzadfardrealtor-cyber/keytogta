@@ -28,6 +28,13 @@ const faqs = [
     href: "/ontario-tenant-rights-gta",
     linkLabel: "Read the full Ontario tenant rights guide",
   },
+  {
+    question: "Do you have guides for specific GTA communities?",
+    answer:
+      "Yes - for example, if you're part of Toronto's Persian-speaking community, my guide to Persian newcomer neighbourhoods breaks down where that community is concentrated across the GTA and what it means for choosing a rental area.",
+    href: "/persian-newcomer-neighbourhoods-gta",
+    linkLabel: "Read the Persian newcomer neighbourhoods guide",
+  },
 ];
 
 export default function FAQSection() {
