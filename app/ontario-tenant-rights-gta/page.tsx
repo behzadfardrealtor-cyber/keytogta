@@ -595,6 +595,17 @@ export default function OntarioTenantRightsPage() {
                 </li>
               ))}
             </ul>
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-white/50">
+              Some LTB processes and eviction notice rules are changing under
+              Bill 60, in stages - see our{" "}
+              <Link
+                href="/bill-60-ontario-tenant-changes-2026"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                Bill 60 tenant changes guide
+              </Link>{" "}
+              for exactly what's in force now versus what's still coming.
+            </p>
           </div>
         </div>
       </section>
