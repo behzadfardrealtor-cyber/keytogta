@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const faqs = [
   {
     question: "Do I need documents before viewing?",
@@ -19,6 +21,13 @@ const faqs = [
     answer:
       "Yes. Buyer support can include budget, pre-approval, down payment, preferred area, property type, shortlist, showings, and offer strategy.",
   },
+  {
+    question: "What are my rights as a tenant in Ontario?",
+    answer:
+      "Rent increases, deposits, and landlord entry are all covered by provincial rules - including the 2026 rent increase guideline and which units are exempt from it.",
+    href: "/ontario-tenant-rights-gta",
+    linkLabel: "Read the full Ontario tenant rights guide",
+  },
 ];
 
 export default function FAQSection() {
@@ -36,6 +45,14 @@ export default function FAQSection() {
               <div key={faq.question} className="rounded-2xl bg-black/5 p-5">
                 <h3 className="font-bold">{faq.question}</h3>
                 <p className="mt-2 leading-7 text-[#3D352D]">{faq.answer}</p>
+                {faq.href && (
+                  <Link
+                    href={faq.href}
+                    className="mt-2 inline-block text-sm font-semibold text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+                  >
+                    {faq.linkLabel}
+                  </Link>
+                )}
               </div>
             ))}
           </div>

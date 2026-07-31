@@ -522,6 +522,15 @@ export default function OntarioRentalDocumentsChecklistPage() {
               Ontario human rights guidance says rental history, credit references,
               credit checks, and income information may be requested, but lack of
               rental or credit history should not be treated negatively by itself.
+              For the rules that apply after you sign a lease - rent increases,
+              deposits, and entry notice - see our{" "}
+              <Link
+                href="/ontario-tenant-rights-gta"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                Ontario tenant rights guide
+              </Link>
+              .
             </p>
           </div>
 
