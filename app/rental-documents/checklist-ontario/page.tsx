@@ -285,7 +285,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-07-05",
-    dateModified: "2026-07-05",
+    dateModified: "2026-08-01",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario rental documents",
