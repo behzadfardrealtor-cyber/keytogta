@@ -17,6 +17,7 @@ const contentPages = [
   "persian-newcomer-neighbourhoods-gta",
   "ontario-tenant-rights-gta",
   "bill-60-ontario-tenant-changes-2026",
+  "cheapest-areas-to-rent-gta",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
