@@ -59,10 +59,16 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 bg-[url('/hero-skyline-bg.jpg')] bg-cover bg-center opacity-48"
-      />
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
+        <ImageWithFallback
+          src="/hero-skyline-bg.jpg"
+          alt=""
+          fill
+          loading="lazy"
+          sizes="100vw"
+          className="object-cover object-center opacity-48"
+        />
+      </div>
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_14%,rgba(245,201,121,0.20),transparent_30%),linear-gradient(90deg,rgba(7,10,18,0.82)_0%,rgba(7,10,18,0.68)_42%,rgba(7,10,18,0.52)_100%)]"
@@ -309,7 +315,7 @@ export default function Home() {
                   fill
                   priority
                   fetchPriority="high"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
                   className="object-cover opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />

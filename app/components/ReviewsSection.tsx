@@ -61,7 +61,7 @@ export default function ReviewsSection() {
               </div>
               <div>
                 <p className="text-lg font-bold">{featuredReview.name}</p>
-                <p className="text-sm text-white/45">{featuredReview.area}</p>
+                <p className="text-sm text-white/58">{featuredReview.area}</p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function ReviewsSection() {
               >
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-sm text-[#F5C979]">★★★★★</p>
-                  <span className="text-xs text-white/35">Next</span>
+                  <span className="text-xs text-white/55">Next</span>
                 </div>
 
                 <p className="mt-3 line-clamp-2 text-sm leading-6 text-white/65">
@@ -89,7 +89,7 @@ export default function ReviewsSection() {
                   </div>
                   <div>
                     <p className="font-semibold">{review.name}</p>
-                    <p className="text-xs text-white/40">{review.area}</p>
+                    <p className="text-xs text-white/55">{review.area}</p>
                   </div>
                 </div>
               </button>

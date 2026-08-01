@@ -122,7 +122,7 @@ export default function RentalReadinessForm({
           onSubmit={step === 1 ? onContinue : handleSubmit}
           className="rounded-[2rem] bg-[#F5EBDD] p-6 text-[#070A12] md:p-8"
         >
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-black/40">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#6E6254]">
             Step {step} of 2
           </p>
 
@@ -275,7 +275,7 @@ export default function RentalReadinessForm({
                 <button
                   type="button"
                   onClick={onBack}
-                  className="justify-self-start text-sm font-semibold text-black/50 underline underline-offset-2 hover:text-black/70 md:col-span-2"
+                  className="justify-self-start text-sm font-semibold text-black/70 underline underline-offset-2 hover:text-black/70 md:col-span-2"
                 >
                   ← Back
                 </button>
