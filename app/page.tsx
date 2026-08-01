@@ -59,16 +59,10 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
-        <ImageWithFallback
-          src="/hero-skyline-bg.jpg"
-          alt=""
-          fill
-          loading="lazy"
-          sizes="100vw"
-          className="object-cover object-center opacity-48"
-        />
-      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(160deg,#0B1728_0%,#07111F_45%,#241B14_100%)]"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_14%,rgba(245,201,121,0.20),transparent_30%),linear-gradient(90deg,rgba(7,10,18,0.82)_0%,rgba(7,10,18,0.68)_42%,rgba(7,10,18,0.52)_100%)]"
@@ -78,132 +72,6 @@ export default function Home() {
         className="pointer-events-none fixed inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-t from-[#070A12]/82 via-[#070A12]/52 to-transparent"
       />
       <div className="relative z-10">
-      <style>{`
-        .premium-bg {
-          background:
-            radial-gradient(circle at 18% 10%, rgba(245,201,121,.16), transparent 28rem),
-            radial-gradient(circle at 82% 16%, rgba(76,119,147,.20), transparent 30rem),
-            radial-gradient(circle at 50% 88%, rgba(245,201,121,.10), transparent 34rem),
-            linear-gradient(135deg, #07111F 0%, #0B1728 38%, #111827 66%, #241B14 100%);
-          position: relative;
-        }
-        .premium-bg:before {
-          content: "";
-          position: fixed;
-          inset: 0;
-          pointer-events: none;
-          z-index: 0;
-          background:
-            linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
-          background-size: 52px 52px;
-          mask-image: radial-gradient(circle at 50% 20%, black, transparent 75%);
-        }
-        .premium-bg:after {
-          content: "";
-          position: fixed;
-          inset: 0;
-          pointer-events: none;
-          z-index: 0;
-          background:
-            radial-gradient(circle at 30% 20%, rgba(255,255,255,.08), transparent 20rem),
-            linear-gradient(180deg, transparent, rgba(0,0,0,.18));
-          mix-blend-mode: screen;
-          opacity: .55;
-        }
-        .premium-bg > * {
-          position: relative;
-          z-index: 1;
-        }
-        .soft-section {
-          background:
-            radial-gradient(circle at top left, rgba(245,201,121,.08), transparent 24rem),
-            rgba(255,255,255,.035);
-        }
-
-        @keyframes floatSlow {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
-        }
-        @keyframes floatSide {
-          0%, 100% { transform: translateX(0px) rotate(-2deg); }
-          50% { transform: translateX(10px) rotate(2deg); }
-        }
-        @keyframes softPulse {
-          0%, 100% { opacity: .55; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.04); }
-        }
-        @keyframes reviewFadeUp {
-          0% { opacity: 0; transform: translateY(16px) scale(.98); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .review-featured {
-          animation: reviewFadeUp .65s ease both;
-        }
-        .review-mini {
-          transition: transform .25s ease, background .25s ease, border-color .25s ease;
-        }
-        .review-mini:hover {
-          transform: translateY(-4px);
-          background: rgba(255,255,255,.08);
-          border-color: rgba(245,201,121,.35);
-        }
-        @keyframes glowLine {
-          0% { transform: translateX(-100%); opacity: 0; }
-          40% { opacity: 1; }
-          100% { transform: translateX(100%); opacity: 0; }
-        }
-        .float-slow { animation: floatSlow 5s ease-in-out infinite; }
-        .float-side { animation: floatSide 6s ease-in-out infinite; }
-        .soft-pulse { animation: softPulse 3s ease-in-out infinite; }
-
-        @keyframes areaFloat {
-          0%, 100% { transform: translateY(0) rotate(0deg); }
-          50% { transform: translateY(-8px) rotate(.4deg); }
-        }
-        @keyframes areaGlow {
-          0%, 100% { opacity: .55; }
-          50% { opacity: 1; }
-        }
-        .area-card {
-          transition: transform .35s ease, border-color .35s ease, background .35s ease, box-shadow .35s ease;
-        }
-        .area-card:hover {
-          transform: translateY(-10px);
-          border-color: rgba(245,201,121,.45);
-          background: rgba(255,255,255,.085);
-          box-shadow: 0 26px 80px rgba(0,0,0,.32), 0 0 45px rgba(245,201,121,.10);
-        }
-        .area-card:nth-child(1) { animation: areaFloat 6s ease-in-out infinite; }
-        .area-card:nth-child(2) { animation: areaFloat 6.8s ease-in-out infinite; }
-        .area-card:nth-child(3) { animation: areaFloat 7.4s ease-in-out infinite; }
-        .area-card:nth-child(4) { animation: areaFloat 6.4s ease-in-out infinite; }
-        .area-card:nth-child(5) { animation: areaFloat 7.1s ease-in-out infinite; }
-        .area-glow { animation: areaGlow 3.5s ease-in-out infinite; }
-
-        .glass-card {
-          background:
-            linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.04)),
-            radial-gradient(circle at top left, rgba(245,201,121,.08), transparent 18rem);
-          border: 1px solid rgba(255,255,255,.14);
-          box-shadow: 0 24px 80px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
-        }
-        .shine {
-          position: relative;
-          overflow: hidden;
-        }
-        .shine:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 45%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
-          animation: glowLine 5.5s ease-in-out infinite;
-        }
-      `}</style>
-
       <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/78 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
