@@ -8,6 +8,7 @@ const areaSlugs = [
   "richmond-hill",
   "markham",
   "scarborough",
+  "toronto",
 ];
 
 const contentPages = [
