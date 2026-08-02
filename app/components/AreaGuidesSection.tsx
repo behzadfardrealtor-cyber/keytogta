@@ -58,6 +58,7 @@ export default function AreaGuidesSection() {
                     src={area.image}
                     alt={`${area.name} rental area`}
                     fill
+                    quality={60}
                     sizes="(min-width: 768px) 20vw, 100vw"
                     className="object-cover opacity-85 transition duration-500 group-hover:scale-110 group-hover:opacity-100"
                   />

@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  experimental: {
+    inlineCss: true,
+  },
+  images: {
+    // Next.js 16 requires an explicit allowlist for `quality`; 75 is the
+    // implicit default already used everywhere else, 60 is only for the
+    // area guide images in AreaGuidesSection.tsx that opt into it.
+    qualities: [60, 75],
+  },
   async headers() {
     return [
       {
