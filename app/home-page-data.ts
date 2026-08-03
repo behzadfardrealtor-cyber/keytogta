@@ -37,7 +37,7 @@ export const areaLinks = [
     description: "Value-focused options, transit access, practical GTA rentals.",
     image: "/scarborough.jpg",
     tag: "Best for value options",
-    rent: "$2,000 - $2,500",
+    rent: "$1,850 - $1,900 (1BR)",
   },
 ];
 
