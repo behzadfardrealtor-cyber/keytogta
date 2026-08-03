@@ -67,9 +67,9 @@ const coveredAreas = [
   },
   {
     name: "Scarborough",
-    range: "$2,000 - $2,500",
-    asOf: "Current listings",
-    note: "No longer the cheapest of the five - that assumption is outdated.",
+    range: "$1,850 - $1,900 (1BR)",
+    asOf: "Aug 3, 2026 (TREB/PropTx MLS via REALM)",
+    note: "Now the cheapest 1-bedroom condo rent of the five - the 'mid-pack' read from earlier in 2026 no longer holds.",
     href: "/rent/scarborough",
     linkLabel: "Full Scarborough guide",
   },
@@ -121,7 +121,7 @@ const faqs = [
   {
     question: "Are there affordable condos for rent in Toronto and the GTA?",
     answer:
-      "\"Affordable\" is relative. Across North York, Markham, and Scarborough, realistic current one-bedroom condo pricing runs $1,950 to $2,500 a month. That's meaningfully below Vaughan or Richmond Hill's current ceilings, but it's not a $1,000-$1,500 budget - see the comparison table above for exact ranges and report months.",
+      "\"Affordable\" is relative. Across North York, Markham, and Scarborough, realistic current one-bedroom condo pricing runs $1,850 to $2,150 a month. That's meaningfully below Vaughan or Richmond Hill's current ceilings, but it's not a $1,000-$1,500 budget - see the comparison table above for exact ranges and report months.",
   },
   {
     question: "What are cheap rent condos in the GTA right now?",
@@ -136,7 +136,7 @@ const faqs = [
   {
     question: "What are Scarborough condos for rent like on price?",
     answer:
-      "Currently $2,000 to $2,500 a month based on current listings - mid-pack among the five areas we cover, not the clear budget leader it's sometimes assumed to be. See our full Scarborough rental guide for a neighbourhood breakdown.",
+      "Currently $1,850 to $1,900 a month for a 1-bedroom condo, based on active TREB/PropTx MLS listings via REALM (licensed agent access, August 3, 2026) - the cheapest of the five areas we cover right now, reversing the \"mid-pack\" estimate this page previously used. See our full Scarborough rental guide for a neighbourhood breakdown.",
   },
   {
     question: "Is Oshawa or Brampton cheaper than Scarborough or Markham?",
@@ -405,10 +405,13 @@ export default function CheapestAreasToRentGTAPage() {
               decline in Ontario (-12.5% year-over-year, liv.rent), and
               currently sits at the low end of this group alongside North
               York. A few months earlier it was the priciest of the five.
-              Scarborough, often assumed to be the budget pick, is currently
-              mid-pack. The honest answer: compare current listings in the
-              specific neighbourhood you want, not last year&apos;s
-              reputation for that area.
+              Scarborough - long assumed to be the budget pick, then
+              corrected to &quot;mid-pack&quot; earlier this year - is
+              actually the cheapest of the five once you use current MLS
+              listing data instead of a stale citywide estimate.
+              The honest answer: compare current listings in the specific
+              neighbourhood you want, not last year&apos;s reputation for
+              that area.
             </p>
           </div>
         </div>
@@ -489,9 +492,11 @@ export default function CheapestAreasToRentGTAPage() {
           </div>
 
           <p className="mt-6 max-w-3xl leading-7 text-white/60">
-            Notice North York and Markham currently sit at the bottom, not
-            Scarborough - that&apos;s a real shift from earlier in 2026, not
-            a typo.
+            Notice Scarborough now sits at the bottom alongside North York
+            and Markham, not in the middle of the pack as earlier 2026
+            figures suggested - rankings here have shifted more than once
+            this year, which is exactly why every figure above has a date
+            next to it.
           </p>
         </div>
       </section>

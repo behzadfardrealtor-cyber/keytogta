@@ -380,7 +380,15 @@ export default function TorontoRentalGuidePage() {
               Toronto but aren&apos;t Toronto. If you specifically want to
               live inside the city of Toronto itself - walking distance to
               the subway, a short ride to downtown, inside the 416 - this
-              guide is for you.
+              guide is for you. If affordability matters more than staying
+              inside Toronto proper,{" "}
+              <Link
+                href="/cheapest-areas-to-rent-gta"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                see how all five covered GTA areas compare on price
+              </Link>
+              .
             </p>
           </div>
         </div>

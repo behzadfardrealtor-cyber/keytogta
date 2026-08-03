@@ -6,6 +6,7 @@ out
 .env.local
 .env*.local
 .env.sentry-build-plugin
+.mcp.json
 .DS_Store
 *.log
 tsconfig.tsbuildinfo

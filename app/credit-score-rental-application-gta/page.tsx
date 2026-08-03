@@ -7,9 +7,9 @@ import PageViewTracker from "../components/PageViewTracker";
 const siteUrl = "https://www.keytogta.ca";
 const pagePath = "/credit-score-rental-application-gta";
 const pageUrl = `${siteUrl}${pagePath}`;
-const title = "GTA Credit Score to Rent: 680+ vs 600+ (2026) | KeyToGTA.ca";
+const title = "What Credit Score Do You Need to Rent in the GTA? (2026) | KeyToGTA.ca";
 const description =
-  "No legal minimum credit score to rent in Ontario. See real 2026 GTA benchmarks by landlord type, plus 6 ways to strengthen a thin or no-credit file.";
+  "No legal minimum in Ontario, but real GTA landlords look for 680+ (property managers) or 600+ (private landlords), plus 6 ways to fix a thin file.";
 
 export const metadata: Metadata = {
   title,

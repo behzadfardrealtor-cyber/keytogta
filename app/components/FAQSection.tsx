@@ -15,6 +15,8 @@ const faqs = [
     question: "Can you help in different GTA areas?",
     answer:
       "Yes. I can help compare areas like North York, Vaughan, Richmond Hill, Markham, and Scarborough based on budget, parking, transit, and lifestyle.",
+    href: "/cheapest-areas-to-rent-gta",
+    linkLabel: "See how these areas compare on affordability",
   },
   {
     question: "Do you help buyers too?",
