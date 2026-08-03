@@ -62,10 +62,8 @@ const areaPages: Record<string, AreaPageData> = {
     ],
     gettingAround:
       "North York is anchored by three subway stations - North York Centre, Sheppard-Yonge, and Finch - all on Line 1. Finch Station also connects to York Region Transit and GO buses, which matters if you work outside downtown Toronto or commute north into York Region.",
-    // TODO: verify current school reputation/ranking claims against TDSB or Fraser
-    // Institute before publishing - not independently sourced as of this draft.
     schoolsNote:
-      "Earl Haig Secondary School, near Yonge and Finch, is one of the more commonly cited draws for renters with older kids considering this part of North York.",
+      "Earl Haig Secondary School (TDSB), near Yonge and Finch, scored 8.9/10 and ranked #23 of 747 Ontario secondary schools - the top 3% province-wide - in the Fraser Institute's 2025 Report Card (based on 2023-24 EQAO data), making it a genuine draw for renters with older kids considering this part of North York.",
   },
   vaughan: {
     name: "Vaughan",
