@@ -42,12 +42,12 @@ export default function PrivacyPolicyPage() {
 
           <p className="mt-8 max-w-3xl leading-8 text-white/72">
             This policy explains what information Key to GTA collects when
-            you visit keytogta.ca, why we collect it, and how it is used. By
+            you visit keytogta.ca, why I collect it, and how it is used. By
             using this site, you agree to the collection and use of
             information as described below.
           </p>
 
-          <h2 className="mt-12 text-2xl font-bold">Information we collect</h2>
+          <h2 className="mt-12 text-2xl font-bold">Information I collect</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-white/72">
             <li>
               Usage data collected automatically through Google Analytics and
@@ -64,13 +64,13 @@ export default function PrivacyPolicyPage() {
             </li>
           </ul>
 
-          <h2 className="mt-12 text-2xl font-bold">How we use this information</h2>
+          <h2 className="mt-12 text-2xl font-bold">How I use this information</h2>
           <p className="mt-4 max-w-3xl leading-8 text-white/72">
-            We use analytics data to understand how visitors use this site so
-            we can improve it. Information submitted through our forms is
+            I use analytics data to understand how visitors use this site so
+            I can improve it. Information submitted through my forms is
             used to review your rental profile, follow up with relevant
             options, and provide the services requested. Form submissions are
-            sent to our team for review and are not sold to third parties.
+            sent to me for review and are not sold to third parties.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Analytics and cookies</h2>
@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="mt-12 text-2xl font-bold">Data retention</h2>
           <p className="mt-4 max-w-3xl leading-8 text-white/72">
-            We keep form submissions for as long as reasonably needed to
+            I keep form submissions for as long as reasonably needed to
             follow up on your rental search and to maintain accurate records.
             Analytics data is retained according to the default retention
             settings of Google Analytics and Microsoft Clarity.
@@ -103,7 +103,7 @@ export default function PrivacyPolicyPage() {
           <p className="mt-4 max-w-3xl leading-8 text-white/72">
             You can browse this site without submitting the Rental Readiness
             form. If you have submitted information and would like it
-            removed or corrected, contact us using the details below.
+            removed or corrected, contact me using the details below.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Contact</h2>
