@@ -203,13 +203,38 @@ const marketQnA = [
   },
   {
     question: "What credit score do you need to rent in the GTA?",
-    answer:
-      "There's no legal minimum credit score in Ontario. In practice, property management companies in Toronto and the GTA typically look for 700+, while independent landlords are often flexible with 600–660 if the rest of the application is strong. Equifax and TransUnion scores can differ by 40+ points for the same person, so check both before applying. A score below 660 doesn't disqualify you — it just shifts what you need to bring: a larger upfront deposit (Ontario law caps this at first and last month's rent), a guarantor, or a written explanation paired with proof of savings. Under the Human Rights Code, a thin or missing credit file (common for newcomers) cannot legally be held against you on its own.",
+    answer: (
+      <>
+        There&apos;s no legal minimum credit score in Ontario — landlords set
+        their own bar, and it varies by landlord type. See our{" "}
+        <Link
+          href="/credit-score-rental-application-gta"
+          className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+        >
+          full credit score guide
+        </Link>{" "}
+        for the 2026 benchmarks by landlord type, and what to do if your file
+        is thin.
+      </>
+    ),
   },
   {
     question: "How competitive is the GTA rental market in 2026?",
-    answer:
-      "Less than the headlines suggest. CMHC reported the GTA's purpose-built rental vacancy rate rose to 3.0% in 2025 — the highest since the pandemic. TRREB recorded 24,012 condo apartment units listed for rent in Q1 2026, up 6% year-over-year, while average one-bedroom rents fell 4.1% to $2,246 and two-bedroom rents fell 3.2% to $2,939 over the same period. Supply has grown faster than demand, driven by record purpose-built rental completions and condo owners renting out units they can't sell profitably. This doesn't mean every unit is easy to get — well-priced units in strong locations still draw multiple applicants — but it does mean 2026 renters generally have more negotiating room and landlords are more open to working with a complete, well-documented application than in 2022–2023.",
+    answer: (
+      <>
+        Less than the headlines suggest — GTA rental supply has grown faster
+        than demand since 2025, giving renters more negotiating room than in
+        2022–2023, though well-priced units in strong locations still move
+        fast. See{" "}
+        <Link
+          href="/cheapest-areas-to-rent-gta"
+          className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+        >
+          current GTA rent data
+        </Link>{" "}
+        for the latest pricing by area.
+      </>
+    ),
   },
   {
     question: "What documents actually get a rental application approved?",

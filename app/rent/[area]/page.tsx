@@ -177,7 +177,7 @@ const areaPages: Record<string, AreaPageData> = {
   },
   scarborough: {
     name: "Scarborough",
-    title: "Scarborough Rentals",
+    title: "Scarborough 1-Bedroom Condo Rentals: $1,850-$1,900/mo",
     priceRange: "$1,850 - $1,900 (1BR)",
     intro:
       "Scarborough is one of the GTA's most practical rental markets - established communities, GO Transit and bus rapid transit access, and generally lower rents than central Toronto for renters prioritizing value.",
