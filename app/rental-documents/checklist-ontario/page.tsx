@@ -176,7 +176,7 @@ const faqs = [
   {
     question: "What credit score do I need to rent an apartment in Toronto?",
     answer:
-      "There's no legal minimum. Property management companies often expect 700+; private landlords are frequently flexible from 600–660 with strong supporting documents.",
+      "There's no legal minimum. Property management companies often expect 680-700+; private landlords are frequently flexible from 600–660 with strong supporting documents.",
   },
   {
     question: "Do I need a guarantor to rent in the GTA?",
