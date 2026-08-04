@@ -14,6 +14,21 @@ const nextConfig: NextConfig = {
     // area guide images in AreaGuidesSection.tsx that opt into it.
     qualities: [60, 75],
   },
+  async redirects() {
+    return [
+      {
+        // Collapses the apex-domain redirect to a single hop. Without this,
+        // Vercel's automatic multi-domain behavior sends http://keytogta.ca
+        // through an intermediate https://keytogta.ca (apex) hop before
+        // reaching https://www.keytogta.ca - GSC flagged the intermediate
+        // apex URL as separately indexed as a result.
+        source: "/:path*",
+        has: [{ type: "host", value: "keytogta.ca" }],
+        destination: "https://www.keytogta.ca/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
