@@ -627,9 +627,16 @@ export default function OntarioTenantRightsPage() {
               >
                 Ontario rental application checklist
               </Link>{" "}
-              for the documents landlords typically expect, or use the Key to
-              GTA Rental Readiness tool to review your budget, income, and
-              documents before you apply.
+              for the documents landlords typically expect - or if you're
+              applying with a guarantor or co-signer, see our{" "}
+              <Link
+                href="/guarantor-vs-cosigner-ontario-rentals"
+                className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+              >
+                guide to how they differ
+              </Link>{" "}
+              - or use the Key to GTA Rental Readiness tool to review your
+              budget, income, and documents before you apply.
             </p>
           </div>
 

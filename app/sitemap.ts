@@ -19,6 +19,7 @@ const contentPages = [
   "ontario-tenant-rights-gta",
   "bill-60-ontario-tenant-changes-2026",
   "cheapest-areas-to-rent-gta",
+  "guarantor-vs-cosigner-ontario-rentals",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

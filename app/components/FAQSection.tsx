@@ -37,6 +37,13 @@ const faqs = [
     href: "/persian-newcomer-neighbourhoods-gta",
     linkLabel: "Read the Persian newcomer neighbourhoods guide",
   },
+  {
+    question: "What's the difference between a guarantor and a co-signer?",
+    answer:
+      "A co-signer is named directly on the lease with liability from day one; a guarantor signs a separate agreement and is only liable if the tenant defaults. Landlords in the GTA ask for either when income, credit, or rental history alone doesn't clear their bar.",
+    href: "/guarantor-vs-cosigner-ontario-rentals",
+    linkLabel: "See the full guarantor vs. co-signer guide",
+  },
 ];
 
 export default function FAQSection() {

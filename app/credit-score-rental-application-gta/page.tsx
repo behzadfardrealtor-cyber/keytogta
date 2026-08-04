@@ -568,6 +568,17 @@ export default function CreditScoreRentalApplicationPage() {
             </Link>
             .
           </p>
+          <p className="mt-4 max-w-3xl leading-7 text-[#3D352D]">
+            If a guarantor is part of the plan, see our{" "}
+            <Link
+              href="/guarantor-vs-cosigner-ontario-rentals"
+              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+            >
+              guarantor vs. co-signer guide
+            </Link>{" "}
+            for the legal difference between the two and what each one is
+            actually liable for.
+          </p>
         </div>
       </section>
 
