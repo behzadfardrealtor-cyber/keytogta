@@ -604,7 +604,16 @@ export default function OntarioTenantRightsPage() {
               >
                 Bill 60 tenant changes guide
               </Link>{" "}
-              for exactly what's in force now versus what's still coming.
+              for exactly what's in force now versus what's still coming. If
+              you've received an N12 for landlord's own use, see our{" "}
+              <Link
+                href="/n12-eviction-notice-ontario-guide"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                N12 eviction notice guide
+              </Link>{" "}
+              for the compensation rules, qualifying family members, and what
+              to do if you suspect bad faith.
             </p>
           </div>
         </div>

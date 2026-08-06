@@ -20,6 +20,7 @@ const contentPages = [
   "bill-60-ontario-tenant-changes-2026",
   "cheapest-areas-to-rent-gta",
   "guarantor-vs-cosigner-ontario-rentals",
+  "n12-eviction-notice-ontario-guide",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

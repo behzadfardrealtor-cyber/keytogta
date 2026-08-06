@@ -512,9 +512,24 @@ export default function Bill60OntarioTenantChangesPage() {
               </div>
 
               {section.id === "n12-compensation" && (
-                <p className="mt-4 max-w-3xl rounded-2xl border border-white/12 bg-white/[0.04] p-5 text-sm leading-6 text-white/60">
-                  {n13Note}
-                </p>
+                <>
+                  <p className="mt-4 max-w-3xl rounded-2xl border border-white/12 bg-white/[0.04] p-5 text-sm leading-6 text-white/60">
+                    {n13Note}
+                  </p>
+                  <p className="mt-4 max-w-3xl text-sm leading-6 text-white/60">
+                    For the full breakdown of N12 rules - who actually
+                    qualifies as a family member, the current compensation
+                    requirement, and what to do if you suspect bad faith -
+                    see our{" "}
+                    <Link
+                      href="/n12-eviction-notice-ontario-guide"
+                      className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                    >
+                      N12 eviction notice guide
+                    </Link>
+                    .
+                  </p>
+                </>
               )}
             </div>
           ))}
