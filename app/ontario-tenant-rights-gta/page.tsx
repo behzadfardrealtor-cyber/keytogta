@@ -517,6 +517,20 @@ export default function OntarioTenantRightsPage() {
               ))}
             </div>
           </div>
+
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-white/50">
+            The one-month cap above is what a landlord can require - a
+            tenant can still choose to voluntarily offer more, and that&apos;s
+            legal in specific circumstances. See our{" "}
+            <Link
+              href="/rent-toronto-without-canadian-credit"
+              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+            >
+              guide to renting without Canadian credit history
+            </Link>{" "}
+            for the required-vs-voluntary distinction and why a landlord
+            can&apos;t relabel a requirement as a request.
+          </p>
         </div>
       </section>
 

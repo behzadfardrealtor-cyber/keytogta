@@ -380,9 +380,18 @@ export default function NewcomerRentalHelpPage() {
               >
                 credit score guide
               </Link>
-              . This page focuses on what's different by newcomer status,
-              plus how to avoid the rental scams that disproportionately
-              target people new to the GTA.
+              ; and if you're weighing whether to offer a landlord prepaid
+              rent to strengthen your file, see our{" "}
+              <Link
+                href="/rent-toronto-without-canadian-credit"
+                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              >
+                guide to renting without Canadian credit history
+              </Link>{" "}
+              for the legal line between what a landlord can require and
+              what you can voluntarily offer. This page focuses on what's
+              different by newcomer status, plus how to avoid the rental
+              scams that disproportionately target people new to the GTA.
             </p>
           </div>
         </div>

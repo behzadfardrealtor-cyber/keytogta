@@ -561,6 +561,15 @@ export default function GuarantorVsCosignerPage() {
               credit score guide
             </Link>{" "}
             for the fastest ways to build a strong file without a guarantor.
+            If a thin or missing Canadian credit file is the real issue, see
+            our{" "}
+            <Link
+              href="/rent-toronto-without-canadian-credit"
+              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+            >
+              guide to renting without Canadian credit history
+            </Link>{" "}
+            for what actually works instead of a guarantor.
           </p>
         </div>
       </section>

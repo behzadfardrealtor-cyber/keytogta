@@ -21,6 +21,7 @@ const contentPages = [
   "cheapest-areas-to-rent-gta",
   "guarantor-vs-cosigner-ontario-rentals",
   "n12-eviction-notice-ontario-guide",
+  "rent-toronto-without-canadian-credit",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -579,6 +579,18 @@ export default function CreditScoreRentalApplicationPage() {
             for the legal difference between the two and what each one is
             actually liable for.
           </p>
+          <p className="mt-4 max-w-3xl leading-7 text-[#3D352D]">
+            And remember: no Canadian credit history isn&apos;t the same as
+            bad credit. See our{" "}
+            <Link
+              href="/rent-toronto-without-canadian-credit"
+              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+            >
+              guide to renting without Canadian credit history
+            </Link>{" "}
+            for what&apos;s legally protected, and the prepaid-rent rules
+            worth knowing before you offer anything upfront.
+          </p>
         </div>
       </section>
 
