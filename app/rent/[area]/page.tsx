@@ -253,17 +253,17 @@ export default async function AreaPage({
   }
 
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="area_guide_view" params={{ area_name: page.name }} />
-      <header className="border-b border-white/10 px-6 py-5">
+      <header className="border-b border-[#E8E4DD] px-6 py-5">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold text-[#17313A]">
             Key to GTA
           </Link>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5EBDD] px-5 py-3 text-sm font-semibold text-[#070A12]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Check Rental Match
           </Link>
@@ -272,23 +272,23 @@ export default async function AreaPage({
 
       <section className="px-6 py-20">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#D8C7AA]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#2F6F6B]">
             GTA Rental Guide
           </p>
 
-          <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
+          <h1 className="break-words text-5xl font-bold tracking-tight md:text-7xl">
             {page.title}
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#17313A]/72">
             {page.intro}
           </p>
 
-          <p className="mt-4 max-w-3xl text-sm leading-6 text-white/50">
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             Before you apply, see our{" "}
             <Link
               href="/rental-documents/checklist-ontario"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               Ontario rental application checklist
             </Link>{" "}
@@ -296,31 +296,31 @@ export default async function AreaPage({
             {page.name} compares to other GTA areas on price?{" "}
             <Link
               href="/cheapest-areas-to-rent-gta"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               See the full affordability comparison
             </Link>
             .
           </p>
 
-          <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.06] p-8">
-            <p className="text-sm uppercase tracking-[0.25em] text-white/50">
+          <div className="mt-8 rounded-[2rem] border border-[#E8E4DD] bg-white p-8 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
+            <p className="text-sm uppercase tracking-[0.25em] text-[#17313A]/68">
               Estimated Rental Range
             </p>
 
-            <h2 className="mt-3 text-4xl font-bold text-[#F5EBDD]">
+            <h2 className="mt-3 text-4xl font-bold text-[#2F6F6B]">
               {page.priceRange}
             </h2>
           </div>
 
           {page.rentDetail && (
             <div className="mt-8">
-              <h2 className="text-2xl font-bold">What you'll actually pay</h2>
-              <p className="mt-3 max-w-3xl leading-7 text-white/70">
+              <h2 className="text-2xl font-bold">What you&apos;ll actually pay</h2>
+              <p className="mt-3 max-w-3xl leading-7 text-[#17313A]/72">
                 {page.rentDetail}
               </p>
               {page.rentSource && (
-                <p className="mt-3 max-w-3xl text-xs leading-5 text-white/40">
+                <p className="mt-3 max-w-3xl text-xs leading-5 text-[#17313A]/68">
                   {page.rentSource}
                 </p>
               )}
@@ -334,10 +334,10 @@ export default async function AreaPage({
                 {page.neighbourhoods.map((item) => (
                   <div
                     key={item.name}
-                    className="rounded-2xl border border-white/10 bg-white/[0.05] p-5"
+                    className="rounded-2xl border border-[#E8E4DD] bg-white p-5 shadow-[0_18px_50px_rgba(23,49,58,.06)]"
                   >
-                    <h3 className="font-bold text-[#F5EBDD]">{item.name}</h3>
-                    <p className="mt-2 text-sm leading-6 text-white/70">
+                    <h3 className="font-bold text-[#2F6F6B]">{item.name}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[#17313A]/72">
                       {item.description}
                     </p>
                   </div>
@@ -350,7 +350,7 @@ export default async function AreaPage({
                 {page.areas.map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 text-white/80"
+                    className="rounded-2xl border border-[#E8E4DD] bg-white p-5 text-[#17313A]/72 shadow-[0_18px_50px_rgba(23,49,58,.06)]"
                   >
                     {item}
                   </div>
@@ -362,14 +362,14 @@ export default async function AreaPage({
           {page.gettingAround && (
             <div className="mt-10">
               <h2 className="text-2xl font-bold">Getting around</h2>
-              <p className="mt-3 max-w-3xl leading-7 text-white/70">
+              <p className="mt-3 max-w-3xl leading-7 text-[#17313A]/72">
                 {page.gettingAround}
               </p>
             </div>
           )}
 
           {page.schoolsNote && (
-            <p className="mt-4 max-w-3xl text-sm leading-6 text-white/60">
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
               {page.schoolsNote}
             </p>
           )}
@@ -377,7 +377,7 @@ export default async function AreaPage({
           <div className="mt-10">
             <Link
               href="/#rental-match"
-              className="inline-flex rounded-2xl bg-[#F5EBDD] px-6 py-4 font-semibold text-[#070A12]"
+              className="inline-flex rounded-2xl bg-[#2F6F6B] px-6 py-4 font-semibold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
             >
               Start Rental Match
             </Link>
@@ -385,7 +385,7 @@ export default async function AreaPage({
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }
