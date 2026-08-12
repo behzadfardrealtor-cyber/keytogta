@@ -23,7 +23,7 @@ export default function ReviewsSection() {
   ];
 
   return (
-    <div className="relative mx-auto mt-8 grid max-w-7xl gap-4 lg:grid-cols-[1.4fr_1fr]">
+    <div className="relative mx-auto mt-8 grid max-w-7xl items-start gap-4 lg:grid-cols-[1.4fr_1fr]">
       <div className="glass-card rounded-[2rem] p-5">
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="text-lg font-bold">Real Google Reviews</h2>

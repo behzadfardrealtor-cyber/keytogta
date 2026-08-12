@@ -81,7 +81,7 @@ export default function Home() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+          <nav className="hidden items-center gap-3 text-xs text-[#17313A]/72 md:flex lg:gap-7 lg:text-sm">
             <a href="#areas" className="hover:text-[#17313A]">Areas</a>
             <a href="#process" className="hover:text-[#17313A]">Process</a>
             <a href="#services" className="hover:text-[#17313A]">Services</a>
@@ -92,7 +92,7 @@ export default function Home() {
 
           <a
             href="#rental-match"
-            className="rounded-full bg-[#2F6F6B] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
+            className="rounded-full bg-[#2F6F6B] px-4 py-2.5 text-xs font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A] lg:px-6 lg:py-3 lg:text-sm"
           >
             Get My Rental Shortlist →
           </a>
@@ -204,7 +204,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="float-side absolute -bottom-5 right-[-1rem] rounded-2xl border border-[#2F6F6B]/24 bg-white/94 p-4 text-[#17313A] shadow-[0_18px_45px_rgba(23,49,58,.14)] backdrop-blur">
+              <div className="float-side static mt-3 rounded-2xl border border-[#2F6F6B]/24 bg-white/94 p-4 text-[#17313A] shadow-[0_18px_45px_rgba(23,49,58,.14)] backdrop-blur sm:absolute sm:-bottom-5 sm:right-[-1rem] sm:mt-0">
                 <p className="font-bold">Rental plan note</p>
                 <p className="text-sm text-[#17313A]/62">Shortlist after profile review</p>
               </div>

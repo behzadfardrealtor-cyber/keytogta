@@ -46,7 +46,7 @@ export default function AreaGuidesSection() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-5">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
             {areaLinks.map((area, index) => (
               <Link
                 key={area.href}
