@@ -246,7 +246,7 @@ const structuredData = [
 
 export default function CheapestAreasToRentGTAPage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="cheapest_areas_view" />
       <script
         type="application/ld+json"
@@ -255,38 +255,38 @@ export default function CheapestAreasToRentGTAPage() {
         }}
       />
 
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/85 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#compare" className="hover:text-white">
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#compare" className="hover:text-[#17313A]">
               Compare
             </a>
-            <a href="#outside-areas" className="hover:text-white">
+            <a href="#outside-areas" className="hover:text-[#17313A]">
               Oshawa &amp; Brampton
             </a>
-            <a href="#budget" className="hover:text-white">
+            <a href="#budget" className="hover:text-[#17313A]">
               Under $1,000?
             </a>
-            <a href="#negotiating" className="hover:text-white">
+            <a href="#negotiating" className="hover:text-[#17313A]">
               Negotiating
             </a>
-            <a href="#faq" className="hover:text-white">
+            <a href="#faq" className="hover:text-[#17313A]">
               FAQ
             </a>
           </nav>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5C979] px-5 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Check Readiness
           </Link>
@@ -296,18 +296,18 @@ export default function CheapestAreasToRentGTAPage() {
       <section className="relative overflow-hidden px-6 py-8 md:py-12 lg:py-14">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(7,10,18,0.98)_0%,rgba(7,10,18,0.82)_48%,rgba(36,27,20,0.72)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.86)_48%,rgba(220,232,227,0.68)_100%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,24rem)] lg:items-center">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C7AA] md:text-sm">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#2F6F6B] md:text-sm">
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
               Which GTA area is cheapest to rent in? North York, Markham,
               Scarborough, Vaughan &amp; Richmond Hill compared (2026)
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
               Rent in the GTA doesn&apos;t sit still. The area that was
               cheapest six months ago isn&apos;t necessarily cheapest now.
               Here&apos;s what these five markets actually cost today, what
@@ -318,19 +318,19 @@ export default function CheapestAreasToRentGTAPage() {
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
                 Check My Rental Readiness
               </Link>
               <a
                 href="#compare"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
                 Compare the Five Areas
               </a>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/52">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               Figures below are pulled from liv.rent&apos;s Ontario Rent
               Reports (January-June 2026) and current listing data. Every
               number has its report month next to it - rents shift enough
@@ -338,7 +338,7 @@ export default function CheapestAreasToRentGTAPage() {
             </p>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.04))] p-3 shadow-2xl lg:justify-self-end">
+          <div className="relative w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white p-3 shadow-[0_18px_50px_rgba(23,49,58,.08)] lg:justify-self-end">
             <div className="relative h-40 overflow-hidden rounded-[1.5rem] md:h-44 lg:h-40">
               <Image
                 src="/hero-condo.jpg"
@@ -348,11 +348,11 @@ export default function CheapestAreasToRentGTAPage() {
                 sizes="(min-width: 1024px) 24rem, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
             </div>
 
             <div className="p-3 pt-4 md:p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 2026 rent snapshot
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
@@ -363,12 +363,12 @@ export default function CheapestAreasToRentGTAPage() {
                 {heroFactRows.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.07] px-3 py-2.5"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-2.5"
                   >
-                    <span className="text-sm font-semibold text-white/78">
+                    <span className="text-sm font-semibold text-[#17313A]/78">
                       {item.label}
                     </span>
-                    <span className="rounded-full bg-[#F5C979]/16 px-3 py-1 text-xs font-bold text-[#F5C979]">
+                    <span className="rounded-full bg-[#2F6F6B]/12 px-3 py-1 text-xs font-bold text-[#2F6F6B]">
                       {item.status}
                     </span>
                   </div>
@@ -379,7 +379,7 @@ export default function CheapestAreasToRentGTAPage() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/62"
+                    className="rounded-full border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-1.5 text-xs font-semibold text-[#17313A]/68"
                   >
                     {badge}
                   </span>
@@ -392,14 +392,14 @@ export default function CheapestAreasToRentGTAPage() {
 
       <section id="direct-answer" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+          <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Direct Answer
             </p>
             <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
               Is one of these five areas reliably the cheapest?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
               Not right now - and treating it that way would be misleading.
               As of April 2026, Markham posted the steepest one-bedroom rent
               decline in Ontario (-12.5% year-over-year, liv.rent), and
@@ -417,23 +417,23 @@ export default function CheapestAreasToRentGTAPage() {
         </div>
       </section>
 
-      <section id="compare" className="px-6 pb-20">
+      <section id="compare" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Compare
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             What five GTA areas actually cost right now
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             One-bedroom ranges, with the report month next to each so you can
             judge how current it is.
           </p>
 
-          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-white/12 md:block">
+          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white md:block">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-white/[0.06] text-sm font-semibold uppercase tracking-[0.08em] text-[#F5C979]">
+                <tr className="bg-[#F7F7F2] text-sm font-semibold uppercase tracking-[0.08em] text-[#2F6F6B]">
                   <th className="px-6 py-4">Area</th>
                   <th className="px-6 py-4">Current range</th>
                   <th className="px-6 py-4">As of</th>
@@ -444,18 +444,18 @@ export default function CheapestAreasToRentGTAPage() {
                 {coveredAreas.map((area) => (
                   <tr
                     key={area.name}
-                    className="border-t border-white/10 text-white/78"
+                    className="border-t border-[#E8E4DD] text-[#17313A]/78"
                   >
                     <td className="px-6 py-4 font-semibold">
                       <Link
                         href={area.href}
-                        className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                        className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
                       >
                         {area.name}
                       </Link>
                     </td>
                     <td className="px-6 py-4">{area.range}</td>
-                    <td className="px-6 py-4 text-sm text-white/55">
+                    <td className="px-6 py-4 text-sm text-[#17313A]/60">
                       {area.asOf}
                     </td>
                     <td className="px-6 py-4 text-sm">{area.note}</td>
@@ -469,21 +469,21 @@ export default function CheapestAreasToRentGTAPage() {
             {coveredAreas.map((area) => (
               <div
                 key={area.name}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-5"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-5"
               >
-                <p className="text-lg font-bold text-[#F5C979]">
+                <p className="text-lg font-bold text-[#2F6F6B]">
                   {area.name}
                 </p>
-                <p className="mt-2 text-xl font-bold text-white">
+                <p className="mt-2 text-xl font-bold text-[#17313A]">
                   {area.range}
                 </p>
-                <p className="mt-1 text-sm text-white/55">
+                <p className="mt-1 text-sm text-[#17313A]/60">
                   As of {area.asOf}
                 </p>
-                <p className="mt-2 leading-6 text-white/72">{area.note}</p>
+                <p className="mt-2 leading-6 text-[#17313A]/72">{area.note}</p>
                 <Link
                   href={area.href}
-                  className="mt-3 inline-block text-sm font-semibold text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                  className="mt-3 inline-block text-sm font-semibold text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
                 >
                   {area.linkLabel} &rarr;
                 </Link>
@@ -491,7 +491,7 @@ export default function CheapestAreasToRentGTAPage() {
             ))}
           </div>
 
-          <p className="mt-6 max-w-3xl leading-7 text-white/60">
+          <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/68">
             Notice Scarborough now sits at the bottom alongside North York
             and Markham, not in the middle of the pack as earlier 2026
             figures suggested - rankings here have shifted more than once
@@ -501,15 +501,15 @@ export default function CheapestAreasToRentGTAPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Why It Moves
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Why &quot;cheapest&quot; keeps changing
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             GTA-wide, supply has grown faster than demand. CMHC reported the
             region&apos;s purpose-built rental vacancy rate rose to 3.0% in
             2025 - the highest since the pandemic - and TRREB recorded a 6%
@@ -519,8 +519,8 @@ export default function CheapestAreasToRentGTAPage() {
             single area&apos;s ranking can flip in a few report cycles.
             That&apos;s exactly what happened to Markham.
           </p>
-          <div className="mt-6 max-w-3xl rounded-[2rem] bg-black/5 p-6">
-            <p className="leading-7 text-[#3D352D]">
+          <div className="mt-6 max-w-3xl rounded-[2rem] bg-[#F7F7F2] p-6">
+            <p className="leading-7 text-[#17313A]/72">
               <span className="font-bold">Do:</span> re-check current
               listings before assuming an area&apos;s old reputation still
               holds - what was true about Scarborough or Markham a year ago
@@ -530,15 +530,15 @@ export default function CheapestAreasToRentGTAPage() {
         </div>
       </section>
 
-      <section id="outside-areas" className="px-6 py-20">
+      <section id="outside-areas" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Outside Our Covered Areas
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             If you&apos;re open to looking outside these five areas
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Full transparency: if raw affordability is your main goal,
             Oshawa, Brampton, and Ajax currently rent for meaningfully less
             than any of the five areas above. I want to be upfront that I
@@ -550,10 +550,10 @@ export default function CheapestAreasToRentGTAPage() {
             closely.
           </p>
 
-          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-white/12 md:block">
+          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white md:block">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-white/[0.06] text-sm font-semibold uppercase tracking-[0.08em] text-[#F5C979]">
+                <tr className="bg-[#F7F7F2] text-sm font-semibold uppercase tracking-[0.08em] text-[#2F6F6B]">
                   <th className="px-6 py-4">Area</th>
                   <th className="px-6 py-4">Current 1BR average</th>
                   <th className="px-6 py-4">As of</th>
@@ -564,11 +564,11 @@ export default function CheapestAreasToRentGTAPage() {
                 {outsideAreas.map((area) => (
                   <tr
                     key={area.name}
-                    className="border-t border-white/10 text-white/78"
+                    className="border-t border-[#E8E4DD] text-[#17313A]/78"
                   >
                     <td className="px-6 py-4 font-semibold">{area.name}</td>
                     <td className="px-6 py-4">{area.range}</td>
-                    <td className="px-6 py-4 text-sm text-white/55">
+                    <td className="px-6 py-4 text-sm text-[#17313A]/60">
                       {area.asOf}
                     </td>
                     <td className="px-6 py-4 text-sm">{area.note}</td>
@@ -582,23 +582,23 @@ export default function CheapestAreasToRentGTAPage() {
             {outsideAreas.map((area) => (
               <div
                 key={area.name}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-5"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-5"
               >
-                <p className="text-lg font-bold text-[#F5C979]">
+                <p className="text-lg font-bold text-[#2F6F6B]">
                   {area.name}
                 </p>
-                <p className="mt-2 text-xl font-bold text-white">
+                <p className="mt-2 text-xl font-bold text-[#17313A]">
                   {area.range}
                 </p>
-                <p className="mt-1 text-sm text-white/55">
+                <p className="mt-1 text-sm text-[#17313A]/60">
                   As of {area.asOf}
                 </p>
-                <p className="mt-2 leading-6 text-white/72">{area.note}</p>
+                <p className="mt-2 leading-6 text-[#17313A]/72">{area.note}</p>
               </div>
             ))}
           </div>
 
-          <p className="mt-6 max-w-3xl leading-7 text-white/60">
+          <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/68">
             These numbers move fast, and I haven&apos;t walked these
             buildings or neighbourhoods personally. If you&apos;re seriously
             considering one, verify current listings yourself on Rentals.ca
@@ -607,8 +607,8 @@ export default function CheapestAreasToRentGTAPage() {
             GTA markets covered on this site.
           </p>
 
-          <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-6">
-            <p className="leading-7 text-white/85">
+          <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6">
+            <p className="leading-7 text-[#17313A]/85">
               <span className="font-bold">Do:</span> if commute time matters,
               check GO Transit schedules from these areas before rent alone
               decides it - the commute cost and time can offset the rent
@@ -618,9 +618,9 @@ export default function CheapestAreasToRentGTAPage() {
         </div>
       </section>
 
-      <section id="budget" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="budget" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Budget Reality Check
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -628,9 +628,9 @@ export default function CheapestAreasToRentGTAPage() {
           </h2>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <article className="rounded-[2rem] bg-black/5 p-6">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <h3 className="text-xl font-bold">Under $1,000</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Not a normal private apartment in any of these areas - the
                 cheapest current one-bedroom averages we can verify sit
                 around $1,587 (Oshawa). If $1,000 is your ceiling, the
@@ -639,9 +639,9 @@ export default function CheapestAreasToRentGTAPage() {
                 building - not a self-contained condo.
               </p>
             </article>
-            <article className="rounded-[2rem] bg-black/5 p-6">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <h3 className="text-xl font-bold">Around $1,500</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Tight, but more realistic - usually a basement apartment in
                 an older building, a bachelor or studio outside the newer
                 condo stock, or splitting a two-bedroom condo with a roommate
@@ -653,8 +653,8 @@ export default function CheapestAreasToRentGTAPage() {
             </article>
           </div>
 
-          <div className="mt-6 max-w-3xl rounded-[2rem] bg-black/5 p-6">
-            <p className="leading-7 text-[#3D352D]">
+          <div className="mt-6 max-w-3xl rounded-[2rem] bg-[#F7F7F2] p-6">
+            <p className="leading-7 text-[#17313A]/72">
               <span className="font-bold">Do:</span> if $1,500 is your real
               ceiling, search shared-unit and basement-unit listings
               specifically rather than standard condo listings.
@@ -663,15 +663,15 @@ export default function CheapestAreasToRentGTAPage() {
         </div>
       </section>
 
-      <section id="negotiating" className="px-6 py-20">
+      <section id="negotiating" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Renewal Strategy
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Negotiating rent at renewal in today&apos;s market
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             This works differently depending on who owns your unit. If
             you&apos;re renting an individually-owned condo or a house, the
             landlord is usually one person carrying a mortgage on that
@@ -684,13 +684,13 @@ export default function CheapestAreasToRentGTAPage() {
             negotiate from - see our{" "}
             <Link
               href="/ontario-tenant-rights-gta"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               Ontario tenant rights guide
             </Link>{" "}
             for how that guideline actually applies.
           </p>
-          <p className="mt-4 max-w-3xl leading-8 text-white/70">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             If you&apos;re in a large purpose-built rental building with an
             in-house leasing office, this is a different conversation -
             pricing and incentives are usually set centrally across the whole
@@ -700,8 +700,8 @@ export default function CheapestAreasToRentGTAPage() {
             this one.
           </p>
 
-          <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-6">
-            <p className="leading-7 text-white/85">
+          <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6">
+            <p className="leading-7 text-[#17313A]/85">
               <span className="font-bold">Do:</span> before your renewal
               conversation, pull two or three current comparable listings in
               your own building or complex - that&apos;s the strongest
@@ -712,17 +712,17 @@ export default function CheapestAreasToRentGTAPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Next Step
             </p>
             <h2 className="text-3xl font-bold md:text-5xl">
               Comparables change monthly - know which one&apos;s actually
               current
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Before you commit anywhere in North York, Markham, Scarborough,
               Vaughan, or Richmond Hill - or weighing Scarborough against
               Oshawa - use the Key to GTA Rental Readiness tool to check your
@@ -731,17 +731,17 @@ export default function CheapestAreasToRentGTAPage() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#070A12] p-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5C979]">
+          <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
               Free readiness check
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-white/75">
               It takes a few minutes and gives you a clearer view of where
               your budget actually lands, and what to prepare next.
             </p>
             <Link
               href="/#rental-match"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#F5C979] px-6 py-4 text-center font-bold text-[#070A12]"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
               Start Rental Readiness
             </Link>
@@ -749,9 +749,9 @@ export default function CheapestAreasToRentGTAPage() {
         </div>
       </section>
 
-      <section id="faq" className="px-6 py-20">
+      <section id="faq" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
           <h2 className="text-3xl font-bold md:text-5xl">
@@ -762,17 +762,17 @@ export default function CheapestAreasToRentGTAPage() {
             {faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-xl font-bold">{faq.question}</h3>
-                <p className="mt-3 leading-7 text-white/70">{faq.answer}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{faq.answer}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }
