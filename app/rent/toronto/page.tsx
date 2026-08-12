@@ -206,7 +206,7 @@ const structuredData = [
 
 export default function TorontoRentalGuidePage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="toronto_rental_guide_view" />
       <script
         type="application/ld+json"
@@ -215,32 +215,32 @@ export default function TorontoRentalGuidePage() {
         }}
       />
 
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/85 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#compare" className="hover:text-white">
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#compare" className="hover:text-[#17313A]">
               Compare
             </a>
-            <a href="#downtown" className="hover:text-white">
+            <a href="#downtown" className="hover:text-[#17313A]">
               Neighbourhoods
             </a>
-            <a href="#scams" className="hover:text-white">
+            <a href="#scams" className="hover:text-[#17313A]">
               Scam Safety
             </a>
           </nav>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5C979] px-5 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Get My Rental Shortlist
           </Link>
@@ -250,17 +250,17 @@ export default function TorontoRentalGuidePage() {
       <section className="relative overflow-hidden px-6 py-8 md:py-12 lg:py-14">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(7,10,18,0.98)_0%,rgba(7,10,18,0.82)_48%,rgba(36,27,20,0.72)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.86)_48%,rgba(220,232,227,0.68)_100%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,24rem)] lg:items-center">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C7AA] md:text-sm">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#2F6F6B] md:text-sm">
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
               Renting in Toronto: a neighbourhood-by-neighbourhood guide (2026)
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
               Toronto proper isn&apos;t one neighbourhood. It&apos;s a patchwork
               of very different pockets: the glass towers of the Financial
               District, the walk-up apartments of the Danforth, the family
@@ -271,19 +271,19 @@ export default function TorontoRentalGuidePage() {
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
                 Get My Rental Shortlist
               </Link>
               <a
                 href="#compare"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
                 Compare Neighbourhoods
               </a>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/52">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               Rent figures below come from liv.rent&apos;s Ontario Rent Report
               (municipality-level) and Zumper&apos;s neighbourhood-level data,
               dated August 2026 unless noted. Rents shift monthly - the date
@@ -291,8 +291,8 @@ export default function TorontoRentalGuidePage() {
             </p>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.04))] p-3 shadow-2xl lg:justify-self-end">
-            <div className="relative h-40 overflow-hidden rounded-[1.5rem] md:h-44 lg:h-40">
+          <div className="relative w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white shadow-[0_18px_50px_rgba(23,49,58,.08)] lg:justify-self-end">
+            <div className="relative h-40 overflow-hidden rounded-t-[2rem] md:h-44 lg:h-40">
               <Image
                 src="/hero-condo.jpg"
                 alt="Toronto condo building for rent"
@@ -302,11 +302,11 @@ export default function TorontoRentalGuidePage() {
                 sizes="(min-width: 1024px) 24rem, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
             </div>
 
             <div className="p-3 pt-4 md:p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 2026 Toronto snapshot
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
@@ -317,12 +317,12 @@ export default function TorontoRentalGuidePage() {
                 {heroFactRows.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.07] px-3 py-2.5"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-2.5"
                   >
-                    <span className="text-sm font-semibold text-white/78">
+                    <span className="text-sm font-semibold text-[#17313A]/78">
                       {item.label}
                     </span>
-                    <span className="rounded-full bg-[#F5C979]/16 px-3 py-1 text-xs font-bold text-[#F5C979]">
+                    <span className="rounded-full bg-[#2F6F6B]/12 px-3 py-1 text-xs font-bold text-[#2F6F6B]">
                       {item.status}
                     </span>
                   </div>
@@ -333,7 +333,7 @@ export default function TorontoRentalGuidePage() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/62"
+                    className="rounded-full border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-1.5 text-xs font-semibold text-[#17313A]/68"
                   >
                     {badge}
                   </span>
@@ -346,32 +346,32 @@ export default function TorontoRentalGuidePage() {
 
       <section id="direct-answer" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+          <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Direct Answer
             </p>
             <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
               &quot;GTA&quot; and &quot;Toronto&quot; are not the same search
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
               If you&apos;ve been looking at rental guides for{" "}
               <Link
                 href="/rent/markham"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Markham
               </Link>
               ,{" "}
               <Link
                 href="/rent/vaughan"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Vaughan
               </Link>
               , or{" "}
               <Link
                 href="/rent/richmond-hill"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Richmond Hill
               </Link>{" "}
@@ -384,7 +384,7 @@ export default function TorontoRentalGuidePage() {
               inside Toronto proper,{" "}
               <Link
                 href="/cheapest-areas-to-rent-gta"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 see how all five covered GTA areas compare on price
               </Link>
@@ -396,17 +396,17 @@ export default function TorontoRentalGuidePage() {
 
       <section id="compare" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Compare
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Toronto neighbourhoods at a glance
           </h2>
 
-          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-white/12 md:block">
+          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white md:block">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-white/[0.06] text-sm font-semibold uppercase tracking-[0.08em] text-[#F5C979]">
+                <tr className="bg-[#F7F7F2] text-sm font-semibold uppercase tracking-[0.08em] text-[#2F6F6B]">
                   <th className="px-6 py-4">Neighbourhood</th>
                   <th className="px-6 py-4">Avg. 1-Bed</th>
                   <th className="px-6 py-4">As of</th>
@@ -418,11 +418,11 @@ export default function TorontoRentalGuidePage() {
                 {comparisonRows.map((row) => (
                   <tr
                     key={row.area}
-                    className="border-t border-white/10 text-white/78"
+                    className="border-t border-[#E8E4DD] text-[#17313A]/78"
                   >
                     <td className="px-6 py-4 font-semibold">{row.area}</td>
                     <td className="px-6 py-4">{row.rent}</td>
-                    <td className="px-6 py-4 text-sm text-white/55">
+                    <td className="px-6 py-4 text-sm text-[#17313A]/60">
                       {row.asOf}
                     </td>
                     <td className="px-6 py-4 text-sm">{row.trend}</td>
@@ -437,18 +437,18 @@ export default function TorontoRentalGuidePage() {
             {comparisonRows.map((row) => (
               <div
                 key={row.area}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-5"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-5 shadow-[0_18px_50px_rgba(23,49,58,.06)]"
               >
-                <p className="text-lg font-bold text-[#F5C979]">{row.area}</p>
-                <p className="mt-2 text-xl font-bold text-white">{row.rent}</p>
-                <p className="mt-1 text-sm text-white/55">As of {row.asOf}</p>
-                <p className="mt-2 leading-6 text-white/72">{row.trend}</p>
-                <p className="mt-2 text-sm text-white/60">{row.bestFor}</p>
+                <p className="text-lg font-bold text-[#2F6F6B]">{row.area}</p>
+                <p className="mt-2 text-xl font-bold text-[#17313A]">{row.rent}</p>
+                <p className="mt-1 text-sm text-[#17313A]/60">As of {row.asOf}</p>
+                <p className="mt-2 leading-6 text-[#17313A]/72">{row.trend}</p>
+                <p className="mt-2 text-sm text-[#17313A]/68">{row.bestFor}</p>
               </div>
             ))}
           </div>
 
-          <p className="mt-6 max-w-3xl text-sm leading-6 text-white/52">
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             Figures above come from liv.rent&apos;s Ontario Rent Report
             (municipality-level: Downtown Toronto, Etobicoke) and
             Zumper&apos;s neighbourhood-level data (Midtown, East End, West
@@ -457,24 +457,24 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <section id="downtown" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="downtown" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Downtown Core
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Financial District &amp; Entertainment District
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             This is what most people picture when they say &quot;downtown
             Toronto&quot; - the CN Tower skyline, glass condo towers, and the
             shortest possible commute if you work in the city centre.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">What you&apos;re paying for</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Proximity - and right now, that&apos;s costing you less than
                 you&apos;d think. A one-bedroom averaged $2,096 a month as of
                 January 2026, down roughly 10% year-over-year, with declines
@@ -485,17 +485,17 @@ export default function TorontoRentalGuidePage() {
                 affordable areas on this list, not the most expensive.
               </p>
             </article>
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">Transit</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Transit</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 You&apos;re almost always within walking distance of Line 1,
                 and Union Station puts the rest of the city and the GO
                 network within reach.
               </p>
             </article>
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">Trade-off</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Trade-off</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Smaller units for the money, and building quality varies -
                 older purpose-built rentals tend to have more predictable
                 management, while newer investor-owned condos can have less
@@ -507,15 +507,15 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <section id="midtown" className="px-6 py-20">
+      <section id="midtown" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Midtown
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Yonge-Eglinton &amp; Davisville
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Locals sometimes call this stretch &quot;Young and Eligible&quot;
             - it&apos;s grown into a second downtown over the last decade,
             with the density of the core but a slightly more residential
@@ -523,24 +523,24 @@ export default function TorontoRentalGuidePage() {
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <article className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-              <h3 className="text-xl font-bold">What you&apos;re paying for</h3>
-              <p className="mt-3 leading-7 text-white/70">
+            <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 The same Line 1 subway access as downtown, in a market
                 that&apos;s cooling gently - a one-bedroom averaged $2,125 a
                 month as of August 2026, down about 3% from a year earlier.
               </p>
             </article>
-            <article className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-              <h3 className="text-xl font-bold">Transit</h3>
-              <p className="mt-3 leading-7 text-white/70">
+            <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Transit</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Direct access to Line 1 (Yonge-University), roughly 25
                 minutes to Union Station.
               </p>
             </article>
-            <article className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-              <h3 className="text-xl font-bold">Good to know</h3>
-              <p className="mt-3 leading-7 text-white/70">
+            <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Good to know</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 This area is dense with restaurants and cafés, so
                 you&apos;re not sacrificing convenience for a quieter street
                 and a softening market.
@@ -550,15 +550,15 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <section id="east-end" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="east-end" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             East End
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Danforth &amp; Riverdale
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             If you want character - older brick homes, independent shops, a
             genuine neighbourhood feel - this is where a lot of renters end
             up staying long-term instead of moving every year. Just budget
@@ -567,9 +567,9 @@ export default function TorontoRentalGuidePage() {
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">What you&apos;re paying for</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Riverdale itself averaged $2,586 for a one-bedroom as of
                 August 2026 - above every other area on this list. If
                 that&apos;s outside your budget, East Danforth (a short walk
@@ -579,16 +579,16 @@ export default function TorontoRentalGuidePage() {
                 Riverdale&apos;s core pricing.
               </p>
             </article>
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">Transit</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Transit</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Line 2 (Bloor-Danforth) runs straight through, connecting you
                 to downtown in well under 30 minutes.
               </p>
             </article>
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">Trade-off</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Trade-off</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Older buildings sometimes mean no in-suite laundry or
                 parking, so ask directly before booking a viewing - and
                 don&apos;t assume this area is the &quot;affordable&quot;
@@ -599,23 +599,23 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <section id="etobicoke" className="px-6 py-20">
+      <section id="etobicoke" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Etobicoke
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Toronto&apos;s western edge
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Currently the fastest-moving rental market in this comparison -
             not the value play it&apos;s sometimes assumed to be.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <article className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-              <h3 className="text-xl font-bold">What you&apos;re paying for</h3>
-              <p className="mt-3 leading-7 text-white/70">
+            <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 A one-bedroom averaged $2,176 as of May 2026 - the highest
                 rent-per-square-foot of any area measured in the GTA that
                 month - and prices are climbing fast, up roughly 7% since
@@ -625,17 +625,17 @@ export default function TorontoRentalGuidePage() {
                 reversed.
               </p>
             </article>
-            <article className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-              <h3 className="text-xl font-bold">Transit</h3>
-              <p className="mt-3 leading-7 text-white/70">
+            <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Transit</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Line 2 reaches the eastern part of Etobicoke; further west,
                 you&apos;re more likely relying on buses or a car for the
                 last stretch.
               </p>
             </article>
-            <article className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-              <h3 className="text-xl font-bold">Best for</h3>
-              <p className="mt-3 leading-7 text-white/70">
+            <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Best for</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Renters prioritizing newer buildings and more space per unit
                 who are comfortable with a longer subway ride - just verify
                 today&apos;s price against your budget rather than a
@@ -646,24 +646,24 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <section id="west-end" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="west-end" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             West End
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Parkdale &amp; Liberty Village
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             These two neighbourhoods sit minutes apart but are no longer
             priced alike - worth treating as two separate decisions, not one
             &quot;West End&quot; bucket.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">What you&apos;re paying for</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Parkdale is currently the most affordable neighbourhood in
                 this entire comparison - a one-bedroom averaged $1,974 as of
                 August 2026, flat month-over-month. Liberty Village, by
@@ -671,17 +671,17 @@ export default function TorontoRentalGuidePage() {
                 closer to the Exhibition GO stop, and priced accordingly.
               </p>
             </article>
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">Transit</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Transit</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 Streetcar lines run frequently along Queen and King through
                 both areas; Liberty Village also has GO Transit&apos;s
                 Exhibition stop for quick access west.
               </p>
             </article>
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <h3 className="text-xl font-bold">Good to know</h3>
-              <p className="mt-3 leading-7 text-[#3D352D]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <h3 className="text-xl font-bold text-[#2F6F6B]">Good to know</h3>
+              <p className="mt-3 leading-7 text-[#17313A]/72">
                 If budget is the deciding factor, Parkdale is the clearer
                 pick right now. If you want newer construction and don&apos;t
                 mind paying for it, Liberty Village delivers that at a real
@@ -692,15 +692,15 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <section id="scams" className="px-6 py-20">
+      <section id="scams" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Before You Sign
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Before you sign anything: the scam risk is real
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             This part isn&apos;t optional reading. Toronto&apos;s rental
             market moves fast, and that speed is exactly what scammers count
             on - especially with newcomers who aren&apos;t yet familiar with
@@ -712,31 +712,31 @@ export default function TorontoRentalGuidePage() {
             {scamCases.map((item) => (
               <article
                 key={item.title}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
-                <h3 className="text-xl font-bold text-[#F5C979]">
+                <h3 className="text-xl font-bold text-[#17313A]">
                   {item.title}
                 </h3>
-                <p className="mt-3 leading-7 text-white/70">{item.detail}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{item.detail}</p>
               </article>
             ))}
           </div>
 
-          <div className="mt-10 rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8">
-            <h3 className="text-xl font-bold text-[#F5C979]">
+          <div className="mt-10 rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-8 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
+            <h3 className="text-xl font-bold text-[#2F6F6B]">
               A few non-negotiables
             </h3>
             <ul className="mt-5 space-y-3">
               {nonNegotiables.map((item) => (
-                <li key={item} className="flex gap-3 leading-7 text-white/85">
-                  <span className="text-[#F5C979]">•</span>
+                <li key={item} className="flex gap-3 leading-7 text-[#17313A]/85">
+                  <span className="text-[#2F6F6B]">•</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <p className="mt-6 max-w-3xl leading-7 text-white/60">
+          <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/68">
             This is the difference between finding a listing on your own and
             having someone verify it for you. A licensed agent reviewing the
             paperwork, confirming the landlord is who they say they are, and
@@ -748,16 +748,16 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Next Step
             </p>
             <h2 className="text-3xl font-bold md:text-5xl">
               Ready to look at real units instead of guessing?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Tell me your budget, your must-haves, and which of these
               neighbourhoods you&apos;re leaning toward - I&apos;ll pull
               together a shortlist that actually fits, verify the listings
@@ -765,18 +765,18 @@ export default function TorontoRentalGuidePage() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#070A12] p-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5C979]">
+          <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
               Free readiness check
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-white/75">
               It takes a few minutes and gives you a clearer view of where
               your budget actually lands in Toronto proper, and what to
               prepare next.
             </p>
             <Link
               href="/#rental-match"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#F5C979] px-6 py-4 text-center font-bold text-[#070A12]"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
               Get My Rental Shortlist
             </Link>
@@ -784,7 +784,7 @@ export default function TorontoRentalGuidePage() {
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }
