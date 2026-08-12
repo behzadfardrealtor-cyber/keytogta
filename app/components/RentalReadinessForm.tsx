@@ -49,6 +49,30 @@ function FieldLabel({
   );
 }
 
+function getFieldControlClassName(hasError = false) {
+  return `rounded-2xl border bg-white p-4 font-normal ${
+    hasError ? "border-red-500" : "border-[#17313A]/15"
+  }`;
+}
+
+function getScorePreviewClassName(score: number) {
+  if (score >= 85) return "mt-3 text-4xl font-bold text-green-700";
+  if (score >= 70) return "mt-3 text-4xl font-bold text-amber-700";
+  if (score >= 50) return "mt-3 text-4xl font-bold text-amber-800";
+  return "mt-3 text-4xl font-bold text-red-700";
+}
+
+function getStatusClassName(status: string) {
+  const isErrorStatus =
+    status.toLowerCase().includes("wrong") ||
+    status.toLowerCase().includes("required") ||
+    status.toLowerCase().includes("fix");
+
+  return isErrorStatus
+    ? "mt-5 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-medium text-red-800"
+    : "mt-5 rounded-2xl border border-green-200 bg-green-50 p-4 text-sm font-medium text-green-800";
+}
+
 export default function RentalReadinessForm({
   approvalReport,
   fieldErrors,
@@ -69,49 +93,52 @@ export default function RentalReadinessForm({
   step,
   updateField,
 }: RentalReadinessFormProps) {
+  const scorePreviewClassName = getScorePreviewClassName(scorePreview);
+  const statusClassName = getStatusClassName(status);
+
   return (
     <section id="rental-match" className="px-6 pb-24">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-8">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+        <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-8 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Rental Readiness
           </p>
 
           <h2 className="text-3xl font-bold md:text-5xl">Check your approval strength</h2>
 
-          <p className="mt-5 leading-8 text-white/70">
+          <p className="mt-5 leading-8 text-[#17313A]/70">
             Answer a few key questions to understand your rental readiness before booking viewings or submitting offers.
           </p>
 
-          <div className="mt-8 rounded-2xl bg-white/[0.07] p-6">
-            <p className="text-sm uppercase tracking-[0.2em] text-white/50">Approval Strength Preview</p>
+          <div className="mt-8 rounded-2xl bg-[#DCE8E3] p-6">
+            <p className="text-sm uppercase tracking-[0.2em] text-[#17313A]/55">Approval Strength Preview</p>
             {form.income.trim() && form.credit.trim() ? (
               <>
-                <p className="mt-3 text-4xl font-bold text-[#F5EBDD]">{scorePreview}/100</p>
-                <p className="mt-2 text-white/70">{resultPreview}</p>
+                <p className={scorePreviewClassName}>{scorePreview}/100</p>
+                <p className="mt-2 text-[#17313A]/70">{resultPreview}</p>
               </>
             ) : (
-              <p className="mt-3 text-2xl font-semibold text-white/50">
+              <p className="mt-3 text-2xl font-semibold text-[#17313A]/55">
                 Complete the form to see your score
               </p>
             )}
-            <p className="mt-3 text-sm leading-6 text-white/55">
+            <p className="mt-3 text-sm leading-6 text-[#17313A]/58">
               {approvalReport.rentRatioLabel}
             </p>
-            <p className="mt-3 text-xs uppercase tracking-[0.18em] text-[#D8C7AA]">
+            <p className="mt-3 text-xs uppercase tracking-[0.18em] text-[#2F6F6B]">
               Suggested rent range
             </p>
-            <p className="mt-1 font-semibold text-white/85">
+            <p className="mt-1 font-semibold text-[#17313A]/85">
               {approvalReport.recommendedRentRange}
             </p>
-            <p className="mt-2 text-xs leading-5 text-white/55">
+            <p className="mt-2 text-xs leading-5 text-[#17313A]/58">
               Comfort range only - not a maximum rent.
             </p>
           </div>
 
-          <div className="mt-6 rounded-2xl border border-white/12 bg-white/[0.04] p-5">
+          <div className="mt-6 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-5">
             <h3 className="font-bold">Documents that usually help</h3>
-            <p className="mt-3 text-sm leading-6 text-white/60">
+            <p className="mt-3 text-sm leading-6 text-[#17313A]/62">
               Government ID, recent pay stubs, full Equifax report, and proof of funds when needed. Extra documents can be reviewed later.
             </p>
           </div>
@@ -120,9 +147,9 @@ export default function RentalReadinessForm({
         <form
           noValidate
           onSubmit={step === 1 ? onContinue : handleSubmit}
-          className="rounded-[2rem] bg-[#F5EBDD] p-6 text-[#070A12] md:p-8"
+          className="rounded-[2rem] bg-white p-6 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.10)] md:p-8"
         >
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#6E6254]">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#2F6F6B]">
             Step {step} of 2
           </p>
 
@@ -148,7 +175,7 @@ export default function RentalReadinessForm({
               <>
                 <FieldLabel label="Full Name">
                   <input
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName(Boolean(fieldErrors.name))}
                     placeholder="Your full name"
                     value={form.name}
                     onChange={(e) => updateField("name", e.target.value)}
@@ -158,7 +185,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Phone Number">
                   <input
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName(Boolean(fieldErrors.phone))}
                     placeholder="416 555 1234"
                     value={form.phone}
                     onChange={(e) => updateField("phone", e.target.value)}
@@ -168,7 +195,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Email Address" wide>
                   <input
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName(Boolean(fieldErrors.email))}
                     placeholder="you@email.com"
                     value={form.email}
                     onChange={(e) => updateField("email", e.target.value)}
@@ -178,7 +205,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Preferred Area" wide>
                   <select
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName()}
                     value={form.area}
                     onChange={(e) => updateField("area", e.target.value)}
                   >
@@ -193,7 +220,7 @@ export default function RentalReadinessForm({
                 <button
                   type="submit"
                   disabled={!mounted}
-                  className="rounded-2xl bg-[#070A12] px-6 py-4 font-semibold text-white disabled:opacity-60 md:col-span-2"
+                  className="rounded-2xl bg-[#2F6F6B] px-6 py-4 font-semibold text-white transition hover:bg-[#17313A] disabled:opacity-60 md:col-span-2"
                 >
                   {!mounted ? "Loading..." : "Continue"}
                 </button>
@@ -202,7 +229,7 @@ export default function RentalReadinessForm({
               <>
                 <FieldLabel label="Move-in Timeline">
                   <select
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName()}
                     value={form.moveIn}
                     onChange={(e) => updateField("moveIn", e.target.value)}
                   >
@@ -214,7 +241,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Monthly Budget">
                   <input
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName(Boolean(fieldErrors.budget))}
                     type="number" inputMode="numeric" placeholder="Example: 2800"
                     value={form.budget}
                     onChange={(e) => updateField("budget", e.target.value)}
@@ -224,7 +251,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Monthly Income">
                   <input
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName(Boolean(fieldErrors.income))}
                     type="number" inputMode="numeric" placeholder="Example: 7500"
                     value={form.income}
                     onChange={(e) => updateField("income", e.target.value)}
@@ -234,7 +261,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Credit Score">
                   <input
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName(Boolean(fieldErrors.credit))}
                     type="number" inputMode="numeric" placeholder="Example: 720"
                     value={form.credit}
                     onChange={(e) => updateField("credit", e.target.value)}
@@ -244,7 +271,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Pay Stubs Ready?">
                   <select
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName()}
                     value={form.paystubs}
                     onChange={(e) => updateField("paystubs", e.target.value)}
                   >
@@ -255,7 +282,7 @@ export default function RentalReadinessForm({
 
                 <FieldLabel label="Equifax Report Ready?">
                   <select
-                    className="rounded-2xl border border-black/10 bg-white p-4 font-normal"
+                    className={getFieldControlClassName()}
                     value={form.creditReport}
                     onChange={(e) => updateField("creditReport", e.target.value)}
                   >
@@ -267,7 +294,7 @@ export default function RentalReadinessForm({
                 <button
                   type="submit"
                   disabled={isSubmitting || !mounted}
-                  className="rounded-2xl bg-[#070A12] px-6 py-4 font-semibold text-white disabled:opacity-60 md:col-span-2"
+                  className="rounded-2xl bg-[#2F6F6B] px-6 py-4 font-semibold text-white transition hover:bg-[#17313A] disabled:opacity-60 md:col-span-2"
                 >
                   {!mounted ? "Loading..." : isSubmitting ? "Sending..." : "Get My Rental Shortlist"}
                 </button>
@@ -275,7 +302,7 @@ export default function RentalReadinessForm({
                 <button
                   type="button"
                   onClick={onBack}
-                  className="justify-self-start text-sm font-semibold text-black/70 underline underline-offset-2 hover:text-black/70 md:col-span-2"
+                  className="justify-self-start text-sm font-semibold text-[#17313A]/70 underline underline-offset-2 hover:text-[#17313A] md:col-span-2"
                 >
                   ← Back
                 </button>
@@ -284,7 +311,7 @@ export default function RentalReadinessForm({
           </div>
 
           {status && (
-            <p className="mt-5 rounded-2xl bg-black/5 p-4 text-sm font-medium">
+              <p className={statusClassName}>
               {status}
             </p>
           )}

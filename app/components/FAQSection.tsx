@@ -49,8 +49,8 @@ const faqs = [
 export default function FAQSection() {
   return (
       <section id="faq" className="px-6 pb-24">
-        <div className="mx-auto max-w-7xl rounded-[2rem] bg-[#F5EBDD] p-8 text-[#070A12] md:p-10">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+        <div className="mx-auto max-w-7xl rounded-[2rem] bg-[#E8E4DD] p-8 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.08)] md:p-10">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
 
@@ -58,13 +58,13 @@ export default function FAQSection() {
 
           <div className="mt-8 grid gap-4">
             {faqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl bg-black/5 p-5">
+              <div key={faq.question} className="rounded-2xl bg-white/72 p-5">
                 <h3 className="font-bold">{faq.question}</h3>
-                <p className="mt-2 leading-7 text-[#3D352D]">{faq.answer}</p>
+                <p className="mt-2 leading-7 text-[#17313A]/72">{faq.answer}</p>
                 {faq.href && (
                   <Link
                     href={faq.href}
-                    className="mt-2 inline-block text-sm font-semibold text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+                    className="mt-2 inline-block text-sm font-semibold text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
                   >
                     {faq.linkLabel}
                   </Link>

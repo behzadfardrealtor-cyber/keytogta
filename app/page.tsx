@@ -52,7 +52,7 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#070A12] text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[#F7F7F2] text-[#17313A]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -61,40 +61,40 @@ export default function Home() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(160deg,#0B1728_0%,#07111F_45%,#241B14_100%)]"
+        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(160deg,#F7F7F2_0%,#FFFFFF_48%,#DCE8E3_100%)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_14%,rgba(245,201,121,0.20),transparent_30%),linear-gradient(90deg,rgba(7,10,18,0.82)_0%,rgba(7,10,18,0.68)_42%,rgba(7,10,18,0.52)_100%)]"
+        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_14%,rgba(47,111,107,0.14),transparent_30%),linear-gradient(90deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.78)_44%,rgba(220,232,227,0.64)_100%)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-t from-[#070A12]/82 via-[#070A12]/52 to-transparent"
+        className="pointer-events-none fixed inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-t from-[#F7F7F2]/92 via-[#F7F7F2]/60 to-transparent"
       />
       <div className="relative z-10">
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/78 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#areas" className="hover:text-white">Areas</a>
-            <a href="#process" className="hover:text-white">Process</a>
-            <a href="#services" className="hover:text-white">Services</a>
-            <a href="#rental-match" className="hover:text-white">Rental Readiness</a>
-            <a href="#faq" className="hover:text-white">FAQ</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#areas" className="hover:text-[#17313A]">Areas</a>
+            <a href="#process" className="hover:text-[#17313A]">Process</a>
+            <a href="#services" className="hover:text-[#17313A]">Services</a>
+            <a href="#rental-match" className="hover:text-[#17313A]">Rental Readiness</a>
+            <a href="#faq" className="hover:text-[#17313A]">FAQ</a>
+            <a href="#contact" className="hover:text-[#17313A]">Contact</a>
           </nav>
 
           <a
             href="#rental-match"
-            className="rounded-full bg-[#F5C979] px-6 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Get My Rental Shortlist →
           </a>
@@ -102,39 +102,39 @@ export default function Home() {
       </header>
 
       <section className="relative px-6 pb-8 pt-4 md:pb-8 md:pt-5">
-        <div className="absolute left-6 right-6 top-6 h-px bg-gradient-to-r from-transparent via-[#F5C979]/35 to-transparent" />
-        <div className="absolute left-[-12rem] top-0 h-[35rem] w-[35rem] rounded-full bg-[#D8C7AA]/14 blur-3xl" />
-        <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-[#4C7793]/18 blur-3xl" />
-        <div className="absolute bottom-[-10rem] left-[20%] h-[26rem] w-[26rem] rounded-full bg-[#F5C979]/10 blur-3xl" />
+        <div className="absolute left-6 right-6 top-6 h-px bg-gradient-to-r from-transparent via-[#2F6F6B]/22 to-transparent" />
+        <div className="absolute left-[-12rem] top-0 h-[35rem] w-[35rem] rounded-full bg-[#E8E4DD]/60 blur-3xl" />
+        <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-[#DCE8E3]/70 blur-3xl" />
+        <div className="absolute bottom-[-10rem] left-[20%] h-[26rem] w-[26rem] rounded-full bg-white/70 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-2 lg:items-start">
           <div className="lg:pt-1">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#E8E4DD] bg-white/78 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#17313A]/76 shadow-sm">
               CURATED GTA RENTALS - LICENSED AGENT
             </div>
 
             <h1 className="max-w-4xl text-4xl font-black leading-[0.95] tracking-[-0.05em] md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl">
               Stop scrolling. Get a GTA rental shortlist{" "}
-              <span className="bg-gradient-to-r from-[#F8DCA6] to-[#D8A94F] bg-clip-text text-transparent">
+              <span className="text-[#2F6F6B]">
                 that actually fits.
               </span>
             </h1>
 
-            <p className="mt-3 max-w-2xl text-base leading-6 text-white/70 md:text-lg">
+            <p className="mt-3 max-w-2xl text-base leading-6 text-[#17313A]/72 md:text-lg">
               Tell me what you're looking for. I hand-pick rentals that fit you and send them over, so you don't have to search the whole market yourself. You pick, I do the legwork.
             </p>
 
             <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a
                 href="#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center text-base font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.38)] ring-1 ring-[#F8DCA6]/70 transition hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C979] sm:w-auto"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center text-base font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B] sm:w-auto"
               >
                 Get My Rental Shortlist →
               </a>
 
               <a
                 href="#areas"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
                 Explore Areas
               </a>
@@ -142,41 +142,41 @@ export default function Home() {
 
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <div className="glass-card rounded-2xl p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">01</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2F6F6B]">01</p>
                 <h2 className="mt-2 font-bold">Profile Review</h2>
-                <p className="text-sm text-white/55">Know where you stand</p>
+                <p className="text-sm text-[#17313A]/58">Know where you stand</p>
               </div>
               <div className="glass-card rounded-2xl p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">02</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2F6F6B]">02</p>
                 <h2 className="mt-2 font-bold">Area Plan</h2>
-                <p className="text-sm text-white/55">Focus on realistic areas</p>
+                <p className="text-sm text-[#17313A]/58">Focus on realistic areas</p>
               </div>
               <div className="glass-card rounded-2xl p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F5C979]">03</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2F6F6B]">03</p>
                 <h2 className="mt-2 font-bold">Application Path</h2>
-                <p className="text-sm text-white/55">Prepare before applying</p>
+                <p className="text-sm text-[#17313A]/58">Prepare before applying</p>
               </div>
             </div>
 
             <div className="glass-card mt-3 hidden rounded-2xl p-4 lg:grid lg:grid-cols-3 lg:gap-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">Private</p>
-                <p className="mt-1 text-sm font-semibold text-white">Readiness clarity</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">Private</p>
+                <p className="mt-1 text-sm font-semibold text-[#17313A]">Readiness clarity</p>
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">Focused</p>
-                <p className="mt-1 text-sm font-semibold text-white">GTA area strategy</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">Focused</p>
+                <p className="mt-1 text-sm font-semibold text-[#17313A]">GTA area strategy</p>
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">Prepared</p>
-                <p className="mt-1 text-sm font-semibold text-white">Application path</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">Prepared</p>
+                <p className="mt-1 text-sm font-semibold text-[#17313A]">Application path</p>
               </div>
             </div>
           </div>
 
           <div className="grid gap-4">
             <div className="relative">
-              <div className="float-slow relative h-[19rem] w-full overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.04] shadow-2xl md:h-[22rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[22rem]">
+              <div className="float-slow relative h-[19rem] w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white shadow-2xl md:h-[22rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[22rem]">
                 <ImageWithFallback
                   src="/hero-condo.jpg"
                   alt="GTA condo living"
@@ -186,34 +186,34 @@ export default function Home() {
                   sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
                   className="object-cover opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#17313A]/82 via-[#17313A]/18 to-transparent" />
 
-                <div className="absolute left-5 top-5 rounded-2xl bg-[#101827]/86 px-5 py-4 shadow-xl backdrop-blur">
-                  <p className="text-sm text-white/60">Curated for</p>
+                <div className="absolute left-5 top-5 rounded-2xl bg-white/90 px-5 py-4 text-[#17313A] shadow-xl backdrop-blur">
+                  <p className="text-sm text-[#17313A]/60">Curated for</p>
                   <p className="font-bold">You</p>
                 </div>
 
-                <div className="absolute bottom-5 left-5 rounded-2xl bg-[#101827]/86 p-5 shadow-xl backdrop-blur">
+                <div className="absolute bottom-5 left-5 rounded-2xl bg-[#17313A]/90 p-5 text-white shadow-xl backdrop-blur">
                   <h3 className="text-xl font-bold">GTA Condo Living</h3>
                   <p className="mt-1 text-sm text-white/60">Find the right fit in the right area.</p>
                 </div>
 
                 <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
-                  <span className="h-2 w-6 rounded-full bg-[#F5C979]" />
-                  <span className="h-2 w-2 rounded-full bg-white/50" />
-                  <span className="h-2 w-2 rounded-full bg-white/50" />
-                  <span className="h-2 w-2 rounded-full bg-white/50" />
+                  <span className="h-2 w-6 rounded-full bg-[#2F6F6B]" />
+                  <span className="h-2 w-2 rounded-full bg-white/65" />
+                  <span className="h-2 w-2 rounded-full bg-white/65" />
+                  <span className="h-2 w-2 rounded-full bg-white/65" />
                 </div>
               </div>
 
-              <div className="float-side absolute -bottom-5 right-[-1rem] rounded-2xl border border-[#F5C979]/35 bg-[#241B14]/90 p-4 shadow-[0_0_45px_rgba(245,201,121,.22)] backdrop-blur">
+              <div className="float-side absolute -bottom-5 right-[-1rem] rounded-2xl border border-[#2F6F6B]/24 bg-white/94 p-4 text-[#17313A] shadow-[0_18px_45px_rgba(23,49,58,.14)] backdrop-blur">
                 <p className="font-bold">Rental plan note</p>
-                <p className="text-sm text-white/60">Shortlist after profile review</p>
+                <p className="text-sm text-[#17313A]/62">Shortlist after profile review</p>
               </div>
             </div>
 
             <div className="glass-card rounded-[2rem] p-6 text-center lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
-              <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#F5C979]/60 bg-white/[0.08] lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
+              <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#2F6F6B]/32 bg-white lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
                 <ImageWithFallback
                   src="/behzad.jpg"
                   alt="Behzad Fard"
@@ -223,9 +223,9 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h3 className="mt-4 text-2xl font-bold text-[#F5C979] lg:mt-0 2xl:mt-4">Behzad Fard</h3>
-                <p className="text-sm text-white/65">Real Estate Agent | Founder, Key to GTA</p>
-                <p className="mt-3 text-sm leading-6 text-white/58 lg:mt-1 2xl:mt-3">
+                <h3 className="mt-4 text-2xl font-bold text-[#2F6F6B] lg:mt-0 2xl:mt-4">Behzad Fard</h3>
+                <p className="text-sm text-[#17313A]/66">Real Estate Agent | Founder, Key to GTA</p>
+                <p className="mt-3 text-sm leading-6 text-[#17313A]/58 lg:mt-1 2xl:mt-3">
                   Helping newcomers and tenants make confident rental decisions across the GTA.
                 </p>
               </div>
@@ -246,7 +246,7 @@ export default function Home() {
 
       <ContactSection />
 
-      <FooterSection />
+      <FooterSection variant="light" />
           </div>
 </main>
   );

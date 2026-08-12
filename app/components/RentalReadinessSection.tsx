@@ -19,9 +19,9 @@ function getScoreStyle(score: number) {
       label: "Strong Position",
       simpleLabel: "Strong Position",
       tone: "green",
-      badge: "bg-green-500",
+      badge: "bg-green-600",
       border: "border-green-300/30",
-      bar: "bg-green-500",
+      bar: "bg-green-600",
       glow: "shadow-green-900/20",
       message: "Your profile looks competitive for a focused rental search.",
     };
@@ -31,11 +31,11 @@ function getScoreStyle(score: number) {
     return {
       label: "Review Recommended",
       simpleLabel: "Review Recommended",
-      tone: "yellow",
-      badge: "bg-yellow-500",
-      border: "border-yellow-300/30",
-      bar: "bg-yellow-500",
-      glow: "shadow-yellow-900/20",
+      tone: "amber",
+      badge: "bg-amber-500",
+      border: "border-amber-300/30",
+      bar: "bg-amber-500",
+      glow: "shadow-amber-900/20",
       message: "Your profile may work, but some details should be reviewed first.",
     };
   }
@@ -44,9 +44,9 @@ function getScoreStyle(score: number) {
     label: "Needs Improvement",
     simpleLabel: "Needs Improvement",
     tone: "red",
-    badge: "bg-red-500",
+    badge: "bg-red-600",
     border: "border-red-300/30",
-    bar: "bg-red-500",
+    bar: "bg-red-600",
     glow: "shadow-red-900/20",
     message: "Your profile may need improvement before applying.",
   };
@@ -292,7 +292,7 @@ export default function RentalReadinessSection() {
       {!showReport && (
         <a
           href="#rental-match"
-          className="fixed bottom-5 left-5 right-5 z-50 rounded-2xl bg-[#F5C979] px-6 py-4 text-center font-semibold text-[#070A12] shadow-2xl md:hidden"
+          className="fixed bottom-5 left-5 right-5 z-50 rounded-2xl bg-[#2F6F6B] px-6 py-4 text-center font-semibold text-white shadow-2xl md:hidden"
         >
           Get My Rental Shortlist
         </a>
