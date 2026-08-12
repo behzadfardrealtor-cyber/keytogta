@@ -112,7 +112,7 @@ export default function AreaGuidesSection() {
                   >
                     Ontario rental application checklist
                   </Link>{" "}
-                  to see what documents you'll need.
+                  to see what documents you&apos;ll need.
                 </p>
               </div>
 

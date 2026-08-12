@@ -9,7 +9,7 @@ export default function ContactSection() {
               </p>
               <h2 className="text-3xl font-bold md:text-5xl">Need help finding a rental?</h2>
               <p className="mt-5 max-w-2xl leading-8 text-[#17313A]/70">
-                Send your rental details and I'll help you understand your options, documents, and next steps.
+                Send your rental details and I&apos;ll help you understand your options, documents, and next steps.
               </p>
             </div>
 

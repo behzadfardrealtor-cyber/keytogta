@@ -8,8 +8,6 @@ import ImageWithFallback from "./components/ImageWithFallback";
 import { LazyRentalReadinessSection, LazyReviewsSection } from "./components/LazySections";
 import ServicesSection from "./components/ServicesSection";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
-
 export const metadata: Metadata = {
   title: "Key to GTA | GTA Rental Shortlist & Rental Readiness Tool",
   description:
@@ -121,7 +119,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-3 max-w-2xl text-base leading-6 text-[#17313A]/72 md:text-lg">
-              Tell me what you're looking for. I hand-pick rentals that fit you and send them over, so you don't have to search the whole market yourself. You pick, I do the legwork.
+              Tell me what you&apos;re looking for. I hand-pick rentals that fit you and send them over, so you don&apos;t have to search the whole market yourself. You pick, I do the legwork.
             </p>
 
             <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">

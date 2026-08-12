@@ -52,7 +52,7 @@ export default function ReviewsSection() {
             </div>
 
             <p className="mt-5 text-lg leading-8 text-[#17313A]/82">
-              "{featuredReview.quote}"
+              &quot;{featuredReview.quote}&quot;
             </p>
 
             <div className="mt-6 flex items-center gap-4">
@@ -80,7 +80,7 @@ export default function ReviewsSection() {
                 </div>
 
                 <p className="mt-3 line-clamp-2 text-sm leading-6 text-[#17313A]/66">
-                  "{review.quote}"
+                  &quot;{review.quote}&quot;
                 </p>
 
                 <div className="mt-4 flex items-center gap-3">

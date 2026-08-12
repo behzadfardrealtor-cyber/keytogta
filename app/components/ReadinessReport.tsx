@@ -27,6 +27,29 @@ function getMeterColor(score: number) {
   return "bg-red-600";
 }
 
+function renderCTAButton({
+  full = true,
+  isSubmittingMatchingOptions,
+  onRequestMatchingOptions,
+}: {
+  full?: boolean;
+  isSubmittingMatchingOptions: boolean;
+  onRequestMatchingOptions: () => void | Promise<void>;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onRequestMatchingOptions}
+      disabled={isSubmittingMatchingOptions}
+      className={`rounded-2xl bg-[#2F6F6B] px-6 py-4 text-center font-black text-white shadow-lg transition hover:bg-[#17313A] disabled:opacity-60 ${
+        full ? "w-full" : ""
+      }`}
+    >
+      {isSubmittingMatchingOptions ? "Sending..." : "Yes, send me matching rental options"}
+    </button>
+  );
+}
+
 export default function ReadinessReport({
   approvalReport,
   isSubmittingMatchingOptions,
@@ -55,19 +78,6 @@ export default function ReadinessReport({
     approvalReport.concerns.length > 0
       ? approvalReport.concerns
       : ["No major concern detected from the information provided."];
-
-  const CTAButton = ({ full = true }: { full?: boolean }) => (
-    <button
-      type="button"
-      onClick={onRequestMatchingOptions}
-      disabled={isSubmittingMatchingOptions}
-      className={`rounded-2xl bg-[#2F6F6B] px-6 py-4 text-center font-black text-white shadow-lg transition hover:bg-[#17313A] disabled:opacity-60 ${
-        full ? "w-full" : ""
-      }`}
-    >
-      {isSubmittingMatchingOptions ? "Sending..." : "Yes, send me matching rental options"}
-    </button>
-  );
 
   return (
     <div className="mt-6">
@@ -108,7 +118,7 @@ export default function ReadinessReport({
         </div>
 
         <div className="mt-5">
-          <CTAButton />
+          {renderCTAButton({ isSubmittingMatchingOptions, onRequestMatchingOptions })}
         </div>
       </div>
 
@@ -302,7 +312,7 @@ export default function ReadinessReport({
       {/* STICKY — always in reach while scrolling the detail sections */}
       <div className="sticky bottom-4 z-20 mt-6">
         <div className="rounded-2xl bg-[#DCE8E3] p-1 shadow-2xl">
-          <CTAButton />
+          {renderCTAButton({ isSubmittingMatchingOptions, onRequestMatchingOptions })}
         </div>
         <p className="mt-2 text-center text-[0.7rem] font-semibold text-[#17313A]/62">
           No pressure — this is only a planning request, not a rental application.
