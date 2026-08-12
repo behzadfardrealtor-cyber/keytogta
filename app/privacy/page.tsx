@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
-      <header className="border-b border-white/12 px-6 py-5">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
+      <header className="border-b border-[#E8E4DD] px-6 py-5">
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
@@ -32,15 +32,15 @@ export default function PrivacyPolicyPage() {
 
       <section className="px-6 py-16">
         <div className="mx-auto max-w-4xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Legal
           </p>
           <h1 className="text-3xl font-black tracking-tight md:text-5xl">
             Privacy Policy
           </h1>
-          <p className="mt-4 text-sm text-white/50">Last updated: July 2026</p>
+          <p className="mt-4 text-sm text-[#17313A]/68">Last updated: July 2026</p>
 
-          <p className="mt-8 max-w-3xl leading-8 text-white/72">
+          <p className="mt-8 max-w-3xl leading-8 text-[#17313A]/72">
             This policy explains what information Key to GTA collects when
             you visit keytogta.ca, why I collect it, and how it is used. By
             using this site, you agree to the collection and use of
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Information I collect</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-white/72">
+          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-[#17313A]/72">
             <li>
               Usage data collected automatically through Google Analytics and
               Microsoft Clarity, such as pages visited, time on site, device
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
           </ul>
 
           <h2 className="mt-12 text-2xl font-bold">How I use this information</h2>
-          <p className="mt-4 max-w-3xl leading-8 text-white/72">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             I use analytics data to understand how visitors use this site so
             I can improve it. Information submitted through my forms is
             used to review your rental profile, follow up with relevant
@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Analytics and cookies</h2>
-          <p className="mt-4 max-w-3xl leading-8 text-white/72">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             This site uses Google Analytics and Microsoft Clarity, both of
             which may set cookies or use similar technology in your browser
             to collect usage information. These tools are operated by Google
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
               href="https://tools.google.com/dlpage/gaoptout"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               Google Analytics Opt-out Browser Add-on
             </a>
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Data retention</h2>
-          <p className="mt-4 max-w-3xl leading-8 text-white/72">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             I keep form submissions for as long as reasonably needed to
             follow up on your rental search and to maintain accurate records.
             Analytics data is retained according to the default retention
@@ -100,18 +100,18 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Your choices</h2>
-          <p className="mt-4 max-w-3xl leading-8 text-white/72">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             You can browse this site without submitting the Rental Readiness
             form. If you have submitted information and would like it
             removed or corrected, contact me using the details below.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Contact</h2>
-          <p className="mt-4 max-w-3xl leading-8 text-white/72">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             Questions about this policy or your information can be sent to{" "}
             <a
               href="mailto:behzadfard.realtor@gmail.com"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               behzadfard.realtor@gmail.com
             </a>
@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }

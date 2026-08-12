@@ -91,9 +91,9 @@ export default function EmailGate({
 
   if (status === "success") {
     return (
-      <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 text-center md:p-10">
-        <p className="text-2xl font-bold">Check your downloads</p>
-        <p className="mt-3 leading-7 text-white/72">
+      <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 text-center md:p-10">
+        <p className="text-2xl font-bold text-[#17313A]">Check your downloads</p>
+        <p className="mt-3 leading-7 text-[#17313A]/72">
           Your checklist should have opened or downloaded automatically. If
           you don&apos;t see it, check your browser&apos;s download bar or
           Downloads folder.
@@ -103,12 +103,12 @@ export default function EmailGate({
   }
 
   return (
-    <div className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-8 md:p-10">
-      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+    <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-8 shadow-[0_18px_50px_rgba(23,49,58,.06)] md:p-10">
+      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
         Free Download
       </p>
-      <h2 className="mt-3 text-2xl font-bold md:text-3xl">{heading}</h2>
-      <p className="mt-3 max-w-2xl leading-7 text-white/70">{description}</p>
+      <h2 className="mt-3 text-2xl font-bold text-[#17313A] md:text-3xl">{heading}</h2>
+      <p className="mt-3 max-w-2xl leading-7 text-[#17313A]/72">{description}</p>
 
       <form onSubmit={handleSubmit} noValidate className="mt-6 grid gap-3 sm:grid-cols-[1fr_1fr_auto]">
         <input
@@ -116,7 +116,7 @@ export default function EmailGate({
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Name (optional)"
-          className="rounded-2xl border border-white/15 bg-white/[0.06] p-4 text-white placeholder:text-white/40"
+          className="rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4 text-[#17313A] placeholder:text-[#17313A]/45"
         />
         <input
           type="email"
@@ -124,22 +124,22 @@ export default function EmailGate({
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
           required
-          className="rounded-2xl border border-white/15 bg-white/[0.06] p-4 text-white placeholder:text-white/40"
+          className="rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4 text-[#17313A] placeholder:text-[#17313A]/45"
         />
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="rounded-2xl bg-[#F5C979] px-6 py-4 font-bold text-[#070A12] transition hover:scale-[1.02] disabled:opacity-60 sm:whitespace-nowrap"
+          className="rounded-2xl bg-[#2F6F6B] px-6 py-4 font-bold text-white transition hover:scale-[1.02] hover:bg-[#17313A] disabled:opacity-60 sm:whitespace-nowrap"
         >
           {status === "submitting" ? "Sending..." : ctaLabel}
         </button>
       </form>
 
       {status === "error" && (
-        <p className="mt-3 text-sm font-semibold text-red-400">{errorMessage}</p>
+        <p className="mt-3 text-sm font-semibold text-red-600">{errorMessage}</p>
       )}
 
-      <p className="mt-4 text-xs leading-5 text-white/45">
+      <p className="mt-4 text-xs leading-5 text-[#17313A]/60">
         We&apos;ll only use your email to send this checklist and occasional
         GTA rental guidance. No spam.
       </p>
