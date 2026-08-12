@@ -104,7 +104,7 @@ const structuredData = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -112,13 +112,13 @@ export default function AboutPage() {
         }}
       />
 
-      <header className="border-b border-white/12 px-6 py-5">
+      <header className="border-b border-[#E8E4DD] px-6 py-5">
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
@@ -127,14 +127,14 @@ export default function AboutPage() {
 
       <section className="px-6 py-16">
         <div className="mx-auto max-w-4xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             About
           </p>
           <h1 className="text-3xl font-black tracking-tight md:text-5xl">
             About Key to GTA
           </h1>
 
-          <p className="mt-8 max-w-3xl leading-8 text-white/72">
+          <p className="mt-8 max-w-3xl leading-8 text-[#17313A]/72">
             Key to GTA is a rental and real estate guidance site for the
             GTA, built to give renters and newcomers clear, research-backed
             information before they apply - not just another listings
@@ -143,44 +143,44 @@ export default function AboutPage() {
             licensed agent, not a call centre or a resold lead.
           </p>
 
-          <div className="mt-12 rounded-[2rem] border border-white/12 bg-white/[0.06] p-8">
+          <div className="mt-12 rounded-[2rem] border border-[#E8E4DD] bg-white p-8 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
             <div className="flex items-start gap-5">
-              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#F5C979]/25 bg-white/[0.06] text-xl font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-xl font-bold text-[#2F6F6B]">
                 BF
               </span>
               <div>
                 <h2 className="text-2xl font-bold">Behzad Fard</h2>
-                <p className="mt-1 text-sm text-white/55">
+                <p className="mt-1 text-sm text-[#17313A]/68">
                   Licensed Real Estate Agent, Ontario
                 </p>
               </div>
             </div>
-            <h3 className="mt-5 text-xl font-bold text-[#F5C979]">
-              I don't guess. I work with data.
+            <h3 className="mt-5 text-xl font-bold text-[#2F6F6B]">
+              I don&apos;t guess. I work with data.
             </h3>
-            <p className="mt-3 leading-7 text-white/72">
+            <p className="mt-3 leading-7 text-[#17313A]/72">
               Real estate decisions are too important to run on gut
-              feeling. Whether you're renting your first place or buying
+              feeling. Whether you&apos;re renting your first place or buying
               your first home, the difference between a good decision and
               an expensive mistake usually comes down to information - and
-              most people simply don't have access to it. That's the gap I
+              most people simply don&apos;t have access to it. That&apos;s the gap I
               close.
             </p>
-            <p className="mt-4 leading-7 text-white/72">
+            <p className="mt-4 leading-7 text-[#17313A]/72">
               My approach is built on market data and modern tools. Backed
               by {BROKERAGE_NAME}, I work with real-time market
-              intelligence that most independent agents can't reach - live
+              intelligence that most independent agents can&apos;t reach - live
               pricing trends, rent
               ranges, neighbourhood demand, and application patterns. I
-              read that data so you don't have to, and I turn it into
+              read that data so you don&apos;t have to, and I turn it into
               clear, practical advice: what a property is really worth,
               when to move, where the leverage is, and where the risk
               hides.
             </p>
-            <p className="mt-4 leading-7 text-white/72">
+            <p className="mt-4 leading-7 text-[#17313A]/72">
               But data is only half the job. I explain things in plain
               language, I never rush a client, and I tell the truth even
-              when it costs me the deal. My job isn't to close fast - it's
+              when it costs me the deal. My job isn&apos;t to close fast - it&apos;s
               to make sure that months later, you still know exactly why
               your decision made sense.
             </p>
@@ -194,12 +194,12 @@ export default function AboutPage() {
             {differentiators.map((item) => (
               <div
                 key={item.label}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6 shadow-[0_18px_50px_rgba(23,49,58,.06)]"
               >
-                <h3 className="text-lg font-bold text-[#F5C979]">
+                <h3 className="text-lg font-bold text-[#2F6F6B]">
                   {item.label}
                 </h3>
-                <p className="mt-2 leading-7 text-white/70">{item.detail}</p>
+                <p className="mt-2 leading-7 text-[#17313A]/72">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -207,13 +207,13 @@ export default function AboutPage() {
           <div className="mt-14 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/#rental-match"
-              className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
             >
               Check My Rental Readiness
             </Link>
           </div>
 
-          <p className="mt-12 max-w-3xl text-xs leading-6 text-white/40">
+          <p className="mt-12 max-w-3xl text-xs leading-6 text-[#17313A]/68">
             Behzad Fard is a licensed real estate agent in the Province of
             Ontario, brokered by {BROKERAGE_NAME}. This site provides
             general information only and is not a substitute for legal,
@@ -222,7 +222,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }
