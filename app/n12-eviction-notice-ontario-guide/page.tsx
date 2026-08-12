@@ -186,7 +186,7 @@ const structuredData = [
 
 export default function N12EvictionNoticeGuidePage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="n12_eviction_view" />
       <script
         type="application/ld+json"
@@ -195,38 +195,38 @@ export default function N12EvictionNoticeGuidePage() {
         }}
       />
 
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/85 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#what-is-n12" className="hover:text-white">
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#what-is-n12" className="hover:text-[#17313A]">
               What Is N12
             </a>
-            <a href="#qualifying-family" className="hover:text-white">
+            <a href="#qualifying-family" className="hover:text-[#17313A]">
               Family Members
             </a>
-            <a href="#compensation" className="hover:text-white">
+            <a href="#compensation" className="hover:text-[#17313A]">
               Compensation
             </a>
-            <a href="#bad-faith" className="hover:text-white">
+            <a href="#bad-faith" className="hover:text-[#17313A]">
               Bad Faith
             </a>
-            <a href="#faq" className="hover:text-white">
+            <a href="#faq" className="hover:text-[#17313A]">
               FAQ
             </a>
           </nav>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5C979] px-5 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Check Readiness
           </Link>
@@ -236,17 +236,17 @@ export default function N12EvictionNoticeGuidePage() {
       <section className="relative overflow-hidden px-6 py-8 md:py-12 lg:py-14">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(7,10,18,0.98)_0%,rgba(7,10,18,0.82)_48%,rgba(36,27,20,0.72)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.86)_48%,rgba(220,232,227,0.68)_100%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,24rem)] lg:items-center">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C7AA] md:text-sm">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#2F6F6B] md:text-sm">
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
               N12 eviction notices in Ontario: landlord&apos;s own use, explained
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
               An N12 notice lets a landlord end a tenancy so they, or one
               specific family member, can move into the unit themselves. It
               comes with real rules most tenants aren&apos;t told about: a
@@ -259,19 +259,19 @@ export default function N12EvictionNoticeGuidePage() {
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
                 Check My Rental Readiness
               </Link>
               <a
                 href="#what-is-n12"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
                 See How It Works
               </a>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/52">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               General information only, not legal advice. If you&apos;ve
               received an active N12, the timeline matters - talk to a
               paralegal, a lawyer, or the Landlord and Tenant Board directly
@@ -279,7 +279,7 @@ export default function N12EvictionNoticeGuidePage() {
             </p>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.04))] p-3 shadow-2xl lg:justify-self-end">
+          <div className="relative w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white p-3 shadow-[0_18px_50px_rgba(23,49,58,.08)] lg:justify-self-end">
             <div className="relative h-40 overflow-hidden rounded-[1.5rem] md:h-44 lg:h-40">
               <Image
                 src="/hero-condo.jpg"
@@ -289,11 +289,11 @@ export default function N12EvictionNoticeGuidePage() {
                 sizes="(min-width: 1024px) 24rem, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
             </div>
 
             <div className="p-3 pt-4 md:p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 N12 snapshot
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
@@ -304,12 +304,12 @@ export default function N12EvictionNoticeGuidePage() {
                 {heroFactRows.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.07] px-3 py-2.5"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-2.5"
                   >
-                    <span className="text-sm font-semibold text-white/78">
+                    <span className="text-sm font-semibold text-[#17313A]/78">
                       {item.label}
                     </span>
-                    <span className="rounded-full bg-[#F5C979]/16 px-3 py-1 text-xs font-bold text-[#F5C979]">
+                    <span className="rounded-full bg-[#2F6F6B]/12 px-3 py-1 text-xs font-bold text-[#2F6F6B]">
                       {item.status}
                     </span>
                   </div>
@@ -320,7 +320,7 @@ export default function N12EvictionNoticeGuidePage() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/62"
+                    className="rounded-full border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-1.5 text-xs font-semibold text-[#17313A]/68"
                   >
                     {badge}
                   </span>
@@ -333,14 +333,14 @@ export default function N12EvictionNoticeGuidePage() {
 
       <section id="direct-answer" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+          <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Direct Answer
             </p>
             <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
               What is an N12 notice and when can a landlord use it?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
               An N12 is the notice of termination a landlord uses to end a
               tenancy for their own use, or for the use of one specific
               qualifying family member (see below) - not for renovations,
@@ -361,15 +361,15 @@ export default function N12EvictionNoticeGuidePage() {
         </div>
       </section>
 
-      <section id="what-is-n12" className="px-6 pb-20">
+      <section id="what-is-n12" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             What Is N12
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             What is an N12, and when can a landlord actually use one?
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             An N12 (Notice to End your Tenancy Because the Landlord Wants to
             Use the Unit) is specific to one situation: someone connected to
             the landlord genuinely intends to move into the unit themselves.
@@ -381,7 +381,7 @@ export default function N12EvictionNoticeGuidePage() {
             received the wrong form, or a form that doesn&apos;t match the
             stated reason.
           </p>
-          <p className="mt-4 max-w-3xl leading-8 text-white/70">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             The occupancy has to be genuine, not a formality. The landlord or
             qualifying family member has to actually intend to live in the
             unit for at least one year. A landlord can&apos;t legally serve
@@ -396,9 +396,9 @@ export default function N12EvictionNoticeGuidePage() {
         </div>
       </section>
 
-      <section id="qualifying-family" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="qualifying-family" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Family Members
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -409,17 +409,17 @@ export default function N12EvictionNoticeGuidePage() {
             {qualifyingCards.map((card) => (
               <article
                 key={card.label}
-                className="rounded-[2rem] bg-black/5 p-6"
+                className="rounded-[2rem] bg-[#F7F7F2] p-6"
               >
                 <h3 className="text-xl font-bold">{card.label}</h3>
-                <p className="mt-3 leading-7 text-[#3D352D]">
+                <p className="mt-3 leading-7 text-[#17313A]/72">
                   {card.detail}
                 </p>
               </article>
             ))}
           </div>
 
-          <p className="mt-6 max-w-3xl text-sm leading-6 text-[#6E6254]">
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             This list is narrower than most tenants - and some landlords -
             assume. If your N12 names anyone outside this list, it
             doesn&apos;t meet the legal requirement, and that&apos;s worth
@@ -428,20 +428,20 @@ export default function N12EvictionNoticeGuidePage() {
         </div>
       </section>
 
-      <section id="compensation" className="px-6 pb-20">
+      <section id="compensation" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Compensation
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             What compensation is a landlord required to pay?
           </h2>
 
-          <div className="mt-8 max-w-3xl rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#F5C979]">
+          <div className="mt-8 max-w-3xl rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
               Current rule
             </p>
-            <p className="mt-3 leading-7 text-white/85">
+            <p className="mt-3 leading-7 text-[#17313A]/85">
               Right now, every N12 comes with the same compensation
               requirement, no matter how much notice the landlord gives: one
               month&apos;s rent, or another rental unit acceptable to the
@@ -452,11 +452,11 @@ export default function N12EvictionNoticeGuidePage() {
             </p>
           </div>
 
-          <div className="mt-6 max-w-3xl rounded-[2rem] border border-white/12 bg-white/[0.06] p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
+          <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#E8E4DD] bg-white/70 p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/50">
               Coming, not yet in force
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-[#17313A]/72">
               Bill 60 introduces an exception to this: a landlord who gives
               at least 120 days&apos; notice - instead of the 60-day minimum
               - would no longer owe the one-month compensation, as long as
@@ -474,14 +474,14 @@ export default function N12EvictionNoticeGuidePage() {
                 href="https://tribunalsontario.ca/ltb/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 tribunalsontario.ca
               </a>{" "}
               before assuming which rule applies - see our{" "}
               <Link
                 href="/bill-60-ontario-tenant-changes-2026"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Bill 60 tenant changes guide
               </Link>{" "}
@@ -491,9 +491,9 @@ export default function N12EvictionNoticeGuidePage() {
         </div>
       </section>
 
-      <section id="bad-faith" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="bad-faith" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Bad Faith
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -502,21 +502,21 @@ export default function N12EvictionNoticeGuidePage() {
 
           <div className="mt-10 grid gap-4">
             {t5Steps.map((step, index) => (
-              <div key={step} className="flex gap-4 rounded-[2rem] bg-black/5 p-5">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#070A12] font-bold text-[#F5EBDD]">
+              <div key={step} className="flex gap-4 rounded-[2rem] bg-[#F7F7F2] p-5">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#17313A] font-bold text-white">
                   {index + 1}
                 </span>
-                <p className="leading-7 text-[#3D352D]">{step}</p>
+                <p className="leading-7 text-[#17313A]/72">{step}</p>
               </div>
             ))}
           </div>
 
-          <p className="mt-8 max-w-3xl leading-7 text-[#3D352D]">
+          <p className="mt-8 max-w-3xl leading-7 text-[#17313A]/72">
             For the broader rules landlords have to follow beyond eviction
             notices - deposits, entry, rent increases - see our{" "}
             <Link
               href="/ontario-tenant-rights-gta"
-              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               Ontario tenant rights guide
             </Link>
@@ -525,22 +525,22 @@ export default function N12EvictionNoticeGuidePage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Next Step
             </p>
             <h2 className="text-3xl font-bold md:text-5xl">
               Know where you stand before you respond
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Whether you&apos;re weighing whether to challenge an N12 or
               just want a clearer picture of your rights as a tenant, see
               our{" "}
               <Link
                 href="/ontario-tenant-rights-gta"
-                className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Ontario tenant rights guide
               </Link>{" "}
@@ -550,18 +550,18 @@ export default function N12EvictionNoticeGuidePage() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#070A12] p-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5C979]">
+          <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
               Free readiness check
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-white/75">
               It takes a few minutes and gives you a clearer view of where
               your application is strong, what may need work, and what to
               prepare next.
             </p>
             <Link
               href="/#rental-match"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#F5C979] px-6 py-4 text-center font-bold text-[#070A12]"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
               Start Rental Readiness
             </Link>
@@ -569,15 +569,15 @@ export default function N12EvictionNoticeGuidePage() {
         </div>
       </section>
 
-      <section id="faq" className="px-6 py-20">
+      <section id="faq" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
           <h2 className="text-3xl font-bold md:text-5xl">
             N12 eviction notice FAQ
           </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-6 text-white/50">
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             General information only, not legal advice - if you&apos;ve
             received an active N12, talk to a paralegal, a lawyer, or the
             Landlord and Tenant Board directly.
@@ -587,17 +587,17 @@ export default function N12EvictionNoticeGuidePage() {
             {faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-xl font-bold">{faq.question}</h3>
-                <p className="mt-3 leading-7 text-white/70">{faq.answer}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{faq.answer}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }

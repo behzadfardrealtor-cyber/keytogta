@@ -253,7 +253,7 @@ const structuredData = [
 
 export default function Bill60OntarioTenantChangesPage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="bill_60_view" />
       <script
         type="application/ld+json"
@@ -262,35 +262,35 @@ export default function Bill60OntarioTenantChangesPage() {
         }}
       />
 
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/85 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#comparison" className="hover:text-white">
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#comparison" className="hover:text-[#17313A]">
               In Force vs. Later
             </a>
-            <a href="#n4-notice" className="hover:text-white">
+            <a href="#n4-notice" className="hover:text-[#17313A]">
               N4 Notice
             </a>
-            <a href="#unchanged" className="hover:text-white">
+            <a href="#unchanged" className="hover:text-[#17313A]">
               Not Changed
             </a>
-            <a href="#faq" className="hover:text-white">
+            <a href="#faq" className="hover:text-[#17313A]">
               FAQ
             </a>
           </nav>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5C979] px-5 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Check Readiness
           </Link>
@@ -300,48 +300,48 @@ export default function Bill60OntarioTenantChangesPage() {
       <section className="relative overflow-hidden px-6 py-8 md:py-12 lg:py-14">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(7,10,18,0.98)_0%,rgba(7,10,18,0.82)_48%,rgba(36,27,20,0.72)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.86)_48%,rgba(220,232,227,0.68)_100%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,24rem)] lg:items-center">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C7AA] md:text-sm">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#2F6F6B] md:text-sm">
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
-              Bill 60: what's actually changed for Ontario tenants (and what
-              hasn't)
+              Bill 60: what&apos;s actually changed for Ontario tenants (and what
+              hasn&apos;t)
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
-              Bill 60's changes to the Residential Tenancies Act are rolling
-              out in stages, not all at once - and most coverage doesn't make
-              that clear. This guide separates what's already in force from
-              what's still coming, and corrects at least one change that
-              gets reported as active when it isn't.
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
+              Bill 60&apos;s changes to the Residential Tenancies Act are rolling
+              out in stages, not all at once - and most coverage doesn&apos;t make
+              that clear. This guide separates what&apos;s already in force from
+              what&apos;s still coming, and corrects at least one change that
+              gets reported as active when it isn&apos;t.
             </p>
 
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
                 Check My Rental Readiness
               </Link>
               <a
                 href="#comparison"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
-                See What's In Force
+                See What&apos;s In Force
               </a>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/52">
-              General information only, not legal advice. If you're in an
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
+              General information only, not legal advice. If you&apos;re in an
               active dispute with your landlord, contact the Landlord and
               Tenant Board (LTB) directly.
             </p>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.04))] p-3 shadow-2xl lg:justify-self-end">
+          <div className="relative w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white p-3 shadow-[0_18px_50px_rgba(23,49,58,.08)] lg:justify-self-end">
             <div className="relative h-40 overflow-hidden rounded-[1.5rem] md:h-44 lg:h-40">
               <Image
                 src="/hero-condo.jpg"
@@ -351,11 +351,11 @@ export default function Bill60OntarioTenantChangesPage() {
                 sizes="(min-width: 1024px) 24rem, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
             </div>
 
             <div className="p-3 pt-4 md:p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 Staged rollout
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
@@ -366,7 +366,7 @@ export default function Bill60OntarioTenantChangesPage() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/62"
+                    className="rounded-full border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-1.5 text-xs font-semibold text-[#17313A]/68"
                   >
                     {badge}
                   </span>
@@ -379,14 +379,14 @@ export default function Bill60OntarioTenantChangesPage() {
 
       <section id="direct-answer" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+          <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Direct Answer
             </p>
             <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
               Is Bill 60 in effect, and what does it change?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
               Bill 60 - the Fighting Delays, Building Faster Act, 2025 -
               received Royal Assent on November 27, 2025, but its changes to
               the Residential Tenancies Act are being brought into force in
@@ -395,7 +395,7 @@ export default function Bill60OntarioTenantChangesPage() {
               (30 days down to 15) and a mandatory Payment Agreement Form for
               arrears repayment plans. A second set - a shorter N4
               non-payment notice period (14 days down to 7) and a waiver of
-              N12 personal-use compensation when a landlord gives 120+ days'
+              N12 personal-use compensation when a landlord gives 120+ days&apos;
               notice - is scheduled for September 21, 2026, and is not in
               force yet. Some things widely reported as changing did not
               make it into the final bill: fixed-term leases still
@@ -405,31 +405,31 @@ export default function Bill60OntarioTenantChangesPage() {
         </div>
       </section>
 
-      <section id="comparison" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="comparison" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             The Staged Rollout
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             In force now vs. takes effect later
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             This is the distinction most coverage of Bill 60 gets wrong.
-            Here's exactly what's active today and what isn't yet.
+            Here&apos;s exactly what&apos;s active today and what isn&apos;t yet.
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6E6254]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 In force since July 1, 2026
               </p>
               <div className="mt-4 grid gap-3">
                 {comparisonInForce.map((item) => (
-                  <div key={item.label} className="rounded-2xl bg-white/55 p-4">
-                    <p className="text-sm font-bold text-[#4A3D2E]">
+                  <div key={item.label} className="rounded-2xl bg-white p-4">
+                    <p className="text-sm font-bold text-[#17313A]">
                       {item.label}
                     </p>
-                    <p className="mt-1 text-sm leading-6 text-[#4A3D2E]">
+                    <p className="mt-1 text-sm leading-6 text-[#17313A]/72">
                       {item.value}
                     </p>
                   </div>
@@ -437,17 +437,17 @@ export default function Bill60OntarioTenantChangesPage() {
               </div>
             </article>
 
-            <article className="rounded-[2rem] bg-black/5 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6E6254]">
+            <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 Takes effect September 21, 2026
               </p>
               <div className="mt-4 grid gap-3">
                 {comparisonLater.map((item) => (
-                  <div key={item.label} className="rounded-2xl bg-white/55 p-4">
-                    <p className="text-sm font-bold text-[#4A3D2E]">
+                  <div key={item.label} className="rounded-2xl bg-white p-4">
+                    <p className="text-sm font-bold text-[#17313A]">
                       {item.label}
                     </p>
-                    <p className="mt-1 text-sm leading-6 text-[#4A3D2E]">
+                    <p className="mt-1 text-sm leading-6 text-[#17313A]/72">
                       {item.value}
                     </p>
                   </div>
@@ -456,17 +456,17 @@ export default function Bill60OntarioTenantChangesPage() {
             </article>
           </div>
 
-          <p className="mt-6 max-w-3xl text-sm leading-6 text-[#6E6254]">
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             The specific date of September 21, 2026 is confirmed by legal
             clinic and industry sources tracking the rollout; Tribunals
-            Ontario's own operational update confirms "September 2026"
+            Ontario&apos;s own operational update confirms &quot;September 2026&quot;
             without spelling out the exact day on that page. Given how close
             this date is, confirm current status at{" "}
             <a
               href="https://tribunalsontario.ca/ltb/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-[#070A12]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               tribunalsontario.ca
             </a>{" "}
@@ -475,11 +475,11 @@ export default function Bill60OntarioTenantChangesPage() {
         </div>
       </section>
 
-      <section id="ltb-review" className="px-6 py-20">
+      <section id="ltb-review" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
           {detailSections.map((section) => (
             <div key={section.id} id={section.id} className="mb-16 last:mb-0">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
                 {section.tag}
               </p>
               <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
@@ -487,25 +487,25 @@ export default function Bill60OntarioTenantChangesPage() {
               </h2>
 
               <div className="mt-6 grid gap-4">
-                <div className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
+                <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/50">
                     What it was
                   </p>
-                  <p className="mt-2 leading-7 text-white/72">{section.was}</p>
+                  <p className="mt-2 leading-7 text-[#17313A]/72">{section.was}</p>
                 </div>
-                <div className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
+                <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/50">
                     What it becomes
                   </p>
-                  <p className="mt-2 leading-7 text-white/72">
+                  <p className="mt-2 leading-7 text-[#17313A]/72">
                     {section.becomes}
                   </p>
                 </div>
-                <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#F5C979]">
+                <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
                     What to do
                   </p>
-                  <p className="mt-2 leading-7 text-white/85">
+                  <p className="mt-2 leading-7 text-[#17313A]/85">
                     {section.doText}
                   </p>
                 </div>
@@ -513,17 +513,17 @@ export default function Bill60OntarioTenantChangesPage() {
 
               {section.id === "n12-compensation" && (
                 <>
-                  <p className="mt-4 max-w-3xl rounded-2xl border border-white/12 bg-white/[0.04] p-5 text-sm leading-6 text-white/60">
+                  <p className="mt-4 max-w-3xl rounded-2xl border border-[#E8E4DD] bg-white/70 p-5 text-sm leading-6 text-[#17313A]/60">
                     {n13Note}
                   </p>
-                  <p className="mt-4 max-w-3xl text-sm leading-6 text-white/60">
+                  <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/60">
                     For the full breakdown of N12 rules - who actually
                     qualifies as a family member, the current compensation
                     requirement, and what to do if you suspect bad faith -
                     see our{" "}
                     <Link
                       href="/n12-eviction-notice-ontario-guide"
-                      className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                      className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
                     >
                       N12 eviction notice guide
                     </Link>
@@ -536,9 +536,9 @@ export default function Bill60OntarioTenantChangesPage() {
         </div>
       </section>
 
-      <section id="arrears" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="arrears" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             In Force (Partly) Since July 1, 2026
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -546,74 +546,74 @@ export default function Bill60OntarioTenantChangesPage() {
           </h2>
 
           <div className="mt-8 grid gap-4">
-            <div className="rounded-[2rem] bg-black/5 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6E6254]">
+            <div className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 What it was
               </p>
-              <p className="mt-2 leading-7 text-[#3D352D]">
+              <p className="mt-2 leading-7 text-[#17313A]/72">
                 {arrearsSection.was}
               </p>
             </div>
-            <div className="rounded-[2rem] bg-black/5 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6E6254]">
+            <div className="rounded-[2rem] bg-[#F7F7F2] p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 What it becomes
               </p>
-              <p className="mt-2 leading-7 text-[#3D352D]">
+              <p className="mt-2 leading-7 text-[#17313A]/72">
                 {arrearsSection.becomes}
               </p>
             </div>
-            <div className="rounded-[2rem] bg-white/55 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4A3D2E]">
+            <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/68">
                 What to do
               </p>
-              <p className="mt-2 leading-7 text-[#4A3D2E]">
+              <p className="mt-2 leading-7 text-[#17313A]/72">
                 {arrearsSection.doText}
               </p>
             </div>
           </div>
 
-          <p className="mt-6 max-w-3xl leading-7 text-[#3D352D]">
+          <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/72">
             Once you know where things stand, our{" "}
             <Link
               href="/rental-documents/checklist-ontario"
-              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               Ontario rental application checklist
             </Link>{" "}
-            covers the documents landlords typically expect if you're
+            covers the documents landlords typically expect if you&apos;re
             applying for a new place.
           </p>
         </div>
       </section>
 
-      <section id="unchanged" className="px-6 py-20">
+      <section id="unchanged" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             What Has NOT Changed
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
-            Don't panic-assume every protection is gone
+            Don&apos;t panic-assume every protection is gone
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Bill 60 is narrower than a lot of the coverage around it
-            suggests. Here's what's still exactly the same.
+            suggests. Here&apos;s what&apos;s still exactly the same.
           </p>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {unchangedItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="mt-3 leading-7 text-white/72">
+                <p className="mt-3 leading-7 text-[#17313A]/72">
                   {item.detail}
                   {item.href && (
                     <>
                       {" "}
                       <Link
                         href={item.href}
-                        className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                        className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
                       >
                         {item.linkLabel}
                       </Link>
@@ -627,36 +627,36 @@ export default function Bill60OntarioTenantChangesPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Next Step
             </p>
             <h2 className="text-3xl font-bold md:text-5xl">
               Got a notice and not sure what applies to you?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
-              A search engine can tell you the rule. It can't look at your
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
+              A search engine can tell you the rule. It can&apos;t look at your
               actual notice, check the date it was served against the date a
               rule took effect, and tell you whether it really applies to
-              your situation. That's worth a real conversation before you
+              your situation. That&apos;s worth a real conversation before you
               act on anything.
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#070A12] p-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5C979]">
+          <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
               Free readiness check
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-white/75">
               Use the Key to GTA Rental Readiness tool to review your
-              situation, or reach out directly if you're dealing with a
+              situation, or reach out directly if you&apos;re dealing with a
               notice and want a second opinion before you respond.
             </p>
             <Link
               href="/#rental-match"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#F5C979] px-6 py-4 text-center font-bold text-[#070A12]"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
               Start Rental Readiness
             </Link>
@@ -664,15 +664,15 @@ export default function Bill60OntarioTenantChangesPage() {
         </div>
       </section>
 
-      <section id="faq" className="px-6 py-20">
+      <section id="faq" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
           <h2 className="text-3xl font-bold md:text-5xl">
             Bill 60 tenant changes FAQ
           </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-6 text-white/50">
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             General information only, not legal advice - for an active
             dispute, contact the LTB directly.
           </p>
@@ -681,17 +681,17 @@ export default function Bill60OntarioTenantChangesPage() {
             {faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-xl font-bold">{faq.question}</h3>
-                <p className="mt-3 leading-7 text-white/70">{faq.answer}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{faq.answer}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }
