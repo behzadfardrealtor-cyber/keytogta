@@ -206,7 +206,7 @@ const structuredData = [
 
 export default function GuarantorVsCosignerPage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="guarantor_cosigner_view" />
       <script
         type="application/ld+json"
@@ -215,38 +215,38 @@ export default function GuarantorVsCosignerPage() {
         }}
       />
 
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/85 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#legal-difference" className="hover:text-white">
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#legal-difference" className="hover:text-[#17313A]">
               Legal Difference
             </a>
-            <a href="#landlord-requirement" className="hover:text-white">
+            <a href="#landlord-requirement" className="hover:text-[#17313A]">
               Landlord Rules
             </a>
-            <a href="#documents" className="hover:text-white">
+            <a href="#documents" className="hover:text-[#17313A]">
               Documents
             </a>
-            <a href="#no-guarantor" className="hover:text-white">
+            <a href="#no-guarantor" className="hover:text-[#17313A]">
               No Guarantor
             </a>
-            <a href="#faq" className="hover:text-white">
+            <a href="#faq" className="hover:text-[#17313A]">
               FAQ
             </a>
           </nav>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5C979] px-5 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Check Readiness
           </Link>
@@ -256,17 +256,17 @@ export default function GuarantorVsCosignerPage() {
       <section className="relative overflow-hidden px-6 py-8 md:py-12 lg:py-14">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(7,10,18,0.98)_0%,rgba(7,10,18,0.82)_48%,rgba(36,27,20,0.72)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.86)_48%,rgba(220,232,227,0.68)_100%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,24rem)] lg:items-center">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C7AA] md:text-sm">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#2F6F6B] md:text-sm">
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
               Guarantor vs. co-signer for Ontario rentals: what&apos;s actually different
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
               Landlords use &quot;guarantor&quot; and &quot;co-signer&quot;
               almost interchangeably, but they create very different legal
               exposure - for the person signing, and for how a rental
@@ -279,19 +279,19 @@ export default function GuarantorVsCosignerPage() {
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
                 Check My Rental Readiness
               </Link>
               <a
                 href="#legal-difference"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
                 See the Difference
               </a>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/52">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               General information only, not legal advice. Guarantor and
               co-signer agreements vary by landlord and by the exact wording
               of the agreement - read yours carefully, or get legal advice if
@@ -299,7 +299,7 @@ export default function GuarantorVsCosignerPage() {
             </p>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.04))] p-3 shadow-2xl lg:justify-self-end">
+          <div className="relative w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white p-3 shadow-[0_18px_50px_rgba(23,49,58,.08)] lg:justify-self-end">
             <div className="relative h-40 overflow-hidden rounded-[1.5rem] md:h-44 lg:h-40">
               <Image
                 src="/guarantor-lease-signing.jpg"
@@ -309,11 +309,11 @@ export default function GuarantorVsCosignerPage() {
                 sizes="(min-width: 1024px) 24rem, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
             </div>
 
             <div className="p-3 pt-4 md:p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 Guarantor vs. co-signer snapshot
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
@@ -324,12 +324,12 @@ export default function GuarantorVsCosignerPage() {
                 {heroFactRows.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.07] px-3 py-2.5"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-2.5"
                   >
-                    <span className="text-sm font-semibold text-white/78">
+                    <span className="text-sm font-semibold text-[#17313A]/78">
                       {item.label}
                     </span>
-                    <span className="rounded-full bg-[#F5C979]/16 px-3 py-1 text-xs font-bold text-[#F5C979]">
+                    <span className="rounded-full bg-[#2F6F6B]/12 px-3 py-1 text-xs font-bold text-[#2F6F6B]">
                       {item.status}
                     </span>
                   </div>
@@ -340,7 +340,7 @@ export default function GuarantorVsCosignerPage() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/62"
+                    className="rounded-full border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-1.5 text-xs font-semibold text-[#17313A]/68"
                   >
                     {badge}
                   </span>
@@ -353,14 +353,14 @@ export default function GuarantorVsCosignerPage() {
 
       <section id="direct-answer" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+          <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Direct Answer
             </p>
             <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
               What&apos;s the difference between a guarantor and a co-signer in Ontario?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
               A co-signer is named directly on the lease, alongside the
               tenant - which means their liability for rent and damages
               starts on day one, the same as the tenant&apos;s. A guarantor
@@ -379,9 +379,9 @@ export default function GuarantorVsCosignerPage() {
         </div>
       </section>
 
-      <section id="legal-difference" className="px-6 pb-20">
+      <section id="legal-difference" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Legal Difference
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -392,18 +392,18 @@ export default function GuarantorVsCosignerPage() {
             {comparisonCards.map((card) => (
               <article
                 key={card.label}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-xl font-bold">{card.label}</h3>
-                <p className="mt-2 text-lg font-bold text-[#F5C979]">
+                <p className="mt-2 text-lg font-bold text-[#2F6F6B]">
                   {card.status}
                 </p>
-                <p className="mt-3 leading-7 text-white/70">{card.detail}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{card.detail}</p>
               </article>
             ))}
           </div>
 
-          <p className="mt-6 max-w-3xl text-sm leading-6 text-white/60">
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             In everyday conversation, GTA landlords and listings often use
             &quot;guarantor&quot; and &quot;co-signer&quot; interchangeably -
             but the paperwork determines which one actually applies, not the
@@ -415,17 +415,17 @@ export default function GuarantorVsCosignerPage() {
         </div>
       </section>
 
-      <section id="landlord-requirement" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="landlord-requirement" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Landlord Rules
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Can a landlord in Ontario require one?
           </h2>
 
-          <div className="mt-10 max-w-3xl rounded-[2rem] bg-black/5 p-6 md:p-8">
-            <p className="leading-7 text-[#3D352D]">
+          <div className="mt-10 max-w-3xl rounded-[2rem] bg-[#F7F7F2] p-6 md:p-8">
+            <p className="leading-7 text-[#17313A]/72">
               Ontario law doesn&apos;t prohibit a landlord from asking for a
               guarantor or co-signer - it&apos;s a common request when a
               tenant&apos;s income, credit history, or rental history alone
@@ -433,7 +433,7 @@ export default function GuarantorVsCosignerPage() {
               frequently used for students, newcomers, and applicants early
               in their credit journey.
             </p>
-            <p className="mt-4 leading-7 text-[#3D352D]">
+            <p className="mt-4 leading-7 text-[#17313A]/72">
               What a landlord can&apos;t do is use the guarantor requirement
               to discriminate against a protected ground under Ontario&apos;s
               Human Rights Code - for example, requiring a guarantor
@@ -443,7 +443,7 @@ export default function GuarantorVsCosignerPage() {
               can&apos;t screen for, see our{" "}
               <Link
                 href="/ontario-tenant-rights-gta"
-                className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Ontario tenant rights guide
               </Link>
@@ -453,15 +453,15 @@ export default function GuarantorVsCosignerPage() {
         </div>
       </section>
 
-      <section id="documents" className="px-6 pb-20">
+      <section id="documents" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Documents
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             What documents will my guarantor or co-signer need?
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Landlords generally ask a guarantor or co-signer for the same
             documentation as the primary tenant - the file needs to prove
             they can actually cover the rent if it comes to that, not just
@@ -470,25 +470,25 @@ export default function GuarantorVsCosignerPage() {
 
           <ul className="mt-8 max-w-3xl space-y-2">
             {documentSteps.map((step) => (
-              <li key={step} className="flex gap-3 leading-7 text-white/70">
-                <span className="text-[#F5C979]">•</span>
+              <li key={step} className="flex gap-3 leading-7 text-[#17313A]/72">
+                <span className="text-[#2F6F6B]">•</span>
                 <span>{step}</span>
               </li>
             ))}
           </ul>
 
-          <p className="mt-6 max-w-3xl leading-7 text-white/70">
+          <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/72">
             See our{" "}
             <Link
               href="/rental-documents/checklist-ontario"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               Ontario rental application checklist
             </Link>{" "}
             for the full list landlords typically expect, and our{" "}
             <Link
               href="/credit-score-rental-application-gta"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               credit score guide
             </Link>{" "}
@@ -498,17 +498,17 @@ export default function GuarantorVsCosignerPage() {
         </div>
       </section>
 
-      <section id="renewal" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="renewal" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Renewals
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Does the guarantee end when the lease renews?
           </h2>
 
-          <div className="mt-10 max-w-3xl rounded-[2rem] bg-black/5 p-6 md:p-8">
-            <p className="leading-7 text-[#3D352D]">
+          <div className="mt-10 max-w-3xl rounded-[2rem] bg-[#F7F7F2] p-6 md:p-8">
+            <p className="leading-7 text-[#17313A]/72">
               Typically, a guarantor or co-signer agreement covers the
               lease&apos;s initial term - commonly 12 months in the GTA.
               Whether it extends into a renewal or month-to-month period
@@ -516,7 +516,7 @@ export default function GuarantorVsCosignerPage() {
               agreement, not on a fixed rule: some guarantees are written to
               continue automatically, and some aren&apos;t.
             </p>
-            <p className="mt-4 leading-7 text-[#3D352D]">
+            <p className="mt-4 leading-7 text-[#17313A]/72">
               This is worth reading carefully on both sides before signing -
               a guarantor who assumes their commitment ends after a year
               could be surprised to find it renews automatically, and a
@@ -527,9 +527,9 @@ export default function GuarantorVsCosignerPage() {
         </div>
       </section>
 
-      <section id="no-guarantor" className="px-6 pb-20">
+      <section id="no-guarantor" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             No Guarantor Available
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -540,23 +540,23 @@ export default function GuarantorVsCosignerPage() {
             {noGuarantorOptions.map((option) => (
               <article
                 key={option.title}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
-                <h3 className="text-lg font-bold text-[#F5C979]">
+                <h3 className="text-lg font-bold text-[#2F6F6B]">
                   {option.title}
                 </h3>
-                <p className="mt-3 leading-7 text-white/70">
+                <p className="mt-3 leading-7 text-[#17313A]/72">
                   {option.detail}
                 </p>
               </article>
             ))}
           </div>
 
-          <p className="mt-6 max-w-3xl leading-7 text-white/70">
+          <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/72">
             See our{" "}
             <Link
               href="/credit-score-rental-application-gta"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               credit score guide
             </Link>{" "}
@@ -565,7 +565,7 @@ export default function GuarantorVsCosignerPage() {
             our{" "}
             <Link
               href="/rent-toronto-without-canadian-credit"
-              className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               guide to renting without Canadian credit history
             </Link>{" "}
@@ -574,20 +574,20 @@ export default function GuarantorVsCosignerPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Next Step
             </p>
             <h2 className="text-3xl font-bold md:text-5xl">
               Applying with a guarantor or co-signer?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Once you know which one applies to your situation, see our{" "}
               <Link
                 href="/rental-documents/checklist-ontario"
-                className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Ontario rental application checklist
               </Link>{" "}
@@ -597,18 +597,18 @@ export default function GuarantorVsCosignerPage() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#070A12] p-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5C979]">
+          <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
               Free readiness check
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-white/75">
               It takes a few minutes and gives you a clearer view of where
               your application is strong, what may need work, and what to
               prepare next.
             </p>
             <Link
               href="/#rental-match"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#F5C979] px-6 py-4 text-center font-bold text-[#070A12]"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
               Start Rental Readiness
             </Link>
@@ -616,15 +616,15 @@ export default function GuarantorVsCosignerPage() {
         </div>
       </section>
 
-      <section id="faq" className="px-6 py-20">
+      <section id="faq" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
           <h2 className="text-3xl font-bold md:text-5xl">
             Guarantor vs. co-signer FAQ
           </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-6 text-white/50">
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             General information only, not legal advice - agreements vary by
             landlord and by the specific wording used.
           </p>
@@ -633,17 +633,17 @@ export default function GuarantorVsCosignerPage() {
             {faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-xl font-bold">{faq.question}</h3>
-                <p className="mt-3 leading-7 text-white/70">{faq.answer}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{faq.answer}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }

@@ -217,7 +217,7 @@ const structuredData = [
 
 export default function RentWithoutCanadianCreditPage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="no_canadian_credit_view" />
       <script
         type="application/ld+json"
@@ -226,35 +226,35 @@ export default function RentWithoutCanadianCreditPage() {
         }}
       />
 
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/85 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#legal-distinction" className="hover:text-white">
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#legal-distinction" className="hover:text-[#17313A]">
               Prepaid Rent Rules
             </a>
-            <a href="#which-situation" className="hover:text-white">
+            <a href="#which-situation" className="hover:text-[#17313A]">
               Your Situation
             </a>
-            <a href="#where-to-go" className="hover:text-white">
+            <a href="#where-to-go" className="hover:text-[#17313A]">
               More Resources
             </a>
-            <a href="#faq" className="hover:text-white">
+            <a href="#faq" className="hover:text-[#17313A]">
               FAQ
             </a>
           </nav>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5C979] px-5 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Check Readiness
           </Link>
@@ -264,17 +264,17 @@ export default function RentWithoutCanadianCreditPage() {
       <section className="relative overflow-hidden px-6 py-8 md:py-12 lg:py-14">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(7,10,18,0.98)_0%,rgba(7,10,18,0.82)_48%,rgba(36,27,20,0.72)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.86)_48%,rgba(220,232,227,0.68)_100%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,24rem)] lg:items-center">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C7AA] md:text-sm">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#2F6F6B] md:text-sm">
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
               Renting in Toronto without Canadian credit history
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
               A thin or missing Canadian credit file is a data gap, not a red
               flag - and it&apos;s specifically protected under
               Ontario&apos;s Human Rights Code. This guide covers the one
@@ -288,19 +288,19 @@ export default function RentWithoutCanadianCreditPage() {
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
                 Check My Rental Readiness
               </Link>
               <a
                 href="#legal-distinction"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
                 See the Legal Rules
               </a>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/52">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               General information only, not legal advice. If a landlord is
               pressuring you to prepay rent as a condition of the lease,
               that&apos;s worth a second opinion from a paralegal, a tenant
@@ -308,7 +308,7 @@ export default function RentWithoutCanadianCreditPage() {
             </p>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.04))] p-3 shadow-2xl lg:justify-self-end">
+          <div className="relative w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white p-3 shadow-[0_18px_50px_rgba(23,49,58,.08)] lg:justify-self-end">
             <div className="relative h-40 overflow-hidden rounded-[1.5rem] md:h-44 lg:h-40">
               <Image
                 src="/hero-condo.jpg"
@@ -318,11 +318,11 @@ export default function RentWithoutCanadianCreditPage() {
                 sizes="(min-width: 1024px) 24rem, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
             </div>
 
             <div className="p-3 pt-4 md:p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 No credit history snapshot
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
@@ -333,12 +333,12 @@ export default function RentWithoutCanadianCreditPage() {
                 {heroFactRows.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.07] px-3 py-2.5"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-2.5"
                   >
-                    <span className="text-sm font-semibold text-white/78">
+                    <span className="text-sm font-semibold text-[#17313A]/78">
                       {item.label}
                     </span>
-                    <span className="rounded-full bg-[#F5C979]/16 px-3 py-1 text-xs font-bold text-[#F5C979]">
+                    <span className="rounded-full bg-[#2F6F6B]/12 px-3 py-1 text-xs font-bold text-[#2F6F6B]">
                       {item.status}
                     </span>
                   </div>
@@ -349,7 +349,7 @@ export default function RentWithoutCanadianCreditPage() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/62"
+                    className="rounded-full border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-1.5 text-xs font-semibold text-[#17313A]/68"
                   >
                     {badge}
                   </span>
@@ -362,15 +362,15 @@ export default function RentWithoutCanadianCreditPage() {
 
       <section id="direct-answer" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+          <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Direct Answer
             </p>
             <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
               What&apos;s the difference between required and voluntary
               prepaid rent in Ontario?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
               Under the Residential Tenancies Act, a landlord can only
               require a rent deposit of up to one month&apos;s rent, applied
               to your final month of tenancy (RTA s.106) - anything beyond
@@ -393,15 +393,15 @@ export default function RentWithoutCanadianCreditPage() {
         </div>
       </section>
 
-      <section id="legal-distinction" className="px-6 pb-20">
+      <section id="legal-distinction" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Prepaid Rent Rules
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             What a landlord can require vs. what you can voluntarily offer
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Ontario&apos;s Residential Tenancies Act caps what a landlord can
             require: a rent deposit of up to one month&apos;s rent, collected
             on or before you sign the lease, applied only to your last month
@@ -410,7 +410,7 @@ export default function RentWithoutCanadianCreditPage() {
             - two months, six months, a year - is asking for something the
             Act doesn&apos;t allow, full stop.
           </p>
-          <p className="mt-4 max-w-3xl leading-8 text-white/70">
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             What the Act doesn&apos;t prohibit is a tenant choosing to offer
             more, on their own initiative. In Corvers v. Bumbia, 2014 ONSC
             985, a tenant whose application had already been refused over
@@ -422,11 +422,11 @@ export default function RentWithoutCanadianCreditPage() {
             hadn&apos;t required it.
           </p>
 
-          <div className="mt-8 max-w-3xl rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#F5C979]">
+          <div className="mt-8 max-w-3xl rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
               This is not a landlord playbook
             </p>
-            <p className="mt-3 leading-7 text-white/85">
+            <p className="mt-3 leading-7 text-[#17313A]/85">
               Courts and the LTB have consistently rejected the
               &quot;voluntary&quot; defense whenever a tenant can show the
               payment was actually a condition of getting the unit - being
@@ -440,11 +440,11 @@ export default function RentWithoutCanadianCreditPage() {
             </p>
           </div>
 
-          <div className="mt-6 max-w-3xl rounded-[2rem] border border-white/12 bg-white/[0.06] p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
+          <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#E8E4DD] bg-white/70 p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/50">
               A separate category: security and damage deposits
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-[#17313A]/72">
               This voluntary/required distinction is specific to{" "}
               <strong>prepaid rent</strong>, which the Act treats as a
               permitted payment type with a cap. Security deposits, damage
@@ -454,7 +454,7 @@ export default function RentWithoutCanadianCreditPage() {
               deposit. See our{" "}
               <Link
                 href="/ontario-tenant-rights-gta"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Ontario tenant rights guide
               </Link>{" "}
@@ -464,9 +464,9 @@ export default function RentWithoutCanadianCreditPage() {
         </div>
       </section>
 
-      <section id="which-situation" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="which-situation" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Your Situation
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -477,10 +477,10 @@ export default function RentWithoutCanadianCreditPage() {
             {situationCards.map((card) => (
               <article
                 key={card.label}
-                className="rounded-[2rem] bg-black/5 p-6"
+                className="rounded-[2rem] bg-[#F7F7F2] p-6"
               >
                 <h3 className="text-xl font-bold">{card.label}</h3>
-                <p className="mt-3 leading-7 text-[#3D352D]">
+                <p className="mt-3 leading-7 text-[#17313A]/72">
                   {card.detail}
                 </p>
               </article>
@@ -489,9 +489,9 @@ export default function RentWithoutCanadianCreditPage() {
         </div>
       </section>
 
-      <section id="where-to-go" className="px-6 pb-20">
+      <section id="where-to-go" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             More Resources
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
@@ -500,13 +500,13 @@ export default function RentWithoutCanadianCreditPage() {
 
           <ul className="mt-8 max-w-3xl space-y-4">
             {otherGuideLinks.map((item) => (
-              <li key={item.href} className="flex gap-3 leading-7 text-white/70">
-                <span className="text-[#F5C979]">•</span>
+              <li key={item.href} className="flex gap-3 leading-7 text-[#17313A]/72">
+                <span className="text-[#2F6F6B]">•</span>
                 <span>
                   {item.text}{" "}
                   <Link
                     href={item.href}
-                    className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                    className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
                   >
                     {item.linkLabel}
                   </Link>{" "}
@@ -518,16 +518,16 @@ export default function RentWithoutCanadianCreditPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Next Step
             </p>
             <h2 className="text-3xl font-bold md:text-5xl">
               Ready to put your file together?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Use the Key to GTA Rental Readiness tool to review your
               income, documents, and application strength before you apply -
               no Canadian credit history required to get a clear picture of
@@ -535,18 +535,18 @@ export default function RentWithoutCanadianCreditPage() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#070A12] p-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5C979]">
+          <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
               Free readiness check
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-white/75">
               It takes a few minutes and gives you a clearer view of where
               your application is strong, what may need work, and what to
               prepare next.
             </p>
             <Link
               href="/#rental-match"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#F5C979] px-6 py-4 text-center font-bold text-[#070A12]"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
               Start Rental Readiness
             </Link>
@@ -554,15 +554,15 @@ export default function RentWithoutCanadianCreditPage() {
         </div>
       </section>
 
-      <section id="faq" className="px-6 py-20">
+      <section id="faq" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
           <h2 className="text-3xl font-bold md:text-5xl">
             Renting without Canadian credit history FAQ
           </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-6 text-white/50">
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             General information only, not legal advice - if a landlord is
             pressuring you to prepay rent, talk to a paralegal, a tenant
             legal clinic, or the LTB directly.
@@ -572,17 +572,17 @@ export default function RentWithoutCanadianCreditPage() {
             {faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-xl font-bold">{faq.question}</h3>
-                <p className="mt-3 leading-7 text-white/70">{faq.answer}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{faq.answer}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }

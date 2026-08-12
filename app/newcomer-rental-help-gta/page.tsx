@@ -228,7 +228,7 @@ const structuredData = [
 
 export default function NewcomerRentalHelpPage() {
   return (
-    <main className="min-h-screen bg-[#070A12] text-white">
+    <main className="min-h-screen bg-[#F7F7F2] text-[#17313A]">
       <PageViewTracker eventName="newcomer_help_view" />
       <script
         type="application/ld+json"
@@ -237,32 +237,32 @@ export default function NewcomerRentalHelpPage() {
         }}
       />
 
-      <header className="sticky top-0 z-50 border-b border-white/12 bg-[#09111F]/85 px-6 py-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#F5C979]/25 bg-white/[0.06] text-base font-bold text-[#F5C979] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_0_22px_rgba(245,201,121,0.14)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2F6F6B]/20 bg-[#DCE8E3] text-base font-bold text-[#17313A] shadow-[inset_0_1px_0_rgba(255,255,255,0.80),0_12px_28px_rgba(23,49,58,0.08)]">
               K
             </span>
-            <span className="text-base font-semibold tracking-tight text-white">
+            <span className="text-base font-semibold tracking-tight text-[#17313A]">
               Key to GTA
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm text-white/75 md:flex">
-            <a href="#by-status" className="hover:text-white">
+          <nav className="hidden items-center gap-7 text-sm text-[#17313A]/72 md:flex">
+            <a href="#by-status" className="hover:text-[#17313A]">
               By Status
             </a>
-            <a href="#scams" className="hover:text-white">
+            <a href="#scams" className="hover:text-[#17313A]">
               Avoid Scams
             </a>
-            <a href="#faq" className="hover:text-white">
+            <a href="#faq" className="hover:text-[#17313A]">
               FAQ
             </a>
           </nav>
 
           <Link
             href="/#rental-match"
-            className="rounded-full bg-[#F5C979] px-5 py-3 text-sm font-semibold text-[#070A12] shadow-[0_0_35px_rgba(245,201,121,.22)] transition hover:scale-[1.03]"
+            className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
             Check Readiness
           </Link>
@@ -272,18 +272,18 @@ export default function NewcomerRentalHelpPage() {
       <section className="relative overflow-hidden px-6 py-8 md:py-12 lg:py-14">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(7,10,18,0.98)_0%,rgba(7,10,18,0.82)_48%,rgba(36,27,20,0.72)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(110deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.86)_48%,rgba(220,232,227,0.68)_100%)]"
         />
         <div className="relative mx-auto grid max-w-7xl gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,24rem)] lg:items-center">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#D8C7AA] md:text-sm">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#2F6F6B] md:text-sm">
               GTA Rental Guide
             </p>
             <h1 className="max-w-4xl text-3xl font-black leading-[1.05] tracking-tight md:text-[2.85rem] lg:text-[3rem]">
               Newcomer rental help for the GTA: renting without Canadian history, and how to avoid scams (2026)
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
-              You don't need Canadian credit or rental history to rent in the
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
+              You don&apos;t need Canadian credit or rental history to rent in the
               GTA - you need the right proof for your situation, and to know
               what a real rental listing looks like versus a scam. This guide
               covers what changes by newcomer status, and the scam patterns
@@ -293,26 +293,26 @@ export default function NewcomerRentalHelpPage() {
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/#rental-match"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#F5C979] px-8 py-4 text-center font-extrabold text-[#070A12] shadow-[0_0_45px_rgba(245,201,121,.30)] transition hover:scale-[1.03]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
                 Check My Rental Readiness
               </Link>
               <a
                 href="#by-status"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/18 px-7 py-4 text-center font-semibold text-white transition hover:bg-white/[0.08]"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#2F6F6B]/28 px-7 py-4 text-center font-semibold text-[#17313A] transition hover:bg-[#DCE8E3]"
               >
                 Find My Situation
               </a>
             </div>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/52">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               General information only, not legal or immigration advice.
               Requirements vary by landlord, and settlement support varies by
               individual circumstances.
             </p>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.105),rgba(255,255,255,0.04))] p-3 shadow-2xl lg:justify-self-end">
+          <div className="relative w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white p-3 shadow-[0_18px_50px_rgba(23,49,58,.08)] lg:justify-self-end">
             <div className="relative h-40 overflow-hidden rounded-[1.5rem] md:h-44 lg:h-40">
               <Image
                 src="/hero-condo.jpg"
@@ -322,11 +322,11 @@ export default function NewcomerRentalHelpPage() {
                 sizes="(min-width: 1024px) 24rem, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07111F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
             </div>
 
             <div className="p-3 pt-4 md:p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F5C979]">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F6F6B]">
                 Built for newcomers
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
@@ -337,7 +337,7 @@ export default function NewcomerRentalHelpPage() {
                 {heroBadges.map((badge) => (
                   <span
                     key={badge}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/62"
+                    className="rounded-full border border-[#E8E4DD] bg-[#F7F7F2] px-3 py-1.5 text-xs font-semibold text-[#17313A]/68"
                   >
                     {badge}
                   </span>
@@ -350,25 +350,25 @@ export default function NewcomerRentalHelpPage() {
 
       <section id="direct-answer" className="px-6 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8 md:p-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#F5C979]">
+          <div className="rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-8 md:p-10">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Direct Answer
             </p>
             <h2 className="max-w-4xl text-3xl font-bold md:text-4xl">
               Can newcomers rent in the GTA without Canadian credit history?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-white/85">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
               Yes. Newcomers can rent in the GTA without Canadian credit
               history or rental history - landlords just weigh other proof
               instead: income or funds documentation, a guarantor,
               references, and a complete, honest application. What counts as
-              "enough" varies by your status (student, work permit holder,
+              &quot;enough&quot; varies by your status (student, work permit holder,
               permanent resident, or protected person - see below) and by
-              the type of landlord you're applying to. For the full list of
+              the type of landlord you&apos;re applying to. For the full list of
               documents landlords typically ask for, see our{" "}
               <Link
                 href="/rental-documents/checklist-ontario"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Ontario rental application checklist
               </Link>
@@ -376,20 +376,20 @@ export default function NewcomerRentalHelpPage() {
               type, see our{" "}
               <Link
                 href="/credit-score-rental-application-gta"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 credit score guide
               </Link>
-              ; and if you're weighing whether to offer a landlord prepaid
+              ; and if you&apos;re weighing whether to offer a landlord prepaid
               rent to strengthen your file, see our{" "}
               <Link
                 href="/rent-toronto-without-canadian-credit"
-                className="text-[#F5C979] underline underline-offset-2 hover:text-[#F8DCA6]"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 guide to renting without Canadian credit history
               </Link>{" "}
               for the legal line between what a landlord can require and
-              what you can voluntarily offer. This page focuses on what's
+              what you can voluntarily offer. This page focuses on what&apos;s
               different by newcomer status, plus how to avoid the rental
               scams that disproportionately target people new to the GTA.
             </p>
@@ -397,48 +397,48 @@ export default function NewcomerRentalHelpPage() {
         </div>
       </section>
 
-      <section id="by-status" className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section id="by-status" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             By Newcomer Status
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             What matters most for your situation
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Requirements genuinely differ depending on your status in
-            Canada. Here's what tends to carry the most weight for each.
+            Canada. Here&apos;s what tends to carry the most weight for each.
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {newcomerTypes.map((item) => (
               <article
                 key={item.label}
-                className="rounded-[2rem] bg-black/5 p-6"
+                className="rounded-[2rem] bg-[#F7F7F2] p-6"
               >
                 <h3 className="text-xl font-bold">{item.label}</h3>
-                <p className="mt-3 leading-7 text-[#3D352D]">{item.detail}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{item.detail}</p>
               </article>
             ))}
           </div>
 
-          <p className="mt-8 max-w-3xl leading-7 text-[#3D352D]">
+          <p className="mt-8 max-w-3xl leading-7 text-[#17313A]/72">
             If transit access matters most while you get settled, our{" "}
             <Link
               href="/rent/vaughan"
-              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               Vaughan rental guide
             </Link>{" "}
-            covers the GTA's only direct-subway option outside Toronto.
+            covers the GTA&apos;s only direct-subway option outside Toronto.
           </p>
 
-          <p className="mt-4 max-w-3xl leading-7 text-[#3D352D]">
+          <p className="mt-4 max-w-3xl leading-7 text-[#17313A]/72">
             If being near an established cultural or language community
             matters as you settle in, see our{" "}
             <Link
               href="/persian-newcomer-neighbourhoods-gta"
-              className="text-[#6E6254] underline underline-offset-2 hover:text-[#070A12]"
+              className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
               guide to Persian newcomer neighbourhoods in the GTA
             </Link>{" "}
@@ -448,15 +448,15 @@ export default function NewcomerRentalHelpPage() {
         </div>
       </section>
 
-      <section id="scams" className="px-6 py-20">
+      <section id="scams" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Rental Scam Prevention
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Newcomers are disproportionately targeted - know the pattern
           </h2>
-          <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Toronto Police received more than 380 reports of rental scams in
             2024, and agencies including the RCMP have issued repeated
             public warnings about the pattern. Scammers disproportionately
@@ -469,35 +469,35 @@ export default function NewcomerRentalHelpPage() {
             {scamRedFlags.map((flag, index) => (
               <div
                 key={flag}
-                className="flex gap-4 rounded-[2rem] border border-white/12 bg-white/[0.06] p-5"
+                className="flex gap-4 rounded-[2rem] border border-[#E8E4DD] bg-white p-5"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F5C979] font-bold text-[#070A12]">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2F6F6B] font-bold text-white">
                   {index + 1}
                 </span>
-                <p className="leading-7 text-white/72">{flag}</p>
+                <p className="leading-7 text-[#17313A]/72">{flag}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 rounded-[2rem] border border-white/12 bg-white/[0.06] p-8">
+          <div className="mt-10 rounded-[2rem] border border-[#E8E4DD] bg-white p-8">
             <h3 className="text-xl font-bold">Legal protections worth knowing</h3>
-            <p className="mt-3 leading-7 text-white/70">
-              Ontario landlords must provide the province's Standard Lease
+            <p className="mt-3 leading-7 text-[#17313A]/72">
+              Ontario landlords must provide the province&apos;s Standard Lease
               Form in writing if a tenant asks for it, within 21 days - if
-              they don't, a tenant can legally withhold rent until they
-              receive it. For buildings with three or more units, Toronto's
-              Landlord Registry can help you verify a landlord's identity
+              they don&apos;t, a tenant can legally withhold rent until they
+              receive it. For buildings with three or more units, Toronto&apos;s
+              Landlord Registry can help you verify a landlord&apos;s identity
               before sending any money.
             </p>
           </div>
 
-          <div className="mt-6 rounded-[2rem] border border-[#F5C979]/30 bg-[#F5C979]/10 p-8">
-            <h3 className="text-xl font-bold">If you think you've been scammed</h3>
+          <div className="mt-6 rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-8">
+            <h3 className="text-xl font-bold text-[#2F6F6B]">If you think you&apos;ve been scammed</h3>
             <ul className="mt-4 grid gap-2">
               {reportingResources.map((resource) => (
                 <li
                   key={resource}
-                  className="rounded-2xl bg-white/[0.06] px-4 py-3 text-white/85"
+                  className="rounded-2xl bg-[#F7F7F2] px-4 py-3 text-[#17313A]/85"
                 >
                   {resource}
                 </li>
@@ -507,34 +507,34 @@ export default function NewcomerRentalHelpPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5EBDD] px-6 py-20 text-[#070A12]">
+      <section className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#6E6254]">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
               Next Step
             </p>
             <h2 className="text-3xl font-bold md:text-5xl">
               Want to know how your application looks right now?
             </h2>
-            <p className="mt-5 max-w-3xl leading-8 text-[#3D352D]">
+            <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Use the Key to GTA Rental Readiness tool to review your
               income, documents, and application strength before you submit
               an application.
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-[#070A12] p-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#F5C979]">
+          <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
               Free readiness check
             </p>
-            <p className="mt-3 leading-7 text-white/70">
+            <p className="mt-3 leading-7 text-white/75">
               It takes a few minutes and gives you a clearer view of where
               your application is strong, what may need work, and what to
               prepare next.
             </p>
             <Link
               href="/#rental-match"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#F5C979] px-6 py-4 text-center font-bold text-[#070A12]"
+              className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
               Start Rental Readiness
             </Link>
@@ -542,9 +542,9 @@ export default function NewcomerRentalHelpPage() {
         </div>
       </section>
 
-      <section id="faq" className="px-6 py-20">
+      <section id="faq" className="bg-[#DCE8E3] px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#D8C7AA]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
           <h2 className="text-3xl font-bold md:text-5xl">
@@ -555,17 +555,17 @@ export default function NewcomerRentalHelpPage() {
             {faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-[2rem] border border-white/12 bg-white/[0.06] p-6"
+                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6"
               >
                 <h3 className="text-xl font-bold">{faq.question}</h3>
-                <p className="mt-3 leading-7 text-white/70">{faq.answer}</p>
+                <p className="mt-3 leading-7 text-[#17313A]/72">{faq.answer}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <FooterSection />
+      <FooterSection variant="light" />
     </main>
   );
 }
