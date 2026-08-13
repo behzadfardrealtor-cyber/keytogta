@@ -110,13 +110,13 @@ export default function EmailGate({
       <h2 className="mt-3 text-2xl font-bold text-[#17313A] md:text-3xl">{heading}</h2>
       <p className="mt-3 max-w-2xl leading-7 text-[#17313A]/72">{description}</p>
 
-      <form onSubmit={handleSubmit} noValidate className="mt-6 grid gap-3 sm:grid-cols-[1fr_1fr_auto]">
+      <form onSubmit={handleSubmit} noValidate className="mt-6 grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto]">
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Name (optional)"
-          className="rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4 text-[#17313A] placeholder:text-[#17313A]/45"
+          className="min-w-0 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4 text-[#17313A] placeholder:text-[#17313A]/45"
         />
         <input
           type="email"
@@ -124,7 +124,7 @@ export default function EmailGate({
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
           required
-          className="rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4 text-[#17313A] placeholder:text-[#17313A]/45"
+          className="min-w-0 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4 text-[#17313A] placeholder:text-[#17313A]/45"
         />
         <button
           type="submit"
