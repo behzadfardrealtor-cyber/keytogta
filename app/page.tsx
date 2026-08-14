@@ -4,6 +4,7 @@ import AreaGuidesSection from "./components/AreaGuidesSection";
 import ContactSection from "./components/ContactSection";
 import FAQSection from "./components/FAQSection";
 import FooterSection from "./components/FooterSection";
+import HeroImageSlideshow from "./components/HeroImageSlideshow";
 import ImageWithFallback from "./components/ImageWithFallback";
 import { LazyRentalReadinessSection, LazyReviewsSection } from "./components/LazySections";
 import ServicesSection from "./components/ServicesSection";
@@ -59,15 +60,33 @@ export default function Home() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(160deg,#F7F7F2_0%,#FFFFFF_48%,#DCE8E3_100%)]"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      >
+        <div
+          className="absolute -inset-10 bg-[url('/hero-skyline-bg.jpg')] bg-cover bg-center opacity-[0.42] grayscale-[20%] md:opacity-[0.46]"
+          style={{
+            maskImage:
+              "radial-gradient(ellipse 145% 115% at 30% 68%, black 0%, black 50%, transparent 92%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 145% 115% at 30% 68%, black 0%, black 50%, transparent 92%)",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskSize: "100% 100%",
+            WebkitMaskSize: "100% 100%",
+          }}
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(160deg,rgba(247,247,242,0.22)_0%,rgba(255,255,255,0.17)_48%,rgba(220,232,227,0.24)_100%)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_14%,rgba(47,111,107,0.14),transparent_30%),linear-gradient(90deg,rgba(247,247,242,0.94)_0%,rgba(255,255,255,0.78)_44%,rgba(220,232,227,0.64)_100%)]"
+        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_18%_14%,rgba(47,111,107,0.18),transparent_32%),radial-gradient(circle_at_85%_82%,rgba(47,111,107,0.14),transparent_34%),linear-gradient(90deg,rgba(247,247,242,0.19)_0%,rgba(255,255,255,0.14)_44%,rgba(220,232,227,0.13)_100%)]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-t from-[#F7F7F2]/92 via-[#F7F7F2]/60 to-transparent"
+        className="pointer-events-none fixed inset-x-0 bottom-0 z-0 h-1/2 bg-gradient-to-t from-[#F7F7F2]/80 via-[#F7F7F2]/42 to-transparent"
       />
       <div className="relative z-10">
       <header className="sticky top-0 z-50 border-b border-[#E8E4DD] bg-white/88 px-6 py-5 backdrop-blur-xl">
@@ -175,15 +194,7 @@ export default function Home() {
           <div className="grid gap-4">
             <div className="relative">
               <div className="float-slow relative h-[19rem] w-full overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white shadow-2xl md:h-[22rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[22rem]">
-                <ImageWithFallback
-                  src="/hero-condo.jpg"
-                  alt="GTA condo living"
-                  fill
-                  priority
-                  fetchPriority="high"
-                  sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
-                  className="object-cover opacity-90"
-                />
+                <HeroImageSlideshow />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#17313A]/82 via-[#17313A]/18 to-transparent" />
 
                 <div className="absolute left-5 top-5 rounded-2xl bg-white/90 px-5 py-4 text-[#17313A] shadow-xl backdrop-blur">
@@ -194,13 +205,6 @@ export default function Home() {
                 <div className="absolute bottom-5 left-5 rounded-2xl bg-[#17313A]/90 p-5 text-white shadow-xl backdrop-blur">
                   <h3 className="text-xl font-bold">GTA Condo Living</h3>
                   <p className="mt-1 text-sm text-white/60">Find the right fit in the right area.</p>
-                </div>
-
-                <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
-                  <span className="h-2 w-6 rounded-full bg-[#2F6F6B]" />
-                  <span className="h-2 w-2 rounded-full bg-white/65" />
-                  <span className="h-2 w-2 rounded-full bg-white/65" />
-                  <span className="h-2 w-2 rounded-full bg-white/65" />
                 </div>
               </div>
 

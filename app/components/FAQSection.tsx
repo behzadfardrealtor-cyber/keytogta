@@ -49,7 +49,7 @@ const faqs = [
 export default function FAQSection() {
   return (
       <section id="faq" className="px-6 pb-24">
-        <div className="mx-auto max-w-7xl rounded-[2rem] bg-[#E8E4DD] p-8 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.08)] md:p-10">
+        <div className="mx-auto max-w-7xl rounded-[2rem] bg-[#E8E4DD]/95 p-8 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.08)] backdrop-blur-sm md:p-10">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             FAQ
           </p>
