@@ -62,7 +62,10 @@ export default function RentalReadinessSection() {
   // component has actually mounted client-side, which only happens once
   // hydration for this chunk has completed.
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const timeout = window.setTimeout(() => setMounted(true), 0);
+    return () => window.clearTimeout(timeout);
+  }, []);
 
   const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState("");
@@ -76,6 +79,25 @@ export default function RentalReadinessSection() {
   const [form, setForm] = useState<RentalForm>(initialRentalForm);
   const [debouncedForm, setDebouncedForm] = useState<RentalForm>(initialRentalForm);
   const hasFiredFormStart = useRef(false);
+  const isRentalReadinessSubmissionActive = useRef(false);
+  const isMatchingOptionsSubmissionActive = useRef(false);
+  const trackedGenerateLeadKeys = useRef<Set<string>>(new Set());
+
+  function trackGenerateLeadOnce(
+    leadType: "rental_readiness" | "matching_options",
+    leadSource: "readiness_form" | "matching_options",
+    currentLeadId: string
+  ) {
+    const trackingKey = `${leadType}:${currentLeadId}`;
+    if (trackedGenerateLeadKeys.current.has(trackingKey)) return;
+
+    trackedGenerateLeadKeys.current.add(trackingKey);
+    trackEvent("generate_lead", {
+      lead_source: leadSource,
+      lead_type: leadType,
+      lead_id: currentLeadId,
+    });
+  }
 
   function updateField(field: keyof RentalForm, value: string) {
     if (!hasFiredFormStart.current) {
@@ -151,6 +173,9 @@ export default function RentalReadinessSection() {
     }
 
     setFieldErrors({});
+    if (isRentalReadinessSubmissionActive.current) return;
+
+    isRentalReadinessSubmissionActive.current = true;
     setIsSubmitting(true);
 
     const phoneDigits = normalizeCanadianPhone(form.phone);
@@ -197,18 +222,22 @@ export default function RentalReadinessSection() {
       });
 
       setLeadId(newLeadId);
-      trackEvent("generate_lead", { lead_source: "readiness_form", lead_id: newLeadId });
+      trackGenerateLeadOnce("rental_readiness", "readiness_form", newLeadId);
       setShowReport(true);
       setStatus("Your report is ready below. Your information was also sent to Behzad for review.");
     } catch {
       setStatus("Something went wrong. Please try again.");
     } finally {
+      isRentalReadinessSubmissionActive.current = false;
       setIsSubmitting(false);
     }
   }
 
   async function handleRequestMatchingOptions() {
+    if (isMatchingOptionsSubmissionActive.current) return;
+
     setMatchingOptionsStatus("");
+    isMatchingOptionsSubmissionActive.current = true;
     setIsSubmittingMatchingOptions(true);
 
     const phoneDigits = normalizeCanadianPhone(form.phone);
@@ -255,13 +284,14 @@ export default function RentalReadinessSection() {
         body: JSON.stringify(payload),
       });
 
-      trackEvent("generate_lead", { lead_source: "matching_options", lead_id: matchingLeadId });
+      trackGenerateLeadOnce("matching_options", "matching_options", matchingLeadId);
       setMatchingOptionsStatus(
         "Thanks - your request was sent to Behzad. He'll review your profile and send realistic rental options that match your search criteria."
       );
     } catch {
       setMatchingOptionsStatus("Something went wrong. Please try again.");
     } finally {
+      isMatchingOptionsSubmissionActive.current = false;
       setIsSubmittingMatchingOptions(false);
     }
   }

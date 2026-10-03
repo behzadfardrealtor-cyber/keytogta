@@ -11,8 +11,7 @@ import ServicesSection from "./components/ServicesSection";
 
 export const metadata: Metadata = {
   title: "Key to GTA | GTA Rental Shortlist & Rental Readiness Tool",
-  description:
-    "Get a curated GTA rental shortlist and check your Rental Readiness score before you apply. Compare North York, Vaughan, Richmond Hill, Markham, and Scarborough.",
+  description: "Find condo and house rentals in Toronto and the GTA with Behzad Fard. Get a tailored rental shortlist and guidance on preparing your application.",
   alternates: {
     canonical: "https://www.keytogta.ca",
   },
@@ -36,16 +35,10 @@ const jsonLd = {
     postalCode: "L4J 0A7",
     addressCountry: "CA",
   },
-  areaServed: ["North York", "Vaughan", "Richmond Hill", "Markham", "Scarborough"],
+  areaServed: ["North York", "Vaughan", "Richmond Hill", "Markham", "Scarborough", "Toronto"],
   worksFor: {
     "@type": "Organization",
     name: "Property.ca Inc., Brokerage",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "10",
-    bestRating: "5",
   },
 };
 

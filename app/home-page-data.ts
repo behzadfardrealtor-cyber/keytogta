@@ -39,6 +39,14 @@ export const areaLinks = [
     tag: "Best for value options",
     rent: "$1,850 - $1,900 (1BR)",
   },
+  {
+    name: "Toronto",
+    href: "/rent/toronto",
+    description: "Downtown, Midtown, East End, Etobicoke, and West End rental trade-offs.",
+    image: "/hero-toronto-aerial.jpg",
+    tag: "Best for city variety",
+    rent: "Varies by neighbourhood",
+  },
 ];
 
 export const reviews = [
