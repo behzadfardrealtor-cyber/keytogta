@@ -52,22 +52,22 @@ const situationCards = [
   {
     label: "Have a job",
     detail:
-      "Pay stubs and a recent employment letter usually carry most of the weight here - two to three pay stubs plus a letter confirming role, start date, and income is often enough on its own.",
+      "Recent pay stubs and an employment letter can help document current work and income. A letter may include your role, start date, and salary; requirements vary by landlord and application.",
   },
   {
     label: "Job offer, not started yet",
     detail:
-      "Lead with the signed offer letter. Pair it with a few months of bank statements to bridge the gap until you have pay stubs to show.",
+      "A signed offer letter and relevant bank statements may help document an upcoming job and available funds. Ask what supporting information is requested for your application.",
   },
   {
     label: "No job yet",
     detail:
-      "Proof of funds does the heavy lifting - bank statements showing you can cover several months of rent are usually the strongest single document you can bring.",
+      "Relevant bank statements may help document available funds while you are between jobs. What is useful depends on the application and landlord's requests.",
   },
   {
     label: "Student",
     detail:
-      "An acceptance or enrollment letter plus proof of funds (or a GIC) typically covers it; a parent or sponsor co-signing from abroad can strengthen the file further if a guarantor is requested.",
+      "An acceptance or enrollment letter and relevant proof of funds, such as a GIC, may help explain your study plans and available resources. A parent or sponsor may be discussed if a guarantor is requested; requirements vary.",
   },
 ];
 
@@ -175,7 +175,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-10-03",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario rental applications",

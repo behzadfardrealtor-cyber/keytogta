@@ -52,14 +52,14 @@ const checklistItems = [
   {
     title: "Recent pay stubs",
     detail:
-      "Prepare your most recent pay stubs, usually two or three, so the landlord can see current income and payment consistency.",
+      "Recent pay stubs may help document current income and payment consistency. Check how many, if any, are requested for the specific application.",
     tip: "If you are self-employed, use invoices, accountant letters, NOAs, or business bank statements instead.",
   },
   {
     title: "Credit report",
     detail:
-      "A full Canadian credit report is often stronger than a screenshot because it shows your name, date, score, accounts, and payment history.",
-    tip: "Equifax is commonly requested in Ontario rental applications, but ask what format is preferred.",
+      "A full Canadian credit report can provide context about your name, date, score, accounts, and payment history.",
+    tip: "Ask which report or format, if any, is requested for the application.",
   },
   {
     title: "Proof of funds",
@@ -70,7 +70,7 @@ const checklistItems = [
   {
     title: "Rental application",
     detail:
-      "Most landlords or listing brokerages will ask for a completed rental application with your contact information, income, references, and consent details.",
+      "A rental application may request contact information, income details, references, and consent for checks. Requirements vary by landlord and application.",
     tip: "Do not leave blanks that create doubt. If something does not apply, explain it briefly.",
   },
   {
@@ -148,7 +148,7 @@ const faqs = [
   {
     question: "Is a guarantor always required?",
     answer:
-      "No. A guarantor is usually considered when income, credit, rental history, or local documentation is weak. If you need one, the guarantor should be ready with complete documents.",
+      "No. A guarantor may be requested depending on the application and landlord. If one is requested, they may need to provide relevant supporting information.",
   },
   {
     question: "What does the Rental Readiness tool check?",
@@ -229,14 +229,14 @@ const marketQnA = [
     ),
   },
   {
-    question: "What documents actually get a rental application approved?",
+    question: "What documents are commonly requested for a rental application?",
     answer:
-      "In order of practical weight: (1) a signed job offer letter or employment letter on company letterhead stating title, start date, and salary; (2) two to three recent pay stubs; (3) a credit report or signed consent for a credit check; (4) a previous landlord reference confirming on-time payment; (5) three to six months of bank statements, especially for newcomers or self-employed applicants without a Canadian credit file. Self-employed applicants should substitute a Notice of Assessment, invoices/contracts, and averaged bank deposits for pay stubs. A landlord cannot legally require your SIN on a rental application — only your full name, address, and date of birth are needed for a credit check.",
+      "Common supporting documents may include an employment letter or signed job offer, recent pay stubs, a credit report or consent for a credit check, rental references, and relevant bank statements. Self-employed applicants may be asked for a Notice of Assessment, invoices or contracts, or bank records. Requirements vary by landlord and application. A landlord cannot legally require your SIN on a rental application.",
   },
   {
     question: "Can you rent in the GTA without Canadian credit history?",
     answer:
-      "Yes. Thin or empty credit files are common and expected for newcomers — most experienced GTA landlords know how to evaluate around them. The two documents that carry the most weight are a signed employment offer letter and three to six months of bank statements showing savings equivalent to several months' rent. Add a Canadian guarantor if available, or a reference from an international landlord or employer if not. Being upfront about limited Canadian credit history, rather than leaving gaps in the application, generally works in your favour — landlords read a complete, transparent file faster than a partial one they have to chase down.",
+      "Yes. If your Canadian credit history is limited, an employment or offer letter, relevant bank statements, rental references, or information about a guarantor may help provide context. You can explain what credit information is unavailable and offer relevant supporting documents. Requirements vary by landlord and application.",
   },
 ];
 
@@ -302,7 +302,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-07-05",
-    dateModified: "2026-08-01",
+    dateModified: "2026-10-03",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario rental documents",
@@ -405,9 +405,9 @@ export default function OntarioRentalDocumentsChecklistPage() {
               Rental documents checklist Ontario renters can use before applying (2026)
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
-              A strong rental application is not about sending the most paperwork.
-              It is about sending the right documents, clearly organized, before
-              the landlord has to chase missing details. This guide is built for
+              Preparing a rental application is not about sending the most paperwork.
+              It is about organizing relevant documents before they are requested.
+              This guide is built for
               GTA renters, students, families, professionals, and newcomers who
               want to rent a condo or apartment in Ontario.
             </p>
@@ -582,10 +582,9 @@ export default function OntarioRentalDocumentsChecklistPage() {
 
           <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6">
             <p className="leading-7 text-[#17313A]/85">
-              In competitive, well-priced listings in strong locations, a
-              unit can still receive 2 to 3 applications at once, so the
-              strongest, best-organized file usually wins. Most landlords ask
-              for about 2 recent pay stubs, sometimes 3.
+              Application requirements vary. A landlord may request recent pay
+              stubs or other information to document income; check what is
+              requested for the specific rental.
             </p>
           </div>
         </div>
@@ -621,12 +620,12 @@ export default function OntarioRentalDocumentsChecklistPage() {
             Practical Checklist
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
-            Documents usually needed to rent a condo or apartment in Ontario
+            Common supporting documents for renting a condo or apartment in Ontario
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             You may not need every item for every rental, but these are the
-            documents most often used to help landlords assess identity, income,
-            credit, rental history, and overall application strength.
+            examples of supporting documents for identity, income, credit, or
+            rental history. Requirements vary by landlord and application.
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -758,8 +757,8 @@ export default function OntarioRentalDocumentsChecklistPage() {
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Use the Key to GTA Rental Readiness tool to review budget, income,
-              credit, move-in timing, and document strength before you submit an
-              application.
+              credit information, move-in timing, and documents before you submit
+              an application.
             </p>
           </div>
 
@@ -768,8 +767,8 @@ export default function OntarioRentalDocumentsChecklistPage() {
               Free readiness check
             </p>
             <p className="mt-3 leading-7 text-white/75">
-              It takes a few minutes and gives you a clearer view of where your
-              application is strong, what may need work, and what to prepare next.
+              Review the information you have and identify documents to prepare
+              next.
             </p>
             <Link
               href="/#rental-match"
