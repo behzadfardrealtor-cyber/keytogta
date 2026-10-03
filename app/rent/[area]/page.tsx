@@ -35,7 +35,7 @@ const areaPages: Record<string, AreaPageData> = {
     intro:
       "North York is one of the GTA's most active rental markets - strong subway access, a wide mix of condo stock, and everyday shopping and services close by in most pockets.",
     rentDetail:
-      "One-bedroom units in North York currently run roughly $1,950 to $2,150 a month. liv.rent's Ontario Rent Report (January 2026) put the Toronto-wide unfurnished one-bedroom average at $1,993/month, with North York down 3.66% that month, while Zumper's May 2026 data showed a North York-area average of roughly $2,044/month. Rents here move month to month, so treat this as a planning range, not a fixed number. Under the common 30%-of-income guideline, this level of rent implies a gross household income of roughly $78,000 to $86,000 a year.",
+      "One-bedroom units in North York currently run roughly $1,950 to $2,150 a month. liv.rent's Ontario Rent Report (January 2026) put the Toronto-wide unfurnished one-bedroom average at $1,993/month, with North York down 3.66% that month, while Zumper's May 2026 data showed a North York-area average of roughly $2,044/month. Rents here move month to month, so treat this as a planning range, not a fixed number.",
     rentSource:
       "Sources: liv.rent Ontario Rent Report (January 2026); Zumper (May 2026). Figures are monthly averages that change regularly - treat as directional, not exact.",
     neighbourhoods: [

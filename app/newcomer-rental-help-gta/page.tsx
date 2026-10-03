@@ -46,17 +46,17 @@ const newcomerTypes = [
   {
     label: "International students",
     detail:
-      "Lead with your acceptance or enrollment letter and proof of funds. Most students don't have Canadian income yet, so a bank statement or GIC confirmation showing you can cover rent typically carries more weight than anything else. A parent or sponsor co-signing from abroad, even without a Canadian address, can also strengthen the file if a landlord asks for a guarantor.",
+      "An acceptance or enrollment letter and relevant proof of funds, such as a bank statement or GIC confirmation, may help explain your study plans and available resources. A parent or sponsor may be discussed if a guarantor is requested; requirements vary.",
   },
   {
     label: "Work permit holders",
     detail:
-      "Your job offer or employer letter is usually the strongest document, especially if you're just starting and don't have pay stubs yet. Once you're working, add recent pay stubs and, if your job offer required one, your LMIA reference number. Between offers or waiting on your first paycheque, bank statements showing savings can bridge the gap until you have income history to show.",
+      "A job offer or employer letter may help document your work plans, especially before pay stubs are available. Once working, recent pay stubs may also be relevant. Bank statements can help document available funds while you build income history. Requests vary by landlord and application.",
   },
   {
     label: "Permanent residents",
     detail:
-      "Your application looks closer to a \"standard\" Canadian rental application, but in the first several months you're still commonly missing Canadian credit history or a local rental history, even with steady income. The same alternatives covered in our credit score guide's no-credit-history section apply here: bank statements, an employer letter, landlord references, a guarantor, or a rent-reporting tradeline started early.",
+      "You may have Canadian income documents while still building Canadian credit or rental history. Depending on your circumstances, bank statements, an employer letter, rental references, or information about a guarantor may help provide context. Requirements vary by landlord and application.",
   },
   {
     label: "Refugee claimants / protected persons",
@@ -71,7 +71,7 @@ const scamRedFlags = [
   "Being asked to pay several months of rent upfront beyond first and last month. Under Ontario's Residential Tenancies Act, a landlord cannot legally require more than one month's rent as a deposit (applied to your last month) plus a refundable key deposit, on top of first month's rent - a tenant can offer more voluntarily, but a landlord asking for it is a red flag, not normal practice.",
   "Listing photos that show up identically across other platforms or under different contact names - a quick reverse image search can confirm this before you go further.",
   "A price significantly below the going rate for the area. Compare against sourced rent ranges on our GTA area guides before assuming a deal is real.",
-  "A landlord who asks for very little information about you. Legitimate landlords almost always want references, proof of income, or a credit check - a suspiciously easy process is itself a warning sign.",
+  "A landlord who asks for very little information about you. Rental application requests vary, but may include references, proof of income, or consent for a credit check; be cautious if the process seems unusually easy.",
 ];
 
 const reportingResources = [
@@ -90,7 +90,7 @@ const faqs = [
   {
     question: "What's different about renting as an international student vs. a work permit holder?",
     answer:
-      "Students typically lead with an acceptance letter and proof of funds since most don't have Canadian income yet, sometimes with a sponsor co-signing from abroad. Work permit holders typically lead with a job offer or employer letter, adding pay stubs once available. Both can use bank statements to bridge any income-history gap.",
+      "Students may have an acceptance or enrollment letter and proof of funds; work permit holders may have a job offer or employer letter, with pay stubs if available. Bank statements may help document available funds. Requests vary by application.",
   },
   {
     question: "Is it legal for a landlord to ask for several months of rent upfront?",
@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "How do I know if a rental listing is a scam?",
     answer:
-      "Watch for requests to pay by e-transfer, wire, or crypto before signing anything or meeting in person; landlords who won't meet or show the unit; listing photos that show up identically across other platforms or contacts; prices well below the going rate for the area; and landlords who ask for almost no information about you, since legitimate landlords usually want references or a credit check.",
+      "Watch for requests to pay by e-transfer, wire, or crypto before signing anything or meeting in person; landlords who won't meet or show the unit; listing photos that show up identically across other platforms or contacts; prices well below the going rate for the area; and requests for unusually little information. Rental application requests vary, but may include references or consent for a credit check.",
   },
   {
     question: "What should I do if I think I've been scammed?",
@@ -110,12 +110,12 @@ const faqs = [
   {
     question: "Do I need a guarantor as a newcomer?",
     answer:
-      "Not always. A guarantor typically helps when your income, credit, or rental history alone doesn't reassure a landlord - common for students with no Canadian income, or anyone very early in establishing a credit file. Strong bank statements, an employer letter, or solid references can sometimes be enough on their own.",
+      "Not always. A guarantor may be discussed when an applicant has limited income, credit, or rental history, but requirements vary. Bank statements, an employer letter, or references may help provide context; these documents do not determine whether a guarantor will be requested.",
   },
   {
-    question: "What documents matter most if I don't have Canadian income yet?",
+    question: "What documents may help if I don't have Canadian income yet?",
     answer:
-      "Bank statements showing you can cover several months of rent typically carry the most weight, followed by an employer letter or acceptance/enrollment letter confirming your situation, and a guarantor if the rest of the file still falls short.",
+      "Bank statements may help document available funds. An employer letter, an acceptance or enrollment letter, or information about a guarantor may also provide relevant context. What is requested varies by landlord and application.",
   },
   {
     question: "Where can I get help if a landlord won't give me a proper lease?",
@@ -186,7 +186,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-07-09",
-    dateModified: "2026-07-09",
+    dateModified: "2026-10-03",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Newcomer rental guidance",
@@ -358,22 +358,19 @@ export default function NewcomerRentalHelpPage() {
               Can newcomers rent in the GTA without Canadian credit history?
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
-              Yes. Newcomers can rent in the GTA without Canadian credit
-              history or rental history - landlords just weigh other proof
-              instead: income or funds documentation, a guarantor,
-              references, and a complete, honest application. What counts as
-              &quot;enough&quot; varies by your status (student, work permit holder,
-              permanent resident, or protected person - see below) and by
-              the type of landlord you&apos;re applying to. For the full list of
-              documents landlords typically ask for, see our{" "}
+              Newcomers may apply without Canadian credit or rental history.
+              Income or funds documents, references, and other relevant context
+              may help explain an application; requests vary by circumstances
+              and landlord. For examples of commonly requested documents, see
+              our{" "}
               <Link
                 href="/rental-documents/checklist-ontario"
                 className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Ontario rental application checklist
               </Link>
-              ; for how credit score and income benchmarks work by landlord
-              type, see our{" "}
+              ; for how credit information may be considered in an Ontario
+              rental application, see our{" "}
               <Link
                 href="/credit-score-rental-application-gta"
                 className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
@@ -403,11 +400,12 @@ export default function NewcomerRentalHelpPage() {
             By Newcomer Status
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
-            What matters most for your situation
+            Documents and information for your situation
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-            Requirements genuinely differ depending on your status in
-            Canada. Here&apos;s what tends to carry the most weight for each.
+            Documents available to you may depend on your circumstances.
+            Here are examples of information that may help explain
+            your circumstances; requests vary by landlord and application.
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -517,9 +515,8 @@ export default function NewcomerRentalHelpPage() {
               Want to know how your application looks right now?
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-              Use the Key to GTA Rental Readiness tool to review your
-              income, documents, and application strength before you submit
-              an application.
+              Review the information requested by Rental Readiness and gather
+              your income and rental documents before starting the form.
             </p>
           </div>
 
@@ -528,9 +525,8 @@ export default function NewcomerRentalHelpPage() {
               Free readiness check
             </p>
             <p className="mt-3 leading-7 text-white/75">
-              It takes a few minutes and gives you a clearer view of where
-              your application is strong, what may need work, and what to
-              prepare next.
+              Review the requested information and documents before starting
+              the form.
             </p>
             <Link
               href="/#rental-match"
