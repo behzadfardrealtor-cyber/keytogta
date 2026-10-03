@@ -46,7 +46,7 @@ export default function AreaGuidesSection() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {areaLinks.map((area, index) => (
               <Link
                 key={area.href}
@@ -59,7 +59,7 @@ export default function AreaGuidesSection() {
                     alt={`${area.name} rental area`}
                     fill
                     quality={60}
-                    sizes="(min-width: 768px) 20vw, 100vw"
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover opacity-85 transition duration-500 group-hover:scale-110 group-hover:opacity-100"
                   />
 

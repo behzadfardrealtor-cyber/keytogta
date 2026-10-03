@@ -41,6 +41,10 @@ export default function FooterSection({ variant = "dark" }: FooterSectionProps) 
             <Link href="/about" className={linkClassName}>
               About Key to GTA
             </Link>
+            {" | "}
+            <Link href="/rental-guides" className={linkClassName}>
+              Rental Guides
+            </Link>
             .
           </p>
         </div>

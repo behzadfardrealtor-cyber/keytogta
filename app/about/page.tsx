@@ -8,7 +8,7 @@ const pagePath = "/about";
 const pageUrl = `${siteUrl}${pagePath}`;
 const title = "About Key to GTA | KeyToGTA.ca";
 const description =
-  "Key to GTA is built by Behzad Fard, a licensed Ontario real estate agent with 5+ years in the GTA rental market. Research-driven guidance, not a call centre.";
+  "Behzad Fard is a licensed Ontario real estate agent helping renters and buyers across Toronto and the GTA.";
 
 export const metadata: Metadata = {
   title,
@@ -95,10 +95,7 @@ const structuredData = [
       "@type": "Organization",
       name: BROKERAGE_NAME,
     },
-    description:
-      "Licensed real estate agent in Ontario with 5+ years working in the GTA market, backed by " +
-      BROKERAGE_NAME +
-      "'s real-time market data and a technology-driven approach to pricing, timing, and negotiation.",
+    description,
   },
 ];
 
