@@ -49,7 +49,7 @@ export default function ServicesSection() {
             <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-7 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
               <h3 className="text-2xl font-bold">Rental Readiness</h3>
               <p className="mt-4 leading-7 text-[#17313A]/68">
-                Review budget, area, move-in timeline, documents, and approval strength before applying.
+                Review budget, area, move-in timeline, and application documents before applying.
               </p>
             </div>
 

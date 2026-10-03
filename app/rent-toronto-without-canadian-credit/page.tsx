@@ -86,10 +86,10 @@ const otherGuideLinks = [
     suffix: ".",
   },
   {
-    text: "Wondering what credit score actually gets you approved? See our",
+    text: "Wondering how credit information may be considered in a rental application? See our",
     linkLabel: "credit score guide",
     href: "/credit-score-rental-application-gta",
-    suffix: "for the benchmarks by landlord type.",
+    suffix: "for Ontario credit-check guidance and preparation steps.",
   },
   {
     text: "Working out what changes by your immigration status, or how to avoid rental scams? See our",
@@ -528,10 +528,10 @@ export default function RentWithoutCanadianCreditPage() {
               Ready to put your file together?
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-              Use the Key to GTA Rental Readiness tool to review your
-              income, documents, and application strength before you apply -
-              no Canadian credit history required to get a clear picture of
-              where you stand.
+              Review the information requested by Rental Readiness and gather
+              your available documents before you apply. The current form
+              asks for a numeric credit score, so it may not fit renters
+              without Canadian credit history.
             </p>
           </div>
 
@@ -540,9 +540,8 @@ export default function RentWithoutCanadianCreditPage() {
               Free readiness check
             </p>
             <p className="mt-3 leading-7 text-white/75">
-              It takes a few minutes and gives you a clearer view of where
-              your application is strong, what may need work, and what to
-              prepare next.
+              Review the requested information and documents before starting
+              the form.
             </p>
             <Link
               href="/#rental-match"

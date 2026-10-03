@@ -111,14 +111,6 @@ const mistakes = [
   "Transferring money before confirming the listing, written acceptance, lease terms, and payment instructions.",
 ];
 
-const incomeGuide = [
-  { rent: "$1,800", income: "$4,500", annual: "$54,000" },
-  { rent: "$2,000", income: "$5,000", annual: "$60,000" },
-  { rent: "$2,500", income: "$6,250", annual: "$75,000" },
-  { rent: "$3,000", income: "$7,500", annual: "$90,000" },
-  { rent: "$3,500", income: "$8,750", annual: "$105,000" },
-];
-
 const heroPackageRows = [
   { label: "Government ID", status: "Ready" },
   { label: "Income proof", status: "Ready" },
@@ -161,22 +153,22 @@ const faqs = [
   {
     question: "What does the Rental Readiness tool check?",
     answer:
-      "It helps you review rent target, income, credit, documents, move-in timing, and application strength before you spend time on showings or submit an offer.",
+      "It helps you review rent target, income, credit, documents, move-in timing, and application preparation before you spend time on showings or submit an offer.",
   },
   {
     question: "How much income do I need to rent an apartment in the GTA?",
     answer:
-      "Many GTA landlords look for a gross monthly income of roughly 2.5 to 3 times the rent. For a $2,000 unit that is about $5,000 per month, or around $60,000 per year. A lower income near $4,000 can still work with no monthly debt, strong savings, or proof of funds. Requirements vary by landlord.",
+      "There is no universal income multiple for renting in the GTA. Compare rent with your income and other expenses for your own budget, and prepare accurate income information if requested.",
   },
   {
     question: "What is a good rent-to-income ratio for renting in the GTA?",
     answer:
-      "Most landlords look for rent at or below 30–35% of gross monthly income, but this cannot legally be the only reason for rejection under Ontario's Human Rights Code.",
+      "There is no universal ratio that determines whether an Ontario rental application will be accepted. Use your income and other expenses to set a personal budget; a fixed rent-to-income cutoff is not an appropriate screening rule for ordinary rentals.",
   },
   {
     question: "What credit score do I need to rent an apartment in Toronto?",
     answer:
-      "There's no legal minimum. Property management companies often expect 680-700+; private landlords are frequently flexible from 600–660 with strong supporting documents.",
+      "Ontario has no legal minimum rental credit score. A credit check may be part of an application, but practices vary, and limited Canadian credit history is not the same as bad credit.",
   },
   {
     question: "Do I need a guarantor to rent in the GTA?",
@@ -199,22 +191,22 @@ const marketQnA = [
   {
     question: "Is the 30% rent-to-income rule actually legal in Ontario?",
     answer:
-      "No — not as a sole basis for rejection. Ontario's Human Rights Code (s. 21(3)) allows landlords to consider income information, credit checks, credit references, and rental history, but a Board of Inquiry ruling upheld by the Ontario Superior Court found that using rent-to-income ratios or minimum income criteria as the sole reason to reject an applicant is indirect discrimination. In practice, most landlords still use it as an informal screening tool — expect to see it on applications — but if your ratio falls short, you have a legal basis to ask the landlord to consider your complete file: savings, guarantor, employment stability, and rental references. The Ontario Human Rights Commission has flagged that automatically requiring a co-signer from low-income applicants can itself create a discriminatory barrier, so this cuts both ways.",
+      "For ordinary non-subsidized rentals, Ontario Human Rights Commission guidance says landlords should not apply a fixed rent-to-income cutoff such as 30%. You can compare rent with your income for personal budgeting, but that ratio is not a landlord approval rule. Income information may be requested and considered under Ontario's rental-housing rules alongside available credit or rental-history information.",
   },
   {
     question: "What credit score do you need to rent in the GTA?",
     answer: (
       <>
-        There&apos;s no legal minimum credit score in Ontario — landlords set
-        their own bar, and it varies by landlord type. See our{" "}
+        There&apos;s no legal minimum credit score in Ontario. A landlord may
+        request a credit check, but practices vary. See our{" "}
         <Link
           href="/credit-score-rental-application-gta"
           className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
         >
           full credit score guide
         </Link>{" "}
-        for the 2026 benchmarks by landlord type, and what to do if your file
-        is thin.
+        for preparation steps, including what to do if your Canadian credit
+        history is limited.
       </>
     ),
   },
@@ -503,19 +495,18 @@ export default function OntarioRentalDocumentsChecklistPage() {
               What income do you need to rent in the GTA?
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
-              Most GTA landlords use a 30–35% rent-to-income guideline,
-              sometimes stated as &quot;40x monthly rent&quot; in annual income. For a
-              $2,000/month unit, that works out to roughly $60,000–$72,000 in
-              gross annual income. But this is a landlord preference, not a
-              legal requirement — Ontario&apos;s Human Rights Code prohibits
-              landlords from rejecting an application based on a
-              rent-to-income ratio alone. A landlord must weigh your full
-              picture: income, credit, and rental history together. That
-              means a strong reference letter, a stable job letter, or a
-              guarantor can offset an income ratio that falls short. In 2026,
-              GTA rental supply has grown faster than demand, so landlords
-              increasingly weigh the complete application rather than a
-              single cutoff number.
+              There is no single income multiple that determines whether you
+              can rent in the GTA. Compare monthly rent with your income and
+              other expenses for your own budget. The{" "}
+              <a
+                href="https://www.ohrc.on.ca/en/writing-fair-rental-housing-ad-fact-sheet"
+                className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
+              >
+                Ontario Human Rights Commission&apos;s rental-housing guidance
+              </a>{" "}
+              says landlords should not use a fixed rent-to-income cutoff for
+              ordinary rentals. Prepare accurate income information and any
+              available rental references or credit information.
             </p>
           </div>
         </div>
@@ -580,64 +571,13 @@ export default function OntarioRentalDocumentsChecklistPage() {
             Income &amp; Budget
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
-            How much income do you usually need to rent in the GTA?
+            How do you budget for rent in the GTA?
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-            As a general guideline, many GTA landlords look for a gross monthly
-            household income of about 2.5 to 3 times the monthly rent. For a
-            $2,000 rental, that is roughly $5,000 per month, or about $60,000
-            per year. A lower income near $4,000 per month can still work when
-            the applicant has no car loan or monthly debt payments, has strong
-            savings, or can show proof of funds. Every landlord is different, so
-            treat these as planning targets, not strict rules.
-          </p>
-
-          <div className="mt-10 hidden overflow-hidden rounded-[2rem] border border-[#E8E4DD] bg-white md:block">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="bg-[#F7F7F2] text-sm font-semibold uppercase tracking-[0.08em] text-[#2F6F6B]">
-                  <th className="px-6 py-4">Monthly rent</th>
-                  <th className="px-6 py-4">
-                    Typical monthly income (about 2.5x)
-                  </th>
-                  <th className="px-6 py-4">Approx. annual income</th>
-                </tr>
-              </thead>
-              <tbody>
-                {incomeGuide.map((row) => (
-                  <tr
-                    key={row.rent}
-                    className="border-t border-[#E8E4DD] text-[#17313A]/78"
-                  >
-                    <td className="px-6 py-4 font-semibold">{row.rent}</td>
-                    <td className="px-6 py-4">{row.income}</td>
-                    <td className="px-6 py-4">{row.annual}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-10 grid gap-4 md:hidden">
-            {incomeGuide.map((row) => (
-              <div
-                key={row.rent}
-                className="rounded-[2rem] border border-[#E8E4DD] bg-white p-5"
-              >
-                <p className="text-lg font-bold text-[#2F6F6B]">{row.rent} rent</p>
-                <p className="mt-2 leading-7 text-[#17313A]/72">
-                  Typical monthly income (about 2.5x): {row.income}
-                </p>
-                <p className="mt-1 leading-7 text-[#17313A]/72">
-                  Approx. annual income: {row.annual}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-5 max-w-3xl text-sm leading-6 text-[#17313A]/68">
-            These are common planning ranges, not guarantees. Strong savings, a
-            co-applicant, or a guarantor can change what a landlord will accept.
+            Start with your take-home income and regular expenses, then consider
+            rent, utilities, transportation, insurance, and moving costs. Leave
+            room for savings and unexpected expenses. This is personal budget
+            planning, not a landlord screening formula.
           </p>
 
           <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6">

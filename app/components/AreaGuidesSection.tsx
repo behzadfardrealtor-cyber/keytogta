@@ -26,7 +26,7 @@ export default function AreaGuidesSection() {
 
             <div className="rounded-[2rem] border border-[#E8E4DD] bg-white/82 p-6 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
               <p className="leading-8 text-[#17313A]/68">
-                Compare lifestyle, budget, transit, parking, and approval strategy before you waste time on showings.
+                Compare lifestyle, budget, transit, parking, and application preparation before you spend time on showings.
               </p>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -40,7 +40,7 @@ export default function AreaGuidesSection() {
                 </div>
                 <div className="rounded-2xl bg-[#DCE8E3] p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2F6F6B]">03</p>
-                  <p className="mt-2 text-sm font-bold">Approval strategy</p>
+                  <p className="mt-2 text-sm font-bold">Application preparation</p>
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function AreaGuidesSection() {
                   Next step
                 </p>
                 <p className="mt-2 text-[#17313A]/66">
-                  Not sure which area fits your budget and approval strength?
+                  Not sure which area fits your budget and rental needs?
                   Start with the Rental Readiness tool, or review my{" "}
                   <Link
                     href="/rental-documents/checklist-ontario"

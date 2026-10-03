@@ -372,8 +372,8 @@ export default function NewcomerRentalHelpPage() {
               >
                 Ontario rental application checklist
               </Link>
-              ; for how credit score and income benchmarks work by landlord
-              type, see our{" "}
+              ; for how credit information may be considered in an Ontario
+              rental application, see our{" "}
               <Link
                 href="/credit-score-rental-application-gta"
                 className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
@@ -517,9 +517,8 @@ export default function NewcomerRentalHelpPage() {
               Want to know how your application looks right now?
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-              Use the Key to GTA Rental Readiness tool to review your
-              income, documents, and application strength before you submit
-              an application.
+              Review the information requested by Rental Readiness and gather
+              your income and rental documents before starting the form.
             </p>
           </div>
 
@@ -528,9 +527,8 @@ export default function NewcomerRentalHelpPage() {
               Free readiness check
             </p>
             <p className="mt-3 leading-7 text-white/75">
-              It takes a few minutes and gives you a clearer view of where
-              your application is strong, what may need work, and what to
-              prepare next.
+              Review the requested information and documents before starting
+              the form.
             </p>
             <Link
               href="/#rental-match"
