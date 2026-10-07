@@ -9,7 +9,7 @@ const pagePath = "/bill-60-ontario-tenant-changes-2026";
 const pageUrl = `${siteUrl}${pagePath}`;
 const title = "Bill 60 Ontario Tenant Changes 2026: What's In Force Now | KeyToGTA.ca";
 const description =
-  "Bill 60 changes are rolling out in stages. See exactly what's in force now vs. later for GTA renters - N4 notices, LTB reviews, N12 compensation, and what hasn't changed.";
+  "See the Ontario tenant changes in force since July and September 2026: N4 notices, LTB reviews, N12 compensation, arrears hearings, and what has not changed.";
 
 export const metadata: Metadata = {
   title,
@@ -37,19 +37,20 @@ export const metadata: Metadata = {
 
 const heroBadges = [
   "In force since July 1, 2026",
-  "Takes effect Sept 21, 2026",
+  "In force since Sept 21, 2026",
   "What hasn't changed",
   "Not legal advice",
 ];
 
 const comparisonInForce = [
-  { label: "LTB order review deadline", value: "30 days -> 15 days" },
-  { label: "Arrears repayment plans", value: "Informal plans -> Mandatory LTB Payment Agreement Form" },
+  { label: "LTB order review", value: "15 days from issuance for orders issued on/after July 1" },
+  { label: "Section 206 payment agreements", value: "LTB Payment Agreement Form required" },
 ];
 
-const comparisonLater = [
-  { label: "N4 non-payment notice period", value: "14 days -> 7 days" },
-  { label: "N12 personal-use compensation", value: "Always owed -> Waived with 120+ days' notice" },
+const comparisonSeptember = [
+  { label: "N4 notices given on/after September 21", value: "At least 7 days' notice" },
+  { label: "Section 48 N12 landlord-own-use", value: "Compensation exception for qualifying 120-day notices" },
+  { label: "Section 82 issues at arrears hearings", value: "New payment condition for applications filed on/after September 21" },
 ];
 
 const detailSections = [
@@ -57,35 +58,35 @@ const detailSections = [
     id: "ltb-review",
     tag: "In force since July 1, 2026",
     title: "LTB order review deadline",
-    was: "If you believed an LTB order had a serious error, you had 30 days from receiving it to ask the LTB to review its own order.",
-    becomes: "That window is now 15 days. This is the only deadline that changed here - the review process itself works the same way.",
-    doText: "Mark the deadline the day you receive any LTB order. If you think there's a mistake, don't wait to look into it - 15 days goes fast. Request a review directly through tribunalsontario.ca.",
+    was: "For LTB orders issued before July 1, 2026, the review-request deadline is 30 days from issuance, subject to the LTB's procedural rules.",
+    becomes: "For orders issued on or after July 1, 2026, the deadline is 15 days from the day the order was issued.",
+    doText: "Check the issue date on your order promptly. The LTB's Review of an Order guideline explains the grounds, filing requirements and deadline rules.",
   },
   {
     id: "n4-notice",
-    tag: "Takes effect September 21, 2026",
+    tag: "In force since September 21, 2026",
     title: "N4 non-payment notice period",
-    was: "An N4 notice for unpaid rent gives a termination date at least 14 days after the notice is given, before the landlord can apply to the LTB.",
-    becomes: "For N4 notices served on or after September 21, 2026, that minimum drops to 7 days. Notices served before that date still follow the 14-day rule.",
-    doText: "If you fall behind on rent, don't assume you have two weeks - check the actual date on your N4 and confirm which rule applies based on when it was served. Acting the same day you receive it is the safest habit either way.",
+    was: "For N4 notices given before September 21, 2026, the minimum was 7 days for daily or weekly rent and 14 days for monthly or yearly rent.",
+    becomes: "For N4 notices given on or after September 21, 2026, the termination date must be at least 7 days after the notice is given. The notice alone does not evict a tenant; the landlord must apply to the LTB for an eviction order.",
+    doText: "Check when and how the N4 was given. Do not count the day it was given; mail or courier service can add days. Use the LTB's N4 form and instructions to check the termination date.",
   },
   {
     id: "n12-compensation",
-    tag: "Takes effect September 21, 2026",
+    tag: "In force since September 21, 2026",
     title: "N12 personal-use compensation and the notice waiver",
-    was: "For a landlord (or a close family member) to end your tenancy for their own use, they must give at least 60 days' notice and pay one month's rent in compensation, or offer another acceptable unit - regardless of how much notice they give.",
-    becomes: "Starting September 21, 2026, that compensation is waived if the landlord gives at least 120 days' notice, with a termination date that falls on the last day of a rental period or the end of a fixed term. Give less than 120 days, and compensation is still owed.",
-    doText: "Do the date math yourself. Count from the day you received the notice to the termination date - if it's under 120 days, you're still owed compensation. This calculation is worth getting a second opinion on, from the LTB or a tenant legal clinic, not just this page.",
+    was: "For N12 notices under section 48 given before September 21, 2026, the landlord owes one month's rent in compensation or another rental unit acceptable to the tenant, regardless of notice length.",
+    becomes: "For section 48 landlord-own-use N12 notices given on or after September 21, 2026, no compensation or alternative unit is required if the notice gives at least 120 days and the termination date is the last day of a fixed term or rental period. Otherwise the compensation rule remains; purchaser-own-use N12 notices under section 49 are not exempt.",
+    doText: "Check the notice date, reason and termination date. Where compensation is required, it must be paid or the acceptable unit offered by the termination date. Ask the LTB or a tenant legal clinic about a notice you have received.",
   },
 ];
 
 const n13Note =
-  "N13 notices (demolition, major renovation, or conversion to non-residential use) are a separate framework from N12. The 120-day compensation waiver above is specific to N12; I could not confirm that N13 compensation is waived the same way. If you've received an N13, treat compensation as still owed unless you confirm otherwise with the LTB.";
+  "N13 notices for demolition, major repairs or conversion follow separate rules. The section 48 N12 compensation exception does not apply to N13 notices; check the N13 rules for your circumstances.";
 
 const arrearsSection = {
-  was: "Repayment plans for rent arrears were often arranged informally - a letter, an email, or a verbal agreement between landlord and tenant.",
-  becomes: "Since July 1, 2026, any formal repayment plan filed with the LTB under section 206 of the Residential Tenancies Act must use the Board's official Payment Agreement Form. Separately, the bill includes a rule that would require tenants to pay at least 50% of claimed arrears before raising repair or maintenance issues at the same hearing - but that specific rule has not been proclaimed yet and has no confirmed effective date.",
-  doText: "If a landlord offers you a repayment plan, insist on the official LTB form, not an email or a verbal understanding. And don't assume the 50% arrears rule applies yet - it hasn't taken effect as of this writing.",
+  was: "Before July 1, 2026, the LTB Payment Agreement Form was not mandatory for repayment agreements under section 206. The new section 82 payment condition did not apply to arrears applications filed before September 21, 2026.",
+  becomes: "Since July 1, the LTB Payment Agreement Form is required for repayment agreements under section 206. For a landlord's arrears application filed on or after September 21, a tenant raising other section 82 issues at the hearing must pay at least half the claimed arrears directly to the landlord at least 7 days before the hearing, and give the landlord and LTB a description of the issues and supporting evidence by that deadline. The requirements cannot be waived except where required by the Human Rights Code.",
+  doText: "Check the application filing date. Keep a receipt for any payment and follow the LTB's issue and evidence instructions. This condition is for raising other section 82 issues; it does not prevent you from attending the hearing or disputing the rent amount claimed.",
 };
 
 const unchangedItems = [
@@ -129,12 +130,12 @@ const faqs = [
   {
     question: "Is Bill 60 in effect yet?",
     answer:
-      "Partly. Some provisions have been in force since July 1, 2026 - the shorter LTB order review deadline and the mandatory Payment Agreement Form. Others, including the shorter N4 notice period and the N12 compensation waiver, aren't in force yet and are scheduled for September 21, 2026.",
+      "Yes, the changes covered here took effect in stages. The shorter LTB order review deadline and section 206 Payment Agreement Form requirement began July 1, 2026. The shorter N4 notice period, qualifying section 48 N12 compensation exception, and section 82 arrears-hearing condition took effect September 21, 2026.",
   },
   {
-    question: "How many days do I have to pay rent before eviction now?",
+    question: "How long is an N4 notice period now?",
     answer:
-      "As of this writing, still 14 days under an N4 notice. That drops to 7 days for N4 notices served on or after September 21, 2026. Check the date on your specific notice - the rule that applies is whichever was in force when the notice was served, not when you're reading this.",
+      "An N4 given on or after September 21, 2026 must allow at least 7 days. For earlier N4 notices, the minimum was 7 days for daily or weekly rent and 14 days for monthly or yearly rent. Exclude the day the notice was given and account for the service method. An N4 does not itself evict you; the landlord must apply to the LTB for an eviction order.",
   },
   {
     question: "Does my fixed-term lease still become month-to-month?",
@@ -144,7 +145,7 @@ const faqs = [
   {
     question: "How long do I have to appeal an LTB decision?",
     answer:
-      "Depends which process you mean. Asking the LTB to review its own order: 15 days, shortened from 30 as of July 1, 2026. Appealing to the Divisional Court on a question of law: still 30 days, unchanged by Bill 60. These are two different processes with two different clocks - don't confuse them.",
+      "These are different processes. An LTB review request is generally due within 15 days of issuance for an order issued on or after July 1, 2026, or 30 days for an earlier order, subject to LTB procedural rules. An appeal to Divisional Court on a question of law has a separate 30-day deadline. Check the applicable rules promptly.",
   },
 ];
 
@@ -210,7 +211,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-07-31",
-    dateModified: "2026-07-31",
+    dateModified: "2026-10-06",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario tenant rights",
@@ -312,11 +313,10 @@ export default function Bill60OntarioTenantChangesPage() {
               hasn&apos;t)
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
-              Bill 60&apos;s changes to the Residential Tenancies Act are rolling
-              out in stages, not all at once - and most coverage doesn&apos;t make
-              that clear. This guide separates what&apos;s already in force from
-              what&apos;s still coming, and corrects at least one change that
-              gets reported as active when it isn&apos;t.
+              Bill 60&apos;s tenant-law changes took effect in stages on July 1
+              and September 21, 2026. This guide explains which dates and
+              notice types matter for N4 notices, N12 compensation, arrears
+              hearings and LTB order reviews.
             </p>
 
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
@@ -359,7 +359,7 @@ export default function Bill60OntarioTenantChangesPage() {
                 Staged rollout
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
-                Two dates. Not everything moves at once.
+                Two effective dates. Check which rule applies.
               </p>
 
               <div className="mt-3 flex flex-wrap gap-2">
@@ -390,16 +390,15 @@ export default function Bill60OntarioTenantChangesPage() {
               Bill 60 - the Fighting Delays, Building Faster Act, 2025 -
               received Royal Assent on November 27, 2025, but its changes to
               the Residential Tenancies Act are being brought into force in
-              stages. As of this writing, one set of changes has been in
-              force since July 1, 2026: a shorter LTB order review deadline
-              (30 days down to 15) and a mandatory Payment Agreement Form for
-              arrears repayment plans. A second set - a shorter N4
-              non-payment notice period (14 days down to 7) and a waiver of
-              N12 personal-use compensation when a landlord gives 120+ days&apos;
-              notice - is scheduled for September 21, 2026, and is not in
-              force yet. Some things widely reported as changing did not
-              make it into the final bill: fixed-term leases still
-              automatically become month-to-month, unchanged.
+              stages. Since July 1, 2026, the LTB review-request deadline is
+              15 days from issuance for new orders, and section 206 repayment
+              agreements require the LTB Payment Agreement Form. Since
+              September 21, 2026, new N4 notices require at least 7 days,
+              qualifying landlord-own-use N12 notices can be exempt from
+              compensation, and a new condition applies when tenants raise
+              other issues at certain arrears hearings. These rules depend
+              on the notice or application date; fixed-term tenancies still
+              continue month-to-month unless properly ended.
             </p>
           </div>
         </div>
@@ -408,14 +407,14 @@ export default function Bill60OntarioTenantChangesPage() {
       <section id="comparison" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
-            The Staged Rollout
+            Effective Dates
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
-            In force now vs. takes effect later
+            What took effect, and when
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-            This is the distinction most coverage of Bill 60 gets wrong.
-            Here&apos;s exactly what&apos;s active today and what isn&apos;t yet.
+            The applicable rule can depend on when an order was issued, a
+            notice was given, or an application was filed.
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -439,10 +438,10 @@ export default function Bill60OntarioTenantChangesPage() {
 
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
-                Takes effect September 21, 2026
+                In force since September 21, 2026
               </p>
               <div className="mt-4 grid gap-3">
-                {comparisonLater.map((item) => (
+                {comparisonSeptember.map((item) => (
                   <div key={item.label} className="rounded-2xl bg-white p-4">
                     <p className="text-sm font-bold text-[#17313A]">
                       {item.label}
@@ -457,20 +456,15 @@ export default function Bill60OntarioTenantChangesPage() {
           </div>
 
           <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
-            The specific date of September 21, 2026 is confirmed by legal
-            clinic and industry sources tracking the rollout; Tribunals
-            Ontario&apos;s own operational update confirms &quot;September 2026&quot;
-            without spelling out the exact day on that page. Given how close
-            this date is, confirm current status at{" "}
+            Tribunals Ontario confirms the September 21 effective date in its{" "}
             <a
-              href="https://tribunalsontario.ca/ltb/"
+              href="https://tribunalsontario.ca/2026/09/21/ltb-operational-update-legislative-changes-at-the-landlord-and-tenant-board-effective-september-21-2026/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
             >
-              tribunalsontario.ca
-            </a>{" "}
-            before relying on it for a specific notice or deadline.
+              September 21, 2026 operational update
+            </a>.
           </p>
         </div>
       </section>
@@ -489,13 +483,13 @@ export default function Bill60OntarioTenantChangesPage() {
               <div className="mt-6 grid gap-4">
                 <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/50">
-                    What it was
+                    Previous rule
                   </p>
                   <p className="mt-2 leading-7 text-[#17313A]/72">{section.was}</p>
                 </div>
                 <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/50">
-                    What it becomes
+                    Current rule
                   </p>
                   <p className="mt-2 leading-7 text-[#17313A]/72">
                     {section.becomes}
@@ -510,6 +504,22 @@ export default function Bill60OntarioTenantChangesPage() {
                   </p>
                 </div>
               </div>
+
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
+                Official guidance: {section.id === "ltb-review" ? (
+                  <a href="https://tribunalsontario.ca/documents/ltb/Interpretation%20Guidelines/08%20-%20Review%20of%20an%20Order.html" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+                    LTB Guideline 8 on reviewing an order
+                  </a>
+                ) : section.id === "n4-notice" ? (
+                  <a href="https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20%26%20Instructions/N4_Instructions.html" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+                    LTB N4 notice instructions and date calculation
+                  </a>
+                ) : (
+                  <a href="https://tribunalsontario.ca/documents/ltb/Interpretation%20Guidelines/12%20-%20Eviction%20for%20Personal%20Use.html" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+                    LTB Guideline 12 on N12 compensation
+                  </a>
+                )}.
+              </p>
 
               {section.id === "n12-compensation" && (
                 <>
@@ -539,7 +549,7 @@ export default function Bill60OntarioTenantChangesPage() {
       <section id="arrears" className="bg-white px-6 py-20 text-[#17313A]">
         <div className="mx-auto max-w-7xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
-            In Force (Partly) Since July 1, 2026
+            July and September 2026 Changes
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
             Payment agreements and arrears hearings
@@ -548,7 +558,7 @@ export default function Bill60OntarioTenantChangesPage() {
           <div className="mt-8 grid gap-4">
             <div className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
-                What it was
+                Previous rule
               </p>
               <p className="mt-2 leading-7 text-[#17313A]/72">
                 {arrearsSection.was}
@@ -556,7 +566,7 @@ export default function Bill60OntarioTenantChangesPage() {
             </div>
             <div className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
-                What it becomes
+                Current rule
               </p>
               <p className="mt-2 leading-7 text-[#17313A]/72">
                 {arrearsSection.becomes}
@@ -571,6 +581,17 @@ export default function Bill60OntarioTenantChangesPage() {
               </p>
             </div>
           </div>
+
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
+            See the LTB&apos;s {" "}
+            <a href="https://tribunalsontario.ca/documents/ltb/Brochures/Issues%20a%20Tenant%20Can%20Raise%20at%20a%20Hearing%20about%20a%20Landlords%20Application%20for%20Non%20Payment%20of%20Rent.html" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+              guide to section 82 issues at an arrears hearing
+            </a>{" "}
+            and its {" "}
+            <a href="https://tribunalsontario.ca/2026/06/30/ltb-operational-update-legislative-changes-at-the-ltb/" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+              July 1 payment agreement update
+            </a>.
+          </p>
 
           <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/72">
             Once you know where things stand, our{" "}

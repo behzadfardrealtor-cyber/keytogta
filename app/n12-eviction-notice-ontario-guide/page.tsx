@@ -37,8 +37,8 @@ export const metadata: Metadata = {
 
 const heroFactRows = [
   { label: "Minimum notice", status: "60 days" },
-  { label: "Standard compensation", status: "1 month's rent" },
-  { label: "Minimum occupancy", status: "1 year" },
+  { label: "Compensation", status: "Depends on notice" },
+  { label: "Landlord-own-use occupancy", status: "1 year" },
 ];
 
 const heroBadges = [
@@ -52,42 +52,42 @@ const qualifyingCards = [
   {
     label: "Who qualifies",
     detail:
-      "The landlord themselves, the landlord's spouse, the landlord's child, the landlord's parent, the landlord's spouse's child, the landlord's spouse's parent, or a caregiver for any of the people on this list.",
+      "For landlord-own-use notices under section 48: the landlord, their spouse, a child or parent of either, or a caregiver for one of them if the person receiving care resides or intends to reside in the building, related group of buildings, mobile home park or land lease community.",
   },
   {
     label: "Who doesn't qualify",
     detail:
-      "Siblings, extended family (grandparents, aunts, uncles, cousins, in-laws beyond a spouse's child or parent), friends or roommates of the landlord, and any corporation or numbered company - a corporate landlord cannot use an N12 for \"personal\" use at all.",
+      "For section 48 landlord-own-use: siblings, extended family (grandparents, aunts, uncles, cousins), friends and roommates are not qualifying occupants. A corporate landlord cannot serve a section 48 N12 for its own use; purchaser-own-use under section 49 is a separate category.",
   },
 ];
 
 const t5Steps = [
   "File a Form T5 - Tenant Application for Compensation for Landlord's Bad Faith Notice to End a Tenancy - with the LTB. This is a separate application from anything related to the original N12 eviction itself.",
   "You have up to 12 months after you moved out to file, so acting quickly isn't a barrier if you're still gathering evidence.",
-  "Evidence that helps: the unit being re-listed for rent, sold instead of occupied, or occupied by someone who doesn't match the notice's named qualifying family member, especially within that first year.",
-  "If the LTB finds bad faith, remedies can include an order for the landlord to pay compensation up to 12 months' rent, on top of any administrative penalties the LTB imposes separately.",
+  "Evidence may include the unit being advertised for rent or sale, or occupancy that differs from the stated purpose. These facts can matter, but bad faith is decided by the LTB, not automatically proven by suspicion.",
+  "If the LTB finds bad faith, remedies can include general compensation of up to one year's rent and a separate administrative fine; the outcome depends on the case.",
 ];
 
 const faqs = [
   {
     question: "What is an N12 notice?",
     answer:
-      "An N12 is the notice a landlord uses to end a tenancy so they, or one specific qualifying family member, can move into the unit themselves for at least a year. It requires at least 60 days' notice and, right now, one month's compensation or a comparable unit - regardless of how much notice is given.",
+      "An N12 is a notice for qualifying personal use by a landlord or purchaser. It requires at least 60 days' notice with a termination date at the end of a rental period or fixed term. For landlord-own-use under section 48, the intended occupancy is at least one year. Compensation is normally one month's rent or another unit acceptable to the tenant, but qualifying section 48 notices given on or after September 21, 2026 with at least 120 days' notice are exempt. Purchaser-own-use notices remain subject to compensation.",
   },
   {
     question: "Can my landlord evict me to sell the property?",
     answer:
-      "No - not with an N12. Selling a property isn't valid N12 grounds on its own. The only way a sale connects to an N12 is if the purchaser is an individual (not a corporation) who genuinely intends to move in themselves or a qualifying family member, using the same narrow family definition and one-year minimum occupancy that applies to any other N12.",
+      "A sale alone is not grounds for an N12. Under section 49, a landlord may give an N12 after entering an agreement of purchase and sale for a condominium unit or a residential complex with no more than three units, if the purchaser, a permitted family member or qualifying caregiver genuinely intends to occupy the unit. The landlord-own-use one-year occupancy requirement is not stated for purchaser-own-use N12 notices. See the LTB's Guideline 12 for the sale and occupancy conditions.",
   },
   {
     question: "What if my landlord doesn't actually move in?",
     answer:
-      "That's the core bad-faith scenario the LTB's T5 process exists for. If the landlord or named family member doesn't move in and stay for at least a year - or the unit gets re-rented, sold, or occupied by someone who doesn't qualify - you can file a Form T5 within 12 months of moving out. If the LTB finds bad faith, remedies can include compensation up to 12 months' rent plus administrative penalties.",
+      "You may file a T5 within 12 months of moving out if you moved out because of the N12 notice or a related L2 application or order and believe the notice was given in bad faith. For a section 48 landlord-own-use N12, a rebuttable bad-faith presumption can apply to a T5 filed after September 21, 2026 if the named occupant does not move in within 60 days after the N12 termination date when you left by that date, or within 60 days after you vacated if you left later. It does not apply to purchaser-own-use notices. The landlord can rebut the presumption; the LTB decides the case and any remedies.",
   },
   {
     question: "How much compensation am I owed?",
     answer:
-      "Right now, one month's rent or a comparable unit, regardless of how much notice you were given - due by the termination date, and the LTB won't order your eviction until it's paid. A Bill 60 change would exempt landlords who give at least 120 days' notice from this requirement, but it isn't in force yet as of this writing; confirm current status at tribunalsontario.ca before assuming which rule applies to your notice.",
+      "For section 48 landlord-own-use N12 notices given on or after September 21, 2026, compensation is not required if the notice gives at least 120 days and the termination date is the last day of a fixed term or rental period. For earlier or shorter section 48 notices, and for purchaser-own-use notices under section 49, the landlord must pay one month's rent or offer another unit acceptable to you by the termination date. The LTB cannot order eviction unless any required compensation obligation is met.",
   },
 ];
 
@@ -144,7 +144,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-10-06",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario tenant rights",
@@ -247,13 +247,11 @@ export default function N12EvictionNoticeGuidePage() {
               N12 eviction notices in Ontario: landlord&apos;s own use, explained
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
-              An N12 notice lets a landlord end a tenancy so they, or one
-              specific family member, can move into the unit themselves. It
-              comes with real rules most tenants aren&apos;t told about: a
-              narrow definition of which family members actually qualify, a
-              minimum notice period, and a compensation requirement the
-              landlord has to satisfy before the LTB will even issue an
-              eviction order.
+              An N12 notice can be used for qualifying personal use by a
+              landlord or purchaser. The notice must meet specific occupancy
+              and timing rules. Whether compensation is required depends on
+              who intends to occupy the unit, when the notice was given, and
+              how much notice it provides.
             </p>
 
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
@@ -341,21 +339,19 @@ export default function N12EvictionNoticeGuidePage() {
               What is an N12 notice and when can a landlord use it?
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
-              An N12 is the notice of termination a landlord uses to end a
-              tenancy for their own use, or for the use of one specific
-              qualifying family member (see below) - not for renovations,
-              not for selling the unit outright, and not for any reason short
-              of genuinely intending to occupy it. The landlord or qualifying
-              family member must intend to live in the unit for at least one
-              year, and has to give at least 60 days&apos; notice, with the
-              termination date falling on the last day of a rental period or
-              the end of a fixed term. Right now, every N12 - regardless of
-              notice length - requires the landlord to compensate the tenant
-              one month&apos;s rent or offer a comparable unit, due by the
-              termination date; the LTB won&apos;t issue an eviction order
-              until that&apos;s paid. A Bill 60 change to that compensation
-              rule is coming but isn&apos;t in force yet - covered in full
-              below.
+              An N12 is a notice for qualifying personal use by a landlord
+              under section 48 or a purchaser under section 49, not for
+              renovations or a sale alone. The intended occupancy must be
+              genuine. Landlord-own-use requires at least one year of intended
+              occupancy; section 49 does not state the same one-year minimum
+              for purchaser-own-use. An N12 needs at least 60 days&apos;
+              notice, ending on the last day of a rental period or fixed term.
+              One month&apos;s rent or another unit acceptable to the tenant
+              is normally required by the termination date. The exception is
+              a section 48 landlord-own-use notice given on or after
+              September 21, 2026 with at least 120 days&apos; notice and the
+              required term- or period-end date. The exception does not cover
+              purchaser-own-use N12 notices.
             </p>
           </div>
         </div>
@@ -370,9 +366,9 @@ export default function N12EvictionNoticeGuidePage() {
             What is an N12, and when can a landlord actually use one?
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-            An N12 (Notice to End your Tenancy Because the Landlord Wants to
-            Use the Unit) is specific to one situation: someone connected to
-            the landlord genuinely intends to move into the unit themselves.
+            An N12 (Notice to End your Tenancy Because the Landlord, a
+            Purchaser or a Family Member Requires the Rental Unit) concerns
+            qualifying personal use by a landlord or purchaser.
             It&apos;s not a tool for general renovations, unit conversions,
             or demolition - those go through a different notice, an N13,
             with its own separate rules and its own separate compensation
@@ -382,13 +378,12 @@ export default function N12EvictionNoticeGuidePage() {
             stated reason.
           </p>
           <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
-            The occupancy has to be genuine, not a formality. The landlord or
-            qualifying family member has to actually intend to live in the
-            unit for at least one year. A landlord can&apos;t legally serve
-            an N12, get the tenant to move out, and then re-list the unit
-            for rent at a higher price within that year - that&apos;s
-            exactly the bad-faith pattern the T5 process (covered below)
-            exists to catch. Minimum notice is 60 days, and the termination
+            The occupancy has to be genuine, not a formality. For section 48
+            landlord-own-use, the intended occupant must plan to live in the
+            unit for at least one year. Re-listing it for rent or sale after
+            the tenant leaves can be relevant to a bad-faith T5 application,
+            but the LTB decides whether the notice was given in bad faith.
+            Minimum notice is 60 days, and the termination
             date on the notice has to land on the last day of a rental
             period (for month-to-month tenancies) or the end of the fixed
             term in a lease.
@@ -421,9 +416,15 @@ export default function N12EvictionNoticeGuidePage() {
 
           <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
             This list is narrower than most tenants - and some landlords -
-            assume. If your N12 names anyone outside this list, it
-            doesn&apos;t meet the legal requirement, and that&apos;s worth
+            assume. If a landlord-own-use N12 names someone outside this
+            section 48 list, that&apos;s worth
             raising directly, ideally with a paralegal or through the LTB.
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
+            See the LTB&apos;s {" "}
+            <a href="https://tribunalsontario.ca/documents/ltb/Interpretation%20Guidelines/12%20-%20Eviction%20for%20Personal%20Use.html" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+              Guideline 12 on qualifying occupants and caregivers
+            </a>.
           </p>
         </div>
       </section>
@@ -439,53 +440,45 @@ export default function N12EvictionNoticeGuidePage() {
 
           <div className="mt-8 max-w-3xl rounded-[2rem] border border-[#2F6F6B]/25 bg-white p-6 md:p-8">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2F6F6B]">
-              Current rule
+              When compensation is required
             </p>
             <p className="mt-3 leading-7 text-[#17313A]/85">
-              Right now, every N12 comes with the same compensation
-              requirement, no matter how much notice the landlord gives: one
-              month&apos;s rent, or another rental unit acceptable to the
-              tenant, due by the termination date on the notice. Per the
-              Landlord and Tenant Board&apos;s own Interpretation Guideline
-              12, the LTB will not issue an order ending the tenancy unless
-              the landlord has satisfied this obligation first.
+              For section 48 landlord-own-use notices that do not meet the
+              exception below, and for section 49 purchaser-own-use notices,
+              the landlord must pay one month&apos;s rent or offer another
+              rental unit acceptable to the tenant by the termination date.
+              The LTB will not issue an eviction order unless any required
+              compensation obligation has been met.
             </p>
           </div>
 
           <div className="mt-6 max-w-3xl rounded-[2rem] border border-[#E8E4DD] bg-white/70 p-6 md:p-8">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#17313A]/50">
-              Coming, not yet in force
+              Section 48 exception in force since September 21, 2026
             </p>
             <p className="mt-3 leading-7 text-[#17313A]/72">
-              Bill 60 introduces an exception to this: a landlord who gives
-              at least 120 days&apos; notice - instead of the 60-day minimum
-              - would no longer owe the one-month compensation, as long as
-              the termination date still falls on the last day of a rental
-              period or the end of a fixed term. This is not in force yet.
-              The date most commonly cited for it to take effect is{" "}
-              <strong>September 21, 2026</strong>, based on legal-clinic and
-              industry sources tracking the rollout - Tribunals Ontario&apos;s
-              own operational update (June 30, 2026) confirms only
-              &quot;September 2026&quot; generally, without naming a specific
-              day or naming the N12 provision directly. If you&apos;re
-              dealing with an active N12 anywhere near that date, confirm
-              the current status directly at{" "}
+              If a section 48 landlord-own-use N12 was given on or after
+              September 21, 2026, gives at least 120 days&apos; notice, and
+              ends on the last day of a fixed term or rental period, the
+              landlord does not have to pay compensation or offer another
+              unit. This does not apply to earlier section 48 notices or to
+              purchaser-own-use notices under section 49. Check the LTB&apos;s{" "}
               <a
-                href="https://tribunalsontario.ca/ltb/"
+                href="https://tribunalsontario.ca/documents/ltb/Interpretation%20Guidelines/12%20-%20Eviction%20for%20Personal%20Use.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
-                tribunalsontario.ca
+                Guideline 12 on N12 compensation
               </a>{" "}
-              before assuming which rule applies - see our{" "}
+              and see our{" "}
               <Link
                 href="/bill-60-ontario-tenant-changes-2026"
                 className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
                 Bill 60 tenant changes guide
               </Link>{" "}
-              for the fuller staged-rollout picture.
+              for the effective-date overview.
             </p>
           </div>
         </div>
@@ -510,6 +503,20 @@ export default function N12EvictionNoticeGuidePage() {
               </div>
             ))}
           </div>
+
+          <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/72">
+            For a T5 filed after September 21, 2026 about a section 48
+            landlord-own-use N12, a rebuttable bad-faith presumption applies
+            if the named occupant has not moved in within 60 days after the
+            notice&apos;s termination date when the tenant left by that date,
+            or within 60 days after the tenant vacated if they left later.
+            This new 60-day presumption does not apply to purchaser-own-use
+            N12 notices. The landlord may rebut it at the hearing; see the
+            LTB&apos;s{" "}
+            <a href="https://tribunalsontario.ca/documents/ltb/Interpretation%20Guidelines/12%20-%20Eviction%20for%20Personal%20Use.html" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+              Guideline 12 on T5 bad-faith applications
+            </a>.
+          </p>
 
           <p className="mt-8 max-w-3xl leading-7 text-[#17313A]/72">
             For the broader rules landlords have to follow beyond eviction
