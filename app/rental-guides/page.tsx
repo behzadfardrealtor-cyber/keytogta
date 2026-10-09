@@ -26,6 +26,12 @@ const guideGroups = [
           "See the documents landlords commonly ask for before they review a rental application.",
       },
       {
+        href: "/proof-of-funds-rental-application-ontario",
+        title: "Proof of Funds for an Ontario Rental Application",
+        description:
+          "Compare a bank letter with a statement and prepare financial records more carefully.",
+      },
+      {
         href: "/renting-condo-toronto-before-signing-lease",
         title: "Renting a Condo in Toronto Before Signing",
         description:
