@@ -170,9 +170,9 @@ export default function ProofOfFundsRentalApplicationPage() {
               </div>
             </div>
             <p className="mt-5">
-              Ontario human rights guidance says rental history, credit
-              information, and income information must be considered under its
-              screening rules; a fixed rent-to-income cutoff is not an
+              Ontario human rights guidance says that when income information is
+              requested, it should be considered with available rental history
+              and credit information; a fixed rent-to-income cutoff is not an
               appropriate rule for ordinary rentals. There is no universal
               &ldquo;three times the rent&rdquo; test. See the{" "}
               <a href="https://www.ohrc.on.ca/en/policy-human-rights-and-rental-housing" className={linkClass}>
