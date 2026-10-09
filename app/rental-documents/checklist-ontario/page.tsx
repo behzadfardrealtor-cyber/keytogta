@@ -642,6 +642,16 @@ export default function OntarioRentalDocumentsChecklistPage() {
               </article>
             ))}
           </div>
+          <p className="mt-8 max-w-3xl leading-8 text-[#17313A]/72">
+            Asked to show savings or a bank statement? Read our{" "}
+            <Link
+              href="/proof-of-funds-rental-application-ontario"
+              className="font-semibold text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
+            >
+              proof of funds guide
+            </Link>{" "}
+            to compare documents and protect private banking details.
+          </p>
         </div>
       </section>
 
