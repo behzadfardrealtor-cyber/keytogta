@@ -26,6 +26,12 @@ const guideGroups = [
           "See the documents landlords commonly ask for before they review a rental application.",
       },
       {
+        href: "/fa/rental-documents-toronto",
+        title: "مدارک لازم برای اجاره خانه در تورنتو | راهنمای فارسی",
+        description:
+          "A Persian-language checklist for Toronto condo and house applications, including options for newcomers without Canadian credit.",
+      },
+      {
         href: "/proof-of-funds-rental-application-ontario",
         title: "Proof of Funds for an Ontario Rental Application",
         description:
