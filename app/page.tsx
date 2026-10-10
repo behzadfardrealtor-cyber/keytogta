@@ -149,6 +149,12 @@ export default function Home() {
                 Explore Areas
               </a>
             </div>
+            <p className="mt-4 text-sm text-[#17313A]/72">
+              راهنمای فارسی:{" "}
+              <Link href="/fa/rental-documents-toronto" lang="fa" dir="rtl" className="font-semibold text-[#2F6F6B] underline underline-offset-2">
+                مدارک اجاره خانه و کاندو در تورنتو
+              </Link>
+            </p>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <div className="glass-card rounded-2xl p-4">

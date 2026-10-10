@@ -427,6 +427,12 @@ export default function OntarioRentalDocumentsChecklistPage() {
               </a>
             </div>
 
+            <p className="mt-4 text-sm leading-6">
+              راهنمای فارسی:{" "}
+              <Link href="/fa/rental-documents-toronto" lang="fa" dir="rtl" className="font-semibold text-[#2F6F6B] underline underline-offset-2">
+                مدارک لازم برای اجاره خانه و کاندو در تورنتو
+              </Link>
+            </p>
             <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               General information only, not legal advice. Rental requirements can
               vary by landlord, property manager, listing brokerage, and building.

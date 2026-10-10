@@ -464,6 +464,12 @@ export default function PersianNewcomerNeighbourhoodsPage() {
             for what changes by status - student, work permit holder,
             permanent resident - plus how to avoid rental scams.
           </p>
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
+            Prefer a guide in Farsi? Read our{" "}
+            <Link href="/fa/rental-documents-toronto" lang="fa" dir="rtl" className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]">
+              راهنمای فارسی مدارک اجاره در تورنتو
+            </Link>.
+          </p>
         </div>
       </section>
 

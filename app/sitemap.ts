@@ -15,6 +15,7 @@ const contentPages = [
   "rental-guides",
   "renting-condo-toronto-before-signing-lease",
   "rental-documents/checklist-ontario",
+  "fa/rental-documents-toronto",
   "proof-of-funds-rental-application-ontario",
   "credit-score-rental-application-gta",
   "newcomer-rental-help-gta",
