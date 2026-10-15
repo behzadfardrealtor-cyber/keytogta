@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 import { trackEvent } from "../lib/analytics";
+import { submitLead } from "../lib/submit-lead";
 
 // Separate Apps Script Web App, deployed independently from the main rental
 // inquiry pipeline. It only appends rows to the "Email Subscribers" tab in
 // the same spreadsheet - see LESSONS.md for the setup walkthrough.
-const EMAIL_GATE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwjBSPBy2OGu0y4S79BIs_hAQqMd4nKOV7-T4lZjP21ODbdvIZDvZdTjh7Kv88fdGvqWw/exec";
-
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
@@ -73,19 +71,14 @@ export default function EmailGate({
     };
 
     try {
-      await fetch(EMAIL_GATE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitLead("email_subscriber", payload);
 
       trackEvent("generate_lead_magnet", { source_page: source });
       triggerDownload(pdfUrl, pdfFilename);
       setStatus("success");
     } catch {
       setStatus("error");
-      setErrorMessage("Something went wrong sending your request. Please try again.");
+      setErrorMessage("We could not confirm your signup. You can still download the checklist below.");
     }
   }
 
@@ -136,7 +129,12 @@ export default function EmailGate({
       </form>
 
       {status === "error" && (
-        <p className="mt-3 text-sm font-semibold text-red-600">{errorMessage}</p>
+        <p className="mt-3 text-sm font-semibold text-red-600">
+          {errorMessage}{" "}
+          {errorMessage.includes("could not confirm") && (
+            <a className="underline" href={pdfUrl} download={pdfFilename}>Download the PDF</a>
+          )}
+        </p>
       )}
 
       <p className="mt-4 text-xs leading-5 text-[#17313A]/60">

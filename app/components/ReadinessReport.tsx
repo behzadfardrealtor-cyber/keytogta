@@ -12,6 +12,7 @@ type ScoreStyle = {
 
 type ReadinessReportProps = {
   approvalReport: ApprovalReport;
+  canRequestMatchingOptions: boolean;
   isSubmittingMatchingOptions: boolean;
   matchingOptionsStatus: string;
   onRequestMatchingOptions: () => void | Promise<void>;
@@ -29,10 +30,12 @@ function getMeterColor(score: number) {
 
 function renderCTAButton({
   full = true,
+  disabled = false,
   isSubmittingMatchingOptions,
   onRequestMatchingOptions,
 }: {
   full?: boolean;
+  disabled?: boolean;
   isSubmittingMatchingOptions: boolean;
   onRequestMatchingOptions: () => void | Promise<void>;
 }) {
@@ -40,7 +43,7 @@ function renderCTAButton({
     <button
       type="button"
       onClick={onRequestMatchingOptions}
-      disabled={isSubmittingMatchingOptions}
+      disabled={isSubmittingMatchingOptions || disabled}
       className={`rounded-2xl bg-[#2F6F6B] px-6 py-4 text-center font-black text-white shadow-lg transition hover:bg-[#17313A] disabled:opacity-60 ${
         full ? "w-full" : ""
       }`}
@@ -52,6 +55,7 @@ function renderCTAButton({
 
 export default function ReadinessReport({
   approvalReport,
+  canRequestMatchingOptions,
   isSubmittingMatchingOptions,
   matchingOptionsStatus,
   onRequestMatchingOptions,
@@ -65,7 +69,7 @@ export default function ReadinessReport({
 
   const meterColor = getMeterColor(approvalReport.score);
   const meterWidth = `${Math.max(4, Math.min(100, approvalReport.score))}%`;
-  const matchingOptionsStatusClassName = matchingOptionsStatus.toLowerCase().includes("wrong")
+  const matchingOptionsStatusClassName = matchingOptionsStatus.toLowerCase().includes("could not confirm")
     ? "mt-4 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-medium leading-6 text-red-800"
     : "mt-4 rounded-2xl border border-green-200 bg-green-50 p-4 text-sm font-medium leading-6 text-green-800";
 
@@ -118,7 +122,7 @@ export default function ReadinessReport({
         </div>
 
         <div className="mt-5">
-          {renderCTAButton({ isSubmittingMatchingOptions, onRequestMatchingOptions })}
+          {canRequestMatchingOptions && renderCTAButton({ isSubmittingMatchingOptions, disabled: Boolean(matchingOptionsStatus), onRequestMatchingOptions })}
         </div>
       </div>
 
@@ -306,13 +310,16 @@ export default function ReadinessReport({
       {matchingOptionsStatus && (
         <p className={matchingOptionsStatusClassName}>
           {matchingOptionsStatus}
+          {matchingOptionsStatus.toLowerCase().includes("could not confirm") && (
+            <> <a className="underline" href="mailto:behzadfard.realtor@gmail.com?subject=Rental%20options%20delivery">Email Behzad</a></>
+          )}
         </p>
       )}
 
       {/* STICKY — always in reach while scrolling the detail sections */}
       <div className="sticky bottom-4 z-20 mt-6">
         <div className="rounded-2xl bg-[#DCE8E3] p-1 shadow-2xl">
-          {renderCTAButton({ isSubmittingMatchingOptions, onRequestMatchingOptions })}
+          {canRequestMatchingOptions && renderCTAButton({ isSubmittingMatchingOptions, disabled: Boolean(matchingOptionsStatus), onRequestMatchingOptions })}
         </div>
         <p className="mt-2 text-center text-[0.7rem] font-semibold text-[#17313A]/62">
           No pressure — this is only a planning request, not a rental application.
