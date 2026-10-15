@@ -38,13 +38,13 @@ export default function PrivacyPolicyPage() {
           <h1 className="text-3xl font-black tracking-tight md:text-5xl">
             Privacy Policy
           </h1>
-          <p className="mt-4 text-sm text-[#17313A]/68">Last updated: July 2026</p>
+          <p className="mt-4 text-sm text-[#17313A]/68">Last updated: October 2026</p>
 
           <p className="mt-8 max-w-3xl leading-8 text-[#17313A]/72">
             This policy explains what information Key to GTA collects when
-            you visit keytogta.ca, why I collect it, and how it is used. By
-            using this site, you agree to the collection and use of
-            information as described below.
+            you visit keytogta.ca, why I collect it, and how it is used.
+            Browsing the site or downloading the checklist does not subscribe
+            you to email updates.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Information I collect</h2>
@@ -62,6 +62,11 @@ export default function PrivacyPolicyPage() {
               This can include your name, email, phone number, and details
               about your rental search, budget, and timeline.
             </li>
+            <li>
+              If you choose to subscribe on the checklist page, I collect the
+              name you enter, your email address, and the page where you signed up.
+              You can download the PDF without subscribing.
+            </li>
           </ul>
 
           <h2 className="mt-12 text-2xl font-bold">How I use this information</h2>
@@ -71,6 +76,12 @@ export default function PrivacyPolicyPage() {
             used to review your rental profile, follow up with relevant
             options, and provide the services requested. Form submissions are
             sent to me for review and are not sold to third parties.
+          </p>
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
+            If you opt in to email updates, your address is saved in the
+            checklist subscriber list for occasional GTA rental guidance.
+            You can ask to stop these emails or have your address removed by
+            contacting me at the address below.
           </p>
 
           <h2 className="mt-12 text-2xl font-bold">Analytics and cookies</h2>
@@ -101,8 +112,8 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="mt-12 text-2xl font-bold">Your choices</h2>
           <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
-            You can browse this site without submitting the Rental Readiness
-            form. If you have submitted information and would like it
+            You can browse this site and download the checklist without
+            submitting a form. If you have submitted information and would like it
             removed or corrected, contact me using the details below.
           </p>
 
