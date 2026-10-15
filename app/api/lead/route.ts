@@ -40,7 +40,7 @@ export async function POST(request: Request) {
   if (isLead && !["leadId", "name", "phone", "email"].every(
     (key) => typeof fields[key] === "string" && (fields[key] as string).trim().length > 0
   )) return failure(400);
-  if (isSubscriber && (typeof fields.email !== "string" || !fields.email.includes("@"))) {
+  if (isSubscriber && (typeof fields.email !== "string" || !fields.email.includes("@") || fields.consent !== true)) {
     return failure(400);
   }
 
