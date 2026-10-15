@@ -8,9 +8,9 @@ const siteUrl = "https://www.keytogta.ca";
 const pagePath = "/credit-score-rental-application-gta";
 const pageUrl = `${siteUrl}${pagePath}`;
 const headline = "What credit score do you need to rent in Ontario?";
-const title = "What Credit Score Do You Need to Rent in Ontario? | Key to GTA";
+const title = "Credit Score Needed to Rent in Ontario? No Legal Minimum";
 const description =
-  "Ontario has no legal minimum rental credit score. Learn how credit checks fit into a GTA rental application and how to prepare if your Canadian credit history is limited.";
+  "Ontario law sets no minimum rental credit score. See how credit reports, rental history and references fit a GTA application, including when you have limited Canadian credit history.";
 
 export const metadata: Metadata = {
   title,
