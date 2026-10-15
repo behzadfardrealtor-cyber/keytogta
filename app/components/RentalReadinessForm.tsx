@@ -13,6 +13,7 @@ type ScoreStyle = {
 
 type RentalReadinessFormProps = {
   approvalReport: ApprovalReport;
+  canRequestMatchingOptions: boolean;
   fieldErrors: Record<string, string>;
   form: RentalForm;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void | Promise<void>;
@@ -65,6 +66,7 @@ function getScorePreviewClassName(score: number) {
 function getStatusClassName(status: string) {
   const isErrorStatus =
     status.toLowerCase().includes("wrong") ||
+    status.toLowerCase().includes("could not confirm") ||
     status.toLowerCase().includes("required") ||
     status.toLowerCase().includes("fix");
 
@@ -75,6 +77,7 @@ function getStatusClassName(status: string) {
 
 export default function RentalReadinessForm({
   approvalReport,
+  canRequestMatchingOptions,
   fieldErrors,
   form,
   handleSubmit,
@@ -313,12 +316,16 @@ export default function RentalReadinessForm({
           {status && (
               <p className={statusClassName}>
               {status}
+              {status.toLowerCase().includes("could not confirm") && (
+                <> <a className="underline" href="mailto:behzadfard.realtor@gmail.com?subject=Rental%20inquiry%20delivery">Email Behzad</a></>
+              )}
             </p>
           )}
 
           {showReport && (
             <ReadinessReport
               approvalReport={approvalReport}
+              canRequestMatchingOptions={canRequestMatchingOptions}
               isSubmittingMatchingOptions={isSubmittingMatchingOptions}
               matchingOptionsStatus={matchingOptionsStatus}
               onRequestMatchingOptions={onRequestMatchingOptions}

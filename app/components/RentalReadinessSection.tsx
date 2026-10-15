@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { createLeadId, trackEvent } from "../lib/analytics";
+import { submitLead } from "../lib/submit-lead";
 import {
   calculateApprovalReport,
   initialRentalForm,
@@ -10,8 +11,6 @@ import {
   validateRentalForm,
 } from "../rental-readiness";
 import RentalReadinessForm from "./RentalReadinessForm";
-
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby8VRgDe26w8oqqwIHMCXbtawTyDFueBsi3iZogL_Kxu5qZ9ZQUHnOnRQeEXQsflN6B/exec";
 
 function getScoreStyle(score: number) {
   if (score >= 85) {
@@ -75,6 +74,7 @@ export default function RentalReadinessSection() {
   const [matchingOptionsStatus, setMatchingOptionsStatus] = useState("");
   const [isSubmittingMatchingOptions, setIsSubmittingMatchingOptions] = useState(false);
   const [leadId, setLeadId] = useState<string | null>(null);
+  const [leadDeliveryConfirmed, setLeadDeliveryConfirmed] = useState(false);
 
   const [form, setForm] = useState<RentalForm>(initialRentalForm);
   const [debouncedForm, setDebouncedForm] = useState<RentalForm>(initialRentalForm);
@@ -112,6 +112,7 @@ export default function RentalReadinessSection() {
     });
     setShowReport(false);
     setStatus("");
+    setMatchingOptionsStatus("");
   }
 
   // Debounce the live score preview so typing doesn't trigger a
@@ -180,6 +181,9 @@ export default function RentalReadinessSection() {
 
     const phoneDigits = normalizeCanadianPhone(form.phone);
     const newLeadId = createLeadId();
+    setLeadId(newLeadId);
+    setLeadDeliveryConfirmed(false);
+    setMatchingOptionsStatus("");
     // Recompute from the live form (not the debounced preview value) so the
     // submitted payload always reflects exactly what's in the fields right
     // now, regardless of the 300ms preview lag.
@@ -214,19 +218,15 @@ export default function RentalReadinessSection() {
     };
 
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitLead("rental_readiness", payload);
 
-      setLeadId(newLeadId);
+      setLeadDeliveryConfirmed(true);
       trackGenerateLeadOnce("rental_readiness", "readiness_form", newLeadId);
       setShowReport(true);
       setStatus("Your report is ready below. Your information was also sent to Behzad for review.");
     } catch {
-      setStatus("Something went wrong. Please try again.");
+      setShowReport(true);
+      setStatus(`Your report is ready below, but we could not confirm delivery to Behzad. Please email him your reference ${newLeadId} rather than submitting the form again.`);
     } finally {
       isRentalReadinessSubmissionActive.current = false;
       setIsSubmitting(false);
@@ -277,19 +277,14 @@ export default function RentalReadinessSection() {
     };
 
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitLead("matching_options", payload);
 
       trackGenerateLeadOnce("matching_options", "matching_options", matchingLeadId);
       setMatchingOptionsStatus(
         "Thanks - your request was sent to Behzad. He'll review your profile and send realistic rental options that match your search criteria."
       );
     } catch {
-      setMatchingOptionsStatus("Something went wrong. Please try again.");
+      setMatchingOptionsStatus(`We could not confirm your request. Please email Behzad with reference ${matchingLeadId} rather than sending it again.`);
     } finally {
       isMatchingOptionsSubmissionActive.current = false;
       setIsSubmittingMatchingOptions(false);
@@ -300,6 +295,7 @@ export default function RentalReadinessSection() {
     <>
       <RentalReadinessForm
         approvalReport={approvalReport}
+        canRequestMatchingOptions={leadDeliveryConfirmed}
         fieldErrors={fieldErrors}
         form={form}
         handleSubmit={handleSubmit}
