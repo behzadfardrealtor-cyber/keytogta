@@ -3,6 +3,7 @@ export type RentalForm = {
   phone: string;
   email: string;
   area: string;
+  otherArea: string;
   moveIn: string;
   budget: string;
   income: string;
@@ -37,6 +38,7 @@ export const initialRentalForm: RentalForm = {
   phone: "",
   email: "",
   area: "North York",
+  otherArea: "",
   moveIn: "0-30 days",
   budget: "",
   income: "",
@@ -178,6 +180,10 @@ export function validateRentalForm(form: RentalForm) {
   } else {
     const emailError = isLikelyFakeEmail(form.email);
     if (emailError) errors.email = emailError;
+  }
+
+  if (form.area === "Other GTA area" && !form.otherArea.trim()) {
+    errors.otherArea = "Tell us which GTA area you prefer.";
   }
 
   if (!form.budget.trim()) {

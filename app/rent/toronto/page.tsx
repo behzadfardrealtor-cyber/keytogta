@@ -7,9 +7,9 @@ import PageViewTracker from "../../components/PageViewTracker";
 const siteUrl = "https://www.keytogta.ca";
 const pagePath = "/rent/toronto";
 const pageUrl = `${siteUrl}${pagePath}`;
-const title = "Toronto Rental Guide 2026 | Neighbourhoods, Prices & Transit | KeyToGTA.ca";
+const title = "Toronto Rental Guide 2026 | Neighbourhoods, Transit & Safety | KeyToGTA.ca";
 const description =
-  "Renting in Toronto proper? Compare Downtown, Midtown, East End, Etobicoke and West End rents, transit, and vibe - plus how to avoid the rental scams targeting newcomers.";
+  "Renting in Toronto proper? Compare Downtown, Midtown, East End, Etobicoke and West End by transit, housing options and fit, with practical rental-scam checks.";
 
 export const metadata: Metadata = {
   title,
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
 };
 
 const heroFactRows = [
-  { label: "Most affordable right now", status: "Downtown / Parkdale" },
-  { label: "Fastest-rising area", status: "Etobicoke" },
-  { label: "Priciest pocket", status: "Riverdale" },
+  { label: "Compare like for like", status: "Same unit type" },
+  { label: "Check the full cost", status: "Utilities & parking" },
+  { label: "Before paying", status: "Verify the listing" },
 ];
 
 const heroBadges = [
-  "5 neighbourhoods compared",
-  "Report month on every figure",
+  "Neighbourhood profiles",
+  "How to compare today's rent",
   "Rental scam safety",
   "Transit at a glance",
 ];
@@ -51,52 +51,45 @@ const heroBadges = [
 const comparisonRows = [
   {
     area: "Downtown Core (Financial/Entertainment District)",
-    rent: "$2,096",
-    asOf: "Jan 2026 (liv.rent)",
-    trend: "Down ~10% year-over-year, still softening",
-    bestFor: "Walk-to-work professionals - currently the most affordable of this group, not the priciest",
+    housing: "High-rise condos and apartments; compare building age and included costs",
+    transit: "Line 1 and Union Station connections",
+    bestFor: "Short downtown commutes",
   },
   {
     area: "Midtown (Yonge-Eglinton, Davisville)",
-    rent: "$2,125",
-    asOf: "Aug 2026 (Zumper)",
-    trend: "Down 3% year-over-year",
-    bestFor: "More space, same subway line, gently softening market",
+    housing: "Mix of newer towers and older apartment buildings",
+    transit: "Line 1 access; check walking distance to the station",
+    bestFor: "Subway access with a more residential feel",
   },
   {
     area: "East End - Riverdale",
-    rent: "$2,586",
-    asOf: "Aug 2026 (Zumper)",
-    trend: "Up slightly year-over-year",
-    bestFor: "Character and patio culture - but you're now paying a premium for it, not a discount",
+    housing: "Character homes and smaller buildings; amenities vary by unit",
+    transit: "Line 2 or streetcar depending on the address",
+    bestFor: "Neighbourhood character and local shops",
   },
   {
     area: "East End - East Danforth",
-    rent: "$2,409",
-    asOf: "Aug 2026 (Zumper)",
-    trend: "Down ~6.6% year-over-year",
-    bestFor: "Same vibe, noticeably cheaper than Riverdale's core",
+    housing: "Apartments and houses; check layout and inclusions",
+    transit: "Line 2 access varies by street",
+    bestFor: "A wider East End search",
   },
   {
     area: "Etobicoke",
-    rent: "$2,176",
-    asOf: "May 2026 (liv.rent)",
-    trend: "Up ~7% since January - the fastest-rising area in this comparison",
-    bestFor: "Renters chasing more space in newer buildings; no longer the budget pick it once was",
+    housing: "Wide range of condos, apartments and houses",
+    transit: "Line 2 in the east; farther west may need a bus or car",
+    bestFor: "Renters comparing space and commute trade-offs",
   },
   {
     area: "West End - Parkdale",
-    rent: "$1,974",
-    asOf: "Aug 2026 (Zumper)",
-    trend: "Flat month-over-month",
-    bestFor: "Best value this close to the core, right now",
+    housing: "Older apartments and houses; check condition and utilities",
+    transit: "Streetcar routes and nearby GO connections",
+    bestFor: "A West End search with varied building types",
   },
   {
     area: "West End - Liberty Village",
-    rent: "$2,500",
-    asOf: "Aug 2026 (Zumper)",
-    trend: "Down slightly month-over-month",
-    bestFor: "Newer condos and nightlife - priced like it",
+    housing: "Condo-heavy; confirm building rules and extra costs",
+    transit: "Streetcars and Exhibition GO",
+    bestFor: "Condo amenities and nearby nightlife",
   },
 ];
 
@@ -116,7 +109,7 @@ const scamCases = [
 const nonNegotiables = [
   "Never send money before seeing the unit in person (or via a live video walkthrough with someone you trust).",
   "Be wary of any landlord or agent who won't meet you at the property.",
-  "Ask to see the building's status certificate before signing anything for a condo unit - this is exactly the kind of document review a licensed agent should be doing on your behalf, not something you should be reading alone for the first time.",
+  "For a condo rental, review the Ontario standard lease and the condo declaration, by-laws and rules provided by the landlord. Verify who is authorized to rent the unit before transferring money.",
   "If a deal feels rushed, that's the point - slow down.",
 ];
 
@@ -173,7 +166,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-08-02",
-    dateModified: "2026-08-02",
+    dateModified: "2026-10-18",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Toronto rental neighbourhoods",
@@ -284,10 +277,10 @@ export default function TorontoRentalGuidePage() {
             </div>
 
             <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
-              Rent figures below come from liv.rent&apos;s Ontario Rent Report
-              (municipality-level) and Zumper&apos;s neighbourhood-level data,
-              dated August 2026 unless noted. Rents shift monthly - the date
-              next to each figure tells you how current it is.
+              Use this guide to narrow your search, then compare current
+              listings for the same unit type, move-in date, parking and
+              utilities. Neighbourhood averages from different sources and
+              months are not a reliable price ranking.
             </p>
           </div>
 
@@ -378,15 +371,13 @@ export default function TorontoRentalGuidePage() {
               and still haven&apos;t found what you need, that&apos;s because
               those are 905-area suburbs - separate cities that border
               Toronto but aren&apos;t Toronto. If you specifically want to
-              live inside the city of Toronto itself - walking distance to
-              the subway, a short ride to downtown, inside the 416 - this
-              guide is for you. If affordability matters more than staying
-              inside Toronto proper,{" "}
+              live inside the city of Toronto itself, this guide is for you.
+              If you&apos;re also open to the surrounding cities,{" "}
               <Link
-                href="/cheapest-areas-to-rent-gta"
+                href="/rental-guides"
                 className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
               >
-                see how all five covered GTA areas compare on price
+                explore the other GTA area guides
               </Link>
               .
             </p>
@@ -408,9 +399,8 @@ export default function TorontoRentalGuidePage() {
               <thead>
                 <tr className="bg-[#F7F7F2] text-sm font-semibold uppercase tracking-[0.08em] text-[#2F6F6B]">
                   <th className="px-6 py-4">Neighbourhood</th>
-                  <th className="px-6 py-4">Avg. 1-Bed</th>
-                  <th className="px-6 py-4">As of</th>
-                  <th className="px-6 py-4">Trend</th>
+                  <th className="px-6 py-4">Housing to check</th>
+                  <th className="px-6 py-4">Transit</th>
                   <th className="px-6 py-4">Best For</th>
                 </tr>
               </thead>
@@ -421,11 +411,8 @@ export default function TorontoRentalGuidePage() {
                     className="border-t border-[#E8E4DD] text-[#17313A]/78"
                   >
                     <td className="px-6 py-4 font-semibold">{row.area}</td>
-                    <td className="px-6 py-4">{row.rent}</td>
-                    <td className="px-6 py-4 text-sm text-[#17313A]/60">
-                      {row.asOf}
-                    </td>
-                    <td className="px-6 py-4 text-sm">{row.trend}</td>
+                    <td className="px-6 py-4 text-sm">{row.housing}</td>
+                    <td className="px-6 py-4 text-sm">{row.transit}</td>
                     <td className="px-6 py-4 text-sm">{row.bestFor}</td>
                   </tr>
                 ))}
@@ -440,19 +427,18 @@ export default function TorontoRentalGuidePage() {
                 className="rounded-[2rem] border border-[#E8E4DD] bg-white p-5 shadow-[0_18px_50px_rgba(23,49,58,.06)]"
               >
                 <p className="text-lg font-bold text-[#2F6F6B]">{row.area}</p>
-                <p className="mt-2 text-xl font-bold text-[#17313A]">{row.rent}</p>
-                <p className="mt-1 text-sm text-[#17313A]/60">As of {row.asOf}</p>
-                <p className="mt-2 leading-6 text-[#17313A]/72">{row.trend}</p>
-                <p className="mt-2 text-sm text-[#17313A]/68">{row.bestFor}</p>
+                <p className="mt-2 leading-6 text-[#17313A]/72">{row.housing}</p>
+                <p className="mt-2 text-sm text-[#17313A]/68">Transit: {row.transit}</p>
+                <p className="mt-2 text-sm text-[#17313A]/68">Best for: {row.bestFor}</p>
               </div>
             ))}
           </div>
 
           <p className="mt-6 max-w-3xl text-sm leading-6 text-[#17313A]/68">
-            Figures above come from liv.rent&apos;s Ontario Rent Report
-            (municipality-level: Downtown Toronto, Etobicoke) and
-            Zumper&apos;s neighbourhood-level data (Midtown, East End, West
-            End - liv.rent doesn&apos;t break these out individually).
+            These are starting points, not a cheapest-to-priciest ranking.
+            For a real budget comparison, use available listings with the same
+            bedroom count and housing type, and include utilities, parking,
+            location and lease terms in the total cost.
           </p>
         </div>
       </section>
@@ -475,14 +461,11 @@ export default function TorontoRentalGuidePage() {
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                Proximity - and right now, that&apos;s costing you less than
-                you&apos;d think. A one-bedroom averaged $2,096 a month as of
-                January 2026, down roughly 10% year-over-year, with declines
-                continuing through the spring. A wave of investor-owned
-                condos hitting the rental market has pushed supply up faster
-                than demand downtown, which is good news if you&apos;re
-                renting here right now - this is currently one of the more
-                affordable areas on this list, not the most expensive.
+                Proximity to work and transit. Downtown includes condos and
+                purpose-built apartments with very different layouts, fees
+                and building policies. Compare actual available units at
+                your move-in date instead of assuming the core is always
+                the most expensive or the best deal.
               </p>
             </article>
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
@@ -526,9 +509,9 @@ export default function TorontoRentalGuidePage() {
             <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
               <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                The same Line 1 subway access as downtown, in a market
-                that&apos;s cooling gently - a one-bedroom averaged $2,125 a
-                month as of August 2026, down about 3% from a year earlier.
+                Line 1 access and a mix of newer towers and older apartment
+                buildings. Check what is included in the rent and how far
+                the specific address is from the station.
               </p>
             </article>
             <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
@@ -543,7 +526,7 @@ export default function TorontoRentalGuidePage() {
               <p className="mt-3 leading-7 text-[#17313A]/72">
                 This area is dense with restaurants and cafés, so
                 you&apos;re not sacrificing convenience for a quieter street
-                and a softening market.
+                and nearby transit.
               </p>
             </article>
           </div>
@@ -562,21 +545,18 @@ export default function TorontoRentalGuidePage() {
             If you want character - older brick homes, independent shops, a
             genuine neighbourhood feel - this is where a lot of renters end
             up staying long-term instead of moving every year. Just budget
-            accordingly: this is currently one of the priciest pockets in
-            this comparison, not a discount alternative to downtown.
+            for the unit you actually want: older homes and smaller
+            buildings can differ considerably in space and amenities.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                Riverdale itself averaged $2,586 for a one-bedroom as of
-                August 2026 - above every other area on this list. If
-                that&apos;s outside your budget, East Danforth (a short walk
-                or streetcar ride further east) runs noticeably cheaper,
-                averaging $2,409 across unit types and down about 6.6%
-                year-over-year - worth checking if you want the vibe without
-                Riverdale&apos;s core pricing.
+                Location and building type. Expand your search across
+                Riverdale and East Danforth, then compare like-for-like
+                listings: a neighbourhood-wide figure across all unit types
+                cannot tell you what a particular one-bedroom will cost.
               </p>
             </article>
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
@@ -591,8 +571,8 @@ export default function TorontoRentalGuidePage() {
               <p className="mt-3 leading-7 text-[#17313A]/72">
                 Older buildings sometimes mean no in-suite laundry or
                 parking, so ask directly before booking a viewing - and
-                don&apos;t assume this area is the &quot;affordable&quot;
-                option anymore.
+                don&apos;t assume an older unit will include the same
+                amenities as a newer condo.
               </p>
             </article>
           </div>
@@ -608,21 +588,18 @@ export default function TorontoRentalGuidePage() {
             Toronto&apos;s western edge
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-            Currently the fastest-moving rental market in this comparison -
-            not the value play it&apos;s sometimes assumed to be.
+            Etobicoke covers a large area, so commute and housing options
+            change significantly from one address to another.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
               <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                A one-bedroom averaged $2,176 as of May 2026 - the highest
-                rent-per-square-foot of any area measured in the GTA that
-                month - and prices are climbing fast, up roughly 7% since
-                January alone. If you&apos;re comparing Etobicoke to downtown
-                on old assumptions about which is cheaper, check current
-                listings before you commit; that gap has narrowed or
-                reversed.
+                Compare the actual space, total monthly cost and commute
+                against a downtown option. A municipality-wide rent snapshot
+                from another month is not a fair measure of which listing
+                is better value for your situation.
               </p>
             </article>
             <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
@@ -636,10 +613,9 @@ export default function TorontoRentalGuidePage() {
             <article className="rounded-[2rem] border border-[#E8E4DD] bg-white p-6">
               <h3 className="text-xl font-bold text-[#2F6F6B]">Best for</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                Renters prioritizing newer buildings and more space per unit
-                who are comfortable with a longer subway ride - just verify
-                today&apos;s price against your budget rather than a
-                reputation.
+                Renters willing to weigh more housing options against a
+                potentially longer trip - verify each address against your
+                budget and commute.
               </p>
             </article>
           </div>
@@ -655,20 +631,18 @@ export default function TorontoRentalGuidePage() {
             Parkdale &amp; Liberty Village
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
-            These two neighbourhoods sit minutes apart but are no longer
-            priced alike - worth treating as two separate decisions, not one
-            &quot;West End&quot; bucket.
+            These nearby neighbourhoods have different mixes of buildings.
+            Treat them as two searches, not one &quot;West End&quot; bucket.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <h3 className="text-xl font-bold text-[#2F6F6B]">What you&apos;re paying for</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                Parkdale is currently the most affordable neighbourhood in
-                this entire comparison - a one-bedroom averaged $1,974 as of
-                August 2026, flat month-over-month. Liberty Village, by
-                contrast, averaged $2,500 the same month - newer buildings,
-                closer to the Exhibition GO stop, and priced accordingly.
+                Parkdale includes many older apartments and houses, while
+                Liberty Village has a higher concentration of condos.
+                Compare similar units and the total cost, including
+                utilities, parking and any building-specific requirements.
               </p>
             </article>
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
@@ -682,10 +656,10 @@ export default function TorontoRentalGuidePage() {
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <h3 className="text-xl font-bold text-[#2F6F6B]">Good to know</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                If budget is the deciding factor, Parkdale is the clearer
-                pick right now. If you want newer construction and don&apos;t
-                mind paying for it, Liberty Village delivers that at a real
-                premium over its neighbour.
+                If budget is the deciding factor, search both areas with
+                the same bedroom count and move-in date. Compare condition,
+                included costs and transit rather than relying on an area
+                average from a different housing mix.
               </p>
             </article>
           </div>
@@ -744,6 +718,22 @@ export default function TorontoRentalGuidePage() {
             real, recently-charged cases like these, it&apos;s the actual
             value of working with a real person instead of scrolling
             listings alone.
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/68">
+            For condo rentals, see the{" "}
+            <a href="https://www.ontario.ca/page/guide-ontarios-standard-lease" className="underline underline-offset-2">
+              Ontario standard lease guide
+            </a>{" "}
+            and the{" "}
+            <a href="https://www.condoauthorityontario.ca/before-you-buy-or-rent-a-condo/leasing-a-condo/" className="underline underline-offset-2">
+              Condominium Authority of Ontario&apos;s leasing guidance
+            </a>.
+            A{" "}
+            <a href="https://www.condoauthorityontario.ca/condo-living/corporate-records/status-certificates/" className="underline underline-offset-2">
+              status certificate
+            </a>{" "}
+            can be requested by anyone, but it is primarily useful to resale
+            buyers, not a blanket prerequisite for a tenant.
           </p>
         </div>
       </section>

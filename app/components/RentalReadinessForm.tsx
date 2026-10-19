@@ -213,12 +213,27 @@ export default function RentalReadinessForm({
                     onChange={(e) => updateField("area", e.target.value)}
                   >
                     <option>North York</option>
+                    <option>Toronto</option>
                     <option>Vaughan</option>
                     <option>Richmond Hill</option>
                     <option>Markham</option>
                     <option>Scarborough</option>
+                    <option>Other GTA area</option>
                   </select>
                 </FieldLabel>
+
+                {form.area === "Other GTA area" && (
+                  <FieldLabel label="Which GTA area?" wide>
+                    <input
+                      className={getFieldControlClassName(Boolean(fieldErrors.otherArea))}
+                      placeholder="For example: Mississauga or Etobicoke"
+                      maxLength={80}
+                      value={form.otherArea}
+                      onChange={(e) => updateField("otherArea", e.target.value)}
+                    />
+                    {fieldErrors.otherArea && <p className="text-xs font-semibold text-red-600">{fieldErrors.otherArea}</p>}
+                  </FieldLabel>
+                )}
 
                 <button
                   type="submit"
