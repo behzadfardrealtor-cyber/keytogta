@@ -145,14 +145,17 @@ export default function RentalReadinessSection() {
     if (errors.name) step1Errors.name = errors.name;
     if (errors.phone) step1Errors.phone = errors.phone;
     if (errors.email) step1Errors.email = errors.email;
+    if (errors.otherArea) step1Errors.otherArea = errors.otherArea;
 
     if (Object.keys(step1Errors).length > 0) {
       setFieldErrors(step1Errors);
+      trackEvent("form_validation_error", { form_name: "rental_readiness", form_step: 1 });
       return;
     }
 
     setFieldErrors({});
     setStep(2);
+    trackEvent("form_step_complete", { form_name: "rental_readiness", form_step: 1 });
   }
 
   function handleBack() {
@@ -170,6 +173,7 @@ export default function RentalReadinessSection() {
       setFieldErrors(errors);
       setShowReport(false);
       setStatus("Please complete the required fields before getting your report.");
+      trackEvent("form_validation_error", { form_name: "rental_readiness", form_step: 2 });
       return;
     }
 
@@ -191,6 +195,7 @@ export default function RentalReadinessSection() {
 
     const payload = {
       ...form,
+      area: form.area === "Other GTA area" ? form.otherArea.trim() : form.area,
       normalizedPhone: phoneDigits,
       leadId: newLeadId,
       leadSource: "Key to GTA Website",
@@ -218,6 +223,7 @@ export default function RentalReadinessSection() {
     };
 
     try {
+      trackEvent("form_submit_attempt", { form_name: "rental_readiness" });
       await submitLead("rental_readiness", payload);
 
       setLeadDeliveryConfirmed(true);
@@ -225,6 +231,7 @@ export default function RentalReadinessSection() {
       setShowReport(true);
       setStatus("Your report is ready below. Your information was also sent to Behzad for review.");
     } catch {
+      trackEvent("form_delivery_unconfirmed", { form_name: "rental_readiness" });
       setShowReport(true);
       setStatus(`Your report is ready below, but we could not confirm delivery to Behzad. Please email him your reference ${newLeadId} rather than submitting the form again.`);
     } finally {
@@ -248,6 +255,7 @@ export default function RentalReadinessSection() {
 
     const payload = {
       ...form,
+      area: form.area === "Other GTA area" ? form.otherArea.trim() : form.area,
       normalizedPhone: phoneDigits,
       leadId: matchingLeadId,
       leadSource: "Key to GTA Website",
