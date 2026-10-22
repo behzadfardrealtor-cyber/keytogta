@@ -340,7 +340,7 @@ export default function ProofOfFundsRentalApplicationPage() {
               document preparation and options.
             </p>
             <Link
-              href="/#rental-match"
+              href="/#rental-inquiry"
               className="mt-6 inline-flex rounded-full bg-[#2F6F6B] px-6 py-3 font-bold text-white hover:bg-[#17313A]"
             >
               Review My Rental Options
