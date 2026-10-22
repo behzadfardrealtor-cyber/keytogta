@@ -135,11 +135,11 @@ export default function RentalInquirySection() {
     <section id="rental-inquiry" className="scroll-mt-24 px-6 pb-24 pt-8">
       <div className="mx-auto grid max-w-7xl gap-8 rounded-[2rem] border border-[#E8E4DD] bg-[#DCE8E3]/85 p-6 shadow-[0_20px_60px_rgba(23,49,58,.08)] md:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2F6F6B]">Start your rental search</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2F6F6B]">Option 1 · Ask for rental help</p>
           <h2 className="mt-4 text-3xl font-black leading-tight md:text-4xl">Tell Behzad what you need</h2>
           <p className="mt-5 leading-7 text-[#17313A]/80">Share your area, timing, and the kind of condo or house you want. Behzad will review your request personally and discuss possible next steps with you.</p>
-          <p className="mt-4 text-sm leading-6 text-[#17313A]/80">No credit score, income details, or document uploads are needed to start. An international phone number is welcome, and you can use email instead.</p>
-          <a href="#rental-match" className="mt-6 inline-block font-semibold text-[#246860] underline underline-offset-4">Want a detailed rental readiness report? Use the two-step tool.</a>
+          <p className="mt-4 text-sm leading-6 text-[#17313A]/80">Choose this for a personal reply about your rental search. No credit score, income details, or document uploads are needed. An international phone number is welcome, and you can use email instead.</p>
+          <a href="#rental-match" className="mt-6 inline-block font-semibold text-[#246860] underline underline-offset-4">Want a detailed readiness report instead? Use the optional two-step tool.</a>
         </div>
 
         <div className="rounded-[1.5rem] bg-white p-5 shadow-sm md:p-8">
