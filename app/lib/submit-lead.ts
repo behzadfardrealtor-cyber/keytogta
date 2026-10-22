@@ -1,4 +1,4 @@
-export async function submitLead(kind: "rental_readiness" | "matching_options" | "email_subscriber", payload: object) {
+export async function submitLead(kind: "rental_readiness" | "matching_options" | "rental_inquiry" | "email_subscriber", payload: object) {
   const response = await fetch("/api/lead", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

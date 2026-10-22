@@ -33,11 +33,27 @@ export async function POST(request: Request) {
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) return failure(400);
 
   const fields = payload as Record<string, unknown>;
-  const isLead = kind === "rental_readiness" || kind === "matching_options";
+  const isInquiry = kind === "rental_inquiry";
+  const isLead = kind === "rental_readiness" || kind === "matching_options" || isInquiry;
   const isSubscriber = kind === "email_subscriber";
   if (!isLead && !isSubscriber) return failure(400);
 
-  if (isLead && !["leadId", "name", "phone", "email"].every(
+  if (isLead && !["leadId", "name"].every(
+    (key) => typeof fields[key] === "string" && (fields[key] as string).trim().length > 0
+  )) return failure(400);
+  if (isInquiry) {
+    const email = typeof fields.email === "string" ? fields.email.trim() : "";
+    const phone = typeof fields.phone === "string" ? fields.phone.trim() : "";
+    if (!email && !phone) return failure(400);
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return failure(400);
+    if (phone && (phone.replace(/\D/g, "").length < 7 || phone.replace(/\D/g, "").length > 15)) return failure(400);
+    if (!["area", "moveIn", "propertyType"].every(
+      (key) => typeof fields[key] === "string" && (fields[key] as string).trim().length > 0
+    )) return failure(400);
+    if (["name", "email", "phone", "area", "moveIn", "propertyType", "budget", "bedrooms", "parking", "question"].some(
+      (key) => typeof fields[key] === "string" && (fields[key] as string).length > 500
+    )) return failure(400);
+  } else if (isLead && !["phone", "email"].every(
     (key) => typeof fields[key] === "string" && (fields[key] as string).trim().length > 0
   )) return failure(400);
   if (isSubscriber && (typeof fields.email !== "string" || !fields.email.includes("@") || fields.consent !== true)) {
