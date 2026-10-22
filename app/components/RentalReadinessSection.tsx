@@ -323,14 +323,6 @@ export default function RentalReadinessSection() {
         updateField={updateField}
       />
 
-      {!showReport && (
-        <a
-          href="#rental-match"
-          className="fixed bottom-5 left-5 right-5 z-50 rounded-2xl bg-[#2F6F6B] px-6 py-4 text-center font-semibold text-white shadow-2xl md:hidden"
-        >
-          Get My Rental Shortlist
-        </a>
-      )}
     </>
   );
 }

@@ -22,10 +22,10 @@ export default function ContactSection() {
               <ContactActions placement="contact_section" />
 
               <a
-                href="#rental-match"
+                href="#rental-inquiry"
                 className="mt-6 inline-flex w-full justify-center rounded-2xl bg-[#2F6F6B] px-6 py-4 font-semibold text-white transition hover:bg-[#17313A]"
               >
-                Get My Rental Shortlist
+                Send a rental request
               </a>
             </div>
           </div>

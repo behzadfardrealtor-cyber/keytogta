@@ -6,6 +6,7 @@ import FAQSection from "./components/FAQSection";
 import FooterSection from "./components/FooterSection";
 import HeroImageSlideshow from "./components/HeroImageSlideshow";
 import ImageWithFallback from "./components/ImageWithFallback";
+import RentalInquirySection from "./components/RentalInquirySection";
 import { LazyRentalReadinessSection, LazyReviewsSection } from "./components/LazySections";
 import ServicesSection from "./components/ServicesSection";
 
@@ -103,10 +104,10 @@ export default function Home() {
           </nav>
 
           <a
-            href="#rental-match"
+            href="#rental-inquiry"
             className="rounded-full bg-[#2F6F6B] px-4 py-2.5 text-xs font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A] lg:px-6 lg:py-3 lg:text-sm"
           >
-            Get My Rental Shortlist →
+            Request Rental Options →
           </a>
         </div>
       </header>
@@ -136,10 +137,10 @@ export default function Home() {
 
             <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a
-                href="#rental-match"
+                href="#rental-inquiry"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center text-base font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B] sm:w-auto"
               >
-                Get My Rental Shortlist →
+                Request Rental Options →
               </a>
 
               <a
@@ -239,6 +240,8 @@ export default function Home() {
 
         <LazyReviewsSection />
       </section>
+
+      <RentalInquirySection />
 
       <AreaGuidesSection />
 

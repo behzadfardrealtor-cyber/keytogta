@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               Information you provide directly, such as when you submit the
-              Rental Readiness form or the matching rental options button.
+              short rental inquiry, Rental Readiness form, or matching rental options button.
               This can include your name, email, phone number, and details
               about your rental search, budget, and timeline.
             </li>
