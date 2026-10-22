@@ -5,9 +5,9 @@ import FooterSection from "../components/FooterSection";
 const pageUrl = "https://www.keytogta.ca/rental-guides";
 
 export const metadata: Metadata = {
-  title: "GTA Rental Guides | Key to GTA",
+  title: "Toronto Renting Tips & GTA Rental Guides | Key to GTA",
   description:
-    "Practical GTA rental guides for condo and house renters: documents, credit, newcomer steps, tenant rights, and area planning.",
+    "Start with practical Toronto renting tips on timing, total costs, condo checks, documents, and lease basics. Explore GTA area and tenant-rights guides.",
   alternates: {
     canonical: pageUrl,
   },
@@ -160,10 +160,10 @@ export default function RentalGuidesPage() {
           </Link>
 
           <Link
-            href="/#rental-match"
+            href="/#rental-inquiry"
             className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
-            Get My Rental Shortlist
+            Request Rental Options
           </Link>
         </div>
       </header>
@@ -178,13 +178,48 @@ export default function RentalGuidesPage() {
             Rental Guides
           </p>
           <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-            GTA Rental Guides
+            Toronto Renting Tips and GTA Rental Guides
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#17313A]/72">
-            Practical guides for condo and house renters who want to prepare a
-            stronger application, compare realistic GTA areas, and understand
-            the next steps before they apply.
+            Start with the decisions that matter in a Toronto condo or house
+            search, then choose a detailed guide for your area, application,
+            or tenant rights. Behzad can discuss possible rental options after
+            reviewing your search needs.
           </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="toronto-rental-tips" className="px-6 pb-16">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#E8E4DD] bg-white p-6 shadow-[0_18px_50px_rgba(23,49,58,.06)] md:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#2F6F6B]">Start here</p>
+          <h2 id="toronto-rental-tips" className="mt-3 text-2xl font-bold md:text-4xl">
+            Five practical tips for renting in Toronto
+          </h2>
+          <p className="mt-3 max-w-3xl leading-7 text-[#17313A]/70">
+            These steps help you narrow a condo or house search before you spend time on showings or send private documents.
+          </p>
+          <ol className="mt-8 grid gap-5 md:grid-cols-2">
+            <li className="rounded-2xl bg-[#F7F7F2] p-5">
+              <h3 className="text-lg font-bold">1. Start with your move-in date and commute</h3>
+              <p className="mt-2 leading-7 text-[#17313A]/72">Compare areas now, then check current availability near the date you can actually move. A listing available today may not suit a much later start date. Use the <Link className="font-semibold text-[#2F6F6B] underline underline-offset-2" href="/rent/toronto">Toronto area guide</Link> to narrow your search.</p>
+            </li>
+            <li className="rounded-2xl bg-[#F7F7F2] p-5">
+              <h3 className="text-lg font-bold">2. Budget beyond the advertised rent</h3>
+              <p className="mt-2 leading-7 text-[#17313A]/72">Ask which utilities, parking, and other recurring costs are included. Compare the total with your commute and space needs before deciding that one area is more affordable.</p>
+            </li>
+            <li className="rounded-2xl bg-[#F7F7F2] p-5">
+              <h3 className="text-lg font-bold">3. Check the unit and the building</h3>
+              <p className="mt-2 leading-7 text-[#17313A]/72">At a viewing, ask about the condition of the unit, what is included, and any condo rules or move-in booking requirements. The <Link className="font-semibold text-[#2F6F6B] underline underline-offset-2" href="/renting-condo-toronto-before-signing-lease">Toronto condo guide</Link> has a closer look.</p>
+            </li>
+            <li className="rounded-2xl bg-[#F7F7F2] p-5">
+              <h3 className="text-lg font-bold">4. Prepare documents without oversharing</h3>
+              <p className="mt-2 leading-7 text-[#17313A]/72">Organize your application, income proof, and credit information, but confirm who is receiving sensitive records and why before sending them. Use the <Link className="font-semibold text-[#2F6F6B] underline underline-offset-2" href="/rental-documents/checklist-ontario">Ontario rental document checklist</Link>.</p>
+            </li>
+            <li className="rounded-2xl bg-[#F7F7F2] p-5 md:col-span-2">
+              <h3 className="text-lg font-bold">5. Read the lease and verify payment details</h3>
+              <p className="mt-2 max-w-4xl leading-7 text-[#17313A]/72">Check the written lease, included services, deposit terms, and the identity of the person receiving payment before transferring money. Review <Link className="font-semibold text-[#2F6F6B] underline underline-offset-2" href="/ontario-tenant-rights-gta">Ontario tenant rights</Link> and the <a className="font-semibold text-[#2F6F6B] underline underline-offset-2" href="https://www.ontario.ca/page/guide-ontarios-standard-lease">Ontario standard lease guide</a>.</p>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -234,11 +269,14 @@ export default function RentalGuidesPage() {
             Need a condo or house rental shortlist that fits your situation?
           </h2>
           <Link
-            href="/#rental-match"
+            href="/#rental-inquiry"
             className="mt-6 inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
           >
-            Get My Rental Shortlist
+            Tell Behzad What You Need
           </Link>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-[#17313A]/72">
+            Share your area and move-in timing to start a conversation. No credit score or documents are needed for the first request. For a detailed preparation review, use the <Link href="/#rental-match" className="font-semibold underline underline-offset-2">Rental Readiness tool</Link>.
+          </p>
         </div>
       </section>
 
