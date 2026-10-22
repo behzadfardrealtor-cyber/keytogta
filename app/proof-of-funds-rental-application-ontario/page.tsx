@@ -182,6 +182,35 @@ export default function ProofOfFundsRentalApplicationPage() {
             </p>
           </section>
 
+          <section aria-labelledby="bank-statements-ontario">
+            <h2 id="bank-statements-ontario" className="text-3xl font-bold text-[#17313A]">
+              Do landlords ask for bank statements in Ontario?
+            </h2>
+            <p className="mt-5">
+              A landlord may ask for one, but a full bank statement is not a
+              standard document every Ontario renter must provide. Ask whether
+              the landlord is trying to confirm available savings or regular income. A dated
+              bank letter may answer a savings question; an employment letter
+              or relevant pay stubs may better show ongoing income. Check
+              whether the recipient will accept the alternative before sending it.
+            </p>
+            <p className="mt-4">
+              If a statement is still requested, ask which dates and details
+              are needed before sharing a copy. The{" "}
+              <a
+                href="https://www.priv.gc.ca/en/privacy-topics/landlords-and-tenants/privacy-in-the-landlord-and-tenant-relationship/"
+                className={linkClass}
+              >
+                Office of the Privacy Commissioner of Canada
+              </a>{" "}
+              says landlords should explain why they collect personal
+              information and limit collection to what is needed; applicants
+              can ask questions and suggest less intrusive alternatives.
+              See the privacy steps below for how to discuss redactions without
+              changing the facts the document is meant to verify.
+            </p>
+          </section>
+
           <section aria-labelledby="privacy-steps">
             <h2 id="privacy-steps" className="text-3xl font-bold text-[#17313A]">
               How to share less while keeping the document useful
@@ -278,14 +307,6 @@ export default function ProofOfFundsRentalApplicationPage() {
               Common questions
             </h2>
             <div className="mt-6 space-y-5">
-              <div>
-                <h3 className="text-xl font-bold text-[#17313A]">Must I send a full bank statement?</h3>
-                <p className="mt-2">
-                  A full statement is not a universal Ontario rental
-                  requirement. Ask whether a bank letter or a relevant,
-                  appropriately redacted statement will meet the request.
-                </p>
-              </div>
               <div>
                 <h3 className="text-xl font-bold text-[#17313A]">Is there a minimum savings balance?</h3>
                 <p className="mt-2">
