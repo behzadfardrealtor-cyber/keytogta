@@ -12,7 +12,7 @@ export default function AreaGuidesSection() {
           <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
             <div>
               <div className="mb-4 inline-flex rounded-full border border-[#2F6F6B]/20 bg-[#DCE8E3] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2F6F6B]">
-                Interactive Area Guide
+                GTA Area Guides
               </div>
 
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
@@ -78,11 +78,6 @@ export default function AreaGuidesSection() {
 
                 <div className="p-5">
                   <h3 className="text-2xl font-black">{area.name}</h3>
-
-                  <div className="mt-3 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-3">
-                    <p className="text-xs text-[#17313A]/56">Estimated rental range</p>
-                    <p className="mt-1 font-bold text-[#2F6F6B]">{area.rent}</p>
-                  </div>
 
                   <p className="mt-4 text-sm leading-6 text-[#17313A]/66">{area.description}</p>
 

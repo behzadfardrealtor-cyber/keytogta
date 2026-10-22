@@ -3,6 +3,7 @@
 import type { FormEvent, ReactNode } from "react";
 import type { ApprovalReport, RentalForm } from "../rental-readiness";
 import ReadinessReport from "./ReadinessReport";
+import ContactActions from "./ContactActions";
 
 type ScoreStyle = {
   label: string;
@@ -100,21 +101,21 @@ export default function RentalReadinessForm({
   const statusClassName = getStatusClassName(status);
 
   return (
-    <section id="rental-match" className="px-6 pb-24">
+    <section id="rental-match" className="scroll-mt-24 px-6 pb-24">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-8 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
             Rental Readiness
           </p>
 
-          <h2 className="text-3xl font-bold md:text-5xl">Check your approval strength</h2>
+          <h2 className="text-3xl font-bold md:text-5xl">Plan your rental search</h2>
 
           <p className="mt-5 leading-8 text-[#17313A]/70">
-            Answer a few key questions to understand your rental readiness before booking viewings or submitting offers.
+            Review your rental preparation and send your search details to Behzad. The planning estimate is not a landlord decision or an approval probability. Available condo and house options need a personal review.
           </p>
 
           <div className="mt-8 rounded-2xl bg-[#DCE8E3] p-6">
-            <p className="text-sm uppercase tracking-[0.2em] text-[#17313A]/55">Approval Strength Preview</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-[#17313A]/75">Rental planning preview</p>
             {form.income.trim() && form.credit.trim() ? (
               <>
                 <p className={scorePreviewClassName}>{scorePreview}/100</p>
@@ -150,14 +151,24 @@ export default function RentalReadinessForm({
         <form
           noValidate
           onSubmit={step === 1 ? onContinue : handleSubmit}
-          className="rounded-[2rem] bg-white p-6 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.10)] md:p-8"
+          aria-label="Rental search request"
+          className="order-first rounded-[2rem] bg-white p-6 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.10)] md:p-8 lg:order-last"
         >
+          <h3 className="mb-3 text-2xl font-bold">Tell me about your rental search</h3>
+          <p className="mb-4 text-sm leading-6 text-[#17313A]/80">
+            This two-step form asks for contact details, your budget, income, credit score, and document readiness. Behzad uses your submission to review your request and contact you. No document uploads are needed. <a href="/privacy" className="font-semibold underline underline-offset-2">Privacy Policy</a>
+          </p>
+          <div className="mb-6 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4">
+            <p className="mb-3 text-sm leading-6">No Canadian credit history or Canadian phone number, or prefer to ask a question first? Contact Behzad directly. Please do not send sensitive documents with your first inquiry.</p>
+            <ContactActions placement="readiness_form" />
+          </div>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#2F6F6B]">
             Step {step} of 2
           </p>
+          <p className="mb-4 text-sm text-[#17313A]/80">All displayed fields are required.</p>
 
           {Object.keys(fieldErrors).length > 0 && (
-            <div className="mb-5 rounded-2xl border border-red-300 bg-red-50 p-4 text-sm text-red-800">
+            <div role="alert" className="mb-5 rounded-2xl border border-red-300 bg-red-50 p-4 text-sm text-red-800">
               <p className="font-bold">Please fix these fields before getting your report:</p>
               <ul className="mt-2 grid gap-1">
                 {Object.values(fieldErrors).map((error) => (
@@ -180,6 +191,9 @@ export default function RentalReadinessForm({
                   <input
                     className={getFieldControlClassName(Boolean(fieldErrors.name))}
                     placeholder="Your full name"
+                    autoComplete="name"
+                    required
+                    aria-invalid={Boolean(fieldErrors.name)}
                     value={form.name}
                     onChange={(e) => updateField("name", e.target.value)}
                   />
@@ -190,6 +204,11 @@ export default function RentalReadinessForm({
                   <input
                     className={getFieldControlClassName(Boolean(fieldErrors.phone))}
                     placeholder="416 555 1234"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    required
+                    aria-invalid={Boolean(fieldErrors.phone)}
                     value={form.phone}
                     onChange={(e) => updateField("phone", e.target.value)}
                   />
@@ -200,6 +219,13 @@ export default function RentalReadinessForm({
                   <input
                     className={getFieldControlClassName(Boolean(fieldErrors.email))}
                     placeholder="you@email.com"
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    autoCapitalize="none"
+                    spellCheck={false}
+                    required
+                    aria-invalid={Boolean(fieldErrors.email)}
                     value={form.email}
                     onChange={(e) => updateField("email", e.target.value)}
                   />
@@ -329,7 +355,7 @@ export default function RentalReadinessForm({
           </div>
 
           {status && (
-              <p className={statusClassName}>
+              <p role="status" aria-live="polite" className={statusClassName}>
               {status}
               {status.toLowerCase().includes("could not confirm") && (
                 <> <a className="underline" href="mailto:behzadfard.realtor@gmail.com?subject=Rental%20inquiry%20delivery">Email Behzad</a></>

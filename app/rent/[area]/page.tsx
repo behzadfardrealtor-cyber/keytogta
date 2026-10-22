@@ -79,7 +79,7 @@ const areaPages: Record<string, AreaPageData> = {
       {
         name: "VMC (Vaughan Metropolitan Centre)",
         description:
-          "Home to Vaughan Metropolitan Centre Station, a real TTC Line 1 subway terminus - about 45 minutes to Union Station, 5 minutes to York University. Vaughan is one of only two municipalities outside Toronto with direct subway access. Dense new-construction condos make up Vaughan's planned downtown core. Best fit for renters who want direct subway access without living in Toronto proper.",
+          "Home to Vaughan Metropolitan Centre Station, the northern terminus of the western branch of TTC Line 1. Condo renters here can use the subway for trips toward York University and downtown Toronto. Compare the walk from each building to the station and check your trip at the time you normally travel.",
       },
       {
         name: "Maple",
@@ -98,7 +98,7 @@ const areaPages: Record<string, AreaPageData> = {
       },
     ],
     gettingAround:
-      "Vaughan has genuinely good subway access, unlike most of the GTA outside Toronto. Vaughan Metropolitan Centre (VMC) Station, opened in December 2017, is a real terminus of TTC Line 1 (Yonge-University) - about 45 minutes to Union Station and 5 minutes to York University station. Vaughan is one of only two municipalities outside Toronto with direct subway access. VMC also connects to York Region Transit's VIVA bus rapid transit along the Highway 7 Rapidway and to Brampton's Zum. GO Transit's Barrie line serves Vaughan as well, with Rutherford GO and Vaughan Metropolitan Centre GO stations running to Union Station.",
+      "Vaughan Metropolitan Centre (VMC) is a TTC subway station on Line 1, not a GO train station. For GO train travel, compare Maple GO and Rutherford GO on the Barrie line. Subway and GO service offer different routes and schedules, so check the full door-to-door trip from a potential rental before choosing an area.",
   },
   "richmond-hill": {
     name: "Richmond Hill",
@@ -365,6 +365,11 @@ export default async function AreaPage({
               <p className="mt-3 max-w-3xl leading-7 text-[#17313A]/72">
                 {page.gettingAround}
               </p>
+              {area === "vaughan" && (
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-[#17313A]/80">
+                  Official transit information: <a href="https://www.ttc.ca/subway-stations/Vaughan-Metropolitan-Centre-station" className="underline underline-offset-2">TTC Vaughan Metropolitan Centre</a>, <a href="https://www.gotransit.com/en/find-a-station-or-stop/02157" className="underline underline-offset-2">Maple GO</a>, and <a href="https://www.gotransit.com/en/find-a-station-or-stop/00028" className="underline underline-offset-2">Rutherford GO</a>.
+                </p>
+              )}
             </div>
           )}
 

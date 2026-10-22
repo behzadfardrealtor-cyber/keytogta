@@ -149,6 +149,9 @@ export default function Home() {
                 Explore Areas
               </a>
             </div>
+            <p className="mt-3 text-sm text-[#17313A]/85">
+              Have a question first? <a href="#contact" className="font-semibold underline underline-offset-2">Contact Behzad directly</a>. No documents needed to start a conversation.
+            </p>
             <p className="mt-4 text-sm text-[#17313A]/72">
               راهنمای فارسی:{" "}
               <Link href="/fa/rental-documents-toronto" lang="fa" dir="rtl" className="font-semibold text-[#2F6F6B] underline underline-offset-2">
@@ -156,7 +159,7 @@ export default function Home() {
               </Link>
             </p>
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <div className="mt-5 hidden gap-3 sm:grid sm:grid-cols-3">
               <div className="glass-card rounded-2xl p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2F6F6B]">01</p>
                 <h2 className="mt-2 font-bold">Profile Review</h2>
@@ -213,7 +216,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="glass-card rounded-[2rem] p-6 text-center lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
+            <div className="glass-card order-first rounded-[2rem] p-6 text-center lg:order-last lg:flex lg:items-center lg:gap-4 lg:p-4 lg:text-left 2xl:block 2xl:p-6 2xl:text-center">
               <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full border-2 border-[#2F6F6B]/32 bg-white lg:mx-0 lg:h-20 lg:w-20 lg:shrink-0 2xl:mx-auto 2xl:h-28 2xl:w-28">
                 <ImageWithFallback
                   src="/behzad.jpg"
@@ -225,7 +228,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="mt-4 text-2xl font-bold text-[#2F6F6B] lg:mt-0 2xl:mt-4">Behzad Fard</h3>
-                <p className="text-sm text-[#17313A]/66">Real Estate Agent | Founder, Key to GTA</p>
+                <p className="text-sm text-[#17313A]/80">Real Estate Agent | Property.ca Inc., Brokerage</p>
                 <p className="mt-3 text-sm leading-6 text-[#17313A]/58 lg:mt-1 2xl:mt-3">
                   Helping newcomers and tenants make confident rental decisions across the GTA.
                 </p>

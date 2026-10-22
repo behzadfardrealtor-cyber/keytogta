@@ -123,9 +123,9 @@ export default function ReviewsSection() {
           <p className="mt-2 text-xs text-[#17313A]/56">Local area guides for renters comparing budget, transit, and lifestyle.</p>
         </div>
         <div className="glass-card rounded-[2rem] p-5 text-center">
-          <h3 className="text-2xl font-black text-[#2F6F6B]">Instant</h3>
-          <p className="font-semibold">Fast Follow-Up</p>
-          <p className="mt-2 text-xs text-[#17313A]/56">Quick review and next-step guidance after form submission.</p>
+          <h3 className="text-2xl font-black text-[#2F6F6B]">Personal</h3>
+          <p className="font-semibold">Agent Follow-Up</p>
+          <p className="mt-2 text-xs text-[#17313A]/75">Discuss your search and next steps directly with Behzad.</p>
         </div>
       </div>
     </div>
