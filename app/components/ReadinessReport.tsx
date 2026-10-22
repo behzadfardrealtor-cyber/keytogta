@@ -122,6 +122,7 @@ export default function ReadinessReport({
         </div>
 
         <div className="mt-5">
+          {canRequestMatchingOptions && <p className="mb-3 text-sm leading-6 text-[#17313A]/70">Your readiness details were already sent. Use this button only if you also want Behzad to follow up about matching rental options.</p>}
           {canRequestMatchingOptions && renderCTAButton({ isSubmittingMatchingOptions, disabled: Boolean(matchingOptionsStatus), onRequestMatchingOptions })}
         </div>
       </div>
@@ -317,14 +318,16 @@ export default function ReadinessReport({
       )}
 
       {/* STICKY — always in reach while scrolling the detail sections */}
-      <div className="sticky bottom-4 z-20 mt-6">
-        <div className="rounded-2xl bg-[#DCE8E3] p-1 shadow-2xl">
-          {canRequestMatchingOptions && renderCTAButton({ isSubmittingMatchingOptions, disabled: Boolean(matchingOptionsStatus), onRequestMatchingOptions })}
+      {canRequestMatchingOptions && (
+        <div className="sticky bottom-4 z-20 mt-6">
+          <div className="rounded-2xl bg-[#DCE8E3] p-1 shadow-2xl">
+            {renderCTAButton({ isSubmittingMatchingOptions, disabled: Boolean(matchingOptionsStatus), onRequestMatchingOptions })}
+          </div>
+          <p className="mt-2 text-center text-[0.7rem] font-semibold text-[#17313A]/62">
+            Optional follow-up request; your readiness details have already been sent.
+          </p>
         </div>
-        <p className="mt-2 text-center text-[0.7rem] font-semibold text-[#17313A]/62">
-          No pressure — this is only a planning request, not a rental application.
-        </p>
-      </div>
+      )}
     </div>
   );
 }

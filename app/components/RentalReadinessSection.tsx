@@ -287,7 +287,7 @@ export default function RentalReadinessSection() {
     try {
       await submitLead("matching_options", payload);
 
-      trackGenerateLeadOnce("matching_options", "matching_options", matchingLeadId);
+      trackEvent("request_matching_options", { lead_id: matchingLeadId });
       setMatchingOptionsStatus(
         "Thanks - your request was sent to Behzad. He'll review your profile and send realistic rental options that match your search criteria."
       );

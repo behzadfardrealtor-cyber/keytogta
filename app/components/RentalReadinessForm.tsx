@@ -105,14 +105,15 @@ export default function RentalReadinessForm({
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="rounded-[2rem] border border-[#E8E4DD] bg-white p-8 shadow-[0_18px_50px_rgba(23,49,58,.06)]">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#2F6F6B]">
-            Rental Readiness
+            Option 2 · Optional readiness report
           </p>
 
-          <h2 className="text-3xl font-bold md:text-5xl">Plan your rental search</h2>
+          <h2 className="text-3xl font-bold md:text-5xl">Check your rental readiness in detail</h2>
 
           <p className="mt-5 leading-8 text-[#17313A]/70">
-            Review your rental preparation and send your search details to Behzad. The planning estimate is not a landlord decision or an approval probability. Available condo and house options need a personal review.
+            Use this two-step tool if you want a planning report based on your budget, income, credit, and document readiness. It also sends a separate request to Behzad. The estimate is not a landlord decision or an approval probability.
           </p>
+          <p className="mt-4 text-sm leading-6 text-[#17313A]/70">Already sent the short request? You do not need to fill this in for Behzad to contact you. If you just want to start a conversation, <a href="#rental-inquiry" className="font-semibold text-[#2F6F6B] underline underline-offset-2">use the short request</a>.</p>
 
           <div className="mt-8 rounded-2xl bg-[#DCE8E3] p-6">
             <p className="text-sm uppercase tracking-[0.2em] text-[#17313A]/75">Rental planning preview</p>
@@ -154,7 +155,7 @@ export default function RentalReadinessForm({
           aria-label="Rental search request"
           className="order-first rounded-[2rem] bg-white p-6 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.10)] md:p-8 lg:order-last"
         >
-          <h3 className="mb-3 text-2xl font-bold">Tell me about your rental search</h3>
+          <h3 className="mb-3 text-2xl font-bold">Get a detailed readiness report</h3>
           <p className="mb-4 text-sm leading-6 text-[#17313A]/80">
             This two-step form asks for contact details, your budget, income, credit score, and document readiness. Behzad uses your submission to review your request and contact you. No document uploads are needed. <a href="/privacy" className="font-semibold underline underline-offset-2">Privacy Policy</a>
           </p>
@@ -340,7 +341,7 @@ export default function RentalReadinessForm({
                   disabled={isSubmitting || !mounted}
                   className="rounded-2xl bg-[#2F6F6B] px-6 py-4 font-semibold text-white transition hover:bg-[#17313A] disabled:opacity-60 md:col-span-2"
                 >
-                  {!mounted ? "Loading..." : isSubmitting ? "Sending..." : "Get My Rental Shortlist"}
+                  {!mounted ? "Loading..." : isSubmitting ? "Sending..." : "Get my readiness report"}
                 </button>
 
                 <button
