@@ -100,7 +100,7 @@ export default function AreaGuidesSection() {
                 </p>
                 <p className="mt-2 text-[#17313A]/66">
                   Not sure which area fits your budget and rental needs?
-                  Start with the Rental Readiness tool, or review my{" "}
+                  Send your rental preferences for a personal reply, or review my{" "}
                   <Link
                     href="/rental-documents/checklist-ontario"
                     className="text-[#2F6F6B] underline underline-offset-2 hover:text-[#17313A]"
@@ -112,10 +112,10 @@ export default function AreaGuidesSection() {
               </div>
 
               <a
-                href="#rental-match"
+                href="#rental-inquiry"
                 className="rounded-full bg-[#2F6F6B] px-6 py-3 text-center font-bold text-white transition hover:bg-[#17313A]"
               >
-                Get My Rental Shortlist →
+                Request Rental Options →
               </a>
             </div>
           </div>

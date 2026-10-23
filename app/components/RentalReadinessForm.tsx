@@ -117,7 +117,7 @@ export default function RentalReadinessForm({
 
           <div className="mt-8 rounded-2xl bg-[#DCE8E3] p-6">
             <p className="text-sm uppercase tracking-[0.2em] text-[#17313A]/75">Rental planning preview</p>
-            {form.income.trim() && form.credit.trim() ? (
+            {form.budget.trim() && form.income.trim() && form.credit.trim() ? (
               <>
                 <p className={scorePreviewClassName}>{scorePreview}/100</p>
                 <p className="mt-2 text-[#17313A]/70">{resultPreview}</p>
@@ -185,7 +185,7 @@ export default function RentalReadinessForm({
             </div>
           )}
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <fieldset disabled={showReport} className="grid min-w-0 gap-4 md:grid-cols-2">
             {step === 1 ? (
               <>
                 <FieldLabel label="Full Name">
@@ -320,6 +320,7 @@ export default function RentalReadinessForm({
                     value={form.paystubs}
                     onChange={(e) => updateField("paystubs", e.target.value)}
                   >
+                    <option>Not sure yet</option>
                     <option>Yes</option>
                     <option>No</option>
                   </select>
@@ -331,6 +332,7 @@ export default function RentalReadinessForm({
                     value={form.creditReport}
                     onChange={(e) => updateField("creditReport", e.target.value)}
                   >
+                    <option>Not sure yet</option>
                     <option>Yes</option>
                     <option>No</option>
                   </select>
@@ -353,7 +355,9 @@ export default function RentalReadinessForm({
                 </button>
               </>
             )}
-          </div>
+          </fieldset>
+
+          {showReport && <p className="mt-4 text-sm font-semibold text-[#17313A]/75">This report is based on the details you submitted. {canRequestMatchingOptions ? "Your request has already been sent; there is no need to submit it again." : "Delivery could not be confirmed. Use the email link below and include your reference."}</p>}
 
           {status && (
               <p role="status" aria-live="polite" className={statusClassName}>
