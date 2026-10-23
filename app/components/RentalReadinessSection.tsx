@@ -70,6 +70,7 @@ export default function RentalReadinessSection() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showReport, setShowReport] = useState(false);
+  const [submittedReport, setSubmittedReport] = useState<ReturnType<typeof calculateApprovalReport> | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [matchingOptionsStatus, setMatchingOptionsStatus] = useState("");
   const [isSubmittingMatchingOptions, setIsSubmittingMatchingOptions] = useState(false);
@@ -128,8 +129,9 @@ export default function RentalReadinessSection() {
     [debouncedForm]
   );
 
-  const scorePreview = approvalReport.score;
-  const resultPreview = approvalReport.strength;
+  const visibleReport = showReport && submittedReport ? submittedReport : approvalReport;
+  const scorePreview = visibleReport.score;
+  const resultPreview = visibleReport.strength;
   const scoreStyle = getScoreStyle(scorePreview);
 
   function handleContinue(e: FormEvent<HTMLFormElement>) {
@@ -166,6 +168,7 @@ export default function RentalReadinessSection() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (showReport || isRentalReadinessSubmissionActive.current) return;
     setStatus("");
 
     const errors = validateRentalForm(form);
@@ -192,6 +195,7 @@ export default function RentalReadinessSection() {
     // submitted payload always reflects exactly what's in the fields right
     // now, regardless of the 300ms preview lag.
     const submittedReport = calculateApprovalReport(form);
+    setSubmittedReport(submittedReport);
 
     const payload = {
       ...form,
@@ -302,7 +306,7 @@ export default function RentalReadinessSection() {
   return (
     <>
       <RentalReadinessForm
-        approvalReport={approvalReport}
+        approvalReport={visibleReport}
         canRequestMatchingOptions={leadDeliveryConfirmed}
         fieldErrors={fieldErrors}
         form={form}

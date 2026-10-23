@@ -45,9 +45,9 @@ export const initialRentalForm: RentalForm = {
   credit: "",
   parking: "Not asked",
   applicants: "Not asked",
-  paystubs: "Yes",
+  paystubs: "Not sure yet",
   jobLetter: "Not asked",
-  creditReport: "Yes",
+  creditReport: "Not sure yet",
 };
 
 function formatCurrency(value: number) {
