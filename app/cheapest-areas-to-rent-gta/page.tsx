@@ -53,7 +53,7 @@ const coveredAreas = [
     name: "North York",
     range: "$1,950 - $2,150",
     asOf: "Jan 2026 (liv.rent) / May 2026 (Zumper)",
-    note: "Currently at the low end of this group.",
+    note: "Historical report range; compare current listings before relying on it.",
     href: "/rent/north-york",
     linkLabel: "Full North York guide",
   },
@@ -69,23 +69,23 @@ const coveredAreas = [
     name: "Scarborough",
     range: "$1,850 - $1,900 (1BR)",
     asOf: "Aug 3, 2026 (TREB/PropTx MLS via REALM)",
-    note: "Now the cheapest 1-bedroom condo rent of the five - the 'mid-pack' read from earlier in 2026 no longer holds.",
+    note: "Historical August 3 listing snapshot; verify today's availability and asking rent before deciding.",
     href: "/rent/scarborough",
     linkLabel: "Full Scarborough guide",
   },
   {
     name: "Vaughan",
     range: "$2,000 - $2,900",
-    asOf: "Current listings",
-    note: "Currently among the higher end of this group.",
+    asOf: "Earlier 2026 listing snapshot (recheck required)",
+    note: "Illustrative listing range, not a live market average.",
     href: "/rent/vaughan",
     linkLabel: "Full Vaughan guide",
   },
   {
     name: "Richmond Hill",
     range: "$2,000 - $3,000",
-    asOf: "Current listings",
-    note: "Currently the highest ceiling of the five.",
+    asOf: "Earlier 2026 listing snapshot (recheck required)",
+    note: "Illustrative listing range, not a live market average.",
     href: "/rent/richmond-hill",
     linkLabel: "Full Richmond Hill guide",
   },
@@ -116,32 +116,32 @@ const faqs = [
   {
     question: "What's the cheapest place to rent in Ontario under $1,000?",
     answer:
-      "Honestly, a normal private apartment for under $1,000 a month doesn't exist in the GTA or the wider markets we track right now - the lowest verified one-bedroom average anywhere in this comparison is around $1,587 in Oshawa. Listings claiming $1,000 or less are usually a single room in a shared house, not a self-contained unit. If $1,000 is a hard ceiling, look at shared housing, a room rental, or splitting a unit with a roommate rather than searching for a standalone apartment at that price.",
+      "The dated one-bedroom averages in this comparison were above $1,000. This does not rule out every available listing. If $1,000 is your ceiling, consider rooms and shared housing, and verify the price, unit type and availability directly.",
   },
   {
     question: "Are there affordable condos for rent in Toronto and the GTA?",
     answer:
-      "\"Affordable\" is relative. Across North York, Markham, and Scarborough, realistic current one-bedroom condo pricing runs $1,850 to $2,150 a month. That's meaningfully below Vaughan or Richmond Hill's current ceilings, but it's not a $1,000-$1,500 budget - see the comparison table above for exact ranges and report months.",
+      "Affordable depends on the property and date. The one-bedroom figures in the table are snapshots from different months in 2026, not a quote for today's available condos. Compare current listings for your budget and preferred area.",
   },
   {
     question: "What are cheap rent condos in the GTA right now?",
     answer:
-      "No single area is reliably \"the cheap one\" anymore - Markham had the steepest rent decline in Ontario as of April 2026 and now sits at the low end alongside North York, reversing the pattern from earlier in the year. Check the dated comparison table on this page rather than relying on an area's older reputation.",
+      "These historical snapshots cannot identify today's cheapest area. Compare current, similar listings for the areas you would actually consider.",
   },
   {
     question: "Is it cheaper to rent a condo near North York?",
     answer:
-      "Relatively, yes, as of the most recent reporting - North York currently runs $1,950 to $2,150 a month (liv.rent, January 2026; Zumper, May 2026), among the lower end of the five areas we cover. See our full North York rental guide for neighbourhood-level detail.",
+      "The North York figures shown here come from January and May 2026 reports. They cannot establish today's price or which neighbourhood is cheapest. See our North York guide and ask about current comparable listings.",
   },
   {
     question: "What are Scarborough condos for rent like on price?",
     answer:
-      "Currently $1,850 to $1,900 a month for a 1-bedroom condo, based on active TREB/PropTx MLS listings via REALM (licensed agent access, August 3, 2026) - the cheapest of the five areas we cover right now, reversing the \"mid-pack\" estimate this page previously used. See our full Scarborough rental guide for a neighbourhood breakdown.",
+      "Our August 3, 2026 listing snapshot put some one-bedroom condo asking rents around $1,850 to $1,900. This is historical listing data, not today's average or a live quote. Ask for current listings and compare similar units before making a decision. See our Scarborough guide for neighbourhoods.",
   },
   {
     question: "Is Oshawa or Brampton cheaper than Scarborough or Markham?",
     answer:
-      "Yes, currently and by a meaningful margin - roughly $350 to $450 a month less on a one-bedroom, based on liv.rent's April and May 2026 reports. We don't have hands-on, in-market experience helping renters in Oshawa or Brampton the way we do in our five covered areas, so treat these figures as directional research, not a recommendation.",
+      "Oshawa and Brampton had lower figures in the April and May 2026 reports cited here, but the data is too old to claim a current price gap. Compare current listings and commuting costs before deciding.",
   },
   {
     question: "Should I rent further from Toronto to save money?",
@@ -203,7 +203,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-08-01",
-    dateModified: "2026-08-01",
+    dateModified: "2026-10-28",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "GTA rent comparison",
@@ -285,10 +285,10 @@ export default function CheapestAreasToRentGTAPage() {
           </nav>
 
           <Link
-            href="/#rental-match"
+            href="/#rental-inquiry"
             className="rounded-full bg-[#2F6F6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(47,111,107,.20)] transition hover:scale-[1.03] hover:bg-[#17313A]"
           >
-            Check Readiness
+            Ask About Rentals
           </Link>
         </div>
       </header>
@@ -310,17 +310,17 @@ export default function CheapestAreasToRentGTAPage() {
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#17313A]/72 md:text-lg">
               Rent in the GTA doesn&apos;t sit still. The area that was
               cheapest six months ago isn&apos;t necessarily cheapest now.
-              Here&apos;s what these five markets actually cost today, what
-              Oshawa, Brampton, and Ajax cost by comparison, and what your
-              budget really gets you.
+              Here are dated rent snapshots for five markets, with Oshawa,
+              Brampton, and Ajax for context. Check current listings before
+              setting your budget.
             </p>
 
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/#rental-match"
+                href="/#rental-inquiry"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#2F6F6B] px-8 py-4 text-center font-extrabold text-white shadow-[0_18px_38px_rgba(47,111,107,.24)] ring-1 ring-[#2F6F6B]/20 transition hover:scale-[1.03] hover:bg-[#17313A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2F6F6B]"
               >
-                Check My Rental Readiness
+                Ask About Current Rentals
               </Link>
               <a
                 href="#compare"
@@ -332,7 +332,7 @@ export default function CheapestAreasToRentGTAPage() {
 
             <p className="mt-4 max-w-2xl text-sm leading-6 text-[#17313A]/68">
               Figures below are pulled from liv.rent&apos;s Ontario Rent
-              Reports (January-June 2026) and current listing data. Every
+              Reports (January-June 2026) and dated listing data. Every
               number has its report month next to it - rents shift enough
               month to month that an undated figure isn&apos;t worth much.
             </p>
@@ -356,7 +356,7 @@ export default function CheapestAreasToRentGTAPage() {
                 2026 rent snapshot
               </p>
               <p className="mt-2 text-xl font-bold leading-snug">
-                Know which number is actually current.
+                Know when each number was recorded.
               </p>
 
               <div className="mt-4 grid gap-2">
@@ -400,18 +400,9 @@ export default function CheapestAreasToRentGTAPage() {
               Is one of these five areas reliably the cheapest?
             </h2>
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/85">
-              Not right now - and treating it that way would be misleading.
-              As of April 2026, Markham posted the steepest one-bedroom rent
-              decline in Ontario (-12.5% year-over-year, liv.rent), and
-              currently sits at the low end of this group alongside North
-              York. A few months earlier it was the priciest of the five.
-              Scarborough - long assumed to be the budget pick, then
-              corrected to &quot;mid-pack&quot; earlier this year - is
-              actually the cheapest of the five once you use current MLS
-              listing data instead of a stale citywide estimate.
-              The honest answer: compare current listings in the specific
-              neighbourhood you want, not last year&apos;s reputation for
-              that area.
+              These snapshots cover different months and sources, so they
+              cannot establish which area is cheapest today. Compare current
+              listings for similar properties in the neighbourhoods you want.
             </p>
           </div>
         </div>
@@ -423,7 +414,7 @@ export default function CheapestAreasToRentGTAPage() {
             Compare
           </p>
           <h2 className="max-w-4xl text-3xl font-bold md:text-5xl">
-            What five GTA areas actually cost right now
+            Dated rent snapshots across five GTA areas
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             One-bedroom ranges, with the report month next to each so you can
@@ -492,11 +483,8 @@ export default function CheapestAreasToRentGTAPage() {
           </div>
 
           <p className="mt-6 max-w-3xl leading-7 text-[#17313A]/68">
-            Notice Scarborough now sits at the bottom alongside North York
-            and Markham, not in the middle of the pack as earlier 2026
-            figures suggested - rankings here have shifted more than once
-            this year, which is exactly why every figure above has a date
-            next to it.
+            These sources use different dates and methods. Treat the ranges as
+            historical context, not a current ranking or guaranteed rent.
           </p>
         </div>
       </section>
@@ -540,8 +528,8 @@ export default function CheapestAreasToRentGTAPage() {
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Full transparency: if raw affordability is your main goal,
-            Oshawa, Brampton, and Ajax currently rent for meaningfully less
-            than any of the five areas above. I want to be upfront that I
+            Earlier 2026 reports showed lower prices in some nearby cities,
+            but they cannot establish today&apos;s price gap. I want to be upfront that I
             don&apos;t have hands-on, in-market experience helping renters in
             these specific cities the way I do in North York, Markham,
             Scarborough, Vaughan, and Richmond Hill - so treat what follows as
@@ -631,12 +619,9 @@ export default function CheapestAreasToRentGTAPage() {
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
               <h3 className="text-xl font-bold">Under $1,000</h3>
               <p className="mt-3 leading-7 text-[#17313A]/72">
-                Not a normal private apartment in any of these areas - the
-                cheapest current one-bedroom averages we can verify sit
-                around $1,587 (Oshawa). If $1,000 is your ceiling, the
-                realistic paths are a shared house or roommate arrangement, a
-                room rental, or a basement unit in an older, non-condo
-                building - not a self-contained condo.
+                The dated one-bedroom averages shown above exceed $1,000.
+                With that ceiling, look at rooms or shared housing and verify
+                any private unit&apos;s price and availability before applying.
               </p>
             </article>
             <article className="rounded-[2rem] bg-[#F7F7F2] p-6">
@@ -648,7 +633,7 @@ export default function CheapestAreasToRentGTAPage() {
                 so your per-person cost lands in that range, even though the
                 unit itself rents for $2,000+. A full private one-bedroom
                 condo at $1,500 in any of our five covered areas would
-                currently be priced below market in most buildings.
+                require checking against current listings before you apply.
               </p>
             </article>
           </div>
@@ -725,25 +710,24 @@ export default function CheapestAreasToRentGTAPage() {
             <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
               Before you commit anywhere in North York, Markham, Scarborough,
               Vaughan, or Richmond Hill - or weighing Scarborough against
-              Oshawa - use the Key to GTA Rental Readiness tool to check your
-              target rent against what&apos;s actually available right now,
-              not a listing that&apos;s been sitting cached for months.
+              Oshawa - send Behzad your search preferences so you can discuss
+              current comparable listings and a practical budget.
             </p>
           </div>
 
           <div className="rounded-[2rem] bg-[#17313A] p-6 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#DCE8E3]">
-              Free readiness check
+              Ask about current rentals
             </p>
             <p className="mt-3 leading-7 text-white/75">
-              It takes a few minutes and gives you a clearer view of where
-              your budget actually lands, and what to prepare next.
+              Share your area, timing, and budget. Behzad can review current
+              options with you personally.
             </p>
             <Link
-              href="/#rental-match"
+              href="/#rental-inquiry"
               className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#2F6F6B] px-6 py-4 text-center font-bold text-white transition hover:bg-[#DCE8E3] hover:text-[#17313A]"
             >
-              Start Rental Readiness
+              Send a Rental Request
             </Link>
           </div>
         </div>

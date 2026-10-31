@@ -16,6 +16,7 @@ type RentalReadinessFormProps = {
   approvalReport: ApprovalReport;
   canRequestMatchingOptions: boolean;
   fieldErrors: Record<string, string>;
+  existingReference: string | null;
   form: RentalForm;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void | Promise<void>;
   isSubmitting: boolean;
@@ -25,7 +26,7 @@ type RentalReadinessFormProps = {
   onBack: () => void;
   onContinue: (e: FormEvent<HTMLFormElement>) => void;
   onRequestMatchingOptions: () => void | Promise<void>;
-  resultPreview: ApprovalReport["strength"];
+  resultPreview: string;
   scorePreview: number;
   scoreStyle: ScoreStyle;
   showReport: boolean;
@@ -58,10 +59,7 @@ function getFieldControlClassName(hasError = false) {
 }
 
 function getScorePreviewClassName(score: number) {
-  if (score >= 85) return "mt-3 text-4xl font-bold text-green-700";
-  if (score >= 70) return "mt-3 text-4xl font-bold text-amber-700";
-  if (score >= 50) return "mt-3 text-4xl font-bold text-amber-800";
-  return "mt-3 text-4xl font-bold text-red-700";
+  return score === 100 ? "mt-3 text-4xl font-bold text-green-700" : "mt-3 text-4xl font-bold text-amber-800";
 }
 
 function getStatusClassName(status: string) {
@@ -80,6 +78,7 @@ export default function RentalReadinessForm({
   approvalReport,
   canRequestMatchingOptions,
   fieldErrors,
+  existingReference,
   form,
   handleSubmit,
   isSubmitting,
@@ -111,40 +110,40 @@ export default function RentalReadinessForm({
           <h2 className="text-3xl font-bold md:text-5xl">Check your rental readiness in detail</h2>
 
           <p className="mt-5 leading-8 text-[#17313A]/70">
-            Use this two-step tool if you want a planning report based on your budget, income, credit, and document readiness. It also sends a separate request to Behzad. The estimate is not a landlord decision or an approval probability.
+            Use this two-step tool to organize your rental search and supporting documents. Income and credit are optional context for a personal discussion. The checklist does not predict approval.
           </p>
           <p className="mt-4 text-sm leading-6 text-[#17313A]/70">Already sent the short request? You do not need to fill this in for Behzad to contact you. If you just want to start a conversation, <a href="#rental-inquiry" className="font-semibold text-[#2F6F6B] underline underline-offset-2">use the short request</a>.</p>
 
           <div className="mt-8 rounded-2xl bg-[#DCE8E3] p-6">
             <p className="text-sm uppercase tracking-[0.2em] text-[#17313A]/75">Rental planning preview</p>
-            {form.budget.trim() && form.income.trim() && form.credit.trim() ? (
+            {form.budget.trim() ? (
               <>
-                <p className={scorePreviewClassName}>{scorePreview}/100</p>
+                <p className={scorePreviewClassName}>{scorePreview === 100 ? "2 of 2" : scorePreview === 50 ? "1 of 2" : "0 of 2"}</p>
                 <p className="mt-2 text-[#17313A]/70">{resultPreview}</p>
               </>
             ) : (
               <p className="mt-3 text-2xl font-semibold text-[#17313A]/55">
-                Complete the form to see your score
+                Add your budget to start the checklist
               </p>
             )}
             <p className="mt-3 text-sm leading-6 text-[#17313A]/58">
               {approvalReport.rentRatioLabel}
             </p>
             <p className="mt-3 text-xs uppercase tracking-[0.18em] text-[#2F6F6B]">
-              Suggested rent range
+              Budget discussion
             </p>
             <p className="mt-1 font-semibold text-[#17313A]/85">
               {approvalReport.recommendedRentRange}
             </p>
             <p className="mt-2 text-xs leading-5 text-[#17313A]/58">
-              Comfort range only - not a maximum rent.
+              This is not an approval estimate or a landlord screening rule.
             </p>
           </div>
 
           <div className="mt-6 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-5">
             <h3 className="font-bold">Documents that usually help</h3>
             <p className="mt-3 text-sm leading-6 text-[#17313A]/62">
-              Government ID, recent pay stubs, full Equifax report, and proof of funds when needed. Extra documents can be reviewed later.
+              Depending on the listing, ID and available income or financial documents may help. Ask which documents are needed before sharing sensitive records.
             </p>
           </div>
         </div>
@@ -156,8 +155,13 @@ export default function RentalReadinessForm({
           className="order-first rounded-[2rem] bg-white p-6 text-[#17313A] shadow-[0_18px_60px_rgba(23,49,58,.10)] md:p-8 lg:order-last"
         >
           <h3 className="mb-3 text-2xl font-bold">Get a detailed readiness report</h3>
+          {existingReference && !showReport && (
+            <p role="status" className="mb-4 rounded-2xl border border-[#C9D8D1] bg-[#F7F7F2] p-4 text-sm leading-6">
+              Your rental request is already recorded under reference {existingReference}. You can review the checklist, but please <a className="font-semibold underline" href={`mailto:behzadfard.realtor@gmail.com?subject=Rental%20request%20${encodeURIComponent(existingReference)}`}>email Behzad</a> to add details instead of submitting a second request.
+            </p>
+          )}
           <p className="mb-4 text-sm leading-6 text-[#17313A]/80">
-            This two-step form asks for contact details, your budget, income, credit score, and document readiness. Behzad uses your submission to review your request and contact you. No document uploads are needed. <a href="/privacy" className="font-semibold underline underline-offset-2">Privacy Policy</a>
+            This two-step form asks for contact details, your budget, and document readiness. Income and credit are optional. Behzad uses your submission to review your request and contact you. No document uploads are needed. <a href="/privacy" className="font-semibold underline underline-offset-2">Privacy Policy</a>
           </p>
           <div className="mb-6 rounded-2xl border border-[#E8E4DD] bg-[#F7F7F2] p-4">
             <p className="mb-3 text-sm leading-6">No Canadian credit history or Canadian phone number, or prefer to ask a question first? Contact Behzad directly. Please do not send sensitive documents with your first inquiry.</p>
@@ -166,7 +170,7 @@ export default function RentalReadinessForm({
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#2F6F6B]">
             Step {step} of 2
           </p>
-          <p className="mb-4 text-sm text-[#17313A]/80">All displayed fields are required.</p>
+          <p className="mb-4 text-sm text-[#17313A]/80">Income and credit are optional; contact details and budget are required for this report.</p>
 
           {Object.keys(fieldErrors).length > 0 && (
             <div role="alert" className="mb-5 rounded-2xl border border-red-300 bg-red-50 p-4 text-sm text-red-800">
@@ -294,7 +298,7 @@ export default function RentalReadinessForm({
                   {fieldErrors.budget && <p className="text-xs font-semibold text-red-600">{fieldErrors.budget}</p>}
                 </FieldLabel>
 
-                <FieldLabel label="Monthly Income">
+                <FieldLabel label="Monthly household income (optional)">
                   <input
                     className={getFieldControlClassName(Boolean(fieldErrors.income))}
                     type="number" inputMode="numeric" placeholder="Example: 7500"
@@ -304,7 +308,7 @@ export default function RentalReadinessForm({
                   {fieldErrors.income && <p className="text-xs font-semibold text-red-600">{fieldErrors.income}</p>}
                 </FieldLabel>
 
-                <FieldLabel label="Credit Score">
+                <FieldLabel label="Credit score (optional)">
                   <input
                     className={getFieldControlClassName(Boolean(fieldErrors.credit))}
                     type="number" inputMode="numeric" placeholder="Example: 720"
@@ -340,7 +344,7 @@ export default function RentalReadinessForm({
 
                 <button
                   type="submit"
-                  disabled={isSubmitting || !mounted}
+                  disabled={isSubmitting || !mounted || Boolean(existingReference)}
                   className="rounded-2xl bg-[#2F6F6B] px-6 py-4 font-semibold text-white transition hover:bg-[#17313A] disabled:opacity-60 md:col-span-2"
                 >
                   {!mounted ? "Loading..." : isSubmitting ? "Sending..." : "Get my readiness report"}

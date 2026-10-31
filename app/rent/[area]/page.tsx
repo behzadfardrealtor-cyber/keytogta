@@ -177,14 +177,14 @@ const areaPages: Record<string, AreaPageData> = {
   },
   scarborough: {
     name: "Scarborough",
-    title: "Scarborough 1-Bedroom Condo Rentals: $1,850-$1,900/mo",
+    title: "Scarborough Condo Rental Guide: Neighbourhoods and Dated Prices",
     priceRange: "$1,850 - $1,900 (1BR)",
     intro:
       "Scarborough is one of the GTA's most practical rental markets - established communities, GO Transit and bus rapid transit access, and generally lower rents than central Toronto for renters prioritizing value.",
     rentDetail:
-      "One-bedroom condo units in Scarborough currently average $1,850 to $1,900 a month, based on active MLS listings (TREB/PropTx via REALM, licensed agent access) as of August 3, 2026 - 45 active 1-bedroom condo listings in Scarborough, filtered to \"Condo & Other,\" clustered in this range. That's a more direct source than the public listing-aggregator data used elsewhere on this site: it reflects real, currently-active asking prices on the MLS rather than a third-party aggregator's modeled average. It also brings this page's range down from the previous $2,000-$2,500 estimate, itself a correction from an even older $3,000-$3,100+ ceiling that had become overstated. Rents move regularly, so treat this as a planning range, not a fixed number.",
+      "A listing snapshot from August 3, 2026 recorded one-bedroom condo asking prices around $1,850 to $1,900 in Scarborough. This is a historical sample of listings, not a current citywide average or a quote for an available unit. Ask for current listings and compare similar properties before setting a budget.",
     rentSource:
-      "Source: TREB/PropTx MLS data via REALM (licensed agent access) - active Scarborough listings filtered to Condo & Other, 1 Bed, August 3, 2026 (45 listings). Figures reflect current asking prices for active listings, not a third-party aggregator average - treat as directional, not exact.",
+      "Historical source: TREB/PropTx MLS via REALM (licensed agent access), Scarborough Condo & Other, 1 Bed, August 3, 2026 (45 listings). Asking prices in that sample are not today's availability or a market average.",
     neighbourhoods: [
       {
         name: "Kennedy",
@@ -209,9 +209,9 @@ const areaPages: Record<string, AreaPageData> = {
     ],
     gettingAround:
       "Scarborough's old rapid-transit line, Line 3 (the Scarborough RT), was permanently shut down in 2023 after a derailment and has not been replaced by rail yet - don't expect subway access directly at Scarborough Town Centre. Kennedy Station is the real rapid-transit anchor for the area, connecting to Line 2 (Bloor-Danforth) subway, GO Transit's Stouffville line, and the Eglinton Crosstown LRT. Scarborough Town Centre itself is currently reached by replacement bus service, with a dedicated Scarborough Busway - a proper bus corridor from Kennedy Station cutting the trip to about 15 minutes - scheduled to open fall 2026. The full subway extension (Line 2 East Extension, permanently replacing Line 3) has been delayed to 2033. Guildwood and Agincourt are each served by their own GO station, on the Lakeshore East and Stouffville lines respectively.",
-    metaTitle: "Scarborough 1-Bedroom Condo Rentals: $1,850-$1,900/mo (2026) | Key to GTA",
+    metaTitle: "Scarborough Condo Rental Guide & Neighbourhoods | Key to GTA",
     metaDescription:
-      "What a 1-bedroom condo actually costs in Scarborough right now: $1,850-$1,900/mo, plus the best-connected neighbourhoods (Kennedy, Guildwood, Agincourt) for transit & value.",
+      "Explore Scarborough rental neighbourhoods, transit and an August 2026 price snapshot. Ask about current listings before deciding on a budget.",
   },
 };
 

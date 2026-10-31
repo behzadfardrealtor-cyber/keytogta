@@ -22,10 +22,7 @@ type ReadinessReportProps = {
 type SectionId = "meaning" | "signs" | "steps" | "documents";
 
 function getMeterColor(score: number) {
-  if (score >= 85) return "bg-green-600";
-  if (score >= 70) return "bg-amber-500";
-  if (score >= 50) return "bg-amber-600";
-  return "bg-red-600";
+  return score === 100 ? "bg-green-600" : "bg-amber-600";
 }
 
 function renderCTAButton({
@@ -48,7 +45,7 @@ function renderCTAButton({
         full ? "w-full" : ""
       }`}
     >
-      {isSubmittingMatchingOptions ? "Sending..." : "Yes, send me matching rental options"}
+      {isSubmittingMatchingOptions ? "Opening email..." : "Email Behzad about rental options"}
     </button>
   );
 }
@@ -68,7 +65,7 @@ export default function ReadinessReport({
   };
 
   const meterColor = getMeterColor(approvalReport.score);
-  const meterWidth = `${Math.max(4, Math.min(100, approvalReport.score))}%`;
+  const meterWidth = `${Math.max(0, Math.min(100, approvalReport.score))}%`;
   const matchingOptionsStatusClassName = matchingOptionsStatus.toLowerCase().includes("could not confirm")
     ? "mt-4 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-medium leading-6 text-red-800"
     : "mt-4 rounded-2xl border border-green-200 bg-green-50 p-4 text-sm font-medium leading-6 text-green-800";
@@ -81,7 +78,7 @@ export default function ReadinessReport({
   const concerns =
     approvalReport.concerns.length > 0
       ? approvalReport.concerns
-      : ["No major concern detected from the information provided."];
+      : ["No remaining checklist items marked missing."];
 
   return (
     <div className="mt-6">
@@ -103,8 +100,8 @@ export default function ReadinessReport({
             />
           </div>
           <div className="mt-2 flex justify-between text-[0.65rem] font-bold uppercase tracking-[0.1em] text-[#17313A]/58">
-            <span>Just starting</span>
-            <span>Ready to apply</span>
+            <span>Start preparing</span>
+            <span>2 items ready</span>
           </div>
         </div>
 
@@ -114,7 +111,7 @@ export default function ReadinessReport({
 
         <div className="mt-4 flex items-center justify-between rounded-2xl bg-[#DCE8E3] p-4">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#2F6F6B]">
-            Comfort range
+            Budget discussion
           </p>
           <p className="text-base font-black text-[#17313A]">
             {approvalReport.recommendedRentRange}
@@ -122,7 +119,7 @@ export default function ReadinessReport({
         </div>
 
         <div className="mt-5">
-          {canRequestMatchingOptions && <p className="mb-3 text-sm leading-6 text-[#17313A]/70">Your readiness details were already sent. Use this button only if you also want Behzad to follow up about matching rental options.</p>}
+          {canRequestMatchingOptions && <p className="mb-3 text-sm leading-6 text-[#17313A]/70">Your readiness request is already recorded. Email Behzad with your reference if you want to add rental preferences; no second CRM request is created.</p>}
           {canRequestMatchingOptions && renderCTAButton({ isSubmittingMatchingOptions, disabled: Boolean(matchingOptionsStatus), onRequestMatchingOptions })}
         </div>
       </div>
@@ -160,9 +157,8 @@ export default function ReadinessReport({
                 {approvalReport.reassuringNote}
               </p>
               <p className="mt-4 text-xs leading-5 text-[#17313A]/62">
-                This is a comfort range, not a hard limit. Many applicants rent above this range
-                when credit, income stability, savings, or co-applicants are strong. This is a
-                planning snapshot, not a pass/fail decision.
+                This checklist only tracks the documents you marked ready. Income, credit, and
+                a numeric ratio do not determine a landlord&apos;s decision or your place in a lead queue.
               </p>
             </div>
           )}
@@ -287,14 +283,13 @@ export default function ReadinessReport({
                 </ul>
               ) : (
                 <p className="text-sm leading-6 text-[#17313A]/72">
-                  Government ID, recent pay stubs, full Equifax report, and proof of funds when
-                  needed. Extra documents can be reviewed later.
+                  Ask what the specific application requires before sharing ID, income proof,
+                  credit information, or bank records. Do not upload documents here.
                 </p>
               )}
               <p className="mt-4 text-xs leading-5 text-[#17313A]/60">
-                This tool is an estimate, not a guarantee. Final approval depends on the
-                landlord, listing agent, complete application, supporting documents, and current
-                market competition.
+                This is a preparation checklist, not an approval prediction. The landlord reviews
+                each application and available information in its context.
               </p>
             </div>
           )}
@@ -324,7 +319,7 @@ export default function ReadinessReport({
             {renderCTAButton({ isSubmittingMatchingOptions, disabled: Boolean(matchingOptionsStatus), onRequestMatchingOptions })}
           </div>
           <p className="mt-2 text-center text-[0.7rem] font-semibold text-[#17313A]/62">
-            Optional follow-up request; your readiness details have already been sent.
+            Opens your email app; send the message to add details to your existing request.
           </p>
         </div>
       )}
