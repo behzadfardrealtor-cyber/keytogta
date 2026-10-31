@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { createLeadId, trackEvent } from "../lib/analytics";
 import { submitLead } from "../lib/submit-lead";
+import { getConfirmedLead, leadSessionEvent, rememberConfirmedLead } from "../lib/lead-session";
 
 type Inquiry = {
   name: string;
@@ -48,12 +49,16 @@ export default function RentalInquirySection() {
   const [sent, setSent] = useState(false);
   const [unconfirmed, setUnconfirmed] = useState(false);
   const [reference, setReference] = useState("");
+  const [existingReference, setExistingReference] = useState<string | null>(null);
   const started = useRef(false);
   const active = useRef(false);
 
   useEffect(() => {
     const timeout = window.setTimeout(() => setMounted(true), 0);
-    return () => window.clearTimeout(timeout);
+    const refresh = () => setExistingReference(getConfirmedLead());
+    refresh();
+    window.addEventListener(leadSessionEvent, refresh);
+    return () => { window.clearTimeout(timeout); window.removeEventListener(leadSessionEvent, refresh); };
   }, []);
 
   function update(field: keyof Inquiry, value: string) {
@@ -73,10 +78,12 @@ export default function RentalInquirySection() {
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (active.current || sent || unconfirmed) return;
+    const previous = getConfirmedLead();
+    if (previous) { setExistingReference(previous); return; }
     const nextErrors = validateInquiry(form);
     if (Object.keys(nextErrors).length) {
       setErrors(nextErrors);
-      trackEvent("form_validation_error", { form_name: "rental_inquiry" });
+      trackEvent("form_validation_error", { form_name: "rental_inquiry", invalid_fields: Object.keys(nextErrors).join(",") });
       return;
     }
 
@@ -121,6 +128,7 @@ export default function RentalInquirySection() {
       trackEvent("form_submit_attempt", { form_name: "rental_inquiry" });
       await submitLead("rental_inquiry", payload);
       setSent(true);
+      rememberConfirmedLead(leadId);
       trackEvent("generate_lead", { lead_source: "inquiry_form", lead_type: "rental_inquiry", lead_id: leadId });
     } catch {
       setUnconfirmed(true);
@@ -147,6 +155,12 @@ export default function RentalInquirySection() {
             <div role="status" className="rounded-2xl border border-green-300 bg-green-50 p-5 text-green-900">
               <h3 className="text-xl font-bold">Your request was sent to Behzad.</h3>
               <p className="mt-2">He can review your search and contact you using the details you provided. Your reference is {reference}.</p>
+            </div>
+          ) : existingReference ? (
+            <div role="status" className="rounded-2xl border border-[#C9D8D1] bg-[#F7F7F2] p-5 text-[#17313A]">
+              <h3 className="text-xl font-bold">Your rental request is already sent.</h3>
+              <p className="mt-2">Behzad has your request under reference {existingReference}. To add details, email him with this reference instead of sending a second form.</p>
+              <a className="mt-3 inline-block font-semibold underline" href={`mailto:behzadfard.realtor@gmail.com?subject=Rental%20request%20${encodeURIComponent(existingReference)}`}>Email Behzad</a>
             </div>
           ) : unconfirmed ? (
             <div role="alert" className="rounded-2xl border border-amber-300 bg-amber-50 p-5 text-amber-950">

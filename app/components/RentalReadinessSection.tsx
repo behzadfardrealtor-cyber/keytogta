@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { createLeadId, trackEvent } from "../lib/analytics";
 import { submitLead } from "../lib/submit-lead";
+import { getConfirmedLead, leadSessionEvent, rememberConfirmedLead } from "../lib/lead-session";
 import {
   calculateApprovalReport,
   initialRentalForm,
@@ -13,41 +14,41 @@ import {
 import RentalReadinessForm from "./RentalReadinessForm";
 
 function getScoreStyle(score: number) {
-  if (score >= 85) {
+  if (score === 100) {
     return {
-      label: "Strong Position",
-      simpleLabel: "Strong Position",
+      label: "Documents ready to discuss",
+      simpleLabel: "Documents ready",
       tone: "green",
       badge: "bg-green-600",
       border: "border-green-300/30",
       bar: "bg-green-600",
       glow: "shadow-green-900/20",
-      message: "Your profile looks competitive for a focused rental search.",
+      message: "You marked both document items ready.",
     };
   }
 
-  if (score >= 70) {
+  if (score >= 50) {
     return {
-      label: "Review Recommended",
-      simpleLabel: "Review Recommended",
+      label: "One document item to prepare",
+      simpleLabel: "One item to prepare",
       tone: "amber",
       badge: "bg-amber-500",
       border: "border-amber-300/30",
       bar: "bg-amber-500",
       glow: "shadow-amber-900/20",
-      message: "Your profile may work, but some details should be reviewed first.",
+      message: "You can still discuss your rental search now.",
     };
   }
 
   return {
-    label: "Needs Improvement",
-    simpleLabel: "Needs Improvement",
-    tone: "red",
-    badge: "bg-red-600",
-    border: "border-red-300/30",
-    bar: "bg-red-600",
-    glow: "shadow-red-900/20",
-    message: "Your profile may need improvement before applying.",
+    label: "Start your document checklist",
+    simpleLabel: "Start your checklist",
+    tone: "amber",
+    badge: "bg-amber-500",
+    border: "border-amber-300/30",
+    bar: "bg-amber-500",
+    glow: "shadow-amber-900/20",
+    message: "You can still ask for help while preparing documents.",
   };
 }
 
@@ -73,15 +74,22 @@ export default function RentalReadinessSection() {
   const [submittedReport, setSubmittedReport] = useState<ReturnType<typeof calculateApprovalReport> | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [matchingOptionsStatus, setMatchingOptionsStatus] = useState("");
-  const [isSubmittingMatchingOptions, setIsSubmittingMatchingOptions] = useState(false);
+  const isSubmittingMatchingOptions = false;
   const [leadId, setLeadId] = useState<string | null>(null);
   const [leadDeliveryConfirmed, setLeadDeliveryConfirmed] = useState(false);
+  const [existingReference, setExistingReference] = useState<string | null>(null);
+
+  useEffect(() => {
+    const refresh = () => setExistingReference(getConfirmedLead());
+    refresh();
+    window.addEventListener(leadSessionEvent, refresh);
+    return () => window.removeEventListener(leadSessionEvent, refresh);
+  }, []);
 
   const [form, setForm] = useState<RentalForm>(initialRentalForm);
   const [debouncedForm, setDebouncedForm] = useState<RentalForm>(initialRentalForm);
   const hasFiredFormStart = useRef(false);
   const isRentalReadinessSubmissionActive = useRef(false);
-  const isMatchingOptionsSubmissionActive = useRef(false);
   const trackedGenerateLeadKeys = useRef<Set<string>>(new Set());
 
   function trackGenerateLeadOnce(
@@ -103,7 +111,7 @@ export default function RentalReadinessSection() {
   function updateField(field: keyof RentalForm, value: string) {
     if (!hasFiredFormStart.current) {
       hasFiredFormStart.current = true;
-      trackEvent("form_start");
+      trackEvent("form_start", { form_name: "rental_readiness" });
     }
     setForm((prev) => ({ ...prev, [field]: value }));
     setFieldErrors((prev) => {
@@ -131,7 +139,7 @@ export default function RentalReadinessSection() {
 
   const visibleReport = showReport && submittedReport ? submittedReport : approvalReport;
   const scorePreview = visibleReport.score;
-  const resultPreview = visibleReport.strength;
+  const resultPreview = visibleReport.displayStrength;
   const scoreStyle = getScoreStyle(scorePreview);
 
   function handleContinue(e: FormEvent<HTMLFormElement>) {
@@ -151,7 +159,7 @@ export default function RentalReadinessSection() {
 
     if (Object.keys(step1Errors).length > 0) {
       setFieldErrors(step1Errors);
-      trackEvent("form_validation_error", { form_name: "rental_readiness", form_step: 1 });
+      trackEvent("form_validation_error", { form_name: "rental_readiness", form_step: 1, invalid_fields: Object.keys(step1Errors).join(",") });
       return;
     }
 
@@ -169,6 +177,12 @@ export default function RentalReadinessSection() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (showReport || isRentalReadinessSubmissionActive.current) return;
+    const previous = getConfirmedLead();
+    if (previous) {
+      setExistingReference(previous);
+      setStatus(`Your rental request is already recorded under reference ${previous}. Email Behzad to add details instead of sending another form.`);
+      return;
+    }
     setStatus("");
 
     const errors = validateRentalForm(form);
@@ -176,7 +190,7 @@ export default function RentalReadinessSection() {
       setFieldErrors(errors);
       setShowReport(false);
       setStatus("Please complete the required fields before getting your report.");
-      trackEvent("form_validation_error", { form_name: "rental_readiness", form_step: 2 });
+      trackEvent("form_validation_error", { form_name: "rental_readiness", form_step: 2, invalid_fields: Object.keys(errors).join(",") });
       return;
     }
 
@@ -204,10 +218,10 @@ export default function RentalReadinessSection() {
       leadId: newLeadId,
       leadSource: "Key to GTA Website",
       clientType: "Renter",
-      matchType: "Rental Approval Strength Report",
-      internalScore: String(submittedReport.score),
-      score: String(submittedReport.score),
-      result: submittedReport.strength,
+      matchType: "Rental Document Readiness Checklist",
+      internalScore: "",
+      score: "",
+      result: `Document checklist: ${submittedReport.score / 50} of 2 marked ready`,
       displayResult: submittedReport.displayStrength,
       priority: submittedReport.priority,
       rentToIncomeRatio: submittedReport.rentToIncomeRatio
@@ -221,7 +235,7 @@ export default function RentalReadinessSection() {
       concerns: submittedReport.concerns.join(", "),
       missingDocuments: submittedReport.missingDocuments.join(", "),
       nextAction: submittedReport.nextAction,
-      notes: "Website approval strength lead",
+      notes: "Document readiness checklist; no automated screening or approval score",
       status: "New Lead",
       followUpStage: "Initial",
     };
@@ -231,6 +245,7 @@ export default function RentalReadinessSection() {
       await submitLead("rental_readiness", payload);
 
       setLeadDeliveryConfirmed(true);
+      rememberConfirmedLead(newLeadId);
       trackGenerateLeadOnce("rental_readiness", "readiness_form", newLeadId);
       setShowReport(true);
       setStatus("Your report is ready below. Your information was also sent to Behzad for review.");
@@ -244,63 +259,9 @@ export default function RentalReadinessSection() {
     }
   }
 
-  async function handleRequestMatchingOptions() {
-    if (isMatchingOptionsSubmissionActive.current) return;
-
-    setMatchingOptionsStatus("");
-    isMatchingOptionsSubmissionActive.current = true;
-    setIsSubmittingMatchingOptions(true);
-
-    const phoneDigits = normalizeCanadianPhone(form.phone);
-    const matchingLeadId = leadId ?? createLeadId();
-    // Same freshness reasoning as handleSubmit - don't rely on the
-    // debounced preview value for the submitted payload.
-    const submittedReport = calculateApprovalReport(form);
-
-    const payload = {
-      ...form,
-      area: form.area === "Other GTA area" ? form.otherArea.trim() : form.area,
-      normalizedPhone: phoneDigits,
-      leadId: matchingLeadId,
-      leadSource: "Key to GTA Website",
-      clientType: "Renter",
-      matchType: "Rental Approval Strength Report",
-      internalScore: String(submittedReport.score),
-      score: String(submittedReport.score),
-      result: submittedReport.strength,
-      displayResult: submittedReport.displayStrength,
-      priority: submittedReport.priority,
-      rentToIncomeRatio: submittedReport.rentToIncomeRatio
-        ? `${submittedReport.rentToIncomeRatio}%`
-        : "",
-      typicalComfortRange: submittedReport.recommendedRentRange,
-      recommendedRentRange: submittedReport.recommendedRentRange,
-      approvalExplanation: submittedReport.explanation,
-      userFriendlySummary: submittedReport.userFriendlySummary,
-      strengths: submittedReport.strengths.join(", "),
-      concerns: submittedReport.concerns.join(", "),
-      missingDocuments: submittedReport.missingDocuments.join(", "),
-      nextAction: "Send shortlist / contact quickly",
-      notes: "Requested matching rental options after readiness check",
-      status: "New Lead",
-      followUpStage: "Initial",
-      requestType: "Matching Rental Options",
-      matchingOptionsRequested: true,
-    };
-
-    try {
-      await submitLead("matching_options", payload);
-
-      trackEvent("request_matching_options", { lead_id: matchingLeadId });
-      setMatchingOptionsStatus(
-        "Thanks - your request was sent to Behzad. He'll review your profile and send realistic rental options that match your search criteria."
-      );
-    } catch {
-      setMatchingOptionsStatus(`We could not confirm your request. Please email Behzad with reference ${matchingLeadId} rather than sending it again.`);
-    } finally {
-      isMatchingOptionsSubmissionActive.current = false;
-      setIsSubmittingMatchingOptions(false);
-    }
+  function handleRequestMatchingOptions() {
+    if (!leadDeliveryConfirmed || !leadId) return;
+    window.location.href = `mailto:behzadfard.realtor@gmail.com?subject=Rental%20options%20${encodeURIComponent(leadId)}`;
   }
 
   return (
@@ -323,6 +284,7 @@ export default function RentalReadinessSection() {
         scoreStyle={scoreStyle}
         showReport={showReport}
         status={status}
+        existingReference={existingReference}
         step={step}
         updateField={updateField}
       />

@@ -16,7 +16,7 @@ export type RentalForm = {
 };
 
 export type ApprovalReport = {
-  strength: "Strong Match" | "Good Match" | "Needs Review" | "Review First" | "Profile Preview";
+  strength: "Profile Preview";
   displayStrength: string;
   priority: "High" | "Medium" | "Review";
   score: number;
@@ -49,19 +49,6 @@ export const initialRentalForm: RentalForm = {
   jobLetter: "Not asked",
   creditReport: "Not sure yet",
 };
-
-function formatCurrency(value: number) {
-  if (!Number.isFinite(value) || value <= 0) return "$0";
-  return new Intl.NumberFormat("en-CA", {
-    style: "currency",
-    currency: "CAD",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
-
-function roundToNearest50(value: number) {
-  return Math.round(value / 50) * 50;
-}
 
 const canadianAreaCodes = new Set([
   "204", "226", "236", "249", "250", "263", "289", "306", "343", "354", "365",
@@ -192,15 +179,11 @@ export function validateRentalForm(form: RentalForm) {
     errors.budget = "Enter a valid monthly rent amount.";
   }
 
-  if (!form.income.trim()) {
-    errors.income = "Monthly household income is required.";
-  } else if (Number(form.income) <= 0) {
+  if (form.income.trim() && (!Number.isFinite(Number(form.income)) || Number(form.income) <= 0)) {
     errors.income = "Enter a valid monthly income amount.";
   }
 
-  if (!form.credit.trim()) {
-    errors.credit = "Credit score is required.";
-  } else if (Number(form.credit) < 300 || Number(form.credit) > 900) {
+  if (form.credit.trim() && (!Number.isFinite(Number(form.credit)) || Number(form.credit) < 300 || Number(form.credit) > 900)) {
     errors.credit = "Enter a credit score between 300 and 900.";
   }
 
@@ -208,210 +191,35 @@ export function validateRentalForm(form: RentalForm) {
 }
 
 export function calculateApprovalReport(form: RentalForm): ApprovalReport {
-  const rent = Number(form.budget || 0);
-  const income = Number(form.income || 0);
-  const credit = Number(form.credit || 0);
-
-  const rentToIncomeRatio =
-    rent > 0 && income > 0 ? Math.round((rent / income) * 100) : null;
-
-  const incomeMultiple = rent > 0 && income > 0 ? income / rent : 0;
-
   const missingDocuments = [
-    form.paystubs !== "Yes" ? "Recent pay stubs" : "",
-    form.creditReport !== "Yes" ? "Full Equifax credit report" : "",
+    form.paystubs !== "Yes" ? "Recent pay stubs or other available income proof" : "",
+    form.creditReport !== "Yes" ? "Credit information, if available" : "",
   ].filter(Boolean);
-
-  const documentsReady = missingDocuments.length === 0;
-
-  let score = 25;
-
-  if (credit >= 760) score += 25;
-  else if (credit >= 700) score += 20;
-  else if (credit >= 660) score += 12;
-  else if (credit >= 620) score += 6;
-
-  if (incomeMultiple >= 3) score += 30;
-  else if (incomeMultiple >= 2.5) score += 24;
-  else if (incomeMultiple >= 2.2) score += 16;
-  else if (incomeMultiple >= 2) score += 9;
-  else if (rent > 0 && income > 0) score += 3;
-
-  if (form.paystubs === "Yes") score += 7;
-  if (form.creditReport === "Yes") score += 7;
-
-  if (form.moveIn === "30-60 days") score += 2;
-  if (form.moveIn === "60+ days") score += 1;
-
-  score = Math.max(0, Math.min(score, 100));
-
-  // Keep the score aligned with real-world rental risk.
-  // A strong credit score and complete documents help, but if the rent is high
-  // compared to income, the final score should still show "review needed".
-  if (rentToIncomeRatio !== null) {
-    if (rentToIncomeRatio >= 45) score = Math.min(score, 62);
-    else if (rentToIncomeRatio >= 41) score = Math.min(score, 74);
-    else if (rentToIncomeRatio >= 38) score = Math.min(score, 82);
-  }
-
-  if (missingDocuments.length >= 2) score = Math.min(score, 68);
-  if (credit > 0 && credit < 620) score = Math.min(score, 58);
-
-  const recommendedRentRange =
-    income > 0
-      ? `${formatCurrency(roundToNearest50(income * 0.35))} - ${formatCurrency(
-          roundToNearest50(income * 0.42)
-        )}`
-      : "Enter income to estimate";
-
-  if (!rent || !income || !credit) {
-    return {
-      strength: "Profile Preview",
-      displayStrength: "Profile Preview",
-      priority: "Review",
-      score,
-      rentToIncomeRatio,
-      rentRatioLabel: "Complete rent, income, and credit to see a stronger estimate.",
-      recommendedRentRange,
-      explanation:
-        "Complete your rent target, monthly household income, credit score, and document status to receive a more useful rental readiness estimate.",
-      nextAction:
-        "Fill in the missing details, then submit the form so Behzad can review your rental profile.",
-      helpfulSteps: [
-        "Add your monthly rent target.",
-        "Add your total monthly household income.",
-        "Add your approximate credit score.",
-      ],
-      missingDocuments,
-      strengths: [],
-      concerns: ["Important information is still missing."],
-      userFriendlySummary:
-        "Complete the form to receive a clearer rental readiness estimate before you book viewings or submit an offer.",
-      reassuringNote:
-        "This is a planning tool, not a final approval decision.",
-    };
-  }
-
-  let strength: ApprovalReport["strength"] = "Needs Review";
-
-  if (credit >= 720 && rentToIncomeRatio !== null && rentToIncomeRatio <= 35 && documentsReady) {
-    strength = "Strong Match";
-  } else if (
-    credit >= 700 &&
-    rentToIncomeRatio !== null &&
-    rentToIncomeRatio <= 40 &&
-    missingDocuments.length <= 1
-  ) {
-    strength = "Good Match";
-  } else if (
-    (rentToIncomeRatio !== null && rentToIncomeRatio >= 45) ||
-    credit < 620 ||
-    incomeMultiple < 2 ||
-    missingDocuments.length >= 2
-  ) {
-    strength = "Review First";
-  }
-
-  const priority: ApprovalReport["priority"] =
-    strength === "Strong Match" ? "High" : strength === "Good Match" ? "Medium" : "Review";
-
-  const ratioText =
-    rentToIncomeRatio !== null
-      ? `Your target rent is about ${rentToIncomeRatio}% of your monthly household income.`
-      : "Your rent-to-income ratio could not be calculated yet.";
-
-  const strengths = [
-    credit >= 700 ? "Credit score appears competitive." : "",
-    documentsReady ? "Key documents appear ready." : "",
-    incomeMultiple >= 2.5 ? "Income is reasonably aligned with the rent target." : "",
-    form.moveIn !== "0-30 days" ? "Move-in timeline gives more time to prepare." : "",
-  ].filter(Boolean);
-
-  const concerns = [
-    rentToIncomeRatio !== null && rentToIncomeRatio > 40
-      ? "The rent target is above the safer income range many landlords prefer."
-      : "",
-    credit > 0 && credit < 700 ? "Credit may need extra context or stronger supporting documents." : "",
-    missingDocuments.length > 0 ? `Documents to prepare: ${missingDocuments.join(", ")}.` : "",
-    incomeMultiple > 0 && incomeMultiple < 2.5 ? "The monthly income may feel tight for this rent range." : "",
-  ].filter(Boolean);
-
-  const displayStrengthMap: Record<ApprovalReport["strength"], string> = {
-    "Strong Match": "Strong Match",
-    "Good Match": "Good Match",
-    "Needs Review": "Needs Strategy",
-    "Review First": "Review First",
-    "Profile Preview": "Profile Preview",
-  };
-
-  const explanationMap: Record<ApprovalReport["strength"], string> = {
-    "Strong Match":
-      "Based on the information provided, your profile appears competitive for many GTA rental applications. A focused shortlist and complete document package would be the next smart step.",
-    "Good Match":
-      "Your profile looks workable. The right listing, complete documents, and a clean application package can make a big difference before submitting an offer.",
-    "Needs Review":
-      "Your profile may still be workable, but the rent target is a little high compared to monthly household income. A better strategy, stronger documents, proof of savings, or a stronger co-applicant may improve your chances.",
-    "Review First":
-      "It is better to review your profile before applying. The rent target, income, credit, or missing documents may make approval harder without a stronger strategy.",
-    "Profile Preview":
-      "Complete your details to receive a more useful rental readiness estimate.",
-  };
-
-  const userFriendlySummaryMap: Record<ApprovalReport["strength"], string> = {
-    "Strong Match":
-      "Good news \u2014 your profile looks ready for a targeted rental search.",
-    "Good Match":
-      "You may be close \u2014 the next step is choosing realistic listings and preparing documents properly.",
-    "Needs Review":
-      "You may still have options, but you should adjust the strategy before booking too many viewings.",
-    "Review First":
-      "Before applying, it is worth reviewing your profile so you avoid weak offers and wasted time.",
-    "Profile Preview":
-      "Complete the form to get your report.",
-  };
-
-  const reassuringNoteMap: Record<ApprovalReport["strength"], string> = {
-    "Strong Match":
-      "This does not guarantee approval, but it suggests your starting point is competitive.",
-    "Good Match":
-      "A good package can still compete well, especially when the unit and rent range fit your profile.",
-    "Needs Review":
-      "This is not a rejection. It simply means your application may need a smarter strategy, a better rent range, or stronger supporting documents.",
-    "Review First":
-      "This does not mean you cannot rent. It means you should avoid applying blindly and build a stronger plan first.",
-    "Profile Preview":
-      "This is a planning tool, not a final approval decision.",
-  };
-
-  const helpfulSteps = [
-    rentToIncomeRatio !== null && rentToIncomeRatio > 40
-      ? `Use ${recommendedRentRange} as a comfort range, but higher rent may still work with stronger documents, savings, or a stronger co-applicant.`
-      : "Keep your rent target aligned with your monthly household income.",
-    credit < 700
-      ? "Prepare a full Equifax report and be ready to explain your credit situation clearly."
-      : "Keep your full Equifax report ready for the application package.",
-    ...missingDocuments.map((doc) => `Prepare ${doc}.`),
-    "Ask Behzad to review your profile and send realistic rental options that fit your situation.",
-  ];
-
+  const readyCount = 2 - missingDocuments.length;
+  const score = Math.round((readyCount / 2) * 100);
+  const strength: ApprovalReport["strength"] = "Profile Preview";
+  const explanation = readyCount === 2
+    ? "You have indicated that two common supporting documents are ready. Behzad can review your situation and the specific listing with you."
+    : "This is a document preparation checklist. You can still ask Behzad for help while you gather what is available.";
   return {
     strength,
-    displayStrength: displayStrengthMap[strength],
-    priority,
+    displayStrength: readyCount === 2 ? "Documents ready to discuss" : "Documents to prepare",
+    priority: "Review",
     score,
-    rentToIncomeRatio,
-    rentRatioLabel: ratioText,
-    recommendedRentRange,
-    explanation: explanationMap[strength],
-    nextAction:
-      strength === "Strong Match"
-        ? "Contact quickly and prepare a targeted shortlist or viewing options."
-        : "Review the profile first, then recommend realistic rental options.",
-    helpfulSteps,
+    rentToIncomeRatio: null,
+    rentRatioLabel: `${readyCount} of 2 document items marked ready. This does not measure your chance of rental approval.`,
+    recommendedRentRange: "Discuss your budget for each listing",
+    explanation,
+    nextAction: "Review the renter's search, available documents, and the listing personally.",
+    helpfulSteps: [
+      ...missingDocuments.map((document) => `Prepare ${document} if available.`),
+      "Ask what documents the particular landlord needs before sharing sensitive records.",
+      "Discuss your preferred area, timing, and budget with Behzad.",
+    ],
     missingDocuments,
-    strengths,
-    concerns,
-    userFriendlySummary: userFriendlySummaryMap[strength],
-    reassuringNote: reassuringNoteMap[strength],
+    strengths: readyCount ? [`${readyCount} document item${readyCount === 1 ? " is" : "s are"} ready to discuss.`] : [],
+    concerns: missingDocuments.length ? ["Some supporting documents may still need preparation."] : [],
+    userFriendlySummary: "Your document preparation snapshot is ready.",
+    reassuringNote: "No score, income ratio, or document checklist guarantees approval. A missing Canadian credit file is not a negative credit record.",
   };
 }
