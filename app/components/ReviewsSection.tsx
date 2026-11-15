@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { reviews } from "../home-page-data";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/CT0t57nXoY6rEAI/review";
+const GOOGLE_REVIEW_URL = "https://www.google.com/maps?cid=12361995150296067379";
 
 export default function ReviewsSection() {
   const [activeReview, setActiveReview] = useState(0);
@@ -35,7 +35,7 @@ export default function ReviewsSection() {
             rel="noreferrer"
             className="ml-auto rounded-full border border-[#2F6F6B]/30 px-4 py-2 text-sm text-[#2F6F6B] hover:bg-[#DCE8E3]"
           >
-            Google Reviews →
+            Read Google Reviews →
           </a>
         </div>
 
