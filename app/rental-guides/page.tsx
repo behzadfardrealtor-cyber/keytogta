@@ -139,7 +139,7 @@ const guideGroups = [
         href: "/bill-60-ontario-tenant-changes-2026",
         title: "Bill 60 Ontario Tenant Changes",
         description:
-          "Track which 2026 tenant-rule changes are in force and which still need confirmation.",
+          "See which Ontario tenant-rule changes took effect in July and September 2026, including updated LTB forms and deadlines.",
       },
     ],
   },

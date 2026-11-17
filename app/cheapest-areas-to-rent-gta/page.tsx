@@ -426,7 +426,7 @@ export default function CheapestAreasToRentGTAPage() {
               <thead>
                 <tr className="bg-[#F7F7F2] text-sm font-semibold uppercase tracking-[0.08em] text-[#2F6F6B]">
                   <th className="px-6 py-4">Area</th>
-                  <th className="px-6 py-4">Current range</th>
+                  <th className="px-6 py-4">Dated 2026 snapshot</th>
                   <th className="px-6 py-4">As of</th>
                   <th className="px-6 py-4">Note</th>
                 </tr>

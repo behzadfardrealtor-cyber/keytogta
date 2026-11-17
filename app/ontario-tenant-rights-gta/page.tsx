@@ -198,7 +198,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-07-30",
-    dateModified: "2026-07-30",
+    dateModified: "2026-11-16",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario tenant rights",
@@ -430,6 +430,18 @@ export default function OntarioTenantRightsPage() {
             The guideline is set annually by the Ontario government and
             changes most years, so it&apos;s worth checking the current figure
             before assuming last year&apos;s number still applies.
+          </p>
+          <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
+            For increases taking effect on or after January 1, 2027, the Ontario
+            guideline is 1.9%. The 2026 guideline remains 2.1% for increases
+            taking effect in 2026. These annual caps apply to most rent-controlled
+            units; units first occupied for residential purposes after November 15,
+            2018 are generally exempt. A landlord must still use the proper form,
+            give at least 90 days&apos; written notice, and wait at least 12 months
+            between increases. Check the{" "}
+            <a href="https://www.ontario.ca/page/residential-rent-increases" className="font-semibold text-[#246860] underline underline-offset-4">
+              Ontario rent increase guidelines
+            </a> for the effective year.
           </p>
           <p className="mt-4 max-w-3xl leading-8 text-[#17313A]/72">
             The guideline amount doesn&apos;t change how notice works - your
