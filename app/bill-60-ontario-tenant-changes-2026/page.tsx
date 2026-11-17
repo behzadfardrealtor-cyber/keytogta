@@ -211,7 +211,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-07-31",
-    dateModified: "2026-10-06",
+    dateModified: "2026-11-16",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "Ontario tenant rights",
@@ -374,6 +374,20 @@ export default function Bill60OntarioTenantChangesPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section aria-label="Updated LTB forms deadline" className="px-6 pb-8">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-[#2F6F6B]/25 bg-[#DCE8E3] p-6 md:p-8">
+          <h2 className="text-xl font-bold md:text-2xl">LTB form deadline: November 30, 2026</h2>
+          <p className="mt-3 max-w-4xl leading-7 text-[#17313A]/85">
+            The LTB updated forms N5, N6, N8, N12, N13, L1, L2, L9, L10 and T5 on September 21.
+            Previous versions will no longer be accepted as of November 30, 2026. Check the current form
+            before filing, especially if you saved an older copy. See the{" "}
+            <a href="https://tribunalsontario.ca/2026/09/21/ltb-operational-update-legislative-changes-at-the-landlord-and-tenant-board-effective-september-21-2026/" className="font-semibold text-[#246860] underline underline-offset-4">
+              LTB operational update
+            </a>.
+          </p>
         </div>
       </section>
 
