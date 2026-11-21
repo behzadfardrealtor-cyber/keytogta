@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const heroFactRows = [
   { label: "Cheapest of the 5 covered areas", status: "Shifts monthly" },
   { label: "Under $1,000 apartment", status: "Not realistic" },
-  { label: "Cheapest GTA-wide (Oshawa)", status: "~$1,587/mo" },
+  { label: "Oshawa historical 1BR snapshot", status: "~$1,587/mo" },
 ];
 
 const heroBadges = [
@@ -96,7 +96,7 @@ const outsideAreas = [
     name: "Oshawa",
     range: "~$1,587 - $1,603",
     asOf: "Apr / May 2026 (liv.rent)",
-    note: "Currently the least expensive municipality in liv.rent's Ontario Rent Reports.",
+    note: "Historical April/May 2026 report range; compare current listings before relying on it.",
   },
   {
     name: "Brampton",
@@ -203,7 +203,7 @@ const structuredData = [
     description,
     image: `${siteUrl}/hero-condo.jpg`,
     datePublished: "2026-08-01",
-    dateModified: "2026-10-28",
+    dateModified: "2026-11-21",
     inLanguage: "en-CA",
     isAccessibleForFree: true,
     articleSection: "GTA rent comparison",
@@ -528,7 +528,7 @@ export default function CheapestAreasToRentGTAPage() {
           </h2>
           <p className="mt-5 max-w-3xl leading-8 text-[#17313A]/72">
             Full transparency: if raw affordability is your main goal,
-            Earlier 2026 reports showed lower prices in some nearby cities,
+            earlier 2026 reports showed lower prices in some nearby cities,
             but they cannot establish today&apos;s price gap. I want to be upfront that I
             don&apos;t have hands-on, in-market experience helping renters in
             these specific cities the way I do in North York, Markham,
@@ -543,7 +543,7 @@ export default function CheapestAreasToRentGTAPage() {
               <thead>
                 <tr className="bg-[#F7F7F2] text-sm font-semibold uppercase tracking-[0.08em] text-[#2F6F6B]">
                   <th className="px-6 py-4">Area</th>
-                  <th className="px-6 py-4">Current 1BR average</th>
+                  <th className="px-6 py-4">Dated 2026 1BR snapshot</th>
                   <th className="px-6 py-4">As of</th>
                   <th className="px-6 py-4">Note</th>
                 </tr>
